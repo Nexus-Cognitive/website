@@ -1,1 +1,1 @@
-export * as Client from '@/types/client'
+export * from '@/types/client'

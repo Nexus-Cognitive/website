@@ -1,3 +1,3 @@
 import * as Interfaces from '@/interfaces'
 
-export type Service = { [index: string]: Interfaces.Client.Instance }
+export type ClientService = { [index: string]: Interfaces.ClientInstance }
