@@ -1,5 +1,6 @@
-export interface Base {
-  id: number
+import * as Interfaces from '@/interfaces'
+
+export interface AuthorBase extends Interfaces.ResourceBase {
+  image: Interfaces.ImageBase
   name: string
-  title: string
 }

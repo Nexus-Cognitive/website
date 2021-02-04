@@ -1,5 +1,5 @@
-export interface Base {
-  id: number
+import * as Interfaces from '@/interfaces'
+
+export interface CategoryBase extends Interfaces.ResourceBase {
   description: string
-  name: string
 }

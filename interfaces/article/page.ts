@@ -1,7 +1,7 @@
 import * as Interfaces from '@/interfaces'
 
-export interface Page extends Interfaces.Article.Base {
+export interface ArticlePage extends Interfaces.ArticleBase {
   body: string
-  images: Interfaces.Image.Base[]
+  images: Interfaces.ImageBase[]
   introduction: string
 }

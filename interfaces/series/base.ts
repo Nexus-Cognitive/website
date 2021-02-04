@@ -1,9 +1,7 @@
 import * as Interfaces from '@/interfaces'
 
-export interface Base {
-  id: number
-  articles: Interfaces.Article.Page[]
+export interface SeriesBase extends Interfaces.ResourceBase {
+  articles: Interfaces.ArticlePage[]
   description: string
   subtitle: string
-  title: string
 }
