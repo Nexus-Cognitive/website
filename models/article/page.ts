@@ -1,6 +1,6 @@
 import * as Interfaces from '@/interfaces'
 
-export const Page: Interfaces.Article.Page = {
+export const Page: Interfaces.ArticlePage = {
   id: 0,
   authors: [],
   body: '',
@@ -10,6 +10,7 @@ export const Page: Interfaces.Article.Page = {
     id: 0,
     alt: '',
     height: 0,
+    title: '',
     url: '',
     width: 0
   },
