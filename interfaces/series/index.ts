@@ -1,1 +1,1 @@
-export * from '@/interfaces/series/base'
+export * from './base'

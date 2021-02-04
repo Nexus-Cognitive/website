@@ -1,2 +1,2 @@
-export * from '@/interfaces/article/base'
-export * from '@/interfaces/article/page'
+export * from './base'
+export * from './page'
