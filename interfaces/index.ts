@@ -1,0 +1,5 @@
+export { ArticleItemI, ArticlePageI } from '@/interfaces/article'
+export { AuthorI } from '@/interfaces/author'
+export { CategoryI } from '@/interfaces/category'
+export { ClientMethodI, ClientInstanceI } from '@/interfaces/client'
+export { ImageI } from '@/interfaces/image'
