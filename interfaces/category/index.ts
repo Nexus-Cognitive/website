@@ -1,1 +1,1 @@
-export { Base } from '@/interfaces/category/base'
+export * from '@/interfaces/category/base'

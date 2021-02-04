@@ -1,1 +1,1 @@
-export { Base } from '@/interfaces/series/base'
+export * from '@/interfaces/series/base'

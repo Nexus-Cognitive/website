@@ -1,1 +1,1 @@
-export { Base } from '@/interfaces/image/base'
+export * from '@/interfaces/image/base'
