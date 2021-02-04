@@ -1,1 +1,1 @@
-export { Client } from '@/services/modules/article/client'
+export * from './client'
