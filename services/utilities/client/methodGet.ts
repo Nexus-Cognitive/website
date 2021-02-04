@@ -6,8 +6,8 @@ import * as Types from '@/types'
 export function methodGet(
   moduleKey: string,
   modelKey: string,
-  methodKey: Types.Client.Method
-): Interfaces.Client.Method {
+  methodKey: Types.ClientMethod
+): Interfaces.ClientMethod {
   return (id?: number, data?: object, params?: object): AxiosPromise => {
     const paths: (number | string)[] = [moduleKey]
 
