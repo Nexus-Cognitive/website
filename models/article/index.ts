@@ -1,7 +1,3 @@
-import { ItemM } from '@/models/article/item'
-import { PageM } from '@/models/article/page'
-
-export const ArticleM = {
-  item: ItemM,
-  page: PageM
-}
+export { Base } from '~/models/article/base'
+export { Page } from '@/models/article/page'
+export { Client } from '@/models/article/client'

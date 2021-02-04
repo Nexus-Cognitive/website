@@ -1,1 +1,1 @@
-export { ArticleM } from '@/models/article/index'
+export * as Article from '@/models/article'
