@@ -1,5 +1,5 @@
 import { AxiosPromise } from 'axios'
 
-export interface ClientMethodI {
+export interface Method {
   (id?: number, data?: object, params?: object): AxiosPromise
 }

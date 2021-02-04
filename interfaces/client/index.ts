@@ -1,2 +1,2 @@
-export { ClientMethodI } from '@/interfaces/client/method'
-export { ClientInstanceI } from '@/interfaces/client/instance'
+export { Method } from '@/interfaces/client/method'
+export { Instance } from '@/interfaces/client/instance'

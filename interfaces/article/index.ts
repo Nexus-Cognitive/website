@@ -1,2 +1,2 @@
-export { ArticleItemI } from '@/interfaces/article/item'
-export { ArticlePageI } from '@/interfaces/article/page'
+export { Base } from '@/interfaces/article/base'
+export { Page } from '@/interfaces/article/page'

@@ -1,5 +1,1 @@
-export interface CategoryI {
-  id: number
-  description: string
-  name: string
-}
+export { Base } from '@/interfaces/category/base'
