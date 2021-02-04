@@ -1,2 +1,1 @@
-export { MethodT } from '@/types/client'
-export { ServiceT } from '@/types/client'
+export * as Client from '@/types/client'
