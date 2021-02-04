@@ -26,7 +26,8 @@
     "types": [
       "@nuxt/types",
       "@types/node"
-    ]
+    ],
+    "emitDecoratorMetadata": true
   },
   "exclude": [
     "node_modules",
