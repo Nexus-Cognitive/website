@@ -1,1 +1,1 @@
-export * as ClientSU from '@/services/utilities/client'
+export * as Client from '@/services/utilities/client'

@@ -1,2 +1,2 @@
-export { ArticleS } from '@/services/modules/article'
-export { ClientS } from '@/services/modules/client'
+export * as Article from '@/services/modules/article'
+export * as Client from '@/services/modules/client'
