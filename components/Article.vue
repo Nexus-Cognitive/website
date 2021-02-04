@@ -2,18 +2,15 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { ArticleItemI } from '@/interfaces/article'
-import { AuthorI } from '@/interfaces/author'
-import { CategoryI } from '@/interfaces/category'
-import { ImageI } from '@/interfaces/image'
+import * as Interfaces from '@/interfaces'
 
 @Component
-export default class Article extends Vue implements ArticleItemI {
+export default class Article extends Vue implements Interfaces.Article.Base {
   @Prop() id!: number
-  @Prop() authors!: AuthorI[]
-  @Prop() categories!: CategoryI[]
+  @Prop() authors!: Interfaces.Author.Base[]
+  @Prop() categories!: Interfaces.Category.Base[]
   @Prop() description!: string
-  @Prop() feature!: ImageI
+  @Prop() feature!: Interfaces.Image.Base
   @Prop() subtitle!: string
   @Prop() title!: string
 
