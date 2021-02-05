@@ -1,5 +1,5 @@
-import * as Interfaces from '@/interfaces'
+import type { ResourceBaseI } from '@/interfaces'
 
-export interface CategoryBase extends Interfaces.ResourceBase {
+export interface CategoryBaseI extends ResourceBaseI {
   description: string
 }

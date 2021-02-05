@@ -1,4 +1,4 @@
-export interface ResourceBase {
+export interface ResourceBaseI {
   id: number
   title: string
 }

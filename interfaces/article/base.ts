@@ -1,9 +1,14 @@
-import * as Interfaces from '@/interfaces'
+import type {
+  AuthorBaseI,
+  CategoryBaseI,
+  ImageBaseI,
+  ResourceBaseI
+} from '@/interfaces'
 
-export interface ArticleBase extends Interfaces.ResourceBase {
-  authors: Interfaces.AuthorBase[]
-  categories: Interfaces.CategoryBase[]
+export interface ArticleBaseI extends ResourceBaseI {
+  authors: AuthorBaseI[]
+  categories: CategoryBaseI[]
   description: string
-  feature: Interfaces.ImageBase
+  feature: ImageBaseI
   subtitle: string
 }

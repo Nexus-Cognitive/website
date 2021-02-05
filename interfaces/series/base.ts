@@ -1,7 +1,7 @@
-import * as Interfaces from '@/interfaces'
+import type { ArticlePageI, ResourceBaseI } from '@/interfaces'
 
-export interface SeriesBase extends Interfaces.ResourceBase {
-  articles: Interfaces.ArticlePage[]
+export interface SeriesBaseI extends ResourceBaseI {
+  articles: ArticlePageI[]
   description: string
   subtitle: string
 }

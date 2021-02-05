@@ -1,6 +1,6 @@
-import * as Interfaces from '@/interfaces'
+import type { ImageBaseI, ResourceBaseI } from '@/interfaces'
 
-export interface AuthorBase extends Interfaces.ResourceBase {
-  image: Interfaces.ImageBase
+export interface AuthorBaseI extends ResourceBaseI {
+  image: ImageBaseI
   name: string
 }
