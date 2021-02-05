@@ -1,6 +1,7 @@
-import * as Models from '@/models'
+import type { ArticleClientI } from '@/interfaces'
+import { ArticleBaseM, ArticlePageM } from '@/models'
 
-export const Client = {
-  index: [Models.Article.Base],
-  page: Models.Article.Page
+export const ArticleClientM: ArticleClientI = {
+  index: [ArticleBaseM],
+  page: ArticlePageM
 }

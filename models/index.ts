@@ -1,1 +1,1 @@
-export * as Article from '@/models/article'
+export * from './article'

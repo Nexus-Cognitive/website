@@ -1,6 +1,6 @@
-import * as Interfaces from '@/interfaces'
+import type { ArticleBaseI } from '@/interfaces'
 
-export const Base: Interfaces.ArticleBase = {
+export const ArticleBaseM: ArticleBaseI = {
   id: 0,
   authors: [],
   categories: [],
