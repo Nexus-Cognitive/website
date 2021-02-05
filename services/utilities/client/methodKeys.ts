@@ -1,6 +1,6 @@
-import * as Types from '@/types'
+import type { ClientMethodT } from '@/types'
 
-export const METHOD_KEYS: Types.ClientMethod[] = [
+export const CLIENT_METHOD_KEYS: ClientMethodT[] = [
   'DELETE',
   'GET',
   'PATCH',

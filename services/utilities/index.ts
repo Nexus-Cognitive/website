@@ -1,1 +1,1 @@
-export * as Client from '@/services/utilities/client'
+export * from './client'

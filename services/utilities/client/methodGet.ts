@@ -1,13 +1,13 @@
 import { AxiosPromise } from 'axios'
-import * as Interfaces from '@/interfaces'
-import * as Services from '@/services'
-import * as Types from '@/types'
+import type { ClientMethodT } from '@/types'
+import type { ClientMethodI } from '@/interfaces'
+import { ClientInstanceS } from '@/services'
 
-export function methodGet(
+export function clientMethodGet(
   moduleKey: string,
   modelKey: string,
-  methodKey: Types.ClientMethod
-): Interfaces.ClientMethod {
+  methodKey: ClientMethodT
+): ClientMethodI {
   return (id?: number, data?: object, params?: object): AxiosPromise => {
     const paths: (number | string)[] = [moduleKey]
 
@@ -17,7 +17,7 @@ export function methodGet(
 
     paths.push(modelKey)
 
-    return Services.Modules.Client.Instance({
+    return ClientInstanceS({
       method: methodKey,
       url: paths.join('/'),
       data,

@@ -1,5 +1,5 @@
 import { camelCase } from 'lodash'
 
-export function moduleModelKeyGet(modelKey: string): string {
+export function clientModuleModelKeyGet(modelKey: string): string {
   return camelCase(modelKey)
 }

@@ -1,16 +1,13 @@
-import * as Services from '@/services'
-import * as Types from '@/types'
+import type { ClientServiceT } from '@/types'
+import { clientGet, clientModuleModelKeyGet } from '@/services'
 
-export function map(moduleKey: string, model: object): Types.ClientService {
-  const _service: Types.ClientService = {}
+export function clientMap(moduleKey: string, model: object): ClientServiceT {
+  const _service: ClientServiceT = {}
 
   for (const modelKey in model) {
-    const _modelKey = Services.Utilities.Client.moduleModelKeyGet(modelKey)
+    const _modelKey = clientModuleModelKeyGet(modelKey)
 
-    _service[_modelKey] = Services.Utilities.Client.clientGet(
-      moduleKey,
-      _modelKey
-    )
+    _service[_modelKey] = clientGet(moduleKey, _modelKey)
   }
 
   return _service

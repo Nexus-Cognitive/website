@@ -1,7 +1,7 @@
-import * as Types from '@/types'
+import type { ClientMethodT } from '@/types'
 
-export function moduleMethodKeyGet(
-  methodKey: Types.ClientMethod
-): Types.ClientMethod {
-  return <Types.ClientMethod>methodKey.toUpperCase()
+export function clientModuleMethodKeyGet(
+  methodKey: ClientMethodT
+): ClientMethodT {
+  return <ClientMethodT>methodKey.toUpperCase()
 }
