@@ -1,1 +1,1 @@
-export type ClientMethod = 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT'
+export type ClientMethodT = 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT'
