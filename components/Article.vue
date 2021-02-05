@@ -5,15 +5,20 @@
 <script lang="ts">
 import 'reflect-metadata'
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import * as Interfaces from '@/interfaces'
+import type {
+  ArticleBaseI,
+  AuthorBaseI,
+  CategoryBaseI,
+  ImageBaseI
+} from '@/interfaces'
 
 @Component
-export default class Article extends Vue implements Interfaces.ArticleBase {
+export default class Article extends Vue implements ArticleBaseI {
   @Prop() id!: number
-  @Prop() authors!: Interfaces.AuthorBase[]
-  @Prop() categories!: Interfaces.CategoryBase[]
+  @Prop() authors!: AuthorBaseI[]
+  @Prop() categories!: CategoryBaseI[]
   @Prop() description!: string
-  @Prop() feature!: Interfaces.ImageBase
+  @Prop() feature!: ImageBaseI
   @Prop() subtitle!: string
   @Prop() title!: string
 
