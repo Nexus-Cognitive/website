@@ -1,3 +1,3 @@
-export * from './base'
-export * from './client'
-export * from './page'
+export * from './articleBase'
+export * from './articleClient'
+export * from './articlePage'
