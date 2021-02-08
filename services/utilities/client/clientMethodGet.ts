@@ -1,13 +1,12 @@
 import { AxiosPromise } from 'axios'
-import type { ClientMethodT } from '@/types'
-import type { ClientMethodI } from '@/interfaces'
+import type { ClientMethodT, ClientMethodKeyT } from '@/types'
 import { ClientInstanceS } from '@/services'
 
 export function clientMethodGet(
   moduleKey: string,
   modelKey: string,
-  methodKey: ClientMethodT
-): ClientMethodI {
+  methodKey: ClientMethodKeyT
+): ClientMethodT {
   return (id?: number, data?: object, params?: object): AxiosPromise => {
     const paths: (number | string)[] = [moduleKey]
 
