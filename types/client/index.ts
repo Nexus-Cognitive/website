@@ -1,2 +1,4 @@
-export * from './method'
-export * from './service'
+export * from './clientInstance'
+export * from './clientMethod'
+export * from './clientMethodKey'
+export * from './clientService'
