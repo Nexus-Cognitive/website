@@ -1,8 +1,8 @@
 import type { ClientServiceT } from '@/types'
 import { ArticleClientM } from '@/models'
-import { clientServiceMap } from '@/services'
+import { serviceClientMap } from '@/utilities'
 
-export const ArticleClientS: ClientServiceT = clientServiceMap(
+export const ArticleClientS: ClientServiceT = serviceClientMap(
   ArticleClientM,
   'article'
 )
