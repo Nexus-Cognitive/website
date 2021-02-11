@@ -1,7 +1,7 @@
-import type { ArticlePageI, ResourceBaseI } from '@/interfaces'
+import type { InsightPageI, ResourceBaseI } from '@/interfaces'
 
 export interface SeriesBaseI extends ResourceBaseI {
-  articles: ArticlePageI[]
+  insights: InsightPageI[]
   description: string
   subtitle: string
 }

@@ -1,7 +1,8 @@
 import axios, { AxiosInstance } from 'axios'
 
-export const ClientInstanceS: AxiosInstance = axios.create({
-  baseURL: 'http://localhost:3000',
+export const APIClientS: AxiosInstance = axios.create({
+  baseURL:
+    'https://my-json-server.typicode.com/adamlwomble/nexus-cognitive-front-end',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json'

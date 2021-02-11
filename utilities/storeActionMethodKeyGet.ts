@@ -1,9 +1,9 @@
 import { camelCase, capitalize } from 'lodash'
-import type { ClientMethodKeyT } from '@/types'
+import type { APIClientMethodKeyT } from '@/types'
 
 export function storeActionMethodKeyGet(
   stateKey: string,
-  clientMethodKey: ClientMethodKeyT
+  apiClientMethodKey: APIClientMethodKeyT
 ): string {
-  return camelCase(stateKey) + capitalize(clientMethodKey)
+  return camelCase(stateKey) + capitalize(apiClientMethodKey)
 }

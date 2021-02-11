@@ -1,2 +1,2 @@
-export { ArticleClientS } from './articleClient'
-export { ClientInstanceS } from './clientInstance'
+export { APIClientS } from './apiClient'
+export { InsightClientS } from './insightClient'

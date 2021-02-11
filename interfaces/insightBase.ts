@@ -5,7 +5,7 @@ import type {
   ResourceBaseI
 } from '@/interfaces'
 
-export interface ArticleBaseI extends ResourceBaseI {
+export interface InsightBaseI extends ResourceBaseI {
   authors: AuthorBaseI[]
   categories: CategoryBaseI[]
   description: string

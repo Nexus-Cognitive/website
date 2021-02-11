@@ -1,4 +1,4 @@
-import type { ClientServiceT } from '@/types'
+import type { APIClientServiceT } from '@/types'
 import type { StoreInstanceI } from '@/interfaces'
 import {
   storeActionMap,
@@ -8,16 +8,16 @@ import {
 } from '@/utilities'
 
 export function storeModuleMap(
-  clientModel: object,
-  clientService: ClientServiceT
+  apiClientModel: object,
+  apiClientService: APIClientServiceT
 ): StoreInstanceI {
-  const state = storeStateMap(clientModel)
+  const state = storeStateMap(apiClientModel)
   const _state = state()
 
   return {
     state,
     mutations: storeMutationMap(_state),
-    actions: storeActionMap(clientService, _state),
+    actions: storeActionMap(apiClientService, _state),
     getters: storeGetterMap(_state)
   }
 }

@@ -1,3 +1,3 @@
-export { ArticleBaseM } from './articleBase'
-export { ArticleClientM } from './articleClient'
-export { ArticlePageM } from './articlePage'
+export { InsightBaseM } from './insightBase'
+export { InsightClientM } from './insightClient'
+export { InsightPageM } from './insightPage'

@@ -1,10 +1,10 @@
-export function storeStateMap(clientModel: object): () => object {
+export function storeStateMap(apiClientModel: object): () => object {
   return () => ({
     acting: false,
     alert: {
       error: '',
       success: ''
     },
-    ...clientModel
+    ...apiClientModel
   })
 }

@@ -1,12 +1,16 @@
 import { AxiosResponse } from 'axios'
-import type { ActionMethodT, ClientMethodKeyT, ClientServiceT } from '@/types'
+import type {
+  ActionMethodT,
+  APIClientMethodKeyT,
+  APIClientServiceT
+} from '@/types'
 import type { ActionPayloadI, StoreContextI } from '@/interfaces'
 import { storeMutationMethodKeyGet } from '@/utilities'
 
 export function storeActionMethodGet(
-  clientService: ClientServiceT,
+  apiClientService: APIClientServiceT,
   stateKey: string,
-  clientMethodKey: ClientMethodKeyT
+  apiClientMethodKey: APIClientMethodKeyT
 ): ActionMethodT {
   return (
     { commit }: StoreContextI,
@@ -16,7 +20,7 @@ export function storeActionMethodGet(
 
     commit(mutationMethodKeyActing, true)
 
-    return clientService[stateKey][clientMethodKey](
+    return apiClientService[stateKey][apiClientMethodKey](
       actionPayload.id,
       actionPayload.data,
       actionPayload.params
@@ -31,7 +35,7 @@ export function storeActionMethodGet(
         if (!actionPayload.silent) {
           commit(
             storeMutationMethodKeyGet('alert', 'success'),
-            `Successful ${clientMethodKey} of ${stateKey}`
+            `Successful ${apiClientMethodKey} of ${stateKey}`
           )
         }
       })
@@ -39,7 +43,7 @@ export function storeActionMethodGet(
         if (!actionPayload.silent) {
           commit(
             storeMutationMethodKeyGet('alert', 'error'),
-            `Error in ${clientMethodKey} of ${stateKey}: ${error.message}`
+            `Error in ${apiClientMethodKey} of ${stateKey}: ${error.message}`
           )
         }
       })

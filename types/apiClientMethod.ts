@@ -1,6 +1,6 @@
 import { AxiosPromise } from 'axios'
 
-export type ClientMethodT = (
+export type APIClientMethodT = (
   id?: number,
   data?: object,
   params?: object

@@ -1,9 +1,8 @@
-import type { ArticlePageI } from '@/interfaces'
+import type { InsightBaseI } from '@/interfaces'
 
-export const ArticlePageM: ArticlePageI = {
+export const InsightBaseM: InsightBaseI = {
   id: 0,
   authors: [],
-  body: '',
   categories: [],
   description: '',
   feature: {
@@ -14,8 +13,6 @@ export const ArticlePageM: ArticlePageI = {
     url: '',
     width: 0
   },
-  images: [],
-  introduction: '',
   subtitle: '',
   title: ''
 }

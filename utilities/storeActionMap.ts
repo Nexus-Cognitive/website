@@ -1,21 +1,25 @@
-import type { ActionInstanceT, ClientServiceT, StateInstanceT } from '@/types'
+import type {
+  ActionInstanceT,
+  APIClientServiceT,
+  StateInstanceT
+} from '@/types'
 import {
-  SERVICE_CLIENT_METHOD_KEYS,
+  API_CLIENT_METHOD_KEYS,
   storeActionMethodGet,
   storeActionMethodKeyGet
 } from '@/utilities'
 
 export function storeActionMap(
-  clientService: ClientServiceT,
+  apiClientService: APIClientServiceT,
   state: StateInstanceT
 ): ActionInstanceT {
   const _actions: ActionInstanceT = {}
 
   for (const stateKey in state) {
-    for (const clientMethodKey of SERVICE_CLIENT_METHOD_KEYS) {
+    for (const apiClientMethodKey of API_CLIENT_METHOD_KEYS) {
       _actions[
-        storeActionMethodKeyGet(stateKey, clientMethodKey)
-      ] = storeActionMethodGet(clientService, stateKey, clientMethodKey)
+        storeActionMethodKeyGet(stateKey, apiClientMethodKey)
+      ] = storeActionMethodGet(apiClientService, stateKey, apiClientMethodKey)
     }
   }
 

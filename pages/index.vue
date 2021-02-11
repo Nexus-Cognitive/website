@@ -11,7 +11,7 @@ import Vue from 'vue'
 import { mapActions, mapState } from 'vuex'
 import { storeModuleKeyGet } from '@/utilities'
 
-const storeModuleKey = storeModuleKeyGet('article')
+const storeModuleKey = storeModuleKeyGet('insights')
 
 export default Vue.extend({
   data() {
