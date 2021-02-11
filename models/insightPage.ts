@@ -9,10 +9,10 @@ export const InsightPageM: InsightPageI = {
   feature: {
     id: 0,
     alt: '',
-    height: 0,
+    height: '',
     title: '',
     url: '',
-    width: 0
+    width: ''
   },
   images: [],
   introduction: '',

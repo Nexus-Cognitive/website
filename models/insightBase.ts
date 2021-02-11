@@ -8,10 +8,10 @@ export const InsightBaseM: InsightBaseI = {
   feature: {
     id: 0,
     alt: '',
-    height: 0,
+    height: '',
     title: '',
     url: '',
-    width: 0
+    width: ''
   },
   subtitle: '',
   title: ''
