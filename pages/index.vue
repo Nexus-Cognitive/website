@@ -1,8 +1,15 @@
 <template>
-  <div class="container mx-auto">
-    <p v-if="alert.error" :class="alertErrorClassList" role="alert">
-      {{ alert.error }}
+  <div class="container">
+    <p v-if="alertShow" :class="alertClassList" role="alert">
+      {{ alertMessage }}
     </p>
+    <section class="grid grid-cols-2 gap-8 mt-4">
+      <insight-base
+        v-for="insight in index"
+        :key="insight.id"
+        v-bind="insight"
+      ></insight-base>
+    </section>
   </div>
 </template>
 
@@ -23,21 +30,30 @@ export default Vue.extend({
   },
 
   computed: {
-    ...mapState(storeModuleKey, ['acting', 'alert']),
+    ...mapState(storeModuleKey, ['acting', 'alert', 'index']),
 
-    alertErrorClassList(): (null | string)[] {
+    alertClassList(): (null | string)[] {
       return [
         this.alerted ? null : 'animate-pulse',
-        'bg-red-300',
-        'p-6',
+        this.alert.error ? 'bg-red-300' : 'bg-green-300',
+        'px-3',
+        'py-2',
         'mx-auto',
         'rounded-lg',
         'mt-4',
         'shadow-md',
         'flex',
         'items-center',
-        'text-red-900'
+        this.alert.error ? 'text-red-900' : 'text-green-900'
       ]
+    },
+
+    alertMessage(): string {
+      return this.alert.error ? this.alert.error : this.alert.success
+    },
+
+    alertShow(): boolean {
+      return this.alert.error || this.alert.success
     }
   },
 
