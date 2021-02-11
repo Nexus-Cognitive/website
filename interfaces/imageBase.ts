@@ -2,7 +2,7 @@ import type { ResourceBaseI } from '@/interfaces'
 
 export interface ImageBaseI extends ResourceBaseI {
   alt: string
-  height: number
+  height: string
   url: string
-  width: number
+  width: string
 }
