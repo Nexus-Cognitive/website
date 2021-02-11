@@ -38,7 +38,6 @@
           }
         }
       ],
-      "body": "Commodo id amet labore laboris amet commodo ad aliquip enim. Magna exercitation tempor voluptate veniam consequat mollit excepteur fugiat velit voluptate. Dolor cupidatat labore nulla occaecat adipisicing aute aliqua laboris non non Lorem magna duis sit. Et laboris qui voluptate id culpa culpa sunt eiusmod nostrud cupidatat nostrud consequat. Fugiat quis voluptate consectetur officia nisi esse minim anim aute proident reprehenderit est reprehenderit velit. Qui pariatur eu adipisicing veniam. Ad nisi occaecat sunt deserunt. Anim mollit consectetur sunt esse elit quis sint. Sit ipsum elit culpa veniam. Irure aute esse ipsum ad esse sint nulla non irure in Lorem ipsum velit. Exercitation aliquip quis fugiat do ea velit dolore nostrud deserunt aliquip incididunt eu enim non. Est irure exercitation labore cupidatat culpa occaecat minim tempor. Sunt commodo mollit consectetur deserunt ea quis sint anim ipsum consequat. Amet minim in amet amet. Esse esse reprehenderit eiusmod officia nisi sunt. Ex culpa ullamco exercitation dolore officia excepteur consequat adipisicing ut officia fugiat. Duis dolore minim reprehenderit magna cupidatat consequat enim id eu ea aliqua. Irure non do deserunt tempor fugiat. Consectetur voluptate exercitation eiusmod consectetur in laboris. Qui aute irure tempor aliqua amet mollit. Aliquip ea incididunt culpa consectetur esse sit non labore veniam sunt. Tempor anim ad sit est do fugiat elit commodo aliquip reprehenderit elit excepteur ipsum commodo. Nisi cupidatat irure labore exercitation anim proident elit. Adipisicing ad ipsum consectetur id aliqua fugiat in et. Incididunt et cupidatat exercitation laborum proident pariatur qui.",
       "categories": [
         {
           "id": "b9238139-9e95-41d6-bd57-edffffccc346",
@@ -73,21 +72,6 @@
         "url": "http://placehold.it/1024x768",
         "width": 1024
       },
-      "images": [
-        {
-          "alt": "incididunt minim",
-          "height": 32,
-          "url": "http://placehold.it/32x32",
-          "width": 32
-        },
-        {
-          "alt": "aute est",
-          "height": 32,
-          "url": "http://placehold.it/32x32",
-          "width": 32
-        }
-      ],
-      "introduction": "Commodo Lorem ea et fugiat ut occaecat laboris non Lorem id labore magna. Ut Lorem minim eiusmod elit cillum dolore mollit mollit mollit nostrud consectetur. Cillum elit cupidatat velit adipisicing dolore sunt sint. Proident sint sint enim commodo deserunt officia in exercitation ut id. Nostrud cupidatat et incididunt ex velit esse anim eu labore dolor incididunt anim.",
       "subtitle": "culpa incididunt magna duis ex anim in nisi"
     },
     {
@@ -117,7 +101,6 @@
           }
         }
       ],
-      "body": "Amet id fugiat in eu dolore laboris. Non magna velit labore sint. Sit aliquip ex sit ex minim labore. Quis ut ea anim amet aute velit fugiat amet labore nisi minim voluptate. Nisi et commodo ex excepteur eiusmod aute nulla fugiat ad commodo est irure. Ex sit sit dolor pariatur veniam aliqua elit culpa nostrud. Eiusmod enim nisi aliqua elit sunt minim eiusmod. Eiusmod aute do voluptate reprehenderit deserunt quis excepteur voluptate consectetur mollit enim labore. Consectetur minim veniam quis culpa Lorem non incididunt ex aute dolor laboris do. Qui aliquip quis voluptate cupidatat irure esse eiusmod Lorem mollit elit culpa aliquip. Velit reprehenderit elit laboris dolor sint ad veniam laborum consectetur ut elit. Est et ex ullamco esse minim pariatur aute minim incididunt sit deserunt incididunt amet. Dolor aute cupidatat est incididunt nostrud minim. Qui culpa labore dolore dolore laboris et ullamco consequat velit Lorem id. Elit officia sit sint aute sunt sunt dolor sit laborum Lorem culpa aute. Nulla incididunt fugiat minim excepteur incididunt magna velit consequat tempor nulla incididunt est ad. Dolor reprehenderit id consectetur tempor. Dolor enim adipisicing ex elit aliquip officia fugiat fugiat ipsum. Proident pariatur laboris ullamco deserunt duis pariatur culpa velit ipsum. Occaecat est fugiat dolor culpa Lorem adipisicing pariatur ipsum. Sunt occaecat qui esse officia nostrud Lorem sunt exercitation incididunt reprehenderit commodo ullamco irure esse. Aliqua eiusmod pariatur nisi laborum eu velit pariatur aliquip occaecat est nulla. Elit exercitation incididunt exercitation mollit excepteur cillum. Ullamco consequat exercitation commodo eiusmod est laboris. Occaecat irure sunt excepteur culpa qui voluptate proident proident occaecat pariatur dolore velit.",
       "categories": [
         {
           "id": "f7274d92-6d0d-48b5-b251-be48b9061aca",
@@ -147,16 +130,7 @@
         "url": "http://placehold.it/1024x768",
         "width": 1024
       },
-      "images": [
-        {
-          "alt": "nulla quis",
-          "height": 32,
-          "url": "http://placehold.it/32x32",
-          "width": 32
-        }
-      ],
-      "introduction": "Ipsum ex deserunt sint velit exercitation do veniam pariatur tempor exercitation aliqua. Veniam in dolor laboris duis dolore amet eu anim magna. Qui nostrud minim nostrud magna esse proident sit mollit velit ad excepteur qui. Incididunt qui officia commodo nostrud laboris ut culpa velit adipisicing exercitation occaecat cillum consectetur. Sint non ad nisi ea commodo id adipisicing amet pariatur cupidatat voluptate adipisicing.",
-      "subtitle": "labore adipisicing laborum tempor magna irure velit velit"
+      "subtitle": "labore adipisicin laborum tempor magna irure velit velit"
     }
   ]
 }
