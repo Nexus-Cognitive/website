@@ -14,7 +14,9 @@ export function apiClientMethodGet(
       paths.push(id)
     }
 
-    paths.push(apiClientModelKey)
+    if (apiClientModelKey !== 'index') {
+      paths.push(apiClientModelKey)
+    }
 
     return APIClientS({
       method: methodKey,
