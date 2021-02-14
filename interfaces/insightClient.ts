@@ -1,6 +1,6 @@
 import type { InsightBaseI, InsightPageI } from '@/interfaces'
 
 export interface InsightClientI {
-  index: InsightBaseI[]
+  base: InsightBaseI[]
   page: InsightPageI
 }

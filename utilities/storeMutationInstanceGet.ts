@@ -10,12 +10,14 @@ export function storeMutationInstanceGet(
   stateInstanceKeys: string[] = [],
   storeMutationInstance: StoreMutationInstanceT = {}
 ): StoreMutationInstanceT {
-  for (const stateKey in stateInstance) {
-    const _stateInstanceKeys = [...stateInstanceKeys, stateKey]
-    const stateInstanceValue = stateInstance[stateKey]
+  for (const stateInstanceKey in stateInstance) {
+    const _stateInstanceKeys = [...stateInstanceKeys, stateInstanceKey]
+    const stateInstanceValue = stateInstance[stateInstanceKey]
     const storeMutationKey = storeMutationInstanceKeyGet(_stateInstanceKeys)
 
-    storeMutationInstance[storeMutationKey] = storeMutationMethodGet(stateKey)
+    storeMutationInstance[storeMutationKey] = storeMutationMethodGet(
+      _stateInstanceKeys
+    )
 
     if (valueIsObject(stateInstanceValue)) {
       storeMutationInstance = storeMutationInstanceGet(

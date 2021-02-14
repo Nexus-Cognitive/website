@@ -5,7 +5,7 @@
     </p>
     <section class="grid grid-cols-2 gap-8 mt-4">
       <insight-base
-        v-for="insight in index"
+        v-for="insight in base"
         :key="insight.id"
         v-bind="insight"
       ></insight-base>
@@ -30,7 +30,7 @@ export default Vue.extend({
   },
 
   computed: {
-    ...mapState(storeModuleKey, ['acting', 'alert', 'index']),
+    ...mapState(storeModuleKey, ['acting', 'alert', 'base']),
 
     alertClassList(): (null | string)[] {
       return [
@@ -58,13 +58,13 @@ export default Vue.extend({
   },
 
   created() {
-    this.indexGet().then(() => {
+    this.baseGet().then(() => {
       if (this.alert.error || this.alert.success) this.alertedTimeout()
     })
   },
 
   methods: {
-    ...mapActions(storeModuleKey, ['indexGet']),
+    ...mapActions(storeModuleKey, ['baseGet']),
 
     alertedTimeout(): void {
       setTimeout(() => (this.alerted = !this.alerted), 2000)

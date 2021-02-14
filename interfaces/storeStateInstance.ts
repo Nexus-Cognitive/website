@@ -1,5 +1,7 @@
+import { StoreStateAlertI } from '@/interfaces'
+
 export interface StoreStateInstanceI {
   acting: boolean
-  alert: string
+  alert: StoreStateAlertI
   [index: string]: any
 }

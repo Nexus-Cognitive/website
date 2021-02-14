@@ -7,6 +7,7 @@ import {
 
 export function apiClientServiceGet(
   apiClientModel: APIClientModelT,
+  apiClientStoreModuleKey: string,
   apiClientService: APIClientServiceT = {},
   apiClientModelKeys: string[] = []
 ): APIClientServiceT {
@@ -15,11 +16,14 @@ export function apiClientServiceGet(
     const apiClientModelValue = apiClientModel[apiClientModelKey]
     const apiClientServiceKey = apiClientServiceKeyGet(_apiClientModelKeys)
 
-    apiClientService[apiClientServiceKey] = apiClientInstanceGet()
+    apiClientService[apiClientServiceKey] = apiClientInstanceGet(
+      apiClientStoreModuleKey
+    )
 
     if (valueIsObject(apiClientModelValue)) {
       apiClientService = apiClientServiceGet(
         apiClientModelValue,
+        apiClientStoreModuleKey,
         apiClientService,
         _apiClientModelKeys
       )

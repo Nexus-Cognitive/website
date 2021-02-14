@@ -6,7 +6,10 @@ export function storeStateMap(
 ): () => StoreStateInstanceI {
   return () => ({
     acting: false,
-    alert: '',
+    alert: {
+      error: '',
+      success: ''
+    },
     ...apiClientModel
   })
 }

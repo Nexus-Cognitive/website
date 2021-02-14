@@ -19,15 +19,17 @@ export function storeActionMethodGet(
     storeActionPayload: StoreActionPayloadI = {}
   ): Promise<void> => {
     const storeMutationMethodKeyActing = storeMutationInstanceKeyGet(['acting'])
-    const storeMutationMethodKeyAlert = storeMutationInstanceKeyGet(['alert'])
 
     const paths: IDT[] = storeActionPayload.id
       ? [
-          stateInstanceKeys[0],
+          stateInstanceKeys[0] !== 'base' ? stateInstanceKeys[0] : '',
           storeActionPayload.id,
           ...stateInstanceKeys.slice(1)
         ]
-      : stateInstanceKeys
+      : [
+          stateInstanceKeys[0] !== 'base' ? stateInstanceKeys[0] : '',
+          ...stateInstanceKeys.slice(1)
+        ]
 
     commit(storeMutationMethodKeyActing, true)
 
@@ -44,13 +46,13 @@ export function storeActionMethodGet(
         }
 
         commit(
-          storeMutationMethodKeyAlert,
+          storeMutationInstanceKeyGet(['alert', 'success']),
           `Successful ${apiClientMethodKey} of ${apiClientServiceKey}`
         )
       })
       .catch((error: Error) =>
         commit(
-          storeMutationMethodKeyAlert,
+          storeMutationInstanceKeyGet(['alert', 'error']),
           `Error in ${apiClientMethodKey} of ${apiClientServiceKey}: ${error.message}`
         )
       )
