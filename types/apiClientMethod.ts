@@ -1,7 +1,8 @@
 import { AxiosPromise } from 'axios'
+import { IDT } from '@/types'
 
 export type APIClientMethodT = (
-  id?: number,
+  paths: IDT[],
   data?: object,
   params?: object
 ) => AxiosPromise

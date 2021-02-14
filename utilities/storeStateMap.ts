@@ -1,10 +1,12 @@
-export function storeStateMap(apiClientModel: object): () => object {
+import type { APIClientModelT } from '@/types'
+import type { StoreStateInstanceI } from '@/interfaces'
+
+export function storeStateMap(
+  apiClientModel: APIClientModelT
+): () => StoreStateInstanceI {
   return () => ({
     acting: false,
-    alert: {
-      error: '',
-      success: ''
-    },
+    alert: '',
     ...apiClientModel
   })
 }

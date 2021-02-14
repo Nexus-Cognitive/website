@@ -1,13 +1,13 @@
 import type {
-  ActionInstanceT,
-  GetterInstanceT,
-  MutationInstanceT,
-  StateInstanceT
+  StoreActionInstanceT,
+  StoreGetterInstanceT,
+  StoreMutationInstanceT,
+  StoreStateInstanceMethodT
 } from '@/types'
 
 export interface StoreInstanceI {
-  state: StateInstanceT
-  mutations: MutationInstanceT
-  actions: ActionInstanceT
-  getters: GetterInstanceT
+  state: StoreStateInstanceMethodT
+  mutations: StoreMutationInstanceT
+  actions: StoreActionInstanceT
+  getters: StoreGetterInstanceT
 }

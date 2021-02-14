@@ -1,52 +1,59 @@
 import { AxiosResponse } from 'axios'
 import type {
-  ActionMethodT,
   APIClientMethodKeyT,
-  APIClientServiceT
+  APIClientServiceT,
+  IDT,
+  StoreActionMethodT
 } from '@/types'
-import type { ActionPayloadI, StoreContextI } from '@/interfaces'
-import { storeMutationMethodKeyGet } from '@/utilities'
+import type { StoreActionPayloadI, StoreContextI } from '@/interfaces'
+import { storeMutationInstanceKeyGet } from '@/utilities'
 
 export function storeActionMethodGet(
   apiClientService: APIClientServiceT,
-  stateKey: string,
-  apiClientMethodKey: APIClientMethodKeyT
-): ActionMethodT {
+  apiClientServiceKey: string,
+  apiClientMethodKey: APIClientMethodKeyT,
+  stateInstanceKeys: string[]
+): StoreActionMethodT {
   return (
     { commit }: StoreContextI,
-    actionPayload: ActionPayloadI = {}
+    storeActionPayload: StoreActionPayloadI = {}
   ): Promise<void> => {
-    const mutationMethodKeyActing = storeMutationMethodKeyGet('acting')
+    const storeMutationMethodKeyActing = storeMutationInstanceKeyGet(['acting'])
+    const storeMutationMethodKeyAlert = storeMutationInstanceKeyGet(['alert'])
 
-    commit(mutationMethodKeyActing, true)
+    const paths: IDT[] = storeActionPayload.id
+      ? [
+          stateInstanceKeys[0],
+          storeActionPayload.id,
+          ...stateInstanceKeys.slice(1)
+        ]
+      : stateInstanceKeys
 
-    return apiClientService[stateKey][apiClientMethodKey](
-      actionPayload.id,
-      actionPayload.data,
-      actionPayload.params
+    commit(storeMutationMethodKeyActing, true)
+
+    return apiClientService[apiClientServiceKey][apiClientMethodKey](
+      paths,
+      storeActionPayload.data,
+      storeActionPayload.params
     )
       .then((response: AxiosResponse) => {
-        if (actionPayload.resolve !== undefined) {
-          return actionPayload.resolve(response)
+        if (storeActionPayload.resolve) {
+          storeActionPayload.resolve(response)
         } else {
-          commit(storeMutationMethodKeyGet(stateKey), response.data)
+          commit(storeMutationInstanceKeyGet(stateInstanceKeys), response.data)
         }
 
-        if (!actionPayload.silent) {
-          commit(
-            storeMutationMethodKeyGet('alert', 'success'),
-            `Successful ${apiClientMethodKey} of ${stateKey}`
-          )
-        }
+        commit(
+          storeMutationMethodKeyAlert,
+          `Successful ${apiClientMethodKey} of ${apiClientServiceKey}`
+        )
       })
-      .catch((error: Error) => {
-        if (!actionPayload.silent) {
-          commit(
-            storeMutationMethodKeyGet('alert', 'error'),
-            `Error in ${apiClientMethodKey} of ${stateKey}: ${error.message}`
-          )
-        }
-      })
-      .finally(() => commit(mutationMethodKeyActing, false))
+      .catch((error: Error) =>
+        commit(
+          storeMutationMethodKeyAlert,
+          `Error in ${apiClientMethodKey} of ${apiClientServiceKey}: ${error.message}`
+        )
+      )
+      .finally(() => commit(storeMutationMethodKeyActing, false))
   }
 }

@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios'
 
-export interface ActionPayloadI {
+export interface StoreActionPayloadI {
   id?: number
   data?: object
   params?: object
