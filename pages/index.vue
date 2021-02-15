@@ -3,6 +3,7 @@
     <p v-if="alertShow" :class="alertClassList" role="alert">
       {{ alertMessage }}
     </p>
+
     <section class="grid grid-cols-2 gap-8 mt-4">
       <insight-base
         v-for="insight in base"

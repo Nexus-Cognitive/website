@@ -5,7 +5,7 @@ import type {
   StoreStateInstanceMethodT
 } from '@/types'
 
-export interface StoreInstanceI {
+export interface StoreModuleInstanceI {
   state: StoreStateInstanceMethodT
   mutations: StoreMutationInstanceT
   actions: StoreActionInstanceT

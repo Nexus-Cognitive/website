@@ -1,4 +1,4 @@
-import { StateInstanceT, StoreMutationInstanceT } from '@/types'
+import type { StoreStateInstanceT, StoreMutationInstanceT } from '@/types'
 import {
   storeMutationInstanceKeyGet,
   storeMutationMethodGet,
@@ -6,7 +6,7 @@ import {
 } from '@/utilities'
 
 export function storeMutationInstanceGet(
-  stateInstance: StateInstanceT,
+  stateInstance: StoreStateInstanceT,
   stateInstanceKeys: string[] = [],
   storeMutationInstance: StoreMutationInstanceT = {}
 ): StoreMutationInstanceT {

@@ -1,5 +1,5 @@
-import { APIClientModelT, APIClientServiceT } from '@/types'
-import { StoreInstanceI } from '@/interfaces'
+import type { APIClientModelT, APIClientServiceT } from '@/types'
+import type { StoreModuleInstanceI } from '@/interfaces'
 import {
   storeActionInstanceGet,
   storeGetterInstanceGet,
@@ -10,7 +10,7 @@ import {
 export function storeModuleMap(
   apiClientModel: APIClientModelT,
   apiClientService: APIClientServiceT
-): StoreInstanceI {
+): StoreModuleInstanceI {
   const state = storeStateMap(apiClientModel)
   const _state = state()
 

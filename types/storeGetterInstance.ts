@@ -1,4 +1,4 @@
-import { StoreGetterMethodT } from '@/types'
+import type { StoreGetterMethodT } from '@/types'
 
 export type StoreGetterInstanceT = {
   [index: string]: StoreGetterMethodT

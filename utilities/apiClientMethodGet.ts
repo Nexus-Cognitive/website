@@ -1,4 +1,4 @@
-import { APIClientMethodT, APIClientMethodKeyT, IDT } from '@/types'
+import type { APIClientMethodT, APIClientMethodKeyT, IDT } from '@/types'
 import { APIClientS } from '@/services'
 
 export function apiClientMethodGet(

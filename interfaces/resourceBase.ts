@@ -1,4 +1,6 @@
+import type { IDT } from '@/types'
+
 export interface ResourceBaseI {
-  id: number
+  id: IDT
   title: string
 }

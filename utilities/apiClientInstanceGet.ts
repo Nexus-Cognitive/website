@@ -1,4 +1,4 @@
-import { APIClientInstanceT } from '@/types'
+import type { APIClientInstanceT } from '@/types'
 import { API_CLIENT_METHOD_KEYS, apiClientMethodGet } from '@/utilities'
 
 export function apiClientInstanceGet(

@@ -1,4 +1,4 @@
-import { StoreStateAlertI } from '@/interfaces'
+import type { StoreStateAlertI } from '@/interfaces'
 
 export interface StoreStateInstanceI {
   acting: boolean

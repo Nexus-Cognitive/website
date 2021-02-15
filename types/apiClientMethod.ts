@@ -1,5 +1,5 @@
-import { AxiosPromise } from 'axios'
-import { IDT } from '@/types'
+import type { AxiosPromise } from 'axios'
+import type { IDT } from '@/types'
 
 export type APIClientMethodT = (
   paths: IDT[],

@@ -1,4 +1,4 @@
-import type { StateInstanceT, StoreGetterInstanceT } from '@/types'
+import type { StoreStateInstanceT, StoreGetterInstanceT } from '@/types'
 import {
   storeGetterInstanceKeyGet,
   storeGetterMethodGet,
@@ -6,7 +6,7 @@ import {
 } from '@/utilities'
 
 export function storeGetterInstanceGet(
-  stateInstance: StateInstanceT,
+  stateInstance: StoreStateInstanceT,
   stateInstanceKeys: string[] = [],
   storeGetterInstance: StoreGetterInstanceT = {}
 ): StoreGetterInstanceT {

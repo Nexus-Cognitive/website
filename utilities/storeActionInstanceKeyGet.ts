@@ -1,5 +1,5 @@
-import { keyGetCamelCase } from './keyGetCamelCase'
-import { APIClientMethodKeyT } from '~/types'
+import type { APIClientMethodKeyT } from '@/types'
+import { keyGetCamelCase } from '@/utilities'
 
 export function storeActionInstanceKeyGet(
   stateInstanceKeys: string[],

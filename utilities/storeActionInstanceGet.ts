@@ -1,6 +1,6 @@
 import {
   APIClientServiceT,
-  StateInstanceT,
+  StoreStateInstanceT,
   StoreActionInstanceT
 } from '@/types'
 import {
@@ -13,7 +13,7 @@ import {
 
 export function storeActionInstanceGet(
   apiClientService: APIClientServiceT,
-  stateInstance: StateInstanceT,
+  stateInstance: StoreStateInstanceT,
   stateInstanceKeys: string[] = [],
   storeActionInstance: StoreActionInstanceT = {}
 ): StoreActionInstanceT {

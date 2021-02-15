@@ -1,4 +1,4 @@
-import { APIClientModelT, APIClientServiceT } from '@/types'
+import type { APIClientModelT, APIClientServiceT } from '@/types'
 import {
   apiClientInstanceGet,
   apiClientServiceKeyGet,

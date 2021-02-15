@@ -1,4 +1,4 @@
-import { APIClientMethodKeyT } from '@/types'
+import type { APIClientMethodKeyT } from '@/types'
 
 export const API_CLIENT_METHOD_KEYS: APIClientMethodKeyT[] = [
   'DELETE',

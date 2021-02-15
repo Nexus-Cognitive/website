@@ -1,6 +1,6 @@
-import { StateInstanceT } from '@/types'
+import type { StoreStateInstanceT } from '@/types'
 
 export type StoreGetterMethodT = (
-  stateInstance: StateInstanceT,
+  stateInstance: StoreStateInstanceT,
   stateKey: string
 ) => void
