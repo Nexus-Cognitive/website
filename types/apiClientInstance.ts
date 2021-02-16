@@ -1,5 +1,5 @@
-import type { APIClientMethodT, APIClientMethodKeyT } from '@/types'
+import type { APIClientMethodT, APIClientInstanceMethodKeyT } from '@/types'
 
 export type APIClientInstanceT = {
-  [index in APIClientMethodKeyT]: APIClientMethodT
+  [index in APIClientInstanceMethodKeyT]: APIClientMethodT
 }

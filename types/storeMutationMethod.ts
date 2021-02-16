@@ -1,6 +1,6 @@
-import type { StoreStateInstanceT } from '@/types'
+import type { StoreStateInstanceI } from '@/interfaces'
 
 export type StoreMutationMethodT = (
-  state: StoreStateInstanceT,
-  stateKey: string
+  storeStateInstance: StoreStateInstanceI,
+  storeStateInstanceKey: string
 ) => void
