@@ -1,47 +1,76 @@
 <template>
   <article>
     <header>
-      <h2 class="text-lg">{{ title }}</h2>
-      <p>{{ subtitle }}</p>
+      <h2 class="text-lg">
+        {{ title }}
+      </h2>
+
+      <p v-if="subtitle">
+        {{ subtitle }}
+      </p>
+
       <div class="flex items-center">
         <div class="mr-1">By:</div>
-        <img
-          v-for="{ id, image } in authors"
-          :key="id"
-          :alt="image.alt"
-          class="mr-1 rounded-full"
-          :height="image.height"
-          :src="image.url"
-          :width="image.width"
-        />
+
+        <image-base
+          v-for="author in authors"
+          :key="author.id"
+          avatar
+          class="mr-1"
+          v-bind="author.image"
+        ></image-base>
       </div>
     </header>
+
     <section>
-      {{ description }}
+      <p>
+        {{ description }}
+      </p>
     </section>
   </article>
 </template>
 
 <script lang="ts">
-import 'reflect-metadata'
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import type {
-  InsightBaseI,
-  AuthorBaseI,
-  CategoryBaseI,
-  ImageBaseI
-} from '@/interfaces'
+import Vue, { PropType } from 'vue'
+import type { IDT } from '@/types'
+import type { AuthorBaseI, CategoryBaseI, ImageBaseI } from '@/interfaces'
 
-@Component
-export default class Article extends Vue implements InsightBaseI {
-  @Prop() id!: number
-  @Prop() authors!: AuthorBaseI[]
-  @Prop() categories!: CategoryBaseI[]
-  @Prop() description!: string
-  @Prop() feature!: ImageBaseI
-  @Prop() subtitle!: string
-  @Prop() title!: string
+export default Vue.extend({
+  props: {
+    id: {
+      required: true,
+      type: [Number, String] as PropType<IDT>
+    },
 
-  created() {}
-}
+    authors: {
+      required: true,
+      type: Array as PropType<AuthorBaseI[]>
+    },
+
+    categories: {
+      required: true,
+      type: Array as PropType<CategoryBaseI[]>
+    },
+
+    description: {
+      required: true,
+      type: String
+    },
+
+    feature: {
+      required: true,
+      type: Object as PropType<ImageBaseI>
+    },
+
+    subtitle: {
+      default: '',
+      type: String
+    },
+
+    title: {
+      required: true,
+      type: String
+    }
+  }
+})
 </script>
