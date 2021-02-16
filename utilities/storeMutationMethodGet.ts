@@ -1,13 +1,30 @@
-import type { StoreStateInstanceT, StoreMutationMethodT } from '@/types'
-import objectPath from 'object-path'
+import type { StoreMutationMethodT } from '@/types'
+import type { StoreStateInstanceI } from '@/interfaces'
+
+function set(
+  storeStateInstance: StoreStateInstanceI,
+  storeStateInstanceKeys: string[],
+  storeStateInstanceValue: any
+): any {
+  storeStateInstance[storeStateInstanceKeys[0]] =
+    storeStateInstanceKeys.length > 1
+      ? set(
+          storeStateInstance,
+          storeStateInstanceKeys.slice(1),
+          storeStateInstanceValue
+        )
+      : storeStateInstanceValue
+
+  return storeStateInstance
+}
 
 export function storeMutationMethodGet(
-  stateInstanceKeys: string[]
+  storeStateInstanceKeys: string[]
 ): StoreMutationMethodT {
   return (
-    stateInstance: StoreStateInstanceT,
-    stateInstanceValue: any
+    storeStateInstance: StoreStateInstanceI,
+    storeStateInstanceValue: any
   ): void => {
-    objectPath.set(stateInstance, stateInstanceKeys, stateInstanceValue)
+    set(storeStateInstance, storeStateInstanceKeys, storeStateInstanceValue)
   }
 }

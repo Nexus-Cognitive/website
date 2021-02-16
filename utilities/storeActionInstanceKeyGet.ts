@@ -1,9 +1,12 @@
-import type { APIClientMethodKeyT } from '@/types'
+import type { APIClientInstanceMethodKeyT } from '@/types'
 import { keyGetCamelCase } from '@/utilities'
 
 export function storeActionInstanceKeyGet(
-  stateInstanceKeys: string[],
-  apiClientMethodKey: APIClientMethodKeyT
+  storeStateInstanceKeys: string[],
+  apiClientInstanceMethodKey: APIClientInstanceMethodKeyT
 ): string {
-  return keyGetCamelCase([...stateInstanceKeys, apiClientMethodKey])
+  return keyGetCamelCase([
+    ...storeStateInstanceKeys,
+    apiClientInstanceMethodKey
+  ])
 }

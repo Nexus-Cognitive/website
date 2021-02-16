@@ -6,10 +6,10 @@ import {
 } from '@/utilities'
 
 export function apiClientServiceGet(
+  apiClientInstanceStoreModuleInstanceKey: string,
   apiClientModel: APIClientModelT,
-  apiClientStoreModuleKey: string,
-  apiClientService: APIClientServiceT = {},
-  apiClientModelKeys: string[] = []
+  apiClientModelKeys: string[] = [],
+  apiClientService: APIClientServiceT = {}
 ): APIClientServiceT {
   for (const apiClientModelKey in apiClientModel) {
     const _apiClientModelKeys = [...apiClientModelKeys, apiClientModelKey]
@@ -17,15 +17,15 @@ export function apiClientServiceGet(
     const apiClientServiceKey = apiClientServiceKeyGet(_apiClientModelKeys)
 
     apiClientService[apiClientServiceKey] = apiClientInstanceGet(
-      apiClientStoreModuleKey
+      apiClientInstanceStoreModuleInstanceKey
     )
 
     if (valueIsObject(apiClientModelValue)) {
       apiClientService = apiClientServiceGet(
+        apiClientInstanceStoreModuleInstanceKey,
         apiClientModelValue,
-        apiClientStoreModuleKey,
-        apiClientService,
-        _apiClientModelKeys
+        _apiClientModelKeys,
+        apiClientService
       )
     }
   }

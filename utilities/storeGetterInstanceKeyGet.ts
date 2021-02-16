@@ -1,5 +1,7 @@
 import { keyGetCamelCase } from '@/utilities'
 
-export function storeGetterInstanceKeyGet(storeGetterKeys: string[]): string {
-  return keyGetCamelCase(storeGetterKeys)
+export function storeGetterInstanceKeyGet(
+  storeStateInstanceKeys: string[]
+): string {
+  return keyGetCamelCase(storeStateInstanceKeys)
 }

@@ -1,4 +1,5 @@
-import type { StoreStateInstanceT, StoreMutationInstanceT } from '@/types'
+import type { StoreMutationInstanceT } from '@/types'
+import type { StoreStateInstanceI } from '@/interfaces'
 import {
   storeMutationInstanceKeyGet,
   storeMutationMethodGet,
@@ -6,23 +7,25 @@ import {
 } from '@/utilities'
 
 export function storeMutationInstanceGet(
-  stateInstance: StoreStateInstanceT,
-  stateInstanceKeys: string[] = [],
+  storeStateInstance: StoreStateInstanceI,
+  storeStateInstanceKeys: string[] = [],
   storeMutationInstance: StoreMutationInstanceT = {}
 ): StoreMutationInstanceT {
-  for (const stateInstanceKey in stateInstance) {
-    const _stateInstanceKeys = [...stateInstanceKeys, stateInstanceKey]
-    const stateInstanceValue = stateInstance[stateInstanceKey]
-    const storeMutationKey = storeMutationInstanceKeyGet(_stateInstanceKeys)
+  for (const storeStateInstanceKey in storeStateInstance) {
+    const _storeStateInstanceKeys = [
+      ...storeStateInstanceKeys,
+      storeStateInstanceKey
+    ]
+    const storeStateInstanceValue = storeStateInstance[storeStateInstanceKey]
 
-    storeMutationInstance[storeMutationKey] = storeMutationMethodGet(
-      _stateInstanceKeys
-    )
+    storeMutationInstance[
+      storeMutationInstanceKeyGet(_storeStateInstanceKeys)
+    ] = storeMutationMethodGet(_storeStateInstanceKeys)
 
-    if (valueIsObject(stateInstanceValue)) {
+    if (valueIsObject(storeStateInstanceValue)) {
       storeMutationInstance = storeMutationInstanceGet(
-        stateInstanceValue,
-        _stateInstanceKeys,
+        storeStateInstanceValue,
+        _storeStateInstanceKeys,
         storeMutationInstance
       )
     }

@@ -1,7 +1,7 @@
 import { keyGetSnakeCase } from '@/utilities'
 
 export function storeMutationInstanceKeyGet(
-  storeMutationKeys: string[]
+  storeStateInstanceKeys: string[]
 ): string {
-  return keyGetSnakeCase([...storeMutationKeys, 'set'])
+  return keyGetSnakeCase([...storeStateInstanceKeys, 'set'])
 }

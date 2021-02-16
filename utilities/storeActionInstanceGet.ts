@@ -1,10 +1,7 @@
+import type { APIClientServiceT, StoreActionInstanceT } from '@/types'
+import type { StoreStateInstanceI } from '@/interfaces'
 import {
-  APIClientServiceT,
-  StoreStateInstanceT,
-  StoreActionInstanceT
-} from '@/types'
-import {
-  API_CLIENT_METHOD_KEYS,
+  API_CLIENT_INSTANCE_METHOD_KEYS,
   apiClientServiceKeyGet,
   storeActionInstanceKeyGet,
   storeActionMethodGet,
@@ -13,31 +10,34 @@ import {
 
 export function storeActionInstanceGet(
   apiClientService: APIClientServiceT,
-  stateInstance: StoreStateInstanceT,
-  stateInstanceKeys: string[] = [],
+  storeStateInstance: StoreStateInstanceI,
+  storeStateInstanceKeys: string[] = [],
   storeActionInstance: StoreActionInstanceT = {}
 ): StoreActionInstanceT {
-  for (const stateInstanceKey in stateInstance) {
-    for (const apiClientMethodKey of API_CLIENT_METHOD_KEYS) {
-      const _stateInstanceKeys = [...stateInstanceKeys, stateInstanceKey]
-      const stateInstanceValue = stateInstance[stateInstanceKey]
+  for (const storeStateInstanceKey in storeStateInstance) {
+    for (const apiClientInstanceMethodKey of API_CLIENT_INSTANCE_METHOD_KEYS) {
+      const _storeStateInstanceKeys = [
+        ...storeStateInstanceKeys,
+        storeStateInstanceKey
+      ]
+      const storeStateInstanceValue = storeStateInstance[storeStateInstanceKey]
       const storeActionInstanceKey = storeActionInstanceKeyGet(
-        _stateInstanceKeys,
-        apiClientMethodKey
+        _storeStateInstanceKeys,
+        apiClientInstanceMethodKey
       )
 
       storeActionInstance[storeActionInstanceKey] = storeActionMethodGet(
         apiClientService,
-        apiClientServiceKeyGet(_stateInstanceKeys),
-        apiClientMethodKey,
-        _stateInstanceKeys
+        apiClientServiceKeyGet(_storeStateInstanceKeys),
+        apiClientInstanceMethodKey,
+        _storeStateInstanceKeys
       )
 
-      if (valueIsObject(stateInstanceValue)) {
+      if (valueIsObject(storeStateInstanceValue)) {
         storeActionInstance = storeActionInstanceGet(
           apiClientService,
-          stateInstanceValue,
-          _stateInstanceKeys,
+          storeStateInstanceValue,
+          _storeStateInstanceKeys,
           storeActionInstance
         )
       }
