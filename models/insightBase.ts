@@ -10,7 +10,7 @@ export const InsightBaseM: InsightBaseI = {
     alt: '',
     height: '',
     title: '',
-    url: '',
+    src: '',
     width: ''
   },
   subtitle: '',

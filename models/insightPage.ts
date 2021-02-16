@@ -11,7 +11,7 @@ export const InsightPageM: InsightPageI = {
     alt: '',
     height: '',
     title: '',
-    url: '',
+    src: '',
     width: ''
   },
   images: [],

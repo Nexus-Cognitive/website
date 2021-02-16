@@ -1,7 +1,41 @@
 import type { InsightClientI } from '@/interfaces'
-import { InsightBaseM, InsightPageM } from '@/models'
 
 export const InsightClientM: InsightClientI = {
-  base: [InsightBaseM],
-  page: InsightPageM
+  base: [
+    {
+      id: 0,
+      authors: [],
+      categories: [],
+      description: '',
+      feature: {
+        id: 0,
+        alt: '',
+        height: '',
+        title: '',
+        src: '',
+        width: ''
+      },
+      subtitle: '',
+      title: ''
+    }
+  ],
+  page: {
+    id: 0,
+    authors: [],
+    body: '',
+    categories: [],
+    description: '',
+    feature: {
+      id: 0,
+      alt: '',
+      height: '',
+      title: '',
+      src: '',
+      width: ''
+    },
+    images: [],
+    introduction: '',
+    subtitle: '',
+    title: ''
+  }
 }
