@@ -1,18 +1,17 @@
 import type {
   APIClientMethodT,
-  APIClientInstanceMethodKeyT,
+  APIClientMethodKeyT,
   IDT
 } from '@/types'
 import { APIClientS } from '@/services'
 
 export function apiClientMethodGet(
-  apiClientStoreModuleKey: string,
-  apiClientInstanceMethodKey: APIClientInstanceMethodKeyT
+  apiClientMethodKey: APIClientMethodKeyT
 ): APIClientMethodT {
   return (paths: IDT[], data?: object, params?: object) =>
     APIClientS({
-      method: apiClientInstanceMethodKey,
-      url: [apiClientStoreModuleKey, ...paths].join('/'),
+      method: apiClientMethodKey,
+      url: [...paths].join('/'),
       data,
       params
     })

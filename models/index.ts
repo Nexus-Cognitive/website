@@ -1,3 +1,3 @@
-export { InsightBaseM } from './insightBase'
+export { InsightElementM } from './insightElement'
 export { InsightClientM } from './insightClient'
-export { InsightPageM } from './insightPage'
+export { InsightItemM } from './insightItem'

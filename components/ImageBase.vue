@@ -1,24 +1,19 @@
 <template>
   <img
-    :alt="alt"
+    :alt="description"
     :class="classList"
     :height="height"
-    :src="src"
+    :src="url"
     :width="width"
   />
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue'
-import type { IDT } from '@/types'
+import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    id: {
-      required: true,
-      type: [Number, String] as PropType<IDT>
-    },
-    alt: {
+    description: {
       required: true,
       type: String
     },
@@ -28,15 +23,15 @@ export default Vue.extend({
     },
     height: {
       required: true,
-      type: String
+      type: Number
     },
-    src: {
+    url: {
       required: true,
       type: String
     },
     width: {
       required: true,
-      type: String
+      type: Number
     }
   },
 

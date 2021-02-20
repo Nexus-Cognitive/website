@@ -1,7 +1,7 @@
 import { keyGetCamelCase } from '@/utilities'
 
 export function apiClientServiceKeyGet(
-  storeStateInstanceKeys: string[]
+  apiClientModelKeys: string[]
 ): string {
-  return keyGetCamelCase(storeStateInstanceKeys)
+  return keyGetCamelCase(apiClientModelKeys)
 }

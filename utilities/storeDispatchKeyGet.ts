@@ -1,13 +1,13 @@
-import { APIClientInstanceMethodKeyT } from '@/types'
+import type { APIClientMethodKeyT } from '@/types'
 import { keyGetCamelCase } from '@/utilities'
 
 export function storeDispatchKeyGet(
   apiClientStoreModuleKey: string,
-  stateInstanceKeys: string[],
-  apiClientInstanceMethodKey: APIClientInstanceMethodKeyT
+  storeStateKeys: string[],
+  apiClientMethodKey: APIClientMethodKeyT
 ): string {
   return [
     keyGetCamelCase([apiClientStoreModuleKey]),
-    keyGetCamelCase([...stateInstanceKeys, apiClientInstanceMethodKey])
+    keyGetCamelCase([...storeStateKeys, apiClientMethodKey])
   ].join('/')
 }

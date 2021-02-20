@@ -1,6 +1,5 @@
-import type { InsightBaseI, InsightPageI } from '@/interfaces'
+import type { InsightItemI } from '@/interfaces'
 
 export interface InsightClientI {
-  base: InsightBaseI[]
-  page: InsightPageI
+  items: InsightItemI[]
 }

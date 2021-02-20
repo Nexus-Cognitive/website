@@ -1,8 +1,8 @@
-import type { StoreStateInstanceI } from '@/interfaces'
+import type { StoreStateI } from '@/interfaces'
 
 export function storeGetterMethodGet(
-  storeStateInstance: StoreStateInstanceI,
-  storeStateInstanceKey: string
+  storeState: StoreStateI,
+  storeStateKey: string
 ): () => void {
-  return () => storeStateInstance[storeStateInstanceKey]
+  return () => storeState[storeStateKey]
 }

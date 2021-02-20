@@ -13,5 +13,21 @@ module.exports = {
   ],
   plugins: ['prettier'],
   // add your custom rules here
-  rules: {}
+  rules: {
+    camelcase: [
+      'error',
+      {
+        allow: [
+          'last_modified',
+          'modular_content',
+          'next_page',
+          'sitemap_locations',
+          'taxonomy_group',
+          'url_slug'
+        ]
+      }
+    ],
+    'vue/no-v-html': 'off',
+    'vue/prop-name-casing': ['error', 'camelCase' | 'snake_case']
+  }
 }
