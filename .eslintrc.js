@@ -28,6 +28,6 @@ module.exports = {
       }
     ],
     'vue/no-v-html': 'off',
-    'vue/prop-name-casing': ['error', 'camelCase' | 'snake_case']
+    'vue/prop-name-casing': 'off'
   }
 }
