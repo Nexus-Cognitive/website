@@ -2,9 +2,7 @@
   <nav>
     <ol>
       <li>
-        <nuxt-link :to="{ name: 'index' }">
-          Home
-        </nuxt-link>
+        <nuxt-link :to="{ name: 'index' }">Home</nuxt-link>
       </li>
 
       <li v-for="route in routes" :key="route.name">
@@ -25,8 +23,8 @@ export default Vue.extend({
     routes(): RouteRecordPublic[] {
       return this.$router
         .getRoutes()
-        .filter(route => route.path.split('/').length === 2)
+        .filter((route) => route.path.split('/').length === 2)
     }
-  }  
+  }
 })
 </script>

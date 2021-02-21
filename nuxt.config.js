@@ -17,7 +17,11 @@ export default {
   css: ['~/assets/css/nx.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/capitalizeFilter.ts', '~/plugins/commaDelimit.ts', '~/plugins/dateFormatFilter.ts'],
+  plugins: [
+    '~/plugins/capitalizeFilter.ts',
+    '~/plugins/commaDelimit.ts',
+    '~/plugins/dateFormatFilter.ts'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

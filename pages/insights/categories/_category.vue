@@ -1,9 +1,7 @@
 <template>
   <article class="mt-7">
     <header class="prose">
-      <h1>
-        Insights: {{ name }}
-      </h1>
+      <h1>Insights: {{ name }}</h1>
     </header>
 
     <section v-if="items.length > 0" class="grid grid-cols-2 gap-4 mt-4">
@@ -26,14 +24,6 @@ import { storeDispatchKeyGet, storeModuleKeyGet } from '@/utilities'
 const storeModuleKey = storeModuleKeyGet('insights')
 
 export default Vue.extend({
-  data() {
-    const category: string = ''
-
-    return {
-      category
-    }
-  },
-
   async asyncData({ params, store }) {
     await store.dispatch(
       storeDispatchKeyGet(storeModuleKey, ['items'], 'GET'),
@@ -45,6 +35,14 @@ export default Vue.extend({
     )
 
     const category: string = params.category
+
+    return {
+      category
+    }
+  },
+
+  data() {
+    const category: string = ''
 
     return {
       category

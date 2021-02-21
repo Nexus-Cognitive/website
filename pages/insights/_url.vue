@@ -53,8 +53,6 @@ export default Vue.extend({
     }
   },
 
-  methods: mapActions(storeModuleKey, ['itemsGet']),
-
   watch: {
     '$route.params'(p) {
       this.itemsGet({
@@ -63,6 +61,8 @@ export default Vue.extend({
         }
       })
     }
-  }
+  },
+
+  methods: mapActions(storeModuleKey, ['itemsGet'])
 })
 </script>

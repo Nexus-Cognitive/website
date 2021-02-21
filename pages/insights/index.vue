@@ -1,9 +1,7 @@
 <template>
   <article class="mt-7">
     <header class="prose">
-      <h1>
-        Insights
-      </h1>
+      <h1>Insights</h1>
     </header>
 
     <section v-if="items.length > 0" class="grid grid-cols-2 gap-4 mt-4">
@@ -25,10 +23,8 @@ import { storeDispatchKeyGet, storeModuleKeyGet } from '@/utilities'
 const storeModuleKey = storeModuleKeyGet('insights')
 
 export default Vue.extend({
-  async asyncData({ params, store }) {
-    await store.dispatch(
-      storeDispatchKeyGet(storeModuleKey, ['items'], 'GET')
-    )
+  async asyncData({ store }) {
+    await store.dispatch(storeDispatchKeyGet(storeModuleKey, ['items'], 'GET'))
   },
 
   computed: mapState(storeModuleKey, ['acting', 'alert', 'items'])
