@@ -1,8 +1,8 @@
 import { InsightClientM } from '@/models'
 import { InsightClientS } from '@/services'
-import { storeModuleGet } from '@/utilities'
+import { storeModuleInstanceGet } from '@/utilities'
 
-export const { state, mutations, actions, getters } = storeModuleGet(
+export const { state, mutations, actions, getters } = storeModuleInstanceGet(
   InsightClientM,
   InsightClientS
 )

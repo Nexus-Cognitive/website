@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios'
 
 export const APIClientS: AxiosInstance = axios.create({
   baseURL:
-    'https://deliver.kontent.ai/5e29be14-6937-0013-a499-bb6a4d5070f1/items',
+    'https://my-json-server.typicode.com/adamlwomble/nexus-cognitive-front-end',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json'

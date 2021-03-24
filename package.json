@@ -18,7 +18,8 @@
     "axios": "^0.21.1",
     "core-js": "^3.8.3",
     "lodash": "^4.17.20",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "object-path": "^0.11.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -52,6 +53,8 @@
     "stylelint-config-standard": "^20.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
     "ts-jest": "^26.4.4",
-    "vue-jest": "^3.0.4"
+    "vue-class-decorator": "^7.6.3",
+    "vue-jest": "^3.0.4",
+    "vue-property-decorator": "^9.1.2"
   }
 }

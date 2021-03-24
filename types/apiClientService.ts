@@ -1,3 +1,3 @@
-import type { APIClientT } from '@/types'
+import type { APIClientInstanceT } from '@/types'
 
-export type APIClientServiceT = { [index: string]: APIClientT }
+export type APIClientServiceT = { [index: string]: APIClientInstanceT }

@@ -1,11 +1,12 @@
 import type { APIClientModelT, APIClientServiceT } from '@/types'
 import {
-  apiClientGet,
+  apiClientInstanceGet,
   apiClientServiceKeyGet,
   valueIsObject
 } from '@/utilities'
 
 export function apiClientServiceGet(
+  apiClientInstanceStoreModuleInstanceKey: string,
   apiClientModel: APIClientModelT,
   apiClientModelKeys: string[] = [],
   apiClientService: APIClientServiceT = {}
@@ -15,10 +16,13 @@ export function apiClientServiceGet(
     const apiClientModelValue = apiClientModel[apiClientModelKey]
     const apiClientServiceKey = apiClientServiceKeyGet(_apiClientModelKeys)
 
-    apiClientService[apiClientServiceKey] = apiClientGet()
+    apiClientService[apiClientServiceKey] = apiClientInstanceGet(
+      apiClientInstanceStoreModuleInstanceKey
+    )
 
     if (valueIsObject(apiClientModelValue)) {
       apiClientService = apiClientServiceGet(
+        apiClientInstanceStoreModuleInstanceKey,
         apiClientModelValue,
         _apiClientModelKeys,
         apiClientService

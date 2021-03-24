@@ -1,6 +1,6 @@
 import { keyGetCamelCase } from '@/utilities'
 
-export function apiClientServiceKeyGet(
+export function storeGetterInstanceKeyGet(
   storeStateInstanceKeys: string[]
 ): string {
   return keyGetCamelCase(storeStateInstanceKeys)

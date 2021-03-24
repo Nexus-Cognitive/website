@@ -1,8 +1,6 @@
 import type { StoreStateInstanceI } from '@/interfaces'
 
-export function storeGetterMethodGet(
+export type StoreMutationMethodT = (
   storeStateInstance: StoreStateInstanceI,
   storeStateInstanceKey: string
-): () => void {
-  return () => storeStateInstance[storeStateInstanceKey]
-}
+) => void

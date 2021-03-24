@@ -3,5 +3,6 @@ import { InsightClientM } from '@/models'
 import { apiClientServiceGet } from '@/utilities'
 
 export const InsightClientS: APIClientServiceT = apiClientServiceGet(
+  'insights',
   InsightClientM
 )
