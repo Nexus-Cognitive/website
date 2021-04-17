@@ -1,8 +1,5 @@
-import type { ResourceBaseI } from '@/interfaces'
+import type { AssetBaseI } from '@/interfaces'
 
-export interface ImageBaseI extends ResourceBaseI {
+export interface ImageBaseI extends AssetBaseI {
   alt: string
-  height: string
-  src: string
-  width: string
 }

@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero-video,
+.slide-image {
+  @apply max-h-screen max-w-none xl:max-w-full;
+}
+
+.hero-section {
+  @apply flex flex-col h-screen justify-end pb-9 sm:pb-24 z-10;
+}
+
+.hero-video {
+  @apply absolute left-0 object-cover top-0 z-0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  @apply transition-opacity;
+}
+
+.page-enter,
+.page-leave-to {
+  @apply opacity-0;
+}
+
+.slide-image {
+  @apply absolute left-0 object-cover top-0 z-0;
+  filter: grayscale(100%) opacity(10%);
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #E24944;
+}

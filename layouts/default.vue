@@ -1,13 +1,15 @@
 <template>
-  <div class="container gap-4 grid grid-cols-1 md:grid-cols-4">
-    <header class="col-span-1">
-      <navigation-base></navigation-base> &copy; {{ dateStart
-      }}<template v-if="dateRangeShow">–{{ dateCurrent }}</template> Nexus
-      Cognitive
+  <div class="relative">
+    <header class="absolute px-3 sm:px-6 py-6 sm:py-9 text-white w-full z-20">
+      <NavigationBase />
     </header>
 
-    <main class="col-span-1 md:col-span-3">
+    <main>
       <Nuxt />
     </main>
   </div>
 </template>
+
+<style>
+@import url('https://use.typekit.net/egm1zle.css');
+</style>

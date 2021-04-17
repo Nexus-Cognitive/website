@@ -1,0 +1,225 @@
+site_url: https://nexuscognitive.com
+
+display_url: https://nexuscognitive.com
+
+logo_url: https://nexuscognitive.com/images/logo.svg
+
+backend:
+  name: git-gateway
+
+publish_mode: editorial_workflow
+
+media_folder: 'static/images'
+
+public_folder: '/images'
+
+collections:
+  - name: 'authors'
+    label: 'Authors'
+    label_singular: 'Author'
+    folder: 'content/authors'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'name'
+        label: 'Name'
+        widget: 'string'
+      - name: 'image'
+        label: 'Image'
+        widget: 'image'
+        allow_multiple: false
+  - name: 'categories'
+    label: 'Categories'
+    label_singular: 'Category'
+    folder: 'content/categories'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'description'
+        label: 'Description'
+        widget: 'string'
+  - name: 'colors'
+    label: 'Colors'
+    label_singular: 'Color'
+    folder: 'content/colors'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'description'
+        label: 'Description'
+        widget: 'string'
+  - name: 'focuses'
+    label: 'Focuses'
+    label_singular: 'Focus'
+    folder: 'content/focuses'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+  - name: 'industries'
+    label: 'Industries'
+    label_singular: 'Industry'
+    folder: 'content/industries'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'description'
+        label: 'Description'
+        widget: 'string'
+  - name: 'insights'
+    label: 'Insights'
+    label_singular: 'Insight'
+    folder: 'content/insights'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'subtitle'
+        label: 'Subtitle'
+        widget: 'string'
+      - name: 'description'
+        label: 'Description'
+        widget: 'string'
+      - name: 'introduction'
+        label: 'Introduction'
+        widget: 'markdown'
+      - name: 'body'
+        label: 'Body'
+        widget: 'markdown'
+      - name: 'feature'
+        label: 'Feature'
+        widget: 'image'
+        allow_multiple: false
+      - name: 'images'
+        label: 'Images'
+        label_singular: 'Image'
+        widget: 'list'
+        required: false
+        summary: '{{fields.image}}'
+        field:
+          name: 'image'
+          label: 'Image'
+          widget: 'image'
+      - name: 'authors'
+        label: 'Authors'
+        label_singular: 'Author'
+        widget: 'relation'
+        collection: 'authors'
+        display_fields: ['title']
+        value_field: '{{slug}}'
+        search_fields: ['title']
+        multiple: true
+      - name: 'categories'
+        label: 'Categories'
+        label_singular: 'Category'
+        widget: 'relation'
+        collection: 'categories'
+        display_fields: ['title']
+        value_field: '{{slug}}'
+        search_fields: ['title']
+        multiple: true
+      - name: 'series'
+        label: 'Series'
+        widget: 'relation'
+        required: false
+        collection: 'series'
+        display_fields: ['title']
+        value_field: '{{slug}}'
+        search_fields: ['title']
+        multiple: true
+  - name: 'series'
+    label: 'Series'
+    folder: 'content/series'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'subtitle'
+        label: 'Subtitle'
+        widget: 'string'
+      - name: 'description'
+        label: 'Description'
+        widget: 'string'
+  - name: 'slides'
+    label: 'Slides'
+    label_singular: 'Slide'
+    folder: 'content/slides'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'subtitle'
+        label: 'Subtitle'
+        widget: 'string'
+      - name: 'body'
+        label: 'Body'
+        widget: 'markdown'
+      - name: 'color'
+        label: 'Color'
+        widget: 'relation'
+        collection: 'colors'
+        display_fields: ['title']
+        value_field: '{{slug}}'
+        search_fields: ['title']
+        multiple: false
+      - name: 'image'
+        label: 'Image'
+        widget: 'image'
+        required: false
+      - name: 'video'
+        label: 'Video'
+        widget: 'file'
+        required: false
+  - name: 'strategies'
+    label: 'Strategies'
+    label_singular: 'Strategy'
+    folder: 'content/strategies'
+    create: true
+    extension: 'json'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'body'
+        label: 'Body'
+        widget: 'markdown'
+      - name: 'color'
+        label: 'Color'
+        widget: 'relation'
+        collection: 'colors'
+        display_fields: ['title']
+        value_field: '{{slug}}'
+        search_fields: ['title']
+        multiple: false
+      - name: 'video'
+        label: 'Video'
+        widget: 'file'
+      - name: 'industries'
+        label: 'Industries'
+        label_singular: 'Industry'
+        widget: 'relation'
+        collection: 'industries'
+        display_fields: ['title']
+        value_field: '{{slug}}'
+        search_fields: ['title']
+        multiple: true

@@ -1,55 +1,48 @@
 <template>
   <article>
+    <ImageBase :alt="featureAlt" :src="feature" />
+
     <header>
       <h2 class="text-lg">
         {{ title }}
       </h2>
 
-      <p v-if="subtitle">
+      <p v-if="!!subtitle">
         {{ subtitle }}
       </p>
 
       <div class="flex items-center">
         <div class="mr-1">By:</div>
 
-        <image-base
-          v-for="author in authors"
-          :key="author.id"
-          avatar
-          class="mr-1"
-          v-bind="author.image"
-        ></image-base>
+        <AuthorList :authors="authors" />
+      </div>
+
+      <div class="flex items-center">
+        <div class="mr-1">In:</div>
+
+        <CategoryList :categories="categories" />
       </div>
     </header>
 
-    <section>
-      <p>
-        {{ description }}
-      </p>
-    </section>
+    <p>
+      {{ description }}
+    </p>
   </article>
 </template>
 
 <script lang="ts">
 import Vue, { PropType } from 'vue'
-import type { IDT } from '@/types'
-import type { AuthorBaseI, CategoryBaseI, ImageBaseI } from '@/interfaces'
 
 export default Vue.extend({
   props: {
-    id: {
-      required: true,
-      type: [Number, String] as PropType<IDT>
-    },
-
     authors: {
       required: true,
-      type: Array as PropType<AuthorBaseI[]>
+      type: Array as PropType<string[]>
     },
 
     categories: {
       required: true,
-      type: Array as PropType<CategoryBaseI[]>
+      type: Array as PropType<string[]>
     },
 
     description: {
@@ -59,7 +52,7 @@ export default Vue.extend({
 
     feature: {
       required: true,
-      type: Object as PropType<ImageBaseI>
+      type: String
     },
 
     subtitle: {
@@ -70,6 +63,12 @@ export default Vue.extend({
     title: {
       required: true,
       type: String
+    }
+  },
+
+  computed: {
+    featureAlt(): string {
+      return `‘${this.title}’ Featured Image`
     }
   }
 })

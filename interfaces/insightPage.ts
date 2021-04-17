@@ -1,7 +1,7 @@
-import type { InsightBaseI, ImageBaseI } from '@/interfaces'
+import type { InsightBaseI } from '@/interfaces'
 
 export interface InsightPageI extends InsightBaseI {
   body: string
-  images: ImageBaseI[]
+  images: string[]
   introduction: string
 }

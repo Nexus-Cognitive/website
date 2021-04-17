@@ -1,6 +1,6 @@
-import type { ImageBaseI, ResourceBaseI } from '@/interfaces'
+import type { ResourceBaseI } from '@/interfaces'
 
 export interface AuthorBaseI extends ResourceBaseI {
-  image: ImageBaseI
+  image: string
   name: string
 }

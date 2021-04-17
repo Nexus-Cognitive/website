@@ -1,0 +1,17 @@
+{
+  "title": "Illuminate",
+  "body": "Break through data silos and discover the optimum path to success.",
+  "industries": [
+    "artificial-intelligence",
+    "machine-learning",
+    "data-science",
+    "business-intelligence"
+  ],
+  "backgroundColor": "purple",
+  "titleColor": "red",
+  "bodyColor": "white",
+  "image": {
+    "alt": "An extended-exposure photograph of a car driving on a dark road at night with light trails behind it, representing energetic, quick path-finding in an unclear environment.",
+    "src": "/images/strategy-illuminate.jpeg"
+  }
+}

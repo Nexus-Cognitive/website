@@ -1,6 +1,5 @@
-import type { IDT } from '@/types'
+import type { IContentDocument } from '@nuxt/content/types/content'
 
-export interface ResourceBaseI {
-  id: IDT
+export interface ResourceBaseI extends IContentDocument {
   title: string
 }

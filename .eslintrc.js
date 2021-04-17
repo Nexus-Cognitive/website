@@ -14,20 +14,12 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    camelcase: [
+    'prettier/prettier': [
       'error',
       {
-        allow: [
-          'last_modified',
-          'modular_content',
-          'next_page',
-          'sitemap_locations',
-          'taxonomy_group',
-          'url_slug'
-        ]
+        endOfLine: 'auto'
       }
     ],
-    'vue/no-v-html': 'off',
-    'vue/prop-name-casing': 'off'
+    'vue/no-v-html': 'off'
   }
 }

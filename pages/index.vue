@@ -1,34 +1,41 @@
 <template>
-  <article class="prose">
-    <header>
-      <h1>Home</h1>
-    </header>
-    <section v-show="base.length > 1" class="grid grid-cols-2 gap-8 mt-4">
-      <insight-base
-        v-for="insight in base"
-        :key="insight.id"
-        v-bind="insight"
-      ></insight-base>
-    </section>
+  <article>
+    <HeroBase
+      poster-src="/images/index-poster.jpeg"
+      section-class-list="pb-9 sm:pb-24"
+      video-src="/videos/index-hero.webm"
+    >
+      <template #default>
+        <p class="font-light font-mono text-xs sm:text-lg 2xl:text-xl">
+          We’re building digitally mature<br
+            class="hidden xs:inline 3xl:hidden"
+          />
+          <FocusList :focuses="focuses" />
+        </p>
+      </template>
+    </HeroBase>
+
+    <SlideBase v-for="slide in slides" v-bind="slide" :key="slide.slug" />
   </article>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapState } from 'vuex'
-import { storeDispatchKeyGet, storeModuleInstanceKeyGet } from '@/utilities'
-
-const storeModuleInstanceKey = storeModuleInstanceKeyGet('insights')
 
 export default Vue.extend({
-  async asyncData({ store }) {
-    await store.dispatch(
-      storeDispatchKeyGet(storeModuleInstanceKey, ['base'], 'GET')
-    )
-  },
+  async asyncData({ $content, error }): Promise<object | undefined> {
+    try {
+      const focuses = await $content('focuses').sortBy('createdAt').fetch()
 
-  computed: {
-    ...mapState(storeModuleInstanceKey, ['acting', 'alert', 'base'])
+      const slides = await $content('slides').sortBy('createdAt').fetch()
+
+      return {
+        focuses,
+        slides
+      }
+    } catch (e) {
+      error({ message: `Unable to fetch() $content(): ${e.toString()}` })
+    }
   }
 })
 </script>

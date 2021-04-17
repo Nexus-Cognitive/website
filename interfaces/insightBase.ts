@@ -1,14 +1,9 @@
-import type {
-  AuthorBaseI,
-  CategoryBaseI,
-  ImageBaseI,
-  ResourceBaseI
-} from '@/interfaces'
+import type { ResourceBaseI } from '@/interfaces'
 
 export interface InsightBaseI extends ResourceBaseI {
-  authors: AuthorBaseI[]
-  categories: CategoryBaseI[]
+  authors: string[]
+  categories: string[]
   description: string
-  feature: ImageBaseI
+  feature: string
   subtitle: string
 }
