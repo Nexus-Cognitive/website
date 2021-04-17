@@ -1,4 +1,4 @@
-# nexus-cognitive-front-end
+# Nexus Cognitive Website
 
 ## Build Setup
 
