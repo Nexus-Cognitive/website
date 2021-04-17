@@ -15,6 +15,7 @@ module.exports = {
           'variants'
         ]
       }
-    ]
+    ],
+    'declaration-empty-line-before': 'never'
   }
 }
