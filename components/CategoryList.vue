@@ -1,31 +1,33 @@
 <template>
-  <ul>
-    <li v-for="category in categoriesContent" :key="category.slug">
+  <ul class="flex">
+    <li v-for="(category, index) in categories" :key="category.slug">
       <CategoryBase v-bind="category" />
+      <span v-if="categoryDelimiterShow(index)">|&nbsp;</span>
     </li>
   </ul>
 </template>
 
 <script lang="ts">
+import type { CategoryContentsT } from '@/types'
 import Vue, { PropType } from 'vue'
 
 export default Vue.extend({
   props: {
     categories: {
       required: true,
-      type: Array as PropType<string[]>
+      type: Array as PropType<CategoryContentsT>
     }
   },
 
-  async asyncData({ $content, error }): Promise<object | undefined> {
-    const categoriesContent = await $content('categories')
-      .where({ slug: { $in: this.categories } })
-      .sortBy('slug')
-      .fetch()
-      .catch((e: Error) => error({ message: e.toString() }))
+  computed: {
+    categoriesLast(): number {
+      return this.categories.length - 1
+    }
+  },
 
-    return {
-      categoriesContent
+  methods: {
+    categoryDelimiterShow(index: number): boolean {
+      return index < this.categoriesLast
     }
   }
 })

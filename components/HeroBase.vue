@@ -1,14 +1,18 @@
 <template>
-  <header class="flex lg:h-screen overflow-hidden relative">
+  <header
+    class="bg-purple flex lg:h-screen justify-center overflow-hidden relative text-center"
+  >
     <VideoBase
+      v-if="videoShow"
+      v-bind="video"
       autoplay
       class="hero-video"
-      :height="2160"
       loop
-      :poster="posterSrc"
-      :src="videoSrc"
-      :width="3840"
+      muted
+      playsinline
     />
+
+    <ImageBase v-if="imageShow" v-bind="image" class="slide-image" />
 
     <SectionBase :class="sectionClassList_" tag="div">
       <template #default>
@@ -19,13 +23,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import type { ImageContentT, VideoContentT } from '@/types'
+import Vue, { PropType } from 'vue'
+import { ImageContentM, VideoContentM } from '@/models'
 
 export default Vue.extend({
   props: {
-    posterSrc: {
-      required: true,
-      type: String
+    image: {
+      default: (): ImageContentT => ImageContentM,
+      type: Object as PropType<ImageContentT>
     },
 
     sectionClassList: {
@@ -33,15 +39,23 @@ export default Vue.extend({
       type: String
     },
 
-    videoSrc: {
-      required: true,
-      type: String
+    video: {
+      default: (): VideoContentT => VideoContentM,
+      type: Object as PropType<VideoContentT>
     }
   },
 
   computed: {
+    imageShow(): boolean {
+      return !!this.image.alt && !!this.image.src
+    },
+
     sectionClassList_(): string {
       return `hero-section ${this.sectionClassList}`
+    },
+
+    videoShow(): boolean {
+      return !!this.video.src && !!this.video.poster
     }
   }
 })

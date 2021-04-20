@@ -2,12 +2,9 @@
   <section :class="classList">
     <ImageBase
       v-if="imageShow"
-      :alt="image.alt"
+      v-bind="image"
       class="md:col-start-2 md:h-screen md:max-w-4xl 3xl:max-w-full object-cover md:row-start-1"
-      :src="image.src"
     />
-
-    <VideoBase v-if="videoShow" v-bind="video" />
 
     <SectionBase
       class="flex flex-col justify-between md:py-6 lg:py-9 md:w-full"
@@ -18,7 +15,7 @@
 
       <ul :class="industriesClassList">
         <li
-          v-for="(industry, index) in industries_"
+          v-for="(industry, index) in industries"
           :key="industry.slug"
           :class="industryClassListGet(index)"
           v-html="industry.title"
@@ -29,14 +26,15 @@
 </template>
 
 <script lang="ts">
+import type { ColorContentT, ImageContentT, IndustryContentT } from '@/types'
 import Vue, { PropType } from 'vue'
-import type { IndustryBaseI } from '@/interfaces'
+import { ImageContentM } from '@/models'
 
 export default Vue.extend({
   props: {
     backgroundColor: {
       required: true,
-      type: String
+      type: Object as PropType<ColorContentT>
     },
 
     body: {
@@ -46,22 +44,17 @@ export default Vue.extend({
 
     bodyColor: {
       required: true,
-      type: String
+      type: Object as PropType<ColorContentT>
     },
 
     image: {
-      default: () => null,
-      type: Object
+      default: (): ImageContentT => ImageContentM,
+      type: Object as PropType<ImageContentT>
     },
 
     industries: {
       required: true,
-      type: Array as PropType<string[]>
-    },
-
-    industriesContent: {
-      required: true,
-      type: Array as PropType<IndustryBaseI[]>
+      type: Array as PropType<IndustryContentT[]>
     },
 
     title: {
@@ -71,32 +64,21 @@ export default Vue.extend({
 
     titleColor: {
       required: true,
-      type: String
-    },
-
-    video: {
-      default: () => null,
-      type: String
+      type: Object as PropType<ColorContentT>
     }
   },
 
   computed: {
     bodyClassList(): string {
-      return `font-mono mt-1 3xl:mt-2 text-${this.bodyColor} 3xl:text-sm`
+      return `font-mono mt-1 3xl:mt-2 text-${this.bodyColor.slug} 3xl:text-sm`
     },
 
     classList(): string {
-      return `bg-${this.backgroundColor} md:h-screen-half lg:h-screen grid md:grid-cols-2 md:grid-rows-1 overflow-hidden`
+      return `bg-${this.backgroundColor.slug} md:h-screen-half lg:h-screen grid md:grid-cols-2 md:grid-rows-1 overflow-hidden`
     },
 
     imageShow(): boolean {
-      return !!this.image
-    },
-
-    industries_(): IndustryBaseI[] {
-      return this.industriesContent.filter(({ slug }): boolean =>
-        this.industries.includes(slug)
-      )
+      return !!this.image.src
     },
 
     industriesClassList(): string {
@@ -108,11 +90,7 @@ export default Vue.extend({
     },
 
     titleColor_(): string {
-      return `text-${this.titleColor}`
-    },
-
-    videoShow(): boolean {
-      return !!this.video
+      return `text-${this.titleColor.slug}`
     }
   },
 

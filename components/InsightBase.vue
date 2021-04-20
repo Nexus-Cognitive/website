@@ -1,48 +1,54 @@
 <template>
-  <article>
-    <ImageBase :alt="featureAlt" :src="feature" />
+  <article
+    class="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-lg shadow"
+  >
+    <div class="flex overflow-hidden">
+      <ImageBase class="object-cover" v-bind="cover" />
+    </div>
 
-    <header>
-      <h2 class="text-lg">
-        {{ title }}
-      </h2>
+    <div class="flex flex-col justify-center p-6">
+      <header>
+        <p v-if="feature" class="category flex items-baseline">
+          <ArrowBase class="mr-1" />Featured Insight
+        </p>
 
-      <p v-if="!!subtitle">
-        {{ subtitle }}
+        <div class="flex">
+          // <CategoryList :categories="categories" class="ml-1" />
+        </div>
+
+        <h2 class="font-bold font-mono mt-2 text-md">
+          {{ title }}
+        </h2>
+      </header>
+
+      <p class="mt-2 text-sm">
+        {{ description }}
       </p>
 
-      <div class="flex items-center">
-        <div class="mr-1">By:</div>
-
-        <AuthorList :authors="authors" />
-      </div>
-
-      <div class="flex items-center">
-        <div class="mr-1">In:</div>
-
-        <CategoryList :categories="categories" />
-      </div>
-    </header>
-
-    <p>
-      {{ description }}
-    </p>
+      <AuthorList :authors="authors" class="mt-2" />
+    </div>
   </article>
 </template>
 
 <script lang="ts">
+import type { AuthorContentsT, CategoryContentsT, ImageContentT } from '@/types'
 import Vue, { PropType } from 'vue'
 
 export default Vue.extend({
   props: {
     authors: {
       required: true,
-      type: Array as PropType<string[]>
+      type: Array as PropType<AuthorContentsT>
     },
 
     categories: {
       required: true,
-      type: Array as PropType<string[]>
+      type: Array as PropType<CategoryContentsT>
+    },
+
+    cover: {
+      required: true,
+      type: Object as PropType<ImageContentT>
     },
 
     description: {
@@ -52,7 +58,7 @@ export default Vue.extend({
 
     feature: {
       required: true,
-      type: String
+      type: Boolean
     },
 
     subtitle: {
@@ -63,12 +69,6 @@ export default Vue.extend({
     title: {
       required: true,
       type: String
-    }
-  },
-
-  computed: {
-    featureAlt(): string {
-      return `‘${this.title}’ Featured Image`
     }
   }
 })

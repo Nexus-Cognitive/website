@@ -1,9 +1,15 @@
 <template>
-  <video :height="height" :poster="poster" :src="src" :width="width"></video>
+  <video
+    :height="height"
+    :poster="poster.src"
+    :src="src"
+    :width="width"
+  ></video>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import type { ImageContentT } from '@/types'
+import Vue, { PropType } from 'vue'
 
 export default Vue.extend({
   props: {
@@ -14,7 +20,7 @@ export default Vue.extend({
 
     poster: {
       required: true,
-      type: String
+      type: Object as PropType<ImageContentT>
     },
 
     src: {

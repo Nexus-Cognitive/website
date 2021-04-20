@@ -1,0 +1,22 @@
+<template>
+  <SectionBase class="bg-black flex justify-between" tag="footer">
+    <div>
+      <Wordmark />
+
+      <address class="font-mono mt-2">
+        15455 Dallas Parkway<br />Suite 600<br />Addison, Texas 75001
+      </address>
+
+      <a class="block mt-2" href="mailto:outcomes@nexuscognitive.com"
+        >outcomes@nexuscognitive.com</a
+      >
+    </div>
+
+    <SocialBase />
+  </SectionBase>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({})
+</script>

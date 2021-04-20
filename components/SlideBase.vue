@@ -1,13 +1,6 @@
 <template>
   <section :class="classList">
-    <ImageBase
-      v-if="imageShow"
-      :alt="image.alt"
-      :src="image.src"
-      class="slide-image"
-    />
-
-    <VideoBase v-if="!!video" :src="video" autoplay class="z-0" />
+    <ImageBase v-if="imageShow" v-bind="image" class="slide-image" />
 
     <SectionBase>
       <template #default>
@@ -26,37 +19,34 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import type { ColorContentT, ImageContentT } from '@/types'
+import Vue, { PropType } from 'vue'
+import { ImageContentM } from '@/models'
 
 export default Vue.extend({
   props: {
+    backgroundColor: {
+      required: true,
+      type: Object as PropType<ColorContentT>
+    },
+
     body: {
       required: true,
       type: String
     },
 
-    color: {
-      required: true,
-      type: String
-    },
-
     image: {
-      default: () => null,
-      type: Object
+      default: (): ImageContentT => ImageContentM,
+      type: Object as PropType<ImageContentT>
     },
 
     subtitle: {
-      default: () => null,
+      default: '',
       type: String
     },
 
     title: {
       required: true,
-      type: String
-    },
-
-    video: {
-      default: () => null,
       type: String
     }
   },
@@ -71,11 +61,11 @@ export default Vue.extend({
     },
 
     classList(): string {
-      return `bg-${this.color} overflow-hidden relative text-white`
+      return `bg-${this.backgroundColor.slug} overflow-hidden relative text-white`
     },
 
     imageShow(): boolean {
-      return !!this.image
+      return !!this.image.src
     },
 
     subtitleShow(): boolean {

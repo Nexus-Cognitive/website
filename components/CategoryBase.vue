@@ -1,7 +1,7 @@
 <template>
-  <nuxt-link :to="{ name: 'insights/categories', params: { slug } }">
+  <NuxtLink :to="{ name: 'insights/categories', params: { slug } }">
     {{ title }}
-  </nuxt-link>
+  </NuxtLink>
 </template>
 
 <script lang="ts">
