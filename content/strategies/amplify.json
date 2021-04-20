@@ -8,11 +8,9 @@
     "automation",
     "data-architecture"
   ],
+  "order": 3,
   "backgroundColor": "red",
-  "titleColor": "white",
   "bodyColor": "black",
-  "image": {
-    "alt": "A macro photograph of water drops representing the magnification of something seemingly small, but actually powerful.",
-    "src": "/images/strategy-amplify.jpeg"
-  }
+  "titleColor": "white",
+  "image": "amplify"
 }

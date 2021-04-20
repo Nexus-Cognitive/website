@@ -8,11 +8,9 @@
     "human-centered-design",
     "customer-experience"
   ],
+  "order": 1,
   "backgroundColor": "white",
   "titleColor": "green",
   "bodyColor": "black",
-  "image": {
-    "alt": "A macro photograph of muschrooms illustrating rapid growth.",
-    "src": "/images/strategy-empower.jpeg"
-  }
+  "image": "empower"
 }
