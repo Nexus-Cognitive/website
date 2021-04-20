@@ -1,18 +1,33 @@
+@import url('https://use.typekit.net/egm1zle.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+abbr[title] {
+  @apply no-underline;
+}
+
+.category {
+  @apply font-bold text-xs tracking-wider uppercase;
+}
+
+.page-title {
+  @apply font-bold text-sm md:text-md tracking-wider uppercase;
+}
+
+.page-subtitle {
+  @apply font-light font-mono mt-2 text-xs sm:text-sm;
+}
+
 .hero-video,
 .slide-image {
-  @apply max-h-screen max-w-none xl:max-w-full;
+  @apply absolute left-0 max-w-none xl:max-w-full object-cover top-0 z-0;
 }
 
 .hero-section {
-  @apply flex flex-col h-screen justify-end pb-9 sm:pb-24 z-10;
-}
-
-.hero-video {
-  @apply absolute left-0 object-cover top-0 z-0;
+  @apply flex flex-col h-screen items-center justify-center pb-9 sm:pb-24 z-10;
+  max-width: 88ch;
 }
 
 .page-enter-active,
@@ -26,7 +41,6 @@
 }
 
 .slide-image {
-  @apply absolute left-0 object-cover top-0 z-0;
   filter: grayscale(100%) opacity(10%);
 }
 
