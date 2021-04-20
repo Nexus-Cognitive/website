@@ -1,9 +1,15 @@
+import type {
+  AuthorContentRelationsT,
+  CategoryRelationsT,
+  ImageRelationT
+} from '@/types'
 import type { ResourceBaseI } from '@/interfaces'
 
 export interface InsightBaseI extends ResourceBaseI {
-  authors: string[]
-  categories: string[]
+  authors: AuthorContentRelationsT
+  categories: CategoryRelationsT
+  cover: ImageRelationT
   description: string
-  feature: string
+  feature: boolean
   subtitle: string
 }
