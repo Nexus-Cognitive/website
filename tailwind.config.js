@@ -1,3 +1,50 @@
+const unit = 8
+
+const borderRadiuses = ['xs', 'sm', 'md', 'lg', 'xl']
+const borderRadius = {}
+borderRadiuses.forEach((b, i) => (borderRadius[b] = `${i * unit}px`))
+
+const colors = [
+  'black',
+  'blue',
+  'gray-dark',
+  'gray-light',
+  'green',
+  'red',
+  'purple'
+]
+const backgrounds = colors.map((c) => `bg-${c}`)
+const texts = colors.map((c) => `bg-${c}`)
+
+const opacities = [0, 20, 60].map((o) => `opacity-${o}`)
+
+const topsBase = [0, 3, 6, 9, 12].map((t) => `top-${t}`)
+const topsBase_ = topsBase.map((t) => `-${t}`)
+
+const topsSm = [0, 8, 16, 24, 32].map((t) => `sm:top-${t}`)
+const topsSm_ = topsSm.map((t) => {
+  const [breakpoint, top] = t.split(':')
+  return [breakpoint, ':-', top].join('')
+})
+
+const tops2xl = [0, 10, 20, 30, 40].map((t) => `2xl:top-${t}`)
+const tops2xl_ = tops2xl.map((t) => {
+  const [breakpoint, top] = t.split(':')
+  return [breakpoint, ':-', top].join('')
+})
+
+const heights = 8
+const height = {}
+for (let h = 0; h <= heights; h++) {
+  height[`${h}`] = `${h * 8}px`
+}
+
+const spacings = 32
+const spacing = {}
+for (let s = 0; s <= spacings; s++) {
+  spacing[`${s}`] = `${s * 8}px`
+}
+
 module.exports = {
   corePlugins: {
     fontSmoothing: false,
@@ -17,58 +64,24 @@ module.exports = {
 
     options: {
       safelist: [
-        'bg-black',
-        'bg-blue',
-        'bg-gray-light',
-        'bg-gray-dark',
-        'bg-green',
-        'bg-purple',
-        'bg-red',
-        'text-black',
-        'text-blue',
-        'text-gray-light',
-        'text-gray-dark',
-        'text-green',
-        'text-purple',
-        'text-red',
-        'opacity-0',
-        'opacity-20',
-        'opacity-60',
-        '-top-0',
-        '-top-3',
-        '-top-6',
-        '-top-9',
-        '-top-12',
-        'top-0',
-        'top-3',
-        'top-6',
-        'top-9',
-        'top-12',
-        'sm:-top-0',
-        'sm:-top-8',
-        'sm:-top-16',
-        'sm:-top-24',
-        'sm:-top-32',
-        'sm:top-0',
-        'sm:top-8',
-        'sm:top-16',
-        'sm:top-24',
-        'sm:top-32',
-        '2xl:-top-0',
-        '2xl:-top-10',
-        '2xl:-top-20',
-        '2xl:-top-30',
-        '2xl:-top-40',
-        '2xl:top-0',
-        '2xl:top-10',
-        '2xl:top-20',
-        '2xl:top-30',
-        '2xl:top-40'
+        ...backgrounds,
+        ...texts,
+        ...opacities,
+        ...topsBase,
+        ...topsBase_,
+        ...topsSm,
+        ...topsSm_,
+        ...tops2xl,
+        ...tops2xl_
       ]
     }
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    borderRadius: {
+      ...borderRadius,
+      full: '9999px'
+    },
     colors: {
       black: {
         DEFAULT: '#22202E'
@@ -106,7 +119,7 @@ module.exports = {
     },
     fontFamily: {
       mono: ['ibm-plex-mono', 'monospace'],
-      sans: ['campaign', 'sans-serif']
+      sans: ['commuter-sans', 'sans-serif']
     },
     fontSize: {
       xs: ['16px', '24px'],
@@ -116,15 +129,7 @@ module.exports = {
       xl: ['64px', '72px']
     },
     height: {
-      0: '0px',
-      1: '8px',
-      2: '16px',
-      3: '24px',
-      4: '32px',
-      5: '40px',
-      6: '48px',
-      7: '56px',
-      8: '64px',
+      ...height,
       screen: '100vh',
       'screen-half': '50vh'
     },
@@ -132,6 +137,7 @@ module.exports = {
       full: '100%',
       max: 'max-content',
       none: 'none',
+      prose: '66ch',
       '4xl': '56rem',
       '12xl': '96rem'
     },
@@ -144,37 +150,7 @@ module.exports = {
       '2xl': '1536px',
       '3xl': '1920px'
     },
-    spacing: {
-      0: '0px',
-      1: '8px',
-      2: '16px',
-      3: '24px',
-      4: '32px',
-      5: '40px',
-      6: '48px',
-      7: '56px',
-      8: '64px',
-      9: '72px',
-      10: '80px',
-      11: '88px',
-      12: '96px',
-      13: '104px',
-      14: '112px',
-      15: '120px',
-      16: '128px',
-      17: '136px',
-      18: '144px',
-      19: '152px',
-      20: '160px',
-      24: '192px',
-      25: '200px',
-      26: '208px',
-      27: '216px',
-      28: '224px',
-      29: '232px',
-      30: '240px',
-      32: '256px'
-    }
+    spacing
   },
   variants: {
     extend: {}

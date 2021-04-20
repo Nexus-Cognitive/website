@@ -7,6 +7,5 @@
   "eslint.validate": [
     "javascript",
     "vue"
-  ],
-  "vetur.validation.template": true
+  ]
 }
