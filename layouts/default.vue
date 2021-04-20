@@ -7,9 +7,7 @@
     <main>
       <Nuxt />
     </main>
+
+    <FooterBase />
   </div>
 </template>
-
-<style>
-@import url('https://use.typekit.net/egm1zle.css');
-</style>
