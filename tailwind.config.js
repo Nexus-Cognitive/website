@@ -117,7 +117,44 @@ module.exports = {
         20: '0.2',
         30: '0.3',
         50: '0.5'
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.black.DEFAULT'),
+            a: {
+              color: theme('colors.blue.DEFAULT'),
+              '&:hover': {
+                color: theme('colors.blue.dark')
+              }
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.blue.DEFAULT'),
+              color: theme('colors.blue.DEFAULT'),
+              fontFamily: theme('fontFamily.mono'),
+              fontSize: theme('fontSize.sm')
+            },
+            h1: {
+              fontFamily: theme('fontFamily.mono')
+            },
+            h2: {
+              fontFamily: theme('fontFamily.mono')
+            },
+            h3: {
+              fontFamily: theme('fontFamily.mono')
+            },
+            h4: {
+              fontFamily: theme('fontFamily.mono')
+            },
+            h5: {
+              fontFamily: theme('fontFamily.mono')
+            },
+            h6: {
+              fontFamily: theme('fontFamily.mono')
+            }
+          }
+        }
+      })
     },
     fontFamily: {
       mono: ['ibm-plex-mono', 'monospace'],

@@ -10,6 +10,8 @@
 .slide-video {
   @apply absolute left-0 max-w-none xl:max-w-full object-cover;
 }
+
+.hero-image,
 .slide-image,
 .slide-video {
   filter: grayscale(100%) opacity(20%);
@@ -36,10 +38,6 @@ abbr[title] {
 
 .category {
   @apply font-bold text-xs tracking-wider uppercase;
-}
-
-.hero-image {
-  filter: blur(2px) grayscale(100%) opacity(20%);
 }
 
 .hero-section {
