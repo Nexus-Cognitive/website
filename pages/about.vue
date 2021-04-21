@@ -3,6 +3,7 @@
     <HeroBase :video="heroVideo">
       <template #default>
         <h1 class="sr-only">About</h1>
+
         <p class="page-title-large">
           An agency rethinking how we work, play, and experience the future
           economy.
@@ -17,9 +18,10 @@
         <ArrowBase class="mr-1" />
         <h2 class="text-md xl:text-lg uppercase">Led by</h2>
       </div>
+
       <p class="font-mono mt-3 text-xs xl:text-sm max-w-prose">
         An experienced leadership team with 100 years of combined experience in
-        delivering technology led outcomes.
+        delivering technology-led outcomes.
       </p>
     </section>
 
@@ -92,9 +94,8 @@ export default Vue.extend({
       weAreSlide = slideMap(weAreSlide, colors, images, videos)
 
       let authors: AuthorContentsT = (await $content('authors')
-        .where({
-          partner: true
-        })
+        .where({ partner: true })
+        .sortBy('order')
         .fetch<AuthorBaseI>()) as AuthorContentsT
 
       authors = authors.map((author) => authorMap(author, images))
@@ -102,6 +103,10 @@ export default Vue.extend({
       const heroVideo: VideoContentT | undefined = videos.find(
         ({ slug }: VideoContentT): boolean => slug === 'about-hero'
       )
+
+      if (heroVideo?.poster) {
+        heroVideo.poster = imageFind(images, heroVideo.poster)
+      }
 
       return {
         aboutHero,

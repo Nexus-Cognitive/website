@@ -6,7 +6,7 @@ authors:
 categories:
   - business-strategy
 cover: business-and-technology-outcomes
-feature": false
+feature: false
 ---
 
 I have a buddy who’s a golfer—really more of a duffer, but he tries hard. He also spends a lot of money on equipment. He truly believes that each new driver or wedge will get him to sub-90. But it never does. To me the answer is obvious. My friend’s problem isn’t equipment; it’s his approach to the game. He doesn’t do what he needs to play better. No lessons, no swing improvement, and not enough structured practice. Eighteen holes on Sunday morning with a cooler won’t do it. But my buddy keeps on spending on equipment, oblivious—and getting poorer by the month.

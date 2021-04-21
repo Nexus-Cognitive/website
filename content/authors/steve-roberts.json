@@ -1,8 +1,9 @@
 {
     "title": "Steve Roberts",
     "image": "steve-roberts",
+    "order": 3,
     "partner": true,
-    "position": "<abbr title='Chief Operating Officer'>COO</abbr> / Partner",
+    "position": "<abbr title='Chief Operating Officer'>COO</abbr>",
     "email": "steve@nexuscognitive.com",
     "linkedIn": "https://www.linkedin.com/in/stevensroberts"
   }
