@@ -7,6 +7,7 @@ borderRadiuses.forEach((b, i) => (borderRadius[b] = `${i * unit}px`))
 const colors = [
   'black',
   'blue',
+  'blue-dark',
   'gray-dark',
   'gray-light',
   'green',
@@ -14,7 +15,7 @@ const colors = [
   'purple'
 ]
 const backgrounds = colors.map((c) => `bg-${c}`)
-const texts = colors.map((c) => `bg-${c}`)
+const texts = colors.map((c) => `text-${c}`)
 
 const opacities = [0, 20, 60].map((o) => `opacity-${o}`)
 
@@ -87,6 +88,7 @@ module.exports = {
         DEFAULT: '#22202E'
       },
       blue: {
+        dark: '#0C163B',
         DEFAULT: '#444AE2'
       },
       gray: {
