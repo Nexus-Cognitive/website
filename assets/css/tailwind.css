@@ -22,14 +22,6 @@
   @apply top-0;
 }
 
-.page-title-large {
-  @apply font-light font-mono text-sm sm:text-md 2xl:text-lg;
-}
-
-.page-subtitle {
-  @apply font-light font-mono mt-2 text-xs sm:text-sm;
-}
-
 .page-enter,
 .page-leave-to {
   @apply opacity-0;
@@ -59,6 +51,10 @@ abbr[title] {
 
 .page-title {
   @apply font-bold text-sm md:text-md tracking-wider uppercase;
+}
+
+.page-title-large {
+  @apply font-light font-mono text-sm sm:text-md 2xl:text-lg;
 }
 
 .page-subtitle {
