@@ -22,14 +22,22 @@
   @apply top-0;
 }
 
-.page-enter-active,
-.page-leave-active {
-  @apply transition-opacity;
+.page-title-large {
+  @apply font-light font-mono text-sm sm:text-md 2xl:text-lg;
+}
+
+.page-subtitle {
+  @apply font-light font-mono mt-2 text-xs sm:text-sm;
 }
 
 .page-enter,
 .page-leave-to {
   @apply opacity-0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  @apply transition-opacity;
 }
 
 abbr[title] {
