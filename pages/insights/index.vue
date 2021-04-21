@@ -12,7 +12,9 @@
     </HeroBase>
 
     <div class="bg-blue-dark">
-      <div class="container gap-4 grid grid-cols-1 md:grid-cols-2 py-6">
+      <div
+        class="container gap-4 grid grid-cols-1 md:grid-cols-2 px-3 sm:px-6 py-6 sm:py-9"
+      >
         <InsightBase
           v-for="insight in insights"
           v-bind="insight"
