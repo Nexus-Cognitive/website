@@ -58,6 +58,7 @@ export default Vue.extend({
       return this.$router
         .getRoutes()
         .filter((route) => route.path.split('/').length === 2)
+        .reverse()
     }
   },
 
