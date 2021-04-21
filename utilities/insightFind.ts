@@ -7,13 +7,9 @@ import type { InsightBaseI } from '@/interfaces'
 import { contentFind } from '@/utilities'
 
 export function insightFind(
-  insightContents: InsightContentsT,
-  insightRelation: InsightRelationT,
-  insightKey: string = 'slug'
+  insights: InsightContentsT,
+  relation: InsightRelationT,
+  key: string = 'slug'
 ): InsightContentT | undefined {
-  return contentFind<InsightBaseI, InsightRelationT>(
-    insightContents,
-    insightRelation,
-    insightKey
-  )
+  return contentFind<InsightBaseI, InsightRelationT>(insights, relation, key)
 }

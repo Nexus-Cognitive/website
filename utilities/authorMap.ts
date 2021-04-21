@@ -5,7 +5,7 @@ export function authorMap(
   author: AuthorContentT,
   images: ImageContentsT
 ): AuthorContentT {
-  if (author.image) {
+  if (author.image && typeof author.image !== 'object') {
     author.image = imageFind(images, author.image)
   }
 

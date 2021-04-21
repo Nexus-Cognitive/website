@@ -7,13 +7,13 @@ import type { IndustryBaseI } from '@/interfaces'
 import { contentsFilter } from '@/utilities'
 
 export function industriesFilter(
-  industryContents: IndustryContentsT,
-  industryRelations: IndustryRelationsT,
+  industries: IndustryContentsT,
+  relations: IndustryRelationsT,
   key: string = 'slug'
 ): IndustryContentsT | undefined {
   return contentsFilter<IndustryBaseI, IndustryRelationT>(
-    industryContents,
-    industryRelations,
+    industries,
+    relations,
     key
   )
 }

@@ -3,13 +3,9 @@ import type { ColorBaseI } from '@/interfaces'
 import { contentFind } from '@/utilities'
 
 export function colorFind(
-  colorContents: ColorContentsT,
-  colorRelation: ColorRelationT,
-  colorKey: string = 'slug'
+  colors: ColorContentsT,
+  relation: ColorRelationT,
+  key: string = 'slug'
 ): ColorContentT | undefined {
-  return contentFind<ColorBaseI, ColorRelationT>(
-    colorContents,
-    colorRelation,
-    colorKey
-  )
+  return contentFind<ColorBaseI, ColorRelationT>(colors, relation, key)
 }

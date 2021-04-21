@@ -7,13 +7,13 @@ import type { CategoryBaseI } from '@/interfaces'
 import { contentFind } from '@/utilities'
 
 export function categoryFind(
-  categoryContents: CategoryContentsT,
-  categoryRelation: CategoryRelationT,
-  categoryKey: string = 'slug'
+  categories: CategoryContentsT,
+  relation: CategoryRelationT,
+  key: string = 'slug'
 ): CategoryContentT | undefined {
   return contentFind<CategoryBaseI, CategoryRelationT>(
-    categoryContents,
-    categoryRelation,
-    categoryKey
+    categories,
+    relation,
+    key
   )
 }

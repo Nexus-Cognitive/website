@@ -3,13 +3,9 @@ import type { ImageBaseI } from '@/interfaces'
 import { contentFind } from '@/utilities'
 
 export function imageFind(
-  imageContents: ImageContentsT,
-  imageRelation: ImageRelationT,
-  imageKey: string = 'slug'
+  images: ImageContentsT,
+  relation: ImageRelationT,
+  key: string = 'slug'
 ): ImageContentT | undefined {
-  return contentFind<ImageBaseI, ImageRelationT>(
-    imageContents,
-    imageRelation,
-    imageKey
-  )
+  return contentFind<ImageBaseI, ImageRelationT>(images, relation, key)
 }

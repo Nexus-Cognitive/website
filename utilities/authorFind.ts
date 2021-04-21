@@ -3,13 +3,9 @@ import type { AuthorBaseI } from '@/interfaces'
 import { contentFind } from '@/utilities'
 
 export function authorFind(
-  authorContents: AuthorContentsT,
-  authorRelation: AuthorRelationT,
-  authorKey: string = 'slug'
+  authors: AuthorContentsT,
+  relation: AuthorRelationT,
+  key: string = 'slug'
 ): AuthorContentT | undefined {
-  return contentFind<AuthorBaseI, AuthorRelationT>(
-    authorContents,
-    authorRelation,
-    authorKey
-  )
+  return contentFind<AuthorBaseI, AuthorRelationT>(authors, relation, key)
 }

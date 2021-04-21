@@ -7,13 +7,13 @@ import type { CategoryBaseI } from '@/interfaces'
 import { contentsFilter } from '@/utilities'
 
 export function categoriesFilter(
-  categoryContents: CategoryContentsT,
-  categoryRelations: CategoryRelationsT,
+  categories: CategoryContentsT,
+  relations: CategoryRelationsT,
   key: string = 'slug'
 ): CategoryContentsT | undefined {
   return contentsFilter<CategoryBaseI, CategoryRelationT>(
-    categoryContents,
-    categoryRelations,
+    categories,
+    relations,
     key
   )
 }
