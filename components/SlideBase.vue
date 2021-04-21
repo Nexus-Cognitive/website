@@ -15,7 +15,8 @@
     <SectionBase class="hero-section">
       <template #default>
         <div class="flex items-center">
-          <ArrowBase class="mr-1" /><h2 :class="titleClassList" v-html="title"></h2>
+          <ArrowBase class="mr-1" />
+          <h2 :class="titleClassList" v-html="title"></h2>
         </div>
 
         <p
