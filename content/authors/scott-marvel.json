@@ -1,8 +1,9 @@
 {
     "title": "Scott Marvel",
     "image": "scott-marvel",
+    "order": 1,
     "partner": true,
-    "position": "Managing Partner",
+    "position": "Managing Partner and Chairman",
     "email": "scott@nexuscognitive.com",
     "linkedIn": "https://www.linkedin.com/in/smarvel"
   }

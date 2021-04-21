@@ -5,6 +5,7 @@ export interface AuthorBaseI extends ResourceBaseI {
   email: string
   image: ImageRelationT
   linkedIn: string
+  order: number
   partner: boolean
   position: string
 }
