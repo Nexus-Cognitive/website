@@ -1,7 +1,8 @@
 {
-  "title": "The future isn’t static.",
-  "subtitle": "Shape the new standards",
-  "body": "Digital commerce, finance, sales & marketing, tax automation, customer experience, energy & utilities, public sector, supply chain.",
-  "backgroundColor": "purple",
-  "image": "the-future-isnt-static"
+  "title": "The Future isn’t Static",
+  "body": "Get the tools and strategies to shape your new standards in business",
+  "backgroundColor": "blue-dark",
+  "image": "the-future-isnt-static-cover",
+  "video": "the-future-isnt-static",
+  "order": 1
 }
