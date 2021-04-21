@@ -5,7 +5,8 @@
         <h1 class="sr-only">Home</h1>
 
         <p class="page-title">
-          We nurture long-term<br class="hidden sm:inline" />digital maturity.
+          We nurture long-term<br class="hidden sm:inline" />
+          digital maturity.
         </p>
 
         <p class="page-subtitle">Digital transformation isn’t a finish line.</p>
@@ -50,7 +51,8 @@ import type {
   SlideContentsT,
   VideoContentT,
   CategoryContentsT,
-  VideoContentsT
+  VideoContentsT,
+  InsightContentT
 } from '@/types'
 import type {
   AuthorBaseI,
@@ -62,13 +64,7 @@ import type {
   VideoBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import {
-  imageFind,
-  insightMap,
-  insightsMap,
-  slidesMap,
-  videoFind
-} from '@/utilities'
+import { imageFind, insightsMap, slidesMap, videoFind } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
@@ -93,21 +89,19 @@ export default Vue.extend({
         'videos'
       ).fetch<VideoBaseI>()) as VideoContentsT
 
-      let [insight]: InsightContentsT = (await $content('insights')
-        .where({ feature: true })
-        .without('body')
-        .fetch<InsightBaseI>()) as InsightContentsT
-
-      insight = insightMap(insight, authors, categories, images)
-
       let insights: InsightContentsT = (await $content('insights')
-        .where({ feature: false })
-        .sortBy('publish', 'desc')
-        .limit(2)
         .without('body')
         .fetch<InsightBaseI>()) as InsightContentsT
 
       insights = insightsMap(insights, authors, categories, images)
+
+      const insight: InsightContentT = insights.find(
+        ({ feature }: InsightContentT): boolean => feature
+      ) as InsightContentT
+
+      insights = insights.filter(
+        ({ feature }: InsightContentT): boolean => !feature
+      )
 
       let slides: SlideContentsT = (await $content('slides')
         .sortBy('order')
