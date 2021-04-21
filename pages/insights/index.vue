@@ -1,21 +1,24 @@
 <template>
   <article>
-    <HeroBase :image="image">
+    <HeroBase :hero-section="false" :image="insightFeature.cover">
       <template #default>
-        <p>Featured</p>
-        <h2>{{ insightFeature.title }}</h2>
-        <p>{{ insightFeature.description }}</p>
+        <h1 class="sr-only">Insights</h1>
+
+        <InsightBase
+          class="col-span-1 md:col-span-2 mt-12 text-left"
+          v-bind="insightFeature"
+        />
       </template>
     </HeroBase>
 
-    <div
-      class="container gap-4 grid grid-cols-1 md:grid-cols-2 mt-4 mx-auto px-4"
-    >
-      <InsightBase
-        v-for="insight in insights"
-        v-bind="insight"
-        :key="insight.slug"
-      />
+    <div class="bg-blue-dark">
+      <div class="container gap-4 grid grid-cols-1 md:grid-cols-2 pb-8 py-6">
+        <InsightBase
+          v-for="insight in insights"
+          v-bind="insight"
+          :key="insight.slug"
+        />
+      </div>
     </div>
   </article>
 </template>
@@ -23,10 +26,8 @@
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  AuthorContentT,
   AuthorContentsT,
   CategoryContentsT,
-  ImageContentT,
   ImageContentsT,
   InsightContentT,
   InsightContentsT
@@ -38,7 +39,7 @@ import type {
   InsightBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { authorsFilter, categoriesFilter, imageFind } from '@/utilities'
+import { insightsMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
@@ -59,6 +60,7 @@ export default Vue.extend({
         .only([
           'authors',
           'categories',
+          'cover',
           'description',
           'feature',
           'subtitle',
@@ -67,48 +69,17 @@ export default Vue.extend({
         .sortBy('publish', 'desc')
         .fetch<InsightBaseI>()) as InsightContentsT
 
+      insights = insightsMap(insights, authors, categories, images)
+
       const insightFeature: InsightContentT | undefined = insights.find(
         (insight: InsightContentT): boolean => insight.feature
       )
 
-      const image: ImageContentT | undefined = imageFind(
-        images,
-        insightFeature?.cover
-      )
-
-      insights = insights.map(
-        (insight: InsightContentT): InsightContentT => {
-          if (insight.authors?.length) {
-            insight.authors = authorsFilter(authors, insight.authors)
-
-            insight.authors = authors.map(
-              (author: AuthorContentT): AuthorContentT => {
-                if (author.image) {
-                  author.image = imageFind(images, author.image as string)
-                }
-
-                return author
-              }
-            )
-          }
-
-          if (insight.categories?.length) {
-            insight.categories = categoriesFilter(
-              categories,
-              insight.categories
-            )
-          }
-
-          if (insight.cover) {
-            insight.cover = imageFind(images, insight.cover as string)
-          }
-
-          return insight
-        }
+      insights = insights.filter(
+        (insight: InsightContentT): boolean => !insight.feature
       )
 
       return {
-        image,
         insightFeature,
         insights
       }

@@ -1,6 +1,6 @@
 <template>
-  <nav>
-    <div class="flex flex-wrap items-center">
+  <nav class="md:flex items-center">
+    <div class="flex flex-wrap items-center md:mr-auto">
       <Wordmark class="mr-auto" />
 
       <button class="md:hidden" @click="hiddenToggle">
@@ -9,7 +9,7 @@
     </div>
 
     <ol
-      class="float-right md:flex md:items-baseline md:items-center md:w-full mt-2 text-right"
+      class="float-right md:flex md:items-center w-full md:w-auto mt-2 md:mt-0 text-right"
       :class="listClassList"
     >
       <li
@@ -30,8 +30,12 @@
 import type { RouteRecordPublic } from 'vue-router'
 import Vue from 'vue'
 
+interface hidable {
+  hidden: boolean
+}
+
 export default Vue.extend({
-  data(): object {
+  data(): hidable {
     const hidden: boolean = true
 
     return {

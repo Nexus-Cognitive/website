@@ -5,7 +5,7 @@
         <p
           class="font-light font-mono text-sm sm:text-lg 2xl:text-xl text-left"
         >
-          We’re building digitally mature<br class="sm:hidden" />
+          We’re building digitally mature<br class="hidden xs:inline" />
           <FocusList :focuses="focuses" />
         </p>
       </template>

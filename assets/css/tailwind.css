@@ -4,10 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.hero-image,
 .hero-video,
 .slide-image,
 .slide-video {
   @apply absolute left-0 max-w-none xl:max-w-full object-cover;
+}
+.slide-image,
+.slide-video {
+  filter: grayscale(100%) opacity(20%);
 }
 
 .hero-video,
@@ -25,11 +30,6 @@
   @apply opacity-0;
 }
 
-.slide-image,
-.slide-video {
-  filter: grayscale(100%) opacity(20%);
-}
-
 abbr[title] {
   @apply no-underline;
 }
@@ -38,13 +38,17 @@ abbr[title] {
   @apply font-bold text-xs tracking-wider uppercase;
 }
 
-.hero-video {
-  @apply z-0;
+.hero-image {
+  filter: blur(2px) grayscale(100%) opacity(20%);
 }
 
 .hero-section {
   @apply flex flex-col h-screen items-center justify-center pb-9 sm:pb-24 z-10;
   max-width: 88ch;
+}
+
+.hero-video {
+  @apply z-0;
 }
 
 .page-title {

@@ -12,7 +12,7 @@
       playsinline
     />
 
-    <ImageBase v-if="imageShow" v-bind="image" class="slide-image" />
+    <ImageBase v-if="imageShow" v-bind="image" class="hero-image" />
 
     <SectionBase :class="sectionClassList_" tag="div">
       <template #default>
@@ -34,6 +34,11 @@ export default Vue.extend({
       type: Object as PropType<ImageContentT>
     },
 
+    heroSection: {
+      default: true,
+      type: Boolean
+    },
+
     sectionClassList: {
       default: '',
       type: String
@@ -51,7 +56,9 @@ export default Vue.extend({
     },
 
     sectionClassList_(): string {
-      return `hero-section ${this.sectionClassList}`
+      return `${this.heroSection ? 'hero-section' : ''} ${
+        this.sectionClassList
+      }`
     },
 
     videoShow(): boolean {
