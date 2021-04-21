@@ -1,10 +1,10 @@
 <template>
   <article>
-    <HeroBase :image="aboutHero">
+    <HeroBase :video="heroVideo">
       <template #default>
         <h1 class="sr-only">About</h1>
         <p class="page-title-large">
-          An agency rethinking how we work, play and experience the future
+          An agency rethinking how we work, play, and experience the future
           economy.
         </p>
       </template>
@@ -46,6 +46,7 @@ import type {
   SlideContentT,
   ImageContentsT,
   ColorContentsT,
+  VideoContentT,
   VideoContentsT
 } from '@/types'
 import type {
@@ -98,17 +99,16 @@ export default Vue.extend({
 
       authors = authors.map((author) => authorMap(author, images))
 
-      // let ledBySlide: SlideContentT = (await $content('slides', 'led-by')
-      //   .fetch<SlideBaseI>()) as SlideContentT
-
-      // ledBySlide = slideMap(ledBySlide, colors, images)
+      const heroVideo: VideoContentT | undefined = videos.find(
+        ({ slug }: VideoContentT): boolean => slug === 'about-hero'
+      )
 
       return {
         aboutHero,
         aboutImageOne,
-        weAreSlide,
-        authors
-        // ledBySlide
+        authors,
+        heroVideo,
+        weAreSlide
       }
     } catch (e: any) {
       error({ message: e.toString() })
