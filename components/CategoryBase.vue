@@ -8,6 +8,8 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  inheritAttrs: false,
+
   props: {
     slug: {
       required: true,

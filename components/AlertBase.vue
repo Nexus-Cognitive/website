@@ -39,12 +39,12 @@ export default Vue.extend({
     }
   },
 
-  mounted() {
+  mounted(): void {
     this.timeout()
   },
 
   methods: {
-    timeout() {
+    timeout(): void {
       setTimeout(() => (this.pulse = false), 2000)
     }
   }

@@ -1,8 +1,18 @@
 <template>
   <section :class="classList">
+    <VideoBase
+      v-if="videoShow"
+      v-bind="video"
+      autoplay
+      class="slide-video"
+      loop
+      muted
+      playsinline
+    />
+
     <ImageBase v-if="imageShow" v-bind="image" class="slide-image" />
 
-    <SectionBase>
+    <SectionBase class="hero-section">
       <template #default>
         <h2 :class="titleClassList" v-html="title"></h2>
 
@@ -19,9 +29,9 @@
 </template>
 
 <script lang="ts">
-import type { ColorContentT, ImageContentT } from '@/types'
+import type { ColorContentT, ImageContentT, VideoContentT } from '@/types'
 import Vue, { PropType } from 'vue'
-import { ImageContentM } from '@/models'
+import { ImageContentM, VideoContentM } from '@/models'
 
 export default Vue.extend({
   props: {
@@ -48,6 +58,11 @@ export default Vue.extend({
     title: {
       required: true,
       type: String
+    },
+
+    video: {
+      default: (): VideoContentT => VideoContentM,
+      type: Object as PropType<VideoContentT>
     }
   },
 
@@ -61,7 +76,7 @@ export default Vue.extend({
     },
 
     classList(): string {
-      return `bg-${this.backgroundColor.slug} overflow-hidden relative text-white`
+      return `bg-${this.backgroundColor.slug} flex flex-col items-center justify-center overflow-hidden relative text-center text-white`
     },
 
     imageShow(): boolean {
@@ -74,9 +89,13 @@ export default Vue.extend({
 
     titleClassList(): object {
       return {
-        'text-md xl:text-lg': true,
+        'font-light font-mono text-md xl:text-lg': true,
         'font-bold': this.subtitleShow
       }
+    },
+
+    videoShow(): boolean {
+      return !!this.video.src
     }
   }
 })

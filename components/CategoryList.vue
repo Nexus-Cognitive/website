@@ -1,8 +1,8 @@
 <template>
-  <ul class="flex">
+  <ul>
     <li v-for="(category, index) in categories" :key="category.slug">
-      <CategoryBase v-bind="category" />
-      <span v-if="categoryDelimiterShow(index)">|&nbsp;</span>
+      {{ category.title }}
+      <span v-if="categoryDelimiterShow(index)" class="mx-1">|</span>
     </li>
   </ul>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <SectionBase class="bg-black flex justify-between" tag="footer">
+  <SectionBase class="bg-black block md:flex justify-between" tag="footer">
     <div>
       <Wordmark />
 
@@ -12,7 +12,7 @@
       >
     </div>
 
-    <SocialBase />
+    <SocialBase class="mt-3 md:mt-0" />
   </SectionBase>
 </template>
 

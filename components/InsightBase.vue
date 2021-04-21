@@ -1,27 +1,29 @@
 <template>
   <article
-    class="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-lg shadow"
+    class="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-lg"
+    :class="classList"
   >
-    <div class="flex overflow-hidden">
+    <div
+      class="flex overflow-hidden md:row-start-1"
+      :class="imageContainerClassList"
+    >
       <ImageBase class="object-cover" v-bind="cover" />
     </div>
 
-    <div class="flex flex-col justify-center p-6">
+    <div class="flex flex-col p-3 md:p-6" :class="contentClassList">
       <header>
         <p v-if="feature" class="category flex items-baseline">
-          <ArrowBase class="mr-1" />Featured Insight
+          <ArrowBase class="md:-ml-3 mr-1" />Featured Insight
         </p>
 
-        <div class="flex">
-          // <CategoryList :categories="categories" class="ml-1" />
-        </div>
+        <CategoryList :categories="categories" :class="categoriesClassList" />
 
-        <h2 class="font-bold font-mono mt-2 text-md">
+        <h2 class="font-bold font-mono mt-2" :class="titleClassList">
           {{ title }}
         </h2>
       </header>
 
-      <p class="mt-2 text-sm">
+      <p :class="descriptionClassList">
         {{ description }}
       </p>
 
@@ -35,6 +37,8 @@ import type { AuthorContentsT, CategoryContentsT, ImageContentT } from '@/types'
 import Vue, { PropType } from 'vue'
 
 export default Vue.extend({
+  inheritAttrs: false,
+
   props: {
     authors: {
       required: true,
@@ -69,6 +73,48 @@ export default Vue.extend({
     title: {
       required: true,
       type: String
+    }
+  },
+
+  computed: {
+    categoriesClassList(): object {
+      return {
+        'md:flex': this.feature
+      }
+    },
+
+    classList(): object {
+      return {
+        'bg-purple shadow-lg': this.feature,
+        'bg-white shadow-md': !this.feature
+      }
+    },
+
+    contentClassList(): object {
+      return {
+        'justify-center text-white': this.feature,
+        'text-black': !this.feature
+      }
+    },
+
+    descriptionClassList(): object {
+      return {
+        'mt-2 text-sm': this.feature,
+        'mt-1': !this.feature
+      }
+    },
+
+    imageContainerClassList(): object {
+      return {
+        'md:col-start-2': !this.feature
+      }
+    },
+
+    titleClassList(): object {
+      return {
+        'text-md md:text-lg': this.feature,
+        'text-sm': !this.feature
+      }
     }
   }
 })

@@ -3,11 +3,13 @@
     <ImageBase
       v-if="imageShow"
       v-bind="image"
-      class="md:col-start-2 md:h-screen md:max-w-4xl 3xl:max-w-full object-cover md:row-start-1"
+      class="md:h-screen object-cover md:row-start-1"
+      :class="imageClassList"
     />
 
     <SectionBase
       class="flex flex-col justify-between md:py-6 lg:py-9 md:w-full"
+      :class="sectionClassList"
     >
       <h2 :class="titleClassList" v-html="title"></h2>
 
@@ -52,6 +54,11 @@ export default Vue.extend({
       type: Object as PropType<ImageContentT>
     },
 
+    imageRight: {
+      default: false,
+      type: Boolean
+    },
+
     industries: {
       required: true,
       type: Array as PropType<IndustryContentT[]>
@@ -77,12 +84,24 @@ export default Vue.extend({
       return `bg-${this.backgroundColor.slug} md:h-screen-half lg:h-screen grid md:grid-cols-2 md:grid-rows-1 overflow-hidden`
     },
 
+    imageClassList(): object {
+      return {
+        'md:col-start-2': this.imageRight
+      }
+    },
+
     imageShow(): boolean {
       return !!this.image.src
     },
 
     industriesClassList(): string {
       return `mt-2 md:mt-auto ${this.titleColor_}`
+    },
+
+    sectionClassList(): object {
+      return {
+        'md:col-start-2': !this.imageRight
+      }
     },
 
     titleClassList(): string {
