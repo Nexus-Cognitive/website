@@ -12,7 +12,7 @@
     </HeroBase>
 
     <div class="bg-blue-dark">
-      <div class="container gap-4 grid grid-cols-1 md:grid-cols-2 pb-8 py-6">
+      <div class="container gap-4 grid grid-cols-1 md:grid-cols-2 py-6">
         <InsightBase
           v-for="insight in insights"
           v-bind="insight"
@@ -63,6 +63,7 @@ export default Vue.extend({
           'cover',
           'description',
           'feature',
+          'slug',
           'subtitle',
           'title'
         ])
