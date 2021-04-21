@@ -1,6 +1,7 @@
 <template>
   <header
-    class="bg-purple flex lg:h-screen justify-center overflow-hidden relative text-center"
+    class="flex lg:h-screen justify-center overflow-hidden relative text-center"
+    :class="headerClassList"
   >
     <VideoBase
       v-if="videoShow"
@@ -29,6 +30,12 @@ import { ImageContentM, VideoContentM } from '@/models'
 
 export default Vue.extend({
   props: {
+    backgroundColor: {
+      default: 'purple',
+      type: String,
+      validator: (v) => ['black', 'blue-dark', 'purple'].includes(v)
+    },
+
     image: {
       default: (): ImageContentT => ImageContentM,
       type: Object as PropType<ImageContentT>
@@ -51,6 +58,10 @@ export default Vue.extend({
   },
 
   computed: {
+    headerClassList(): string {
+      return `bg-${this.backgroundColor}`
+    },
+
     imageShow(): boolean {
       return !!this.image.alt && !!this.image.src
     },

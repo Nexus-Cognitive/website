@@ -1,25 +1,27 @@
 <template>
   <article
-    class="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-lg"
+    class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-lg"
     :class="classList"
   >
     <div
-      class="flex overflow-hidden md:row-start-1"
+      class="flex overflow-hidden lg:row-start-1"
       :class="imageContainerClassList"
     >
-      <ImageBase class="object-cover" v-bind="cover" />
+      <ImageBase class="h-16 object-cover" v-bind="cover" />
     </div>
 
-    <div class="flex flex-col p-3 md:p-6" :class="contentClassList">
+    <div class="flex flex-col p-3 lg:p-6" :class="contentClassList">
       <header>
         <p v-if="feature" class="category flex items-baseline">
-          <ArrowBase class="md:-ml-3 mr-1" />Featured Insight
+          <ArrowBase class="lg:-ml-3 mr-1" />Featured Insight
         </p>
 
         <CategoryList :categories="categories" :class="categoriesClassList" />
 
         <h2 class="font-bold font-mono mt-2" :class="titleClassList">
-          {{ title }}
+          <NuxtLink :to="to">
+            {{ title }}
+          </NuxtLink>
         </h2>
       </header>
 
@@ -63,6 +65,11 @@ export default Vue.extend({
     feature: {
       required: true,
       type: Boolean
+    },
+
+    slug: {
+      required: true,
+      type: String
     },
 
     subtitle: {
@@ -115,6 +122,10 @@ export default Vue.extend({
         'text-md md:text-lg': this.feature,
         'text-sm': !this.feature
       }
+    },
+
+    to(): string {
+      return `/insights/${this.slug}`
     }
   }
 })
