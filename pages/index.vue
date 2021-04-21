@@ -17,11 +17,26 @@
       </template>
     </HeroBase>
 
-    <SectionBase class="bg-black" tag="div">
-      <InsightBase v-bind="insight" class="bg-purple" />
-    </SectionBase>
+    <SlideBase
+      v-for="slide in slides"
+      v-bind="slide"
+      :key="slide.slug"
+      class="h-screen"
+    />
 
-    <SlideBase v-for="slide in slides" v-bind="slide" :key="slide.slug" />
+    <SectionBase class="bg-blue-dark" tag="div">
+      <template #default>
+        <InsightBase v-bind="insight" />
+
+        <div class="gap-4 grid grid-cols-1 md:grid-cols-2 mt-5">
+          <InsightBase
+            v-for="insight in insights"
+            v-bind="insight"
+            :key="insight.slug"
+          />
+        </div>
+      </template>
+    </SectionBase>
   </article>
 </template>
 
@@ -32,13 +47,12 @@ import type {
   ColorContentsT,
   ImageContentsT,
   InsightContentsT,
-  SlideContentT,
   SlideContentsT,
   VideoContentT,
   CategoryContentsT,
-  AuthorContentT
+  VideoContentsT
 } from '@/types'
-import {
+import type {
   AuthorBaseI,
   CategoryBaseI,
   ColorBaseI,
@@ -49,10 +63,11 @@ import {
 } from '@/interfaces'
 import Vue from 'vue'
 import {
-  authorsFilter,
-  categoriesFilter,
-  colorFind,
-  imageFind
+  imageFind,
+  insightMap,
+  insightsMap,
+  slidesMap,
+  videoFind
 } from '@/utilities'
 
 export default Vue.extend({
@@ -74,59 +89,41 @@ export default Vue.extend({
         'images'
       ).fetch<ImageBaseI>()) as ImageContentsT
 
-      const [insight]: InsightContentsT = (await $content('insights')
+      const videos: VideoContentsT = (await $content(
+        'videos'
+      ).fetch<VideoBaseI>()) as VideoContentsT
+
+      let [insight]: InsightContentsT = (await $content('insights')
         .where({ feature: true })
+        .without('body')
         .fetch<InsightBaseI>()) as InsightContentsT
 
-      if (insight) {
-        if (insight.authors?.length) {
-          insight.authors = authorsFilter(authors, insight.authors)?.map(
-            (author: AuthorContentT): AuthorContentT => {
-              if (author.image) {
-                author.image = imageFind(images, author.image)
-              }
+      insight = insightMap(insight, authors, categories, images)
 
-              return author
-            }
-          )
-        }
+      let insights: InsightContentsT = (await $content('insights')
+        .where({ feature: false })
+        .sortBy('publish', 'desc')
+        .limit(2)
+        .without('body')
+        .fetch<InsightBaseI>()) as InsightContentsT
 
-        if (insight.categories?.length) {
-          insight.categories = categoriesFilter(categories, insight.categories)
-        }
-
-        if (insight.cover) {
-          insight.cover = imageFind(images, insight.cover)
-        }
-      }
-
-      const video: VideoContentT = (await $content(
-        'videos',
-        'index-hero'
-      ).fetch<VideoBaseI>()) as VideoContentT
-
-      video.poster = imageFind(images, video.poster)
+      insights = insightsMap(insights, authors, categories, images)
 
       let slides: SlideContentsT = (await $content('slides')
-        .sortBy('createdAt')
+        .sortBy('order')
         .fetch<SlideBaseI>()) as SlideContentsT
 
-      slides = slides.map(
-        (slide: SlideContentT): SlideContentT => {
-          if (slide.backgroundColor) {
-            slide.backgroundColor = colorFind(colors, slide.backgroundColor)
-          }
+      slides = slidesMap(slides, colors, images, videos)
 
-          if (slide.image) {
-            slide.image = imageFind(images, slide.image)
-          }
+      const video: VideoContentT | undefined = videoFind(videos, 'index-hero')
 
-          return slide
-        }
-      )
+      if (video) {
+        video.poster = imageFind(images, video.poster)
+      }
 
       return {
         insight,
+        insights,
         slides,
         video
       }

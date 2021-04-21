@@ -2,19 +2,20 @@
   <article>
     <HeroBase section-class-list="pb-9 sm:pb-24" :video="video">
       <template #default>
-        <p class="font-light font-mono text-xs sm:text-lg 2xl:text-xl">
-          We’re building digitally mature<br
-            class="hidden xs:inline 3xl:hidden"
-          />
+        <p
+          class="font-light font-mono text-sm sm:text-lg 2xl:text-xl text-left"
+        >
+          We’re building digitally mature<br class="sm:hidden" />
           <FocusList :focuses="focuses" />
         </p>
       </template>
     </HeroBase>
 
     <StrategyBase
-      v-for="strategy in strategies"
+      v-for="(strategy, index) in strategies"
       v-bind="strategy"
       :key="strategy.slug"
+      :image-right="strategyImageRightGet(index)"
     />
   </article>
 </template>
@@ -113,6 +114,12 @@ export default Vue.extend({
       }
     } catch (e: any) {
       error({ message: e.toString() })
+    }
+  },
+
+  methods: {
+    strategyImageRightGet(index: number): boolean {
+      return !(index % 2 === 0)
     }
   }
 })
