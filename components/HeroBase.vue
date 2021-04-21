@@ -3,15 +3,7 @@
     class="flex lg:h-screen justify-center overflow-hidden relative text-center"
     :class="headerClassList"
   >
-    <VideoBase
-      v-if="videoShow"
-      v-bind="video"
-      autoplay
-      class="hero-video"
-      loop
-      muted
-      playsinline
-    />
+    <VideoBase v-if="videoShow" v-bind="video" class="hero-video" />
 
     <ImageBase v-if="imageShow" v-bind="image" class="hero-image" />
 

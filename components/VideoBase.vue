@@ -1,6 +1,10 @@
 <template>
   <video
+    autoplay
     :height="height"
+    loop
+    muted
+    playsinline
     :poster="poster.src"
     :src="src"
     :width="width"
