@@ -34,14 +34,12 @@ import type { Context } from '@nuxt/types'
 import type {
   AuthorContentsT,
   CategoryContentsT,
-  ColorContentT,
   ImageContentsT,
   InsightContentT
 } from '@/types'
 import {
   AuthorBaseI,
   CategoryBaseI,
-  ColorBaseI,
   ImageBaseI,
   InsightBaseI
 } from '@/interfaces'
