@@ -14,7 +14,9 @@
 
     <SectionBase class="hero-section">
       <template #default>
-        <h2 :class="titleClassList" v-html="title"></h2>
+        <div class="flex items-center">
+          <ArrowBase class="mr-1" /><h2 :class="titleClassList" v-html="title"></h2>
+        </div>
 
         <p
           v-if="subtitleShow"
