@@ -62,10 +62,6 @@ abbr[title] {
   @apply font-light sm:text-md 2xl:text-lg;
 }
 
-.page-title-large {
-  @apply font-light font-mono text-sm sm:text-md 2xl:text-lg;
-}
-
 .page-subtitle {
   @apply font-light font-mono mt-2 text-xs sm:text-sm;
 }
