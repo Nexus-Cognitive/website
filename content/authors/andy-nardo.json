@@ -1,9 +1,9 @@
 {
-    "title": "Andy Nardo",
-    "image": "andy-nardo",
-    "order": 4,
-    "partner": true,
-    "position": "<abbr title='Chief Technology Officer'>CTO</abbr>",
-    "email": "andy@nexuscognitive.com",
-    "linkedIn": "https://www.linkedin.com/in/andrewnardo"
-  }
+  "title": "Andy Nardo",
+  "image": "andy-nardo",
+  "order": 4,
+  "partner": true,
+  "position": "<abbr title='Chief Technology Officer'>CTO</abbr>",
+  "email": "andy@nexuscognitive.com",
+  "linkedIn": "https://www.linkedin.com/in/andrewnardo"
+}
