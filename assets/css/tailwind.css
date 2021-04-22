@@ -32,6 +32,11 @@
   @apply transition-opacity;
 }
 
+.page-title,
+.page-title-large {
+  @apply font-title text-sm;
+}
+
 abbr[title] {
   @apply no-underline;
 }
@@ -50,7 +55,11 @@ abbr[title] {
 }
 
 .page-title {
-  @apply font-bold text-sm md:text-md tracking-wider uppercase;
+  @apply font-bold md:text-md tracking-wider uppercase;
+}
+
+.page-title-large {
+  @apply font-light sm:text-md 2xl:text-lg;
 }
 
 .page-title-large {
@@ -62,7 +71,7 @@ abbr[title] {
 }
 
 .slide-image {
-  @apply bottom-0 mt-auto z-10;
+  @apply bottom-0 z-10;
 }
 
 .underline {

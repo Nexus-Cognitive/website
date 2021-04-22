@@ -4,7 +4,33 @@ const borderRadiuses = ['xs', 'sm', 'md', 'lg', 'xl']
 const borderRadius = {}
 borderRadiuses.forEach((b, i) => (borderRadius[b] = `${i * unit}px`))
 
-const colors = [
+const colors = {
+  black: {
+    DEFAULT: '#22202E'
+  },
+  blue: {
+    dark: '#0C163B',
+    DEFAULT: '#444AE2'
+  },
+  gray: {
+    dark: '#4B4B5E',
+    light: '#B6B5BF'
+  },
+  green: {
+    DEFAULT: '#2A4D4B'
+  },
+  purple: {
+    DEFAULT: '#2E2A4D'
+  },
+  red: {
+    DEFAULT: '#E24944'
+  },
+  white: {
+    DEFAULT: '#F7F7F7'
+  }
+}
+
+const colorClasses = [
   'black',
   'blue',
   'blue-dark',
@@ -14,8 +40,24 @@ const colors = [
   'red',
   'purple'
 ]
-const backgrounds = colors.map((c) => `bg-${c}`)
-const texts = colors.map((c) => `text-${c}`)
+const backgrounds = colorClasses.map((c) => `bg-${c}`)
+const texts = colorClasses.map((c) => `text-${c}`)
+
+const fontFamily = {
+  mono: ['ibm-plex-mono', 'monospace'],
+  sans: ['ibm-plex-sans', 'sans-serif'],
+  title: ['commuter-sans', 'sans-serif']
+}
+const fontFamilies = ['mono', 'sans', 'title'].map((f) => `font-${f}`)
+const fontWeights = ['light', 'bold'].map((f) => `font-${f}`)
+
+const fontSize = {
+  xs: ['16px', '24px'],
+  sm: ['24px', '32px'],
+  md: ['32px', '40px'],
+  lg: ['48px', '56px'],
+  xl: ['64px', '72px']
+}
 
 const opacities = [0, 20, 60].map((o) => `opacity-${o}`)
 
@@ -67,6 +109,8 @@ module.exports = {
       safelist: [
         ...backgrounds,
         ...texts,
+        ...fontFamilies,
+        ...fontWeights,
         ...opacities,
         ...topsBase,
         ...topsBase_,
@@ -83,31 +127,7 @@ module.exports = {
       ...borderRadius,
       full: '9999px'
     },
-    colors: {
-      black: {
-        DEFAULT: '#22202E'
-      },
-      blue: {
-        dark: '#0C163B',
-        DEFAULT: '#444AE2'
-      },
-      gray: {
-        dark: '#4B4B5E',
-        light: '#B6B5BF'
-      },
-      green: {
-        DEFAULT: '#2A4D4B'
-      },
-      purple: {
-        DEFAULT: '#2E2A4D'
-      },
-      red: {
-        DEFAULT: '#E24944'
-      },
-      white: {
-        DEFAULT: '#F7F7F7'
-      }
-    },
+    colors,
     container: {
       center: true
     },
@@ -118,55 +138,63 @@ module.exports = {
         30: '0.3',
         50: '0.5'
       },
-      typography: (theme) => ({
+      typography: {
         DEFAULT: {
           css: {
-            color: theme('colors.black.DEFAULT'),
+            color: colors.black.DEFAULT,
             a: {
-              color: theme('colors.blue.DEFAULT'),
+              color: colors.blue.DEFAULT,
               '&:hover': {
-                color: theme('colors.blue.dark')
+                color: colors.blue.dark
               }
             },
             blockquote: {
-              borderLeftColor: theme('colors.blue.DEFAULT'),
-              color: theme('colors.blue.DEFAULT'),
-              fontFamily: theme('fontFamily.mono'),
-              fontSize: theme('fontSize.sm')
+              borderLeftColor: colors.blue.DEFAULT,
+              color: colors.blue.DEFAULT,
+              fontFamily: fontFamily.sans.join(','),
+              fontSize: fontSize.sm[0],
+              fontStyle: 'normal',
+              lineHeight: fontSize.sm[1],
+              quotes: null
             },
             h1: {
-              fontFamily: theme('fontFamily.mono')
+              color: colors.blue.dark,
+              fontFamily: fontFamily.mono[0],
+              fontSize: fontSize.lg[0],
+              fontWeight: '300',
+              lineHeight: fontSize.lg[1]
             },
             h2: {
-              fontFamily: theme('fontFamily.mono')
+              color: colors.blue.dark,
+              fontFamily: fontFamily.mono.join(','),
+              fontSize: fontSize.md[0],
+              lineHeight: fontSize.md[1]
             },
             h3: {
-              fontFamily: theme('fontFamily.mono')
+              color: colors.blue.dark,
+              fontFamily: fontFamily.mono.join(','),
+              fontSize: fontSize.sm[0],
+              fontWeight: '700',
+              lineHeight: fontSize.sm[1]
             },
             h4: {
-              fontFamily: theme('fontFamily.mono')
+              color: colors.blue.dark,
+              fontFamily: fontFamily.mono.join(',')
             },
             h5: {
-              fontFamily: theme('fontFamily.mono')
+              color: colors.blue.dark,
+              fontFamily: fontFamily.mono.join(',')
             },
             h6: {
-              fontFamily: theme('fontFamily.mono')
+              color: colors.blue.dark,
+              fontFamily: fontFamily.mono.join(',')
             }
           }
         }
-      })
+      }
     },
-    fontFamily: {
-      mono: ['ibm-plex-mono', 'monospace'],
-      sans: ['commuter-sans', 'sans-serif']
-    },
-    fontSize: {
-      xs: ['16px', '24px'],
-      sm: ['24px', '32px'],
-      md: ['32px', '40px'],
-      lg: ['48px', '56px'],
-      xl: ['64px', '72px']
-    },
+    fontFamily,
+    fontSize,
     height: {
       ...height,
       screen: '100vh',
