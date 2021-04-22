@@ -7,12 +7,12 @@ module.exports = {
       true,
       {
         ignoreAtRules: [
-          'apply',
-          'layer',
-          'responsive',
-          'screen',
-          'tailwind',
-          'variants'
+          /apply/,
+          /layer/,
+          /responsive/,
+          /screen/,
+          /tailwind/,
+          /variants/
         ]
       }
     ],
