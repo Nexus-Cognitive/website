@@ -18,7 +18,7 @@
       </template>
     </HeroBase>
 
-    <VimeoVideo :video="futureStaticVideo">
+    <SectionVideo :video="futureStaticVideo">
       <section
         class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
       >
@@ -32,7 +32,7 @@
           Get the tools and strategies to shape your new standards in business
         </p>
       </section>
-    </VimeoVideo>
+    </SectionVideo>
 
     <SlideBase
       v-for="slide in slides"

@@ -13,13 +13,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue, { PropType } from 'vue'
+import type { VideoContentT } from '@/types'
 
 export default Vue.extend({
   props: {
     video: {
       required: true,
-      type: Object
+      type: Object as PropType<VideoContentT>
     }
   }
 })

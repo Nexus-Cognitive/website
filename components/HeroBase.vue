@@ -3,7 +3,7 @@
     class="flex lg:h-screen justify-center overflow-hidden relative text-center"
     :class="headerClassList"
   >
-    <VimeoVideo v-if="videoShow" :video="video" class="hero-video" />
+    <SectionVideo v-if="videoShow" :video="video" class="hero-video" />
 
     <ImageBase v-if="imageShow" v-bind="image" class="hero-image" />
 
