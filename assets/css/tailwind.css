@@ -41,6 +41,10 @@ abbr[title] {
   @apply no-underline;
 }
 
+address {
+  @apply font-normal;
+}
+
 .category {
   @apply font-bold text-xs tracking-wider uppercase;
 }
