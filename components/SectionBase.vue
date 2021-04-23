@@ -1,5 +1,8 @@
 <template>
-  <component :is="tag" class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10">
+  <component
+    :is="tag"
+    class="px-3 sm:px-5 pb-5 sm:pb-8 pt-3 sm:pt-5 text-white z-10"
+  >
     <slot name="default"></slot>
   </component>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="author in authors" :key="author.slug">
+    <li v-for="author in authors" :key="author.slug" class="item">
       <AuthorBase v-bind="author" />
     </li>
   </ul>
@@ -19,3 +19,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped lang="scss">
+.item:not(:first-child) {
+  @apply mt-2;
+}
+</style>
