@@ -19,9 +19,19 @@ export default Vue.extend({
       type: Boolean
     },
 
+    height: {
+      required: true,
+      type: Number
+    },
+
     src: {
       required: true,
       type: String
+    },
+
+    width: {
+      required: true,
+      type: Number
     }
   },
 
