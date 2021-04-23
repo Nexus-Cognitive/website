@@ -8,5 +8,5 @@ export function authorsFilterMap(
 ): AuthorContentsT | undefined {
   const _authors = authorsFilter(authors, relations)
 
-  return _authors ? authorsMap(authors, images) : _authors
+  return _authors ? authorsMap(_authors, images) : _authors
 }

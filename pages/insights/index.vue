@@ -1,6 +1,10 @@
 <template>
   <article>
-    <HeroBase :hero-section="false" :image="insightFeature.cover">
+    <HeroBase
+      background-color="blue-dark"
+      :hero-section="false"
+      :image="insightFeature.cover"
+    >
       <template #default>
         <h1 class="sr-only">Insights</h1>
 

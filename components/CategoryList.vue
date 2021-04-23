@@ -1,8 +1,15 @@
 <template>
-  <ul>
-    <li v-for="(category, index) in categories" :key="category.slug">
-      {{ category.title }}
-      <span v-if="categoryDelimiterShow(index)" class="mx-1">|</span>
+  <ul class="font-mono">
+    <li
+      v-for="(category, index) in categories"
+      :key="category.slug"
+      class="inline"
+    >
+      <span v-if="startShow(index)">//</span>
+      <NuxtLink :to="toGet(category.slug)"
+        >{{ category.title
+        }}<span v-if="delimiterShow(index)">,</span></NuxtLink
+      >
     </li>
   </ul>
 </template>
@@ -20,14 +27,22 @@ export default Vue.extend({
   },
 
   computed: {
-    categoriesLast(): number {
+    last(): number {
       return this.categories.length - 1
     }
   },
 
   methods: {
-    categoryDelimiterShow(index: number): boolean {
-      return index < this.categoriesLast
+    delimiterShow(index: number): boolean {
+      return index !== this.last
+    },
+
+    startShow(index: number): boolean {
+      return !index
+    },
+
+    toGet(slug: string): string {
+      return `/insights/categories/${slug}`
     }
   }
 })

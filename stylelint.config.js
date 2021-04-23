@@ -1,7 +1,6 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
-  // add your custom config here
-  // https://stylelint.io/user-guide/configuration
+  extends: ['stylelint-config-sass-guidelines', 'stylelint-config-prettier'],
+  plugins: ['stylelint-scss'],
   rules: {
     'at-rule-no-unknown': [
       true,
@@ -16,6 +15,7 @@ module.exports = {
         ]
       }
     ],
-    'declaration-empty-line-before': 'never'
+    'declaration-empty-line-before': 'never',
+    'max-nesting-depth': 4
   }
 }

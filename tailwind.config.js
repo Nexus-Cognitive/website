@@ -76,7 +76,7 @@ const tops2xl_ = tops2xl.map((t) => {
   return [breakpoint, ':-', top].join('')
 })
 
-const heights = 8
+const heights = 32
 const height = {}
 for (let h = 0; h <= heights; h++) {
   height[`${h}`] = `${h * 8}px`
@@ -197,6 +197,8 @@ module.exports = {
     fontSize,
     height: {
       ...height,
+      auto: 'auto',
+      full: '100%',
       screen: '100vh',
       'screen-half': '50vh'
     },

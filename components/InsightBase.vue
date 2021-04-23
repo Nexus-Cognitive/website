@@ -1,35 +1,33 @@
 <template>
-  <article
-    class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-lg"
-    :class="classList"
-  >
-    <div
-      class="flex overflow-hidden lg:row-start-1"
-      :class="imageContainerClassList"
-    >
-      <ImageBase class="h-16 object-cover" v-bind="cover" />
+  <article class="base" :class="classList">
+    <!-- cover container -->
+    <div class="cover-container">
+      <!-- image -->
+      <ImageBase v-bind="cover" class="cover-image" />
     </div>
-
-    <div class="flex flex-col p-3 lg:p-6" :class="contentClassList">
+    <!-- content container -->
+    <div class="content-container">
       <header>
-        <p v-if="feature" class="category flex items-baseline">
-          <ArrowBase class="lg:-ml-3 mr-1" />Featured Insight
-        </p>
-
-        <CategoryList :categories="categories" :class="categoriesClassList" />
-
-        <h2 class="font-bold font-mono mt-2" :class="titleClassList">
+        <!-- categories -->
+        <CategoryList :categories="categories" />
+        <!-- heading -->
+        <h2 class="title">
+          <!-- link -->
           <NuxtLink :to="to">
+            <!-- title -->
             {{ title }}
           </NuxtLink>
         </h2>
       </header>
-
-      <p :class="descriptionClassList">
+      <!-- description -->
+      <p class="description">
         {{ description }}
       </p>
-
-      <AuthorList :authors="authors" class="mt-2" />
+      <!-- footer -->
+      <footer class="footer">
+        <!-- authors -->
+        <AuthorList :authors="authors" class="authors" />
+      </footer>
     </div>
   </article>
 </template>
@@ -84,43 +82,9 @@ export default Vue.extend({
   },
 
   computed: {
-    categoriesClassList(): object {
-      return {
-        'md:flex': this.feature
-      }
-    },
-
     classList(): object {
       return {
-        'bg-purple shadow-lg': this.feature,
-        'bg-white shadow-md': !this.feature
-      }
-    },
-
-    contentClassList(): object {
-      return {
-        'justify-center text-white': this.feature,
-        'text-black': !this.feature
-      }
-    },
-
-    descriptionClassList(): object {
-      return {
-        'mt-2 text-sm': this.feature,
-        'mt-1': !this.feature
-      }
-    },
-
-    imageContainerClassList(): object {
-      return {
-        'md:col-start-2': !this.feature
-      }
-    },
-
-    titleClassList(): object {
-      return {
-        'text-md md:text-lg': this.feature,
-        'text-sm': !this.feature
+        feature: this.feature
       }
     },
 
@@ -130,3 +94,80 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped lang="scss">
+.base {
+  @apply bg-white gap-3 md:gap-4 grid grid-cols-1 xl:grid-cols-2 overflow-hidden rounded-lg shadow text-black;
+
+  &.feature {
+    @apply bg-purple md:grid-cols-2 shadow-lg text-white;
+
+    .content {
+      &-container {
+        @apply md:justify-center md:pt-3 md:pl-0;
+      }
+    }
+
+    .cover {
+      &-container,
+      &-image {
+        @apply md:h-full;
+      }
+    }
+
+    .description {
+      @apply xl:text-sm;
+    }
+
+    .footer {
+      @apply xl:mt-0;
+    }
+
+    .title {
+      @apply text-md lg:text-lg;
+    }
+  }
+
+  &,
+  &.feature {
+    .content {
+      &-container {
+        @apply xl:py-4;
+      }
+    }
+  }
+}
+
+.authors {
+  @apply mt-2;
+}
+
+.content {
+  &-container {
+    @apply flex flex-col pb-3 px-3 xl:pl-0 xl:pr-4;
+  }
+}
+
+.cover {
+  &-container,
+  &-image {
+    @apply h-24 sm:h-32 xl:h-full;
+  }
+
+  &-image {
+    @apply object-cover w-full;
+  }
+}
+
+.description {
+  @apply mt-1;
+}
+
+.footer {
+  @apply mt-auto;
+}
+
+.title {
+  @apply font-bold font-title mt-2 text-sm xl:text-md;
+}
+</style>

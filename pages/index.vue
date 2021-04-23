@@ -27,7 +27,14 @@
 
     <SectionBase class="bg-blue-dark" tag="div">
       <template #default>
-        <InsightBase v-bind="insight" />
+        <div class="flex items-baseline">
+          <ArrowBase class="mr-1 text-blue" />
+          <h2 class="font-bold font-title text-sm tracking-wider uppercase">
+            Latest Insights
+          </h2>
+        </div>
+
+        <InsightBase v-bind="insight" class="mt-4" />
 
         <div class="gap-4 grid grid-cols-1 md:grid-cols-2 mt-5">
           <InsightBase

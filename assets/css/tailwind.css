@@ -42,7 +42,7 @@ abbr[title] {
 }
 
 address {
-  @apply font-normal;
+  font-style: normal;
 }
 
 .category {
