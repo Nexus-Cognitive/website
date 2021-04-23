@@ -18,13 +18,6 @@
       </template>
     </HeroBase>
 
-    <SlideBase
-      v-for="slide in slides"
-      v-bind="slide"
-      :key="slide.slug"
-      class="h-screen"
-    />
-
     <VimeoVideo :video="futureStaticVideo">
       <section
         class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
@@ -40,6 +33,13 @@
         </p>
       </section>
     </VimeoVideo>
+
+    <SlideBase
+      v-for="slide in slides"
+      v-bind="slide"
+      :key="slide.slug"
+      class="h-screen"
+    />
 
     <SectionBase class="bg-blue-dark" tag="div">
       <template #default>
