@@ -18,7 +18,7 @@
       </template>
     </HeroBase>
 
-    <SectionVideo :video="futureStaticVideo">
+    <SectionVideo v-bind="futureStaticVideo">
       <section
         class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
       >
@@ -141,6 +141,10 @@ export default Vue.extend({
 
       if (video) {
         video.poster = imageFind(images, video.poster)
+      }
+
+      if (futureStaticVideo) {
+        futureStaticVideo.poster = imageFind(images, futureStaticVideo.poster)
       }
 
       return {

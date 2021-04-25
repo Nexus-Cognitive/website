@@ -1,12 +1,15 @@
 <template>
-  <div class="vimeo-wrapper flex justify-center items-center">
+  <div class="section-video-wrapper flex justify-center items-center">
     <iframe
-      class="vimeo-iframe"
-      frameborder="0"
-      webkitallowfullscreen
-      mozallowfullscreen
       allowfullscreen
-      :src="video.src"
+      class="section-video-iframe"
+      frameborder="0"
+      :height="height"
+      mozallowfullscreen
+      :poster="poster.src"
+      :src="src"
+      webkitallowfullscreen
+      :width="width"
     />
     <slot></slot>
   </div>
@@ -14,13 +17,28 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue'
-import type { VideoContentT } from '@/types'
+import type { ImageContentT } from '@/types'
 
 export default Vue.extend({
   props: {
-    video: {
+    height: {
       required: true,
-      type: Object as PropType<VideoContentT>
+      type: Number
+    },
+
+    poster: {
+      required: true,
+      type: Object as PropType<ImageContentT>
+    },
+
+    src: {
+      required: true,
+      type: String
+    },
+
+    width: {
+      required: true,
+      type: Number
     }
   }
 })
