@@ -6,10 +6,7 @@
       class="inline"
     >
       <span v-if="startShow(index)">//</span>
-      <NuxtLink :to="toGet(category.slug)"
-        >{{ category.title
-        }}<span v-if="delimiterShow(index)">,</span></NuxtLink
-      >
+      {{ category.title }}<span v-if="delimiterShow(index)">,</span>
     </li>
   </ul>
 </template>
