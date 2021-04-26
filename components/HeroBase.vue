@@ -3,7 +3,7 @@
     class="flex lg:h-screen justify-center overflow-hidden relative text-center"
     :class="headerClassList"
   >
-    <VideoBase v-if="videoShow" v-bind="video" class="hero-video" />
+    <SectionVideo v-if="videoShow" v-bind="video" class="hero-video" />
 
     <ImageBase v-if="imageShow" v-bind="image" class="hero-image" />
 
@@ -31,6 +31,11 @@ export default Vue.extend({
     image: {
       default: (): ImageContentT => ImageContentM,
       type: Object as PropType<ImageContentT>
+    },
+
+    heroVideo: {
+      default: null,
+      type: Object as PropType<VideoContentT>
     },
 
     heroSection: {
