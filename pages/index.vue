@@ -114,6 +114,7 @@ export default Vue.extend({
 
       let insights: InsightContentsT = (await $content('insights')
         .without('body')
+        .sortBy('publish', 'desc')
         .fetch<InsightBaseI>()) as InsightContentsT
 
       insights = insightsMap(insights, authors, categories, images)
@@ -122,9 +123,9 @@ export default Vue.extend({
         ({ feature }: InsightContentT): boolean => feature
       ) as InsightContentT
 
-      insights = insights.filter(
-        ({ feature }: InsightContentT): boolean => !feature
-      )
+      insights = insights
+        .filter(({ feature }: InsightContentT): boolean => !feature)
+        ?.slice(0, 2)
 
       let slides: SlideContentsT = (await $content('slides')
         .sortBy('order')
