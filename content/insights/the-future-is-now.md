@@ -4,6 +4,7 @@ subtitle: Industry leaders will be those who adapt
 description: Technological change is happening at a rapid pace, no more so than in Information Technology (IT).
 authors:
   - anu-jain
+publish: 2021-01-08T12:00:00Z
 categories:
   - artificial-intelligence
   - data-analytics

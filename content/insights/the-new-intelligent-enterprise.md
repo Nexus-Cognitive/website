@@ -3,6 +3,7 @@ title: The New Intelligent Enterprise
 description: Smart companies will leverage new technologies to become exponentially more intelligent.
 authors:
   - anu-jain
+publish: 2021-01-12T12:00:00Z
 categories: 
   - business-intelligence
   - data-analytics
