@@ -31,7 +31,7 @@
         src="/images/our-framework.jpeg"
         class="illuminate-image"
       />
-      <section class="illuminate-text">
+      <div class="illuminate-text">
         <div class="flex items-center">
           <ArrowBase class="mr-1" />
           <h2
@@ -55,7 +55,7 @@
         >
           See Our Framework
         </a>
-      </section>
+      </div>
       <img src="/images/framework-logos.svg" class="illuminate-logos" />
     </section>
 
