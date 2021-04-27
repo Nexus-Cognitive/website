@@ -2,7 +2,7 @@
 title: Deep Learning, Seismic Reflection Data for the DoI
 description: Delivering state-of-the-art solutions to investigate the mineral potential of Alaska's Offshore Continental Shelf (OCS).
 authors:
-  - andy-nardo
+  - scott-marvel
 publish: 2020-09-28T12:00:00Z
 categories:
   - press-release
