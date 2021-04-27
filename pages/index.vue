@@ -25,13 +25,13 @@
       class="h-screen"
     />
 
-    <section class="illuminate-wrapper">
+    <div class="illuminate-wrapper">
       <img
         alt="Photo of trees in a forest."
         src="/images/our-framework.jpeg"
         class="illuminate-image"
       />
-      <div class="illuminate-text">
+      <section class="illuminate-text">
         <div class="flex items-center">
           <ArrowBase class="mr-1" />
           <h2
@@ -55,9 +55,9 @@
         >
           See Our Framework
         </a>
-      </div>
+      </section>
       <img src="/images/framework-logos.svg" class="illuminate-logos" />
-    </section>
+    </div>
 
     <SectionVideo v-bind="futureStaticVideo">
       <section
