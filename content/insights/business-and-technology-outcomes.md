@@ -3,6 +3,7 @@ title: Business and Technology Outcomes
 description: How business outcomes and technology outcomes shape the success of your analytics efforts.
 authors:
   - anu-jain
+publish: 2021-01-15T12:00:00Z
 categories:
   - business-strategy
 cover: business-and-technology-outcomes
