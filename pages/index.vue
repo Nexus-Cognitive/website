@@ -1,6 +1,6 @@
 <template>
   <article>
-    <HeroBase section-class-list="md:h-screen-half lg:h-screen" :video="video">
+    <HeroBase section-class-list="md:h-screen" :video="video">
       <template #default>
         <h1 class="sr-only">Home</h1>
 
@@ -18,22 +18,6 @@
       </template>
     </HeroBase>
 
-    <SectionVideo v-bind="futureStaticVideo">
-      <section
-        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
-      >
-        <div class="flex items-center">
-          <ArrowBase class="mr-1" />
-          <h2 class="font-light font-mono text-md xl:text-lg">
-            The Future isn’t Static
-          </h2>
-        </div>
-        <p class="font-mono mt-3 text-xs xl:text-sm">
-          Get the tools and strategies to shape your new standards in business
-        </p>
-      </section>
-    </SectionVideo>
-
     <SlideBase
       v-for="slide in slides"
       v-bind="slide"
@@ -50,9 +34,15 @@
       <section class="illuminate illuminate-text">
         <div class="flex items-center">
           <ArrowBase class="mr-1" />
-          <h2 class="font-light font-mono text-md xl:text-lg">Our Framework</h2>
+          <h2
+            class="font-bold font-mono font-title text-sm tracking-widest uppercase"
+          >
+            Our Framework
+          </h2>
         </div>
-        <h3 class="xs:mt-1 mt-2 xs:text-sm text-md xl:text-lg">
+        <h3
+          class="font-light font-mono xs:mt-1 mt-2 xs:text-sm text-md xl:text-lg"
+        >
           Illuminating your way forward
         </h3>
         <p class="font-mono xs:mt-1 mt-3 text-xs xl:text-sm">
@@ -71,6 +61,22 @@
         class="illuminate illuminate-img"
       />
     </section>
+
+    <SectionVideo v-bind="futureStaticVideo">
+      <section
+        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
+      >
+        <div class="flex items-center">
+          <ArrowBase class="mr-1" />
+          <h2 class="font-light font-mono text-md xl:text-lg">
+            The Future isn’t Static
+          </h2>
+        </div>
+        <p class="font-mono mt-3 text-xs xl:text-sm">
+          Get the tools and strategies to shape your new standards in business
+        </p>
+      </section>
+    </SectionVideo>
 
     <SectionBase class="bg-blue-dark" tag="div">
       <template #default>
