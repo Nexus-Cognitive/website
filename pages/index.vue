@@ -1,6 +1,6 @@
 <template>
   <article>
-    <HeroBase section-class-list="md:h-screen-half lg:h-screen" :video="video">
+    <HeroBase section-class-list="md:h-screen" :video="video">
       <template #default>
         <h1 class="sr-only">Home</h1>
 
@@ -18,6 +18,50 @@
       </template>
     </HeroBase>
 
+    <SlideBase
+      v-for="slide in slides"
+      v-bind="slide"
+      :key="slide.slug"
+      class="h-screen"
+    />
+
+    <section class="illuminate-section">
+      <img
+        alt="Photo of trees in a forest."
+        src="/images/our-framework.jpeg"
+        class="illuminate-image"
+      />
+      <section class="illuminate illuminate-text">
+        <div class="flex items-center">
+          <ArrowBase class="mr-1" />
+          <h2
+            class="font-bold font-mono font-title text-sm tracking-widest uppercase"
+          >
+            Our Framework
+          </h2>
+        </div>
+        <h3
+          class="font-light font-mono xs:mt-1 mt-2 xs:text-sm text-md xl:text-lg"
+        >
+          Illuminating your way forward
+        </h3>
+        <p class="font-mono xs:mt-1 mt-3 text-xs xl:text-sm">
+          We build on platforms and technologies that empower, illuminate and
+          amplify your employees and products.
+        </p>
+        <a
+          href="/services"
+          class="w-auto mt-5 px-4 py-2 bg-blue font-mono text-xs md:text-sm box-content"
+        >
+          See Our Framework
+        </a>
+      </section>
+      <img
+        src="/images/framework-logos.svg"
+        class="illuminate illuminate-img"
+      />
+    </section>
+
     <SectionVideo v-bind="futureStaticVideo">
       <section
         class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
@@ -33,13 +77,6 @@
         </p>
       </section>
     </SectionVideo>
-
-    <SlideBase
-      v-for="slide in slides"
-      v-bind="slide"
-      :key="slide.slug"
-      class="h-screen"
-    />
 
     <SectionBase class="bg-blue-dark" tag="div">
       <template #default>

@@ -58,6 +58,21 @@ address {
   @apply z-0;
 }
 
+.illuminate-section {
+  @apply h-auto md:h-screen bg-black flex flex-row xs:flex-wrap md:flex-wrap lg:flex-nowrap items-center justify-center overflow-hidden relative text-center text-white;
+}
+.illuminate {
+  @apply px-3 sm:px-5 pb-5 sm:pb-8 pt-3 sm:pt-5 z-10 xs:w-full sm:w-6/12 flex xs:items-center sm:items-start;
+}
+
+.illuminate-text {
+  @apply xs:justify-center sm:justify-start flex-col text-left text-white;
+}
+
+.illuminate-image {
+  @apply absolute left-0 max-w-full object-cover filter opacity-25 min-h-full min-w-full;
+}
+
 .page-title {
   @apply font-bold md:text-md tracking-wider uppercase;
 }
