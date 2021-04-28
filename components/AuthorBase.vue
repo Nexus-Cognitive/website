@@ -2,7 +2,7 @@
   <figure class="flex items-center">
     <ImageBase avatar class="h-6 mr-2 w-6" v-bind="image" />
 
-    <figcaption class="flex items-baseline">
+    <figcaption class="flex items-center">
       <span class="font-bold tracking-wider uppercase">{{ title }}</span>
       <span class="mx-1">|</span>
       <span v-html="position"></span>
