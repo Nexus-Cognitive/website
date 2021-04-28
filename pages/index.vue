@@ -18,48 +18,71 @@
       </template>
     </HeroBase>
 
-    <SlideBase
-      v-for="slide in slides"
-      v-bind="slide"
-      :key="slide.slug"
-      class="h-screen"
-    />
-
-    <div class="illuminate-wrapper">
-      <img
-        alt="Photo of trees in a forest."
-        src="/images/our-framework.jpeg"
-        class="illuminate-image"
-      />
-      <section class="illuminate-text">
+    <SectionBase class="flex justify-center w-full h-auto bg-purple" tag="div">
+      <section
+        class="flex flex-col items-start text-white z-10 xs: pt-2 sm:pt-3 px-3 md:px-0 max-w-12xl"
+      >
         <div class="flex items-center">
           <ArrowBase class="mr-1" />
           <h2
             class="font-bold font-mono font-title text-sm tracking-widest uppercase"
           >
-            Our Framework
+            We are
           </h2>
         </div>
-        <h3
-          class="font-light font-mono xs:mt-1 mt-2 xs:text-sm text-md xl:text-lg"
+        <!---->
+        <p
+          class="font-light font-mono font-titlexs:mt-1 mt-2 xs:text-sm text-md xl:text-lg"
         >
-          Illuminating your way forward
-        </h3>
-        <p class="font-mono xs:mt-1 mt-3 text-xs xl:text-sm">
-          We build on platforms and technologies that empower, illuminate and
-          amplify your employees and products.
+          A passionate team of technologists and developers helping businesses
+          mature their products and workflows.
         </p>
-        <a
-          href="/services"
-          class="w-auto mt-5 px-4 py-2 bg-blue font-mono text-xs md:text-sm box-content"
-        >
-          See Our Framework
-        </a>
       </section>
-      <img src="/images/framework-logos.svg" class="illuminate-logos" />
-    </div>
+    </SectionBase>
 
-    <SectionVideo v-bind="futureStaticVideo">
+    <SectionBase class="illuminate-wrapper" tag="div">
+      <img
+        alt="Photo of trees in a forest."
+        src="/images/our-framework.jpeg"
+        class="illuminate-bg-image"
+      />
+      <div
+        class="max-w-12xl flex flex-row justify-center xs:flex-wrap lg:flex-nowrap pt-3"
+      >
+        <section class="illuminate-text">
+          <div class="flex items-center">
+            <ArrowBase class="mr-1" />
+            <h2
+              class="font-bold font-mono font-title text-sm tracking-widest uppercase"
+            >
+              Our Framework
+            </h2>
+          </div>
+          <h3
+            class="font-light font-mono xs:mt-1 mt-2 xs:text-sm text-md xl:text-lg"
+          >
+            Illuminating your way forward
+          </h3>
+          <p class="font-mono xs:mt-1 mt-3 text-xs xl:text-sm">
+            We build on platforms and technologies that empower, illuminate and
+            amplify your employees and products.
+          </p>
+          <a
+            href="/services"
+            class="w-auto mt-5 px-4 py-2 bg-blue font-mono text-xs md:text-sm box-content"
+          >
+            See Our Framework
+          </a>
+        </section>
+        <img
+          src="/images/framework-logos.svg"
+          class="illuminate-logos"
+          alt="Image of logos for UI Path, alteryx, ethereum, GraphQL, Amazon Web Services, salesforce, Power BI, and Azure."
+        />
+      </div>
+    </SectionBase>
+
+    <SectionVideo v-bind="futureStaticVideo" class="relative">
       <section
         class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
       >
@@ -73,6 +96,10 @@
           Get the tools and strategies to shape your new standards in business
         </p>
       </section>
+      <img
+        class="absolute bottom-0"
+        src="/images/the-future-isnt-static-cover.svg"
+      />
     </SectionVideo>
 
     <SectionBase class="bg-blue-dark" tag="div">
