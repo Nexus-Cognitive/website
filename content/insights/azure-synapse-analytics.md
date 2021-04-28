@@ -23,3 +23,5 @@ Powerful Insights / AI: Deeply integration with Power BI and Azure Machine Learn
 According to MSFT, Synapse is the first and only analytics system to have run all TPC-H queries at petabyte-scale. They also emphasized it is designed to support the increasingly popular DevOps strategy, in which development and operations staff collaborate more closely to create and implement services that work better throughout their lifecycles.
 
 If you are assessing your data integration/aggregation strategy, [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/) is worth a look.
+
+![Illustration of Azure Synapse Analytics as the hub connecting Microsoft Power BI and Azure Machine Learning to an extended ecosystem.](/images/azure-synapse-analytics-illustration-0.png "Illustration of Azure Synapse Analytics as the hub connecting Microsoft Power BI and Azure Machine Learning to an extended ecosystem.")

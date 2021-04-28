@@ -3,12 +3,12 @@ title: Analytics Strategy
 description: Strategizing for analytics success.
 authors:
   - anu-jain
-categories: 
-  - analytics-ops
+publish: 2021-02-19T12:00:00Z
+categories:
+  - analytics-operations
   - business-strategy
 cover: analytics-strategy
 feature: false
-published: 2021-02-19T12:00:00Z
 ---
 
 In my last blog, I talked about Analytics Ops and embedding analytics in

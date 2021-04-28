@@ -9,7 +9,6 @@ categories:
   - data-analytics
 cover: the-future-is-now
 feature: true
-published: 2021-01-08T12:00:00Z
 ---
 
 Technological change is happening at a rapid pace, no more so than in information technology. In the past decade, the deluge of big data has wrought a vast transformation of the IT landscape. Predictive analytics has become common-place. New technologies such as artificial intelligence (AI) promise to change the way we approach analytics and decision-making. Additionally, the pressure the gain efficiencies, connect more intimately with suppliers and customers, and increase top and bottom line revenue to maximize shareholder value has made it imperative to respond more quickly to market changes.

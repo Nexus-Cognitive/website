@@ -3,12 +3,12 @@ title: Analytics Framework
 description: Components of an analytics framework.
 authors:
   - anu-jain
-categories: 
-  - analytics-ops
+publish: 2021-02-23T12:00:00Z
+categories:
+  - analytics-operations
   - business-strategy
 cover: analytics-framework
 feature: false
-published: 2021-02-23T12:00:00Z
 ---
 
 Last week I talked about the characteristics and advantages of a
@@ -25,8 +25,7 @@ all the components of the analytics framework — there's simply not
 enough space. My focus here is solely on that part of the framework that
 spans data ingestion, preparation, and discovery.
 
-![](media/image1.png){width="4.775in"
-height="2.5833333333333335in"}There are basically two types technologies
+There are basically two types technologies
 used to capture, manipulate, and deliver data to users: the data
 warehouse and the data lake. My focus here will be the data lake.
 
@@ -106,10 +105,7 @@ The benefits of a data lake are clear:
     questions — driving more informed, quicker decision-making that
     leads to accelerated outcomes.
 
-I've only begun to scratch the surface of data lake technology here. If
-you want more information, you can find it
-[here](https://www.thinkbiganalytics.com/kylo2/). I'd also love to hear
-from you and get your opinions on data lakes vs. data warehouses. You
-can leave a comment below or contact me directly on
-[Linkedin](https://www.linkedin.com/feed/) or at
-<anu.jain@thinkbiganalytics.com>.
+I've only begun to scratch the surface of data lake technology here. I'd
+love to hear from you and get your opinions on data lakes vs. data warehouses.
+You can contact me directly on [Linkedin](https://www.linkedin.com/in/anujain/)
+or at <anu@nexuscognitive.com>.
