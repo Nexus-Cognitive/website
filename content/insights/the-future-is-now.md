@@ -1,6 +1,5 @@
 ---
 title: The Future is Now
-subtitle: Industry leaders will be those who adapt
 description: Technological change is happening at a rapid pace, no more so than in Information Technology (IT).
 authors:
   - anu-jain
