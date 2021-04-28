@@ -3,15 +3,17 @@
     <HeroBase background-color="blue-dark" :image="insight.cover">
       <template #default>
         <div class="text-left">
-          <CategoryList :categories="insight.categories" class="flex" />
+          <p class="font-mono">
+            {{ insight.publish | dateFormat }}
+          </p>
 
-          <AuthorList :authors="insight.authors" class="mt-2" />
+          <CategoryList :categories="insight.categories" class="mt-1" />
 
-          <h1 class="font-light font-mono mt-1 text-sm sm:text-lg 2xl:text-xl">
+          <AuthorList :authors="insight.authors" class="mt-3" />
+
+          <h1 class="font-light font-mono mt-2 text-sm sm:text-lg 2xl:text-xl">
             {{ insight.title }}
           </h1>
-
-          <p class="mt-1 page-subtitle">{{ insight.subtitle }}</p>
 
           <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
             {{ insight.description }}
