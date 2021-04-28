@@ -6,11 +6,11 @@ import type {
 import type { ResourceBaseI } from '@/interfaces'
 
 export interface StrategyBaseI extends ResourceBaseI {
-  backgroundColor?: ColorRelationT
+  backgroundColor: ColorRelationT
   body: string
-  bodyColor?: ColorRelationT
-  image?: ImageRelationT
+  bodyColor: ColorRelationT
+  image: ImageRelationT
   industries: IndustryRelationsT
   order: number
-  titleColor?: ColorRelationT
+  titleColor: ColorRelationT
 }

@@ -2,5 +2,6 @@
   "title": "We are",
   "body": "A passionate team of technologists and developers helping businesses mature their products and workflows.",
   "backgroundColor": "black",
-  "image": "the-future-isnt-static"
+  "image": "the-future-isnt-static",
+  "order": 0
 }

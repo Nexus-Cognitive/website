@@ -11,5 +11,5 @@ export interface InsightBaseI extends ResourceBaseI {
   cover: ImageRelationT
   description: string
   feature: boolean
-  subtitle: string
+  publish: string
 }
