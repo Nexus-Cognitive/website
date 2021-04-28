@@ -68,10 +68,10 @@ that stress rapid prototyping and decision-making that will deliver high
 value and impact to your organization and that set you up for
 sustainable success. These frameworks generally cover four areas:
 
--   Design
--   Alignment
--   Value creation
--   Evaluation metrics
+- Design
+- Alignment
+- Value creation
+- Evaluation metrics
 
 A sound analytics framework will provide you with a roadmap to achieve
 your goals. It will contain milestones and rapid-development

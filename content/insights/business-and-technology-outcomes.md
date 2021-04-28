@@ -19,6 +19,7 @@ There are two categories of outcomes that will affect the success of your analyt
 ## Business Outcomes
 
 Markets are changing faster than ever, and the future comes at you before you can blink. To survive the changes and capitalize on that future, I believe that business-outcome success should be defined keeping three criteria in mind:
+
 - How you deal with customers. It’s not enough anymore to satisfy your customers. You must delight them. To delight them, it’s critical to create a sense of greater intimacy between your business and your customers. Customers want to feel as if you know them—what they need, what they want, and—most importantly—what they don’t know they want.
 - How you manage and mitigate risk. There’s no reward without risk, but too much risk leads to disaster. What’s more, the types of risks have multiplied exponentially (fraud, cyber-security, market, economic, political) and it’s essential to evaluate them appropriately and manage them effectively. It’s essential to integrate technology—especially AI—into all aspects of risk management.
 - How you innovate. Innovate—both in terms of what you offer the market and how you operate your business. Social media has changed the market landscape and businesses that don’t constantly innovate die more quickly than ever. Innovation won’t be possible, however, unless your business is operating at its optimal level. To do that, you must constantly innovate your operations to achieve and maintain operational excellence.

@@ -88,18 +88,18 @@ analysis.
 
 The benefits of a data lake are clear:
 
-1.  They're quick to deploy. Because data lakes use schema on read
+1. They're quick to deploy. Because data lakes use schema on read
     (which means that data isn't processed until its queried) there
     isn't a months-long effort to write a rigid schema to organize the
     data. Instead, data is only organized when users need to access it.
-2.  They're flexible and scalable. Because they accept most data types
+2. They're flexible and scalable. Because they accept most data types
     and they're open source to facilitate more storage, data lakes can
     change as your organization changes, and they can grow as you grow.
-3.  They make managing data easy. With powerful cleansing and
+3. They make managing data easy. With powerful cleansing and
     transformation capabilities facilitated through an easy-to-use
     interface — as well as pre-built transformation rules — data lakes
     make data management less complex and more streamlined.
-4.  They deliver powerful analysis capabilities. With user-friendly GUIs
+4. They deliver powerful analysis capabilities. With user-friendly GUIs
     and self-service data query abilities, users can quickly search for
     and access the data they need, and ask business-driven, complex
     questions — driving more informed, quicker decision-making that
