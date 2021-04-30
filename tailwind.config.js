@@ -46,7 +46,7 @@ const texts = colorClasses.map((c) => `text-${c}`)
 const fontFamily = {
   mono: ['ibm-plex-mono', 'monospace'],
   sans: ['ibm-plex-sans', 'sans-serif'],
-  title: ['commuter-sans', 'sans-serif']
+  title: ['commuters-sans', 'sans-serif']
 }
 const fontFamilies = ['mono', 'sans', 'title'].map((f) => `font-${f}`)
 const fontWeights = ['light', 'bold'].map((f) => `font-${f}`)
