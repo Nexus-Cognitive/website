@@ -1,5 +1,5 @@
 <template>
-  <article class="base" :class="classList">
+  <article class="base">
     <!-- cover container -->
     <div class="cover-container">
       <!-- image -->
@@ -8,19 +8,14 @@
     <!-- content container -->
     <div class="content-container">
       <header>
-        <!-- publish -->
-        <p class="font-mono">
-          {{ publish | dateFormat }}
-        </p>
-
         <!-- categories -->
         <CategoryList :categories="categories" />
         <!-- heading -->
-        <h2 class="title">
+        <h2 class="client">
           <!-- link -->
           <NuxtLink :to="to">
-            <!-- title -->
-            {{ title }}
+            <!-- client -->
+            {{ client }}
           </NuxtLink>
         </h2>
       </header>
@@ -55,6 +50,11 @@ export default Vue.extend({
       type: Array as PropType<CategoryContentsT>
     },
 
+    client: {
+      required: true,
+      type: String
+    },
+
     cover: {
       required: true,
       type: Object as PropType<ImageContentT>
@@ -65,36 +65,15 @@ export default Vue.extend({
       type: String
     },
 
-    feature: {
-      required: true,
-      type: Boolean
-    },
-
     slug: {
-      required: true,
-      type: String
-    },
-
-    publish: {
-      required: true,
-      type: String
-    },
-
-    title: {
       required: true,
       type: String
     }
   },
 
   computed: {
-    classList(): object {
-      return {
-        feature: this.feature
-      }
-    },
-
     to(): string {
-      return `/insights/${this.slug}`
+      return `/gov/solutions/${this.slug}`
     }
   }
 })
@@ -103,44 +82,6 @@ export default Vue.extend({
 <style scoped lang="scss">
 .base {
   @apply bg-white gap-3 md:gap-4 grid grid-cols-1 xl:grid-cols-2 overflow-hidden rounded-lg shadow text-black;
-
-  &.feature {
-    @apply bg-purple md:grid-cols-2 shadow-lg text-white;
-
-    .content {
-      &-container {
-        @apply md:justify-center md:pt-3 md:pl-0;
-      }
-    }
-
-    .cover {
-      &-container,
-      &-image {
-        @apply md:h-full;
-      }
-    }
-
-    .description {
-      @apply xl:text-sm;
-    }
-
-    .footer {
-      @apply xl:mt-0;
-    }
-
-    .title {
-      @apply text-md lg:text-lg;
-    }
-  }
-
-  &,
-  &.feature {
-    .content {
-      &-container {
-        @apply xl:py-4;
-      }
-    }
-  }
 }
 
 .authors {
@@ -149,7 +90,7 @@ export default Vue.extend({
 
 .content {
   &-container {
-    @apply flex flex-col pb-3 px-3 xl:pl-0 xl:pr-4;
+    @apply flex flex-col pb-3 px-3 xl:pl-0 xl:pr-4 xl:py-4;
   }
 }
 
@@ -164,15 +105,15 @@ export default Vue.extend({
   }
 }
 
+.client {
+  @apply font-bold font-title mt-2 text-sm xl:text-md;
+}
+
 .description {
   @apply mt-1;
 }
 
 .footer {
   @apply mt-auto;
-}
-
-.title {
-  @apply font-bold font-title mt-2 text-sm xl:text-md;
 }
 </style>

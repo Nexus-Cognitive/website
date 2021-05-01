@@ -69,14 +69,19 @@ export default Vue.extend({
           'cover',
           'description',
           'feature',
+          'publish',
           'slug',
-          'subtitle',
           'title'
         ])
         .sortBy('publish', 'desc')
         .fetch<InsightBaseI>()) as InsightContentsT
 
-      insights = insightsMap(insights, authors, categories, images)
+      insights = insightsMap(
+        insights,
+        authors,
+        categories,
+        images
+      ) as InsightContentsT
 
       const insightFeature: InsightContentT | undefined = insights.find(
         (insight: InsightContentT): boolean => insight.feature

@@ -1,5 +1,3 @@
-import type { InsightBaseI } from '@/interfaces'
+import type { ArticlePageI, InsightBaseI } from '@/interfaces'
 
-export interface InsightPageI extends InsightBaseI {
-  body: string
-}
+export interface InsightPageI extends ArticlePageI, InsightBaseI {}

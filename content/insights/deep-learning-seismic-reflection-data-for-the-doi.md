@@ -6,7 +6,7 @@ authors:
 publish: 2020-09-28T12:00:00Z
 categories:
   - press-release
-cover: deep-learning-seismic-reflection-data-for-the-doi
+cover: offshore-oil-rig
 feature: false
 ---
 
@@ -16,10 +16,10 @@ Nexus Cognitive Government Solutions (Nexus Cognitive) announced that it was awa
 
 “This award from DOI further validates Nexus Cognitive Government Solutions deep skills in machine learning, and pervasive analytics powered by our capabilities in GPU enabled High Performance Compute. We look forward to accelerating the mission of DOI and BOEM,” said Anu Jain, Analytics Leader and Growth Officer of Nexus Cognitive Government Solutions.
 
-## About Nexus Cognitive Government Solutions 
+## About Nexus Cognitive Government Solutions
 
 Nexus Cognitive Government Solutions is a premier public sector digital transformation agency. Nexus has deep experience in delivering digital outcomes through the use of Cloud, Advanced data and analytic capabilities, application migration, cognitive design services, cybersecurity, and deep SME expertise in our domains. Nexus strives to be the trusted partner to enable digital solutions to the public sector. Nexus Cognitive Government solutions is classified as a Service Disabled Veteran Owned Small Business (SDVOSB).
 
 Learn more at [Nexus Cognitive Government Solutions](http://www.nexuscognitivegov.com) and [Nexus Cognitive](http://www.nexuscognitive.com) websites.
 
-For further information: Steve Roberts, Chief Operating Officer Nexus Government Solutions, <a href="tel:2147759949;ext=703">214.775.9949 ext. 703</a>, <a href="mailto:steve@nexuscognitive.com">steve@nexuscognitive.com</a>
+For further information: Steve Roberts, Chief Operating Officer Nexus Government Solutions, [214.775.9949 ext. 703](tel:2147759949;ext=703), [steve@nexuscognitive.com](mailto:steve@nexuscognitive.com)

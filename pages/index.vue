@@ -30,7 +30,7 @@
             We are
           </h2>
         </div>
-        <!---->
+
         <p
           class="font-light font-mono font-titlexs:mt-1 mt-2 xs:text-sm text-md xl:text-lg"
         >
@@ -173,7 +173,12 @@ export default Vue.extend({
         .sortBy('publish', 'desc')
         .fetch<InsightBaseI>()) as InsightContentsT
 
-      insights = insightsMap(insights, authors, categories, images)
+      insights = insightsMap(
+        insights,
+        authors,
+        categories,
+        images
+      ) as InsightContentsT
 
       const insight: InsightContentT = insights.find(
         ({ feature }: InsightContentT): boolean => feature

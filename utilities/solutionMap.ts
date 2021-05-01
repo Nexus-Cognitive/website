@@ -3,15 +3,15 @@ import type {
   AuthorContentsT,
   CategoryContentsT,
   ImageContentsT,
-  InsightContentT
+  SolutionContentT
 } from '@/types'
 import { articleMap } from '@/utilities'
 
-export function insightMap(
-  insight: InsightContentT,
+export function solutionMap(
+  solution: SolutionContentT,
   authors: AuthorContentsT,
   categories: CategoryContentsT,
   images: ImageContentsT
 ): ArticleContentT {
-  return articleMap(insight, authors, categories, images)
+  return articleMap(solution, authors, categories, images)
 }

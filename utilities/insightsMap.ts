@@ -1,4 +1,6 @@
 import type {
+  ArticleContentT,
+  ArticleContentsT,
   AuthorContentsT,
   CategoryContentsT,
   ImageContentsT,
@@ -12,9 +14,9 @@ export function insightsMap(
   authors: AuthorContentsT,
   categories: CategoryContentsT,
   images: ImageContentsT
-): InsightContentsT {
+): ArticleContentsT {
   return insights.map(
-    (insight: InsightContentT): InsightContentT =>
+    (insight: InsightContentT): ArticleContentT =>
       insightMap(insight, authors, categories, images)
   )
 }
