@@ -1,20 +1,34 @@
 <template>
-  <section :class="classList">
-    <ImageBase
-      v-if="imageShow"
-      v-bind="image"
-      class="md:h-screen object-cover md:row-start-1"
-      :class="imageClassList"
-    />
+  <!-- Default Strategy Base -->
+  <div>
+    <section v-if="!gov" :class="classList">
+      <slot>
+        <ImageBase
+          v-if="imageShow"
+          v-bind="image"
+          class="md:h-screen object-cover md:row-start-1"
+          :class="imageClassList"
+        />
+        <SectionBase
+          class="flex flex-col justify-between md:py-6 lg:py-9 md:w-full"
+          :class="sectionClassList"
+        >
+          <h2 :class="titleClassList" v-html="title"></h2>
+          <p :class="bodyClassList" v-html="body"></p>
+          <ul :class="industriesClassList">
+            <li
+              v-for="(industry, index) in industries"
+              :key="industry.slug"
+              :class="industryClassListGet(index)"
+              v-html="industry.title"
+            ></li>
+          </ul>
+        </SectionBase>
+      </slot>
+    </section>
 
-    <SectionBase
-      class="flex flex-col justify-between md:py-6 lg:py-9 md:w-full"
-      :class="sectionClassList"
-    >
-      <h2 :class="titleClassList" v-html="title"></h2>
-
-      <p :class="bodyClassList" v-html="body"></p>
-
+    <!-- Government Strategy Base -->
+    <section v-if="gov">
       <ul :class="industriesClassList">
         <li
           v-for="(industry, index) in industries"
@@ -23,8 +37,8 @@
           v-html="industry.title"
         ></li>
       </ul>
-    </SectionBase>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -47,6 +61,11 @@ export default Vue.extend({
     bodyColor: {
       required: true,
       type: Object as PropType<ColorContentT>
+    },
+
+    gov: {
+      default: false,
+      type: Boolean
     },
 
     image: {
@@ -95,7 +114,9 @@ export default Vue.extend({
     },
 
     industriesClassList(): string {
-      return `mt-2 md:mt-auto ${this.titleColor_}`
+      return this.gov
+        ? `${this.titleColor_}`
+        : `mt-2 md:mt-auto ${this.titleColor_}`
     },
 
     sectionClassList(): object {
@@ -114,11 +135,22 @@ export default Vue.extend({
   },
 
   methods: {
-    industryClassListGet(index: number): object {
-      return {
-        'py-1 sm:py-2 md:py-1 lg:py-2 text-xs sm:text-sm md:text-xs lg:text-sm 3xl:text-md': true,
-        'border-gray-light border-t-2': index > 0
+    industryClassListGet(index: number): string[] {
+      const classList = [
+        'py-1 sm:py-2 md:py-1 lg:py-2 text-xs sm:text-sm md:text-xs lg:text-sm 3xl:text-md'
+      ]
+
+      if (index > 0) {
+        classList.push('border-t-2')
+
+        if (this.gov) {
+          classList.push(this.titleColor_)
+        } else {
+          classList.push('border-gray-light')
+        }
       }
+
+      return classList
     }
   }
 })

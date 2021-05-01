@@ -57,11 +57,7 @@ export default Vue.extend({
     routes(): RouteRecordPublic[] {
       return this.$router
         .getRoutes()
-        .filter(
-          (route) =>
-            route.path.split('/').length === 2 &&
-            !route.path.toLowerCase().includes('gov')
-        )
+        .filter((route) => route.path.split('/').length === 2)
         .reverse()
     }
   },

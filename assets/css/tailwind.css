@@ -74,6 +74,10 @@ address {
   @apply pt-6 lg:pt-0 xs:px-3 z-10;
 }
 
+.link-button {
+  @apply w-auto pb-2 pt-1 px-4 bg-blue font-mono text-xs md:text-sm box-content rounded-sm;
+}
+
 .page-title {
   @apply font-bold md:text-md tracking-wider uppercase;
 }

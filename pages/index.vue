@@ -67,12 +67,7 @@
             We build on platforms and technologies that empower, illuminate and
             amplify your employees and products.
           </p>
-          <a
-            href="/services"
-            class="w-auto mt-5 px-4 py-2 bg-blue font-mono text-xs md:text-sm box-content"
-          >
-            See Our Framework
-          </a>
+          <a href="/services" class="link-button mt-3"> See Our Framework </a>
         </section>
         <img
           src="/images/framework-logos.svg"
