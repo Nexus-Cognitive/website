@@ -75,7 +75,7 @@ address {
 }
 
 .link-button {
-  @apply w-auto px-4 py-1 bg-blue font-mono text-xs md:text-sm box-content rounded-sm;
+  @apply w-auto pb-2 pt-1 px-4 bg-blue font-mono text-xs md:text-sm box-content rounded-sm;
 }
 
 .page-title {

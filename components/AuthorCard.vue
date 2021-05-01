@@ -10,12 +10,13 @@
         </figcaption>
       </figure>
       <div class="flex items-center mt-1 text-gray-dark">
-        <a :href="`mailto:`" class="mr-2"><IconEmail /></a>
+        <a :href="href" class="mr-2"><IconEmail /></a>
         <a :href="linkedIn"
           ><ImageBase
-            src="/images/linked-in.svg"
             alt="LinkedIn Logo"
+            class="linked-in-logo"
             :height="32"
+            src="/images/linked-in.svg"
             :width="32"
         /></a>
       </div>
@@ -28,21 +29,22 @@
         <ImageBase class="h-14 w-14" v-bind="image" />
         <figcaption class="mt-2">
           <span class="font-bold tracking-wider uppercase"
-            >GOV POC: {{ title }}</span
-          ><br /><span class="font-mono" v-html="position"></span
-          ><span> / Partner</span>
+            ><abbr title="Government Point-of-contact">GOV POC</abbr>
+            {{ title }}</span
+          ><br /><span class="font-mono" v-html="position"></span>
         </figcaption>
       </figure>
       <div class="flex items-center mt-1 text-white">
-        <a :href="`mailto:`" class="mr-2"><IconEmail /></a>
-        <a :href="linkedIn" class="linkedin-link"
-          ><ImageBase
-            class="linkedin-logo"
-            src="/images/linked-in.svg"
+        <a :href="href" class="mr-2"><IconEmail /></a>
+        <a :href="linkedIn">
+          <ImageBase
             alt="LinkedIn Logo"
+            class="linked-in-logo"
             :height="32"
+            src="/images/linked-in.svg"
             :width="32"
-        /></a>
+          />
+        </a>
       </div>
     </article>
   </div>
@@ -83,12 +85,18 @@ export default Vue.extend({
       required: true,
       type: String
     }
+  },
+
+  computed: {
+    href(): string {
+      return `mailto:${this.email}`
+    }
   }
 })
 </script>
 
 <style scoped>
-.linkedin-link .linkedin-logo {
-  max-width: 32px;
+.linked-in-logo {
+  @apply h-4 w-4;
 }
 </style>

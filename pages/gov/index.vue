@@ -25,7 +25,7 @@
         <div class="flex items-center">
           <ArrowBase class="mr-1" />
           <h2
-            class="font-bold font-mono font-title text-sm tracking-widest uppercase"
+            class="font-bold font-mono font-title text-xs md:text-sm tracking-widest uppercase"
           >
             We are
           </h2>
@@ -50,7 +50,7 @@
         <div class="flex items-center">
           <ArrowBase class="mr-1" />
           <h2
-            class="font-bold font-mono font-title text-sm tracking-widest uppercase"
+            class="font-bold font-mono font-title text-xs md:text-sm tracking-widest uppercase"
           >
             Our Capabilities
           </h2>
@@ -77,18 +77,20 @@
 
     <SectionBase class="flex w-full h-auto" tag="div">
       <section
-        class="w-full flex flex-col items-start text-black z-10 xs: pt-2 sm:pt-3 px-3 md:px-0 max-w-12xl"
+        class="w-full flex flex-col items-start text-black z-10 xs:pt-2 sm:pt-3 px-3 md:px-0 max-w-12xl"
       >
         <div class="flex items-center">
           <ArrowBase class="mr-1" />
           <h2
-            class="font-bold font-mono font-title text-sm tracking-widest uppercase"
+            class="font-bold font-mono font-title text-xs md:text-sm tracking-widest uppercase"
           >
             Our Differentiators
           </h2>
         </div>
         <!---->
-        <p class="font-bold font-mono ml-6 xs:mt-1 mt-2 xs:text-xs md:text-sm">
+        <p
+          class="font-bold font-mono md:ml-6 xs:mt-1 mt-2 xs:text-xs md:text-sm"
+        >
           An outstanding team of highly experienced industry leaders<br />
           and staff with over 100 years of combined consulting experience.
         </p>
@@ -205,7 +207,7 @@ export default Vue.extend({
       }
 
       let authors: AuthorContentsT = (await $content('authors')
-        .where({ title: 'Steve Roberts' })
+        .where({ slug: 'steve-roberts' })
         .sortBy('order')
         .fetch<AuthorBaseI>()) as AuthorContentsT
 
