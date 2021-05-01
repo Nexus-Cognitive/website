@@ -1,15 +1,5 @@
-import type {
-  AuthorContentRelationsT,
-  CategoryRelationsT,
-  ImageRelationT
-} from '@/types'
-import type { ResourceBaseI } from '@/interfaces'
+import type { ArticleBaseI } from '@/interfaces'
 
-export interface InsightBaseI extends ResourceBaseI {
-  authors: AuthorContentRelationsT
-  categories: CategoryRelationsT
-  cover: ImageRelationT
-  description: string
+export interface InsightBaseI extends ArticleBaseI {
   feature: boolean
-  publish: string
 }

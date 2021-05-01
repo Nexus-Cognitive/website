@@ -173,6 +173,7 @@ collections:
       - name: feature
         label: Feature
         widget: boolean
+        default: true
       - name: authors
         label: Authors
         label_singular: Author
@@ -241,6 +242,85 @@ collections:
       - name: order
         label: Order
         widget: number
+  - name: solutions
+    label: Solutions
+    label_singular: Solution
+    folder: content/solutions
+    create: true
+    extension: md
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: string
+      - name: body
+        label: Body
+        widget: markdown
+        buttons:
+          - bold
+          - italic
+          - code
+          - link
+          - heading-two
+          - heading-three
+          - heading-four
+          - heading-five
+          - heading-six
+          - quote
+          - bulleted-list
+          - numbered-list
+      - name: client
+        label: Client
+        widget: string
+      - name: project
+        label: Project
+        widget: string
+      - name: amount
+        label: Amount
+        widget: string
+      - name: problem
+        label: Problem
+        widget: string
+      - name: cover
+        label: Cover
+        widget: relation
+        collection: images
+        display_fields:
+          - title
+        value_field: '{{slug}}'
+        search_fields:
+          - title
+        multiple: false
+      - name: publish
+        label: Publish
+        widget: datetime
+        format: YYYY-MM-DDTHH:mm:ssZ
+        picker_utc: true
+        time_format: false
+      - name: authors
+        label: Authors
+        label_singular: Author
+        widget: relation
+        collection: authors
+        display_fields:
+          - title
+        value_field: '{{slug}}'
+        search_fields:
+          - title
+        multiple: true
+      - name: categories
+        label: Categories
+        label_singular: Category
+        widget: relation
+        collection: categories
+        display_fields:
+          - title
+        value_field: '{{slug}}'
+        search_fields:
+          - title
+        multiple: true
   - name: strategies
     label: Strategies
     label_singular: Strategy

@@ -1,32 +1,35 @@
 <template>
   <article>
-    <HeroBase background-color="blue-dark" :image="insight.cover">
+    <HeroBase background-color="blue-dark" :image="solution.cover">
       <template #default>
         <div class="text-left">
-          <p class="font-mono">
-            {{ insight.publish | dateFormat }}
-          </p>
+          <CategoryList :categories="solution.categories" class="mt-1" />
 
-          <CategoryList :categories="insight.categories" class="mt-1" />
-
-          <AuthorList :authors="insight.authors" class="mt-3" />
+          <AuthorList :authors="solution.authors" class="mt-3" />
 
           <h1 class="font-light font-mono mt-2 text-sm sm:text-lg 2xl:text-xl">
-            {{ insight.title }}
+            {{ solution.client }}
           </h1>
 
+          <h2 class="font-light font-mono mt-2 text-xs sm:text-sm 2xl:text-md">
+            Contract Amount: {{ solution.amount }}
+          </h2>
+
           <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
-            {{ insight.description }}
+            Project: {{ solution.description }}
           </p>
         </div>
       </template>
     </HeroBase>
 
     <div class="container py-6">
-      <NuxtContent
-        class="mx-auto prose prose-blue prose-lg"
-        :document="insight"
-      />
+      <div class="mx-auto prose prose-blue prose-lg">
+        <h2>Problem</h2>
+
+        <p>{{ solution.problem }}</p>
+
+        <NuxtContent :document="solution" />
+      </div>
     </div>
   </article>
 </template>
@@ -37,16 +40,16 @@ import type {
   AuthorContentsT,
   CategoryContentsT,
   ImageContentsT,
-  InsightContentT
+  SolutionContentT
 } from '@/types'
 import {
   AuthorBaseI,
   CategoryBaseI,
   ImageBaseI,
-  InsightBaseI
+  SolutionBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightMap } from '@/utilities'
+import { solutionMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -67,20 +70,20 @@ export default Vue.extend({
         'images'
       ).fetch<ImageBaseI>()) as ImageContentsT
 
-      let insight: InsightContentT = (await $content(
-        'insights',
+      let solution: SolutionContentT = (await $content(
+        'solutions',
         params.slug
-      ).fetch<InsightBaseI>()) as InsightContentT
+      ).fetch<SolutionBaseI>()) as SolutionContentT
 
-      insight = insightMap(
-        insight,
+      solution = solutionMap(
+        solution,
         authors,
         categories,
         images
-      ) as InsightContentT
+      ) as SolutionContentT
 
       return {
-        insight
+        solution
       }
     } catch (e: any) {
       error({ message: e.toString() })
