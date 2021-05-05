@@ -45,8 +45,14 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // https://plausible.io
+    'vue-plausible'
   ],
+
+  plausible: {
+    domain: 'nexuscognitive.com'
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
