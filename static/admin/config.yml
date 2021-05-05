@@ -112,10 +112,10 @@ collections:
       - name: height
         label: Height
         widget: number
-  - name: industries
-    label: Industries
-    label_singular: Industry
-    folder: content/industries
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: content/services
     create: true
     extension: json
     fields:
@@ -364,11 +364,11 @@ collections:
         search_fields:
           - title
         multiple: false
-      - name: industries
-        label: Industries
-        label_singular: Industry
+      - name: services
+        label: Services
+        label_singular: Service
         widget: relation
-        collection: industries
+        collection: services
         display_fields:
           - title
         value_field: '{{slug}}'

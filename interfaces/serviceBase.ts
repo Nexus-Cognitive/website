@@ -1,5 +1,5 @@
 import type { ResourceBaseI } from '@/interfaces'
 
-export interface IndustryBaseI extends ResourceBaseI {
+export interface ServiceBaseI extends ResourceBaseI {
   description: string
 }

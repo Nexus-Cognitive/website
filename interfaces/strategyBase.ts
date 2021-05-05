@@ -1,8 +1,4 @@
-import type {
-  ColorRelationT,
-  ImageRelationT,
-  IndustryRelationsT
-} from '@/types'
+import type { ColorRelationT, ImageRelationT, ServiceRelationsT } from '@/types'
 import type { ResourceBaseI } from '@/interfaces'
 
 export interface StrategyBaseI extends ResourceBaseI {
@@ -10,7 +6,7 @@ export interface StrategyBaseI extends ResourceBaseI {
   body: string
   bodyColor: ColorRelationT
   image: ImageRelationT
-  industries: IndustryRelationsT
+  services: ServiceRelationsT
   order: number
   titleColor: ColorRelationT
 }
