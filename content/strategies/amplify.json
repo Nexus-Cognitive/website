@@ -11,6 +11,6 @@
   "order": 3,
   "backgroundColor": "red",
   "bodyColor": "black",
-  "titleColor": "white",
+  "titleColor": "black",
   "image": "amplify"
 }
