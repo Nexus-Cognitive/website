@@ -15,12 +15,12 @@
         >
           <h2 :class="titleClassList" v-html="title"></h2>
           <p :class="bodyClassList" v-html="body"></p>
-          <ul :class="industriesClassList">
+          <ul :class="servicesClassList">
             <li
-              v-for="(industry, index) in industries"
-              :key="industry.slug"
-              :class="industryClassListGet(index)"
-              v-html="industry.title"
+              v-for="(service, index) in services"
+              :key="service.slug"
+              :class="serviceClassListGet(index)"
+              v-html="service.title"
             ></li>
           </ul>
         </SectionBase>
@@ -29,12 +29,12 @@
 
     <!-- Government Strategy Base -->
     <section v-if="gov">
-      <ul :class="industriesClassList">
+      <ul :class="servicesClassList">
         <li
-          v-for="(industry, index) in industries"
-          :key="industry.slug"
-          :class="industryClassListGet(index)"
-          v-html="industry.title"
+          v-for="(service, index) in services"
+          :key="service.slug"
+          :class="serviceClassListGet(index)"
+          v-html="service.title"
         ></li>
       </ul>
     </section>
@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts">
-import type { ColorContentT, ImageContentT, IndustryContentT } from '@/types'
+import type { ColorContentT, ImageContentT, ServiceContentT } from '@/types'
 import Vue, { PropType } from 'vue'
 import { ImageContentM } from '@/models'
 
@@ -78,9 +78,9 @@ export default Vue.extend({
       type: Boolean
     },
 
-    industries: {
+    services: {
       required: true,
-      type: Array as PropType<IndustryContentT[]>
+      type: Array as PropType<ServiceContentT[]>
     },
 
     title: {
@@ -113,7 +113,7 @@ export default Vue.extend({
       return !!this.image.src
     },
 
-    industriesClassList(): string {
+    servicesClassList(): string {
       return this.gov
         ? `${this.titleColor_}`
         : `mt-2 md:mt-auto ${this.titleColor_}`
@@ -135,7 +135,7 @@ export default Vue.extend({
   },
 
   methods: {
-    industryClassListGet(index: number): string[] {
+    serviceClassListGet(index: number): string[] {
       const classList = [
         'py-1 sm:py-2 md:py-1 lg:py-2 text-xs sm:text-sm md:text-xs lg:text-sm 3xl:text-md'
       ]

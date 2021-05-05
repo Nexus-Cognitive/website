@@ -2,6 +2,8 @@
   <article>
     <HeroBase section-class-list="pb-9 sm:pb-24" :video="video">
       <template #default>
+        <h1 class="sr-only">Services</h1>
+
         <p
           class="font-light font-mono text-sm sm:text-lg 2xl:text-xl text-left"
         >
@@ -26,7 +28,7 @@ import type {
   ColorContentsT,
   FocusContentsT,
   ImageContentsT,
-  IndustryContentsT,
+  ServiceContentsT,
   StrategyContentT,
   StrategyContentsT,
   VideoContentT
@@ -35,12 +37,12 @@ import type {
   ColorBaseI,
   FocusBaseI,
   ImageBaseI,
-  IndustryBaseI,
+  ServiceBaseI,
   StrategyBaseI,
   VideoBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { colorFind, imageFind, industriesFilter } from '@/utilities'
+import { colorFind, imageFind, servicesFilter } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
@@ -62,9 +64,9 @@ export default Vue.extend({
         video.poster = imageFind(images, video.poster)
       }
 
-      const industries: IndustryContentsT = (await $content('industries')
+      const services: ServiceContentsT = (await $content('services')
         .sortBy('createdAt')
-        .fetch<IndustryBaseI>()) as IndustryContentsT
+        .fetch<ServiceBaseI>()) as ServiceContentsT
 
       const colors: ColorContentsT = (await $content(
         'colors'
@@ -91,11 +93,8 @@ export default Vue.extend({
             strategy.image = imageFind(images, strategy.image)
           }
 
-          if (strategy.industries?.length) {
-            strategy.industries = industriesFilter(
-              industries,
-              strategy.industries
-            )
+          if (strategy.services?.length) {
+            strategy.services = servicesFilter(services, strategy.services)
           }
 
           if (strategy.titleColor) {
@@ -108,7 +107,7 @@ export default Vue.extend({
 
       return {
         focuses,
-        industries,
+        services,
         strategies,
         video
       }
