@@ -92,7 +92,7 @@
         </p>
       </section>
       <img
-        class="absolute bottom-0"
+        class="absolute bottom-0 w-full"
         src="/images/the-future-isnt-static-cover.svg"
       />
     </SectionVideo>
