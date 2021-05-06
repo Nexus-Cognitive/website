@@ -74,26 +74,25 @@
       </div>
     </SectionBase>
 
-    <SectionBase class="bg-purple">
-      <template #default>
-        <div class="flex items-center">
-          <ArrowBase class="mr-1" />
+    <section class="bg-blue-dark px-4 py-6">
+      <div class="container">
+        <div class="flex items-baseline">
+          <ArrowBase class="mr-1 text-blue" />
+
           <h2
-            class="font-bold font-mono font-title text-xs md:text-sm tracking-widest uppercase"
+            class="font-bold font-title text-sm text-white tracking-wider uppercase"
           >
             Past Performances
           </h2>
         </div>
 
-        <div class="gap-4 grid grid-cols-1 md:grid-cols-2 mt-5">
-          <SolutionBase
-            v-for="solution in solutions"
-            v-bind="solution"
-            :key="solution.slug"
-          />
-        </div>
-      </template>
-    </SectionBase>
+        <ArticleList
+          :articles="solutions"
+          class="mt-4"
+          component="SolutionBase"
+        />
+      </div>
+    </section>
 
     <SectionBase class="flex w-full h-auto" tag="div">
       <section
