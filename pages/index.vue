@@ -92,31 +92,32 @@
         </p>
       </section>
       <img
-        class="absolute bottom-0"
+        class="absolute bottom-0 w-full"
         src="/images/the-future-isnt-static-cover.svg"
       />
     </SectionVideo>
 
-    <SectionBase class="bg-blue-dark" tag="div">
-      <template #default>
+    <section class="bg-blue-dark px-4 py-6">
+      <div class="container">
         <div class="flex items-baseline">
           <ArrowBase class="mr-1 text-blue" />
-          <h2 class="font-bold font-title text-sm tracking-wider uppercase">
+
+          <h2
+            class="font-bold font-title text-sm text-white tracking-wider uppercase"
+          >
             Latest Insights
           </h2>
         </div>
 
         <InsightBase v-bind="insight" class="mt-4" />
 
-        <div class="gap-4 grid grid-cols-1 md:grid-cols-2 mt-5">
-          <InsightBase
-            v-for="insight in insights"
-            v-bind="insight"
-            :key="insight.slug"
-          />
-        </div>
-      </template>
-    </SectionBase>
+        <ArticleList
+          :articles="insights"
+          class="mt-4"
+          component="InsightBase"
+        />
+      </div>
+    </section>
   </article>
 </template>
 
@@ -169,7 +170,16 @@ export default Vue.extend({
       ).fetch<VideoBaseI>()) as VideoContentsT
 
       let insights: InsightContentsT = (await $content('insights')
-        .without('body')
+        .only([
+          'authors',
+          'categories',
+          'cover',
+          'description',
+          'feature',
+          'publish',
+          'slug',
+          'title'
+        ])
         .sortBy('publish', 'desc')
         .fetch<InsightBaseI>()) as InsightContentsT
 
