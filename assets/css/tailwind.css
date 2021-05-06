@@ -8,7 +8,7 @@
 .hero-video,
 .slide-image,
 .slide-video {
-  @apply absolute left-0 max-w-none xl:max-w-full object-cover;
+  @apply absolute left-0 max-w-none xl:max-w-full object-cover land:w-full;
 }
 
 .hero-image,

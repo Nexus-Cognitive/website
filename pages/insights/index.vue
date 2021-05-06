@@ -15,16 +15,12 @@
       </template>
     </HeroBase>
 
-    <div class="bg-blue-dark">
-      <div
-        class="container gap-4 grid grid-cols-1 md:grid-cols-2 px-3 sm:px-6 py-6 sm:py-9"
-      >
-        <InsightBase
-          v-for="insight in insights"
-          v-bind="insight"
-          :key="insight.slug"
-        />
-      </div>
+    <div class="bg-blue-dark px-4 py-6">
+      <ArticleList
+        :articles="insights"
+        class="container"
+        component="InsightBase"
+      />
     </div>
   </article>
 </template>
@@ -50,10 +46,6 @@ import { insightsMap } from '@/utilities'
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
     try {
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
-
       const authors: AuthorContentsT = (await $content(
         'authors'
       ).fetch<AuthorBaseI>()) as AuthorContentsT
@@ -61,6 +53,10 @@ export default Vue.extend({
       const categories: CategoryContentsT = (await $content(
         'categories'
       ).fetch<CategoryBaseI>()) as CategoryContentsT
+
+      const images: ImageContentsT = (await $content(
+        'images'
+      ).fetch<ImageBaseI>()) as ImageContentsT
 
       let insights: InsightContentsT = (await $content('insights')
         .only([

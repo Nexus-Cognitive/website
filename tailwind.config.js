@@ -138,6 +138,14 @@ module.exports = {
         30: '0.3',
         50: '0.5'
       },
+      screens: {
+        land: {
+          raw: '(orientation: landscape)'
+        },
+        port: {
+          raw: '(orientation: portrait)'
+        }
+      },
       typography: {
         DEFAULT: {
           css: {
