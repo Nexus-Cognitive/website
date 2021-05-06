@@ -5,7 +5,7 @@
         <h2
           class="font-title font-bold text-sm md:text-xl left-3 md:left-5 bottom-5 absolute"
         >
-          {{ service.heading }}
+          {{ service.title }}
         </h2>
       </template>
     </HeroBase>
