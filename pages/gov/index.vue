@@ -239,7 +239,7 @@ export default Vue.extend({
       ).fetch<ImageBaseI>()) as ImageContentsT
 
       const services: ServiceContentsT = (await $content('services')
-        .sortBy('createdAt')
+        .sortBy('title')
         .fetch<ServiceBaseI>()) as ServiceContentsT
 
       let authors: AuthorContentsT = (await $content(
