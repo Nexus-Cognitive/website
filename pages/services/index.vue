@@ -29,7 +29,6 @@ import type {
   FocusContentsT,
   ImageContentsT,
   ServiceContentsT,
-  StrategyContentT,
   StrategyContentsT,
   VideoContentT
 } from '@/types'
@@ -42,7 +41,7 @@ import type {
   VideoBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { colorFind, imageFind, servicesFilter } from '@/utilities'
+import { imageFind, strategiesMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
@@ -65,7 +64,7 @@ export default Vue.extend({
       }
 
       const services: ServiceContentsT = (await $content('services')
-        .sortBy('createdAt')
+        .sortBy('title')
         .fetch<ServiceBaseI>()) as ServiceContentsT
 
       const colors: ColorContentsT = (await $content(
@@ -76,34 +75,7 @@ export default Vue.extend({
         .sortBy('order')
         .fetch<StrategyBaseI>()) as StrategyContentsT
 
-      strategies = strategies.map(
-        (strategy: StrategyContentT): StrategyContentT => {
-          if (strategy.backgroundColor) {
-            strategy.backgroundColor = colorFind(
-              colors,
-              strategy.backgroundColor
-            )
-          }
-
-          if (strategy.bodyColor) {
-            strategy.bodyColor = colorFind(colors, strategy.bodyColor)
-          }
-
-          if (strategy.image) {
-            strategy.image = imageFind(images, strategy.image)
-          }
-
-          if (strategy.services?.length) {
-            strategy.services = servicesFilter(services, strategy.services)
-          }
-
-          if (strategy.titleColor) {
-            strategy.titleColor = colorFind(colors, strategy.titleColor)
-          }
-
-          return strategy
-        }
-      )
+      strategies = strategiesMap(strategies, colors, images, services)
 
       return {
         focuses,
