@@ -67,7 +67,7 @@ export default Vue.extend({
     },
 
     rows: {
-      default: 1,
+      default: 0,
       type: [Number, String],
       validator
     },
@@ -133,7 +133,7 @@ export default Vue.extend({
         this.colsXl ? `xl:grid-cols-${this.colsXl}` : '',
         this.cols2xl ? `2xl:grid-cols-${this.cols2xl}` : '',
         this.cols3xl ? `3xl:grid-cols-${this.cols3xl}` : '',
-        `grid-rows-${this.rows}`,
+        this.rows ? `grid-rows-${this.rows}` : '',
         this.rowsXs ? `xs:grid-rows-${this.rowsXs}` : '',
         this.rowsSm ? `sm:grid-rows-${this.rowsSm}` : '',
         this.rowsMd ? `md:grid-rows-${this.rowsMd}` : '',
