@@ -20,8 +20,11 @@
               v-for="(service, index) in services"
               :key="service.slug"
               :class="serviceClassListGet(index)"
-              v-html="service.title"
-            ></li>
+            >
+              <NuxtLink :to="serviceToGet(service)">
+                {{ service.title }}
+              </NuxtLink>
+            </li>
           </ul>
         </SectionBase>
       </slot>
@@ -151,6 +154,10 @@ export default Vue.extend({
       }
 
       return classList
+    },
+
+    serviceToGet({ slug }: ServiceContentT): string {
+      return `/services/${slug}`
     }
   }
 })
