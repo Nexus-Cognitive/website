@@ -2,5 +2,9 @@
   "title": "Dev / Analytic Ops",
   "description": "Our team integrates seamlessly with your operations to build lasting momentum.",
   "body": "In short, AnalyticOps is a framework that oversees development of automation and consumption of analytics across the enterprise. It’s a series of steps, integrated processes and technologies that are must-haves for companies that want to successfully deliver business value from AI and advanced analytics-based models. AnalyticOps frameworks help break silos and accelerate time to value by bringing together data science, software engineering and the business.",
-  "image": "about-poster"
+  "image": "about-poster",
+  "services": [
+    "artificial-intelligence",
+    "data-science"
+  ]
 }
