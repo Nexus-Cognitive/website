@@ -195,7 +195,10 @@ export default Vue.extend({
       ) as InsightContentT
 
       insights = insights
-        .filter(({ feature }: InsightContentT): boolean => !feature)
+        .filter(
+          ({ feature, publish }: InsightContentT): boolean =>
+            !feature && publish < new Date().toISOString()
+        )
         ?.slice(0, 2)
 
       let slides: SlideContentsT = (await $content('slides')
