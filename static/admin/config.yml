@@ -196,6 +196,43 @@ collections:
         search_fields:
           - title
         multiple: true
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: content/services
+    create: true
+    extension: json
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: string
+      - name: body
+        label: Body
+        widget: text
+      - name: image
+        label: Image
+        widget: relation
+        collection: images
+        display_fields:
+          - title
+        value_field: '{{slug}}'
+        search_fields:
+          - title
+        multiple: false
+      - name: services
+        label: Services
+        label_singular: Service
+        widget: relation
+        collection: services
+        display_fields:
+          - title
+        value_field: '{{slug}}'
+        search_fields:
+          - title
+        multiple: true
   - name: slides
     label: Slides
     label_singular: Slide
