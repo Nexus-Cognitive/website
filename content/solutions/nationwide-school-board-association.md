@@ -32,7 +32,7 @@ To address competitive risk and scale to meet near term growth, the existing pla
 * Azure Cognitive Search
 * Azure Dev Ops
 
-Applying our Cloud Acceleration Framework allowed Nexus to complete cloud modernization and migration to a production environment in under 4.5 months. This efficient migration allowed TASB to take advantage of the back-to-school season, a key business driver.
+Applying our Cloud Acceleration Framework allowed Nexus to complete cloud modernization and migration to a production environment in under 4.5 months. This efficient migration allowed the client to take advantage of the back-to-school season, a key business driver.
 
 **Results**
 The following key benefits/outcomes were directly driven by the modernization and migration effort.
