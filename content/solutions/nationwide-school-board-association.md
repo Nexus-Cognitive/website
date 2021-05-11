@@ -14,7 +14,7 @@ problem: The largest non-profit Public School Board Association (PSBA) operate a
   developed internally on the Microsoft Platform over 10 years prior with
   performance degrading as annual transaction volume exceeded over $1 Billion
   annually.
-cover: amplify
+cover: gov-public-school-board
 publish: 2021-05-11T09:52:29-05:00
 authors:
   - andy-nardo
