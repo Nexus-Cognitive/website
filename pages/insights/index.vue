@@ -85,7 +85,7 @@ export default Vue.extend({
 
       insights = insights.filter(
         ({ feature, publish }: InsightContentT): boolean =>
-          !feature && publish < new Date().toISOString()
+          !feature && publish <= new Date().toISOString()
       )
 
       return {
