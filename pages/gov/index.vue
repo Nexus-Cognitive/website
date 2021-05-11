@@ -197,7 +197,7 @@ import type {
   CategoryContentsT,
   ColorContentsT,
   ImageContentsT,
-  IndustryContentsT,
+  ServiceContentsT,
   SolutionContentsT,
   StrategyContentsT,
   StrategyContentT,
@@ -208,7 +208,7 @@ import {
   CategoryBaseI,
   ColorBaseI,
   ImageBaseI,
-  IndustryBaseI,
+  ServiceBaseI,
   SolutionBaseI,
   StrategyBaseI,
   VideoBaseI
@@ -219,7 +219,7 @@ import {
   authorsMap,
   colorFind,
   imageFind,
-  industriesFilter,
+  servicesFilter,
   solutionsMap
 } from '@/utilities'
 
@@ -238,9 +238,9 @@ export default Vue.extend({
         'images'
       ).fetch<ImageBaseI>()) as ImageContentsT
 
-      const industries: IndustryContentsT = (await $content('industries')
-        .sortBy('createdAt')
-        .fetch<IndustryBaseI>()) as IndustryContentsT
+      const services: ServiceContentsT = (await $content('services')
+        .sortBy('title')
+        .fetch<ServiceBaseI>()) as ServiceContentsT
 
       let authors: AuthorContentsT = (await $content(
         'authors'
@@ -280,11 +280,8 @@ export default Vue.extend({
             strategy.image = imageFind(images, strategy.image)
           }
 
-          if (strategy.industries?.length) {
-            strategy.industries = industriesFilter(
-              industries,
-              strategy.industries
-            )
+          if (strategy.services?.length) {
+            strategy.services = servicesFilter(services, strategy.services)
           }
 
           switch (strategy.slug) {

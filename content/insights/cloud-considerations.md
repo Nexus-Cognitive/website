@@ -3,7 +3,7 @@ title: Cloud Considerations
 description: Plan for the Right Cloud-Services Vendor
 authors:
   - anu-jain
-publish: 2021-04-09T12:00:00Z
+publish: 2021-08-09T12:00:00Z
 categories: 
   - cloud
   - business-strategy
