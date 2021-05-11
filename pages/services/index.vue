@@ -2,6 +2,8 @@
   <article>
     <HeroBase section-class-list="pb-9 sm:pb-24" :video="video">
       <template #default>
+        <h1 class="sr-only">Services</h1>
+
         <p
           class="font-light font-mono text-sm sm:text-lg 2xl:text-xl text-left"
         >
@@ -26,8 +28,7 @@ import type {
   ColorContentsT,
   FocusContentsT,
   ImageContentsT,
-  IndustryContentsT,
-  StrategyContentT,
+  ServiceContentsT,
   StrategyContentsT,
   VideoContentT
 } from '@/types'
@@ -35,12 +36,12 @@ import type {
   ColorBaseI,
   FocusBaseI,
   ImageBaseI,
-  IndustryBaseI,
+  ServiceBaseI,
   StrategyBaseI,
   VideoBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { colorFind, imageFind, industriesFilter } from '@/utilities'
+import { imageFind, strategiesMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
@@ -62,9 +63,9 @@ export default Vue.extend({
         video.poster = imageFind(images, video.poster)
       }
 
-      const industries: IndustryContentsT = (await $content('industries')
-        .sortBy('createdAt')
-        .fetch<IndustryBaseI>()) as IndustryContentsT
+      const services: ServiceContentsT = (await $content('services')
+        .sortBy('title')
+        .fetch<ServiceBaseI>()) as ServiceContentsT
 
       const colors: ColorContentsT = (await $content(
         'colors'
@@ -74,41 +75,11 @@ export default Vue.extend({
         .sortBy('order')
         .fetch<StrategyBaseI>()) as StrategyContentsT
 
-      strategies = strategies.map(
-        (strategy: StrategyContentT): StrategyContentT => {
-          if (strategy.backgroundColor) {
-            strategy.backgroundColor = colorFind(
-              colors,
-              strategy.backgroundColor
-            )
-          }
-
-          if (strategy.bodyColor) {
-            strategy.bodyColor = colorFind(colors, strategy.bodyColor)
-          }
-
-          if (strategy.image) {
-            strategy.image = imageFind(images, strategy.image)
-          }
-
-          if (strategy.industries?.length) {
-            strategy.industries = industriesFilter(
-              industries,
-              strategy.industries
-            )
-          }
-
-          if (strategy.titleColor) {
-            strategy.titleColor = colorFind(colors, strategy.titleColor)
-          }
-
-          return strategy
-        }
-      )
+      strategies = strategiesMap(strategies, colors, images, services)
 
       return {
         focuses,
-        industries,
+        services,
         strategies,
         video
       }
