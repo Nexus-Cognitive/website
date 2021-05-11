@@ -20,4 +20,5 @@ The Department of the Interior selected Nexus Cognitive Government Solutions to 
 
 ![](/images/picture1.png)
 
+**Solution**
 Nexus Cognitive used its skills and intellectual property, to include proprietary analytics workflows to deliver a solution and analytics services for the first two task orders in under 3 months. Nexus Cognitive Government Solutions deep skills in machine learning, and pervasive analytics powered by our capabilities in GPU enabled High Performance Compute in the cloud got the job done in much faster time than the DOI though possible
