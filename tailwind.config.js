@@ -208,7 +208,8 @@ module.exports = {
       auto: 'auto',
       full: '100%',
       screen: '100vh',
-      'screen-half': '50vh'
+      'screen-half': '50vh',
+      'screen-three-quarter': '75vh'
     },
     maxWidth: {
       full: '100%',
