@@ -2,7 +2,7 @@ site_url: https://nexuscognitive.com
 
 display_url: https://nexuscognitive.com
 
-logo_url: https://nexuscognitive.com/images/logo.svg
+logo_url: https://www.nexuscognitive.com/images/logo.svg
 
 backend:
   name: github
@@ -210,6 +210,16 @@ collections:
       - name: body
         label: Body
         widget: text
+      - name: image
+        label: Image
+        widget: relation
+        collection: images
+        display_fields:
+          - title
+        value_field: '{{slug}}'
+        search_fields:
+          - title
+        multiple: false
       - name: services
         label: Services
         label_singular: Service
