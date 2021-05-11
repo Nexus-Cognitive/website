@@ -1,7 +1,11 @@
 <template>
   <article>
     <!-- hero -->
-    <HeroBase section-class-list="pb-9 sm:pb-24" :image="service.image">
+    <HeroBase
+      header-height="three-quarter"
+      :image="service.image"
+      section-class-list="pb-9 sm:pb-24"
+    >
       <template #default>
         <!-- heading -->
         <h2
