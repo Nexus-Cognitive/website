@@ -1,17 +1,29 @@
 import type {
-  ArticleContentT,
   AuthorContentsT,
   CategoryContentsT,
   ImageContentsT,
-  InsightContentT
+  InsightContentT,
+  SectionContentsT
 } from '@/types'
-import { articleMap } from '@/utilities'
+import { articleMap, sectionFind } from '@/utilities'
 
 export function insightMap(
   insight: InsightContentT,
   authors: AuthorContentsT,
   categories: CategoryContentsT,
-  images: ImageContentsT
-): ArticleContentT {
-  return articleMap(insight, authors, categories, images)
+  images: ImageContentsT,
+  sections: SectionContentsT | undefined = undefined
+): InsightContentT {
+  const article = articleMap(
+    insight,
+    authors,
+    categories,
+    images
+  ) as InsightContentT
+
+  if (article.section && sections) {
+    article.section = sectionFind(sections, article.section)
+  }
+
+  return article
 }
