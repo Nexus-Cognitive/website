@@ -2,5 +2,9 @@
   "title": "Blockchain",
   "description": "Securing reality via automated distributed ledgers",
   "body": "Enhance business operations and reduce red tape through permissionless smart contracts and automated fast transactions",
-  "image": "about-poster"
+  "image": "services-blockchain",
+  "services": [
+    "automation",
+    "digital-strategy"
+  ]
 }
