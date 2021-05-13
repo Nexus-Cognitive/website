@@ -9,7 +9,7 @@ categories:
 cover: office-building
 client: Big 4 Professional Services Firm
 project: IT Process Optimization
-amount: $32M (over 4 years)
+outcomes: $32M (over 4 years)
 problem: Large, global professional services organization lacked consistency and alignment in technology sourcing and platforms across multiple countries.
 ---
 

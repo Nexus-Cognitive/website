@@ -312,8 +312,8 @@ collections:
       - name: project
         label: Project
         widget: string
-      - name: amount
-        label: Amount
+      - name: outcomes
+        label: Outcomes
         widget: string
       - name: problem
         label: Problem

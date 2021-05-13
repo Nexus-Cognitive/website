@@ -9,7 +9,7 @@ categories:
 cover: healthcare
 client: Major Healthcare Services Company
 project: IT Process Optimization
-amount: $5M
+outcomes: $5M
 problem: The Health Solutions IT department suffered from several criticisms from internal customers as well as other IT departments within the organization. Internal customers were experiencing long wait times, lack of problem resolution with trouble tickets entered (multiple tickets per problem), no well-defined service levels to set expectations for work performance, etc. Corporate IT was frustrated with Health Solutions’ inability to conform to PMO requirements and standards. Additionally, morale and communication was low within the group.
 ---
 
