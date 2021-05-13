@@ -1,5 +1,11 @@
 {
   "title": "Customer Experience",
-  "description": "CX is a key differentiator in commerce, and its mastery is something we consider essential in the new digital economy.",
-  "body": "Customer experience (Cx) the impression your brand leaves on your customers. It is the end result of every interaction they have with you–from discovering your offering to making a purchase. Customers’ future interactions with your brand are directly related to their experience, so it is imperative their journey is as frictionless and delightful as possible. We evaluate the entirety of your customer’s interactions and consider each touchpoint to create a consistently seamless experience. By connecting creative, content, and commerce together, we forge transformative, user-centric digital experiences that inspire."
+  "description": "In the future economy, customer experience is a key differentiator for industries.",
+  "body": "Customer experience (Cx) is the end result of every point of contact you have with your customers. From their first moment of discovering your offering to the most loyal, customers’ future interactions with your brand are directly related to their experience at any given time. We map and evaluate customer touch-points and journeys through rich analytics to discover quick wins and growth while reducing customer churn.",
+  "services": [
+    "customer-experience",
+    "human-centered-design",
+    "dev-analytic-ops"
+  ],
+  "image": "services-ai"
 }
