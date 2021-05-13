@@ -10,7 +10,7 @@ categories:
 cover: healthcare-worker
 client: Major Healthcare Provider
 project: EMR System Selection, Implementation and Support
-amount: $7M
+outcomes: $7M
 problem: The company needed an Electronic Medical Records system for all of its on-site clinics, including electronic file transmission capabilities with pharmacies as well as reporting requirements within the clinics and back to corporate. The legacy system was ineffective functionally, highly manual, and did not scale as required by the growth of the business.
 ---
 
