@@ -7,17 +7,16 @@
 
           <AuthorList :authors="solution.authors" class="mt-3" />
 
-          <h1 class="font-light font-mono mt-2 text-sm sm:text-lg 2xl:text-xl">
+          <h1 class="font-bold font-title mt-2 text-sm sm:text-lg 2xl:text-xl">
             {{ solution.client }}
           </h1>
-
           <h2 class="font-light font-mono mt-2 text-xs sm:text-sm 2xl:text-md">
-            Contract Amount: {{ solution.amount }}
+            <strong>Project:</strong> {{ solution.description }}
           </h2>
-
           <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
-            Project: {{ solution.description }}
+           <strong> Outcomes:</strong> {{ solution.outcomes }}
           </p>
+     
         </div>
       </template>
     </HeroBase>
