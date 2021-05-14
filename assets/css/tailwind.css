@@ -14,7 +14,7 @@
 .hero-image,
 .slide-image,
 .slide-video {
-  filter: grayscale(100%) opacity(20%);
+  filter:opacity(60%);
 }
 
 .hero-video,
