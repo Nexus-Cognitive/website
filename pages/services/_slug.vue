@@ -28,7 +28,7 @@
           </h3>
 
           <!-- body -->
-          <p class="font-mono text-black text-xs md:row-start-2 md:col-start-2">
+          <p class="font-sans text-gray-dark text-xs md:row-start-2 md:col-start-2">
             {{ service.body }}
           </p>
         </template>
@@ -62,7 +62,7 @@
     </section>
 
     <!-- related services -->
-    <section v-if="servicesShow" class="px-2 md:px-4 py-3 md:py-6">
+    <section v-if="servicesShow" class="px-2 md:px-4 py-3 md:py-6 border-t border-solid border-gray-light">
       <!-- container -->
       <div class="container">
         <!-- heading and arrow -->
@@ -71,13 +71,13 @@
           <ArrowBase class="mr-1 text-blue" />
 
           <!-- heading -->
-          <h3 class="font-bold font-title text-sm tracking-wider uppercase">
+          <h3 class="font-bold font-title text-xs tracking-wider uppercase">
             Related Services
           </h3>
         </div>
 
         <!-- grid -->
-        <Grid class="mt-2 md:mt-4" cols-md="2">
+        <Grid class="mt-2 md:mt-4" cols-md="4">
           <!-- default -->
           <template #default>
             <!-- service -->
@@ -86,14 +86,14 @@
               :key="serviceRelation.slug"
             >
               <!-- title -->
-              <h4 class="font-title text-sm md:text-md">
+              <h4 class="font-sans text-sm text-purple  md:text-md">
                 <NuxtLink :to="serviceToGet(serviceRelation)">
                   {{ serviceRelation.title }}
                 </NuxtLink>
               </h4>
 
               <!-- description -->
-              <p>{{ serviceRelation.description }}</p>
+              <p class="text-gray-dark">{{ serviceRelation.description }}</p>
             </article>
           </template>
         </Grid>
