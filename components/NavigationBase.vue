@@ -15,7 +15,7 @@
       <li
         v-for="(route, index) in routes"
         :key="route.name"
-        class="block mt-1 md:mt-0 sm:text-sm"
+        class="block mt-1 md:mt-0 sm:text-sm font-title"
         :class="routeClassListGet(index, route.name)"
       >
         <nuxt-link :to="{ name: route.name }">
