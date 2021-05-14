@@ -6,7 +6,7 @@
         <ImageBase
           v-if="imageShow"
           v-bind="image"
-          class="md:h-screen object-cover md:row-start-1"
+          class="md:h-screen-three-quarter object-cover md:row-start-1"
           :class="imageClassList"
         />
         <SectionBase
@@ -103,7 +103,7 @@ export default Vue.extend({
     },
 
     classList(): string {
-      return `bg-${this.backgroundColor.slug} md:h-screen-half lg:h-screen grid md:grid-cols-2 md:grid-rows-1 overflow-hidden`
+      return `bg-${this.backgroundColor.slug} md:h-screen-half lg:h-screen-three-quarter grid md:grid-cols-2 md:grid-rows-1 overflow-hidden`
     },
 
     imageClassList(): object {
@@ -144,8 +144,7 @@ export default Vue.extend({
       ]
 
       if (index > 0) {
-        classList.push('border-t-2')
-
+       
         if (this.gov) {
           classList.push(this.titleColor_)
         } else {
