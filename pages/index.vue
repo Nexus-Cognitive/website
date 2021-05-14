@@ -82,17 +82,17 @@
         class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
       >
         <div class="flex items-center">
-          <ArrowBase class="mr-1" />
-          <h2 class="font-light font-mono text-md xl:text-lg">
+      
+          <h2 class="font-bold uppercase font-title text-md xl:text-lg">
             The Future isn’t Static
           </h2>
         </div>
-        <p class="font-mono mt-3 text-xs xl:text-sm">
+        <p class="text-center font-mono mt-3 text-xs xl:text-sm">
           Get the tools and strategies to shape your new standards in business
         </p>
       </section>
       <img
-        class="absolute bottom-0 w-full"
+        class="absolute -bottom-10 w-full"
         src="/images/the-future-isnt-static-cover.svg"
       />
     </SectionVideo>
@@ -109,7 +109,7 @@
           </h2>
         </div>
 
-        <InsightBase v-bind="insight" class="mt-4" />
+    
 
         <ArticleList
           :articles="insights"
