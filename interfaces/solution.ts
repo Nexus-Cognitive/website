@@ -1,4 +1,6 @@
-import type { ArticlePageI, SolutionBaseI } from '@/interfaces'
+import type { ArticleBaseI, ArticlePageI } from '@/interfaces'
+
+export interface SolutionBaseI extends ArticleBaseI {}
 
 export interface SolutionPageI extends ArticlePageI, SolutionBaseI {
   outcomes: string
