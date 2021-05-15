@@ -1,6 +1,10 @@
 <template>
-  <article>
-    <HeroBase    header-height="three-quarter" background-color="blue-dark" :image="insight.cover">
+  <article v-if="insight">
+    <HeroBase
+      header-height="three-quarter"
+      background-color="blue-dark"
+      :image="insight.cover"
+    >
       <template #default>
         <div class="text-left">
           <h1 class="font-bold font-title mt-2 text-sm sm:text-lg 2xl:text-xl">
@@ -10,23 +14,25 @@
           <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
             {{ insight.description }}
           </p>
-            <AuthorList :authors="insight.authors" class="mt-3" />
-    
-       
+          <AuthorList :authors="insight.authors" class="mt-3" />
         </div>
       </template>
     </HeroBase>
 
     <div class="container py-6">
-        <NuxtContent
+      <NuxtContent
         class="mx-auto prose prose-blue prose-lg"
         :document="insight"
       />
-        <div class="flex flex-col mx-auto w-1/2 justify-center content-center">
-          <CategoryList :categories="insight.categories" class="mt-3 text-gray-dark " />
-                 <p class="font-mono mt-3 text-gray-dark ">
-            {{ insight.publish | dateFormat }}
-          </p></div>
+      <div class="flex flex-col mx-auto w-1/2 justify-center content-center">
+        <CategoryList
+          :categories="insight.categories"
+          class="mt-3 text-gray-dark"
+        />
+        <p class="font-mono mt-3 text-gray-dark">
+          {{ insight.publish | dateFormat }}
+        </p>
+      </div>
     </div>
   </article>
 </template>
@@ -34,10 +40,10 @@
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  AuthorContentsT,
-  CategoryContentsT,
-  ImageContentsT,
-  InsightContentT
+  AuthorResultT,
+  CategoryResultT,
+  ImageResultT,
+  InsightResultT
 } from '@/types'
 import {
   AuthorBaseI,
@@ -46,7 +52,7 @@ import {
   InsightBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightMap } from '@/utilities'
+import { insightResultFilterPublishMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -55,29 +61,27 @@ export default Vue.extend({
     params
   }: Context): Promise<object | void> {
     try {
-      const authors: AuthorContentsT = (await $content(
+      const authors: AuthorResultT = await $content(
         'authors'
-      ).fetch<AuthorBaseI>()) as AuthorContentsT
+      ).fetch<AuthorBaseI>()
 
-      const categories: CategoryContentsT = (await $content(
+      const categories: CategoryResultT = await $content(
         'categories'
-      ).fetch<CategoryBaseI>()) as CategoryContentsT
+      ).fetch<CategoryBaseI>()
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      let insight: InsightContentT = (await $content(
+      let insight: InsightResultT = await $content(
         'insights',
         params.slug
-      ).fetch<InsightBaseI>()) as InsightContentT
+      ).fetch<InsightBaseI>()
 
-      insight = insightMap(
+      insight = insightResultFilterPublishMap(
         insight,
         authors,
         categories,
         images
-      ) as InsightContentT
+      )
 
       return {
         insight

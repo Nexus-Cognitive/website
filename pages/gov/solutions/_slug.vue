@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article v-if="solution">
     <HeroBase background-color="blue-dark" :image="solution.cover">
       <template #default>
         <div class="text-left">
@@ -14,9 +14,8 @@
             <strong>Project:</strong> {{ solution.description }}
           </h2>
           <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
-           <strong> Outcomes:</strong> {{ solution.outcomes }}
+            <strong> Outcomes:</strong> {{ solution.outcomes }}
           </p>
-     
         </div>
       </template>
     </HeroBase>
@@ -36,10 +35,10 @@
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  AuthorContentsT,
-  CategoryContentsT,
-  ImageContentsT,
-  SolutionContentT
+  AuthorResultT,
+  CategoryResultT,
+  ImageResultT,
+  SolutionResultT
 } from '@/types'
 import {
   AuthorBaseI,
@@ -48,7 +47,7 @@ import {
   SolutionBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { solutionMap } from '@/utilities'
+import { solutionResultMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -57,29 +56,22 @@ export default Vue.extend({
     params
   }: Context): Promise<object | void> {
     try {
-      const authors: AuthorContentsT = (await $content(
+      const authors: AuthorResultT = await $content(
         'authors'
-      ).fetch<AuthorBaseI>()) as AuthorContentsT
+      ).fetch<AuthorBaseI>()
 
-      const categories: CategoryContentsT = (await $content(
+      const categories: CategoryResultT = await $content(
         'categories'
-      ).fetch<CategoryBaseI>()) as CategoryContentsT
+      ).fetch<CategoryBaseI>()
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      let solution: SolutionContentT = (await $content(
+      let solution: SolutionResultT = await $content(
         'solutions',
         params.slug
-      ).fetch<SolutionBaseI>()) as SolutionContentT
+      ).fetch<SolutionBaseI>()
 
-      solution = solutionMap(
-        solution,
-        authors,
-        categories,
-        images
-      ) as SolutionContentT
+      solution = solutionResultMap(solution, authors, categories, images)
 
       return {
         solution
