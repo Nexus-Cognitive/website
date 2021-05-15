@@ -1,3 +1,8 @@
 {
-  "title": "Developer Operations"
+  "title": "Developer Operations",
+  "description": "-",
+  "services": [
+    "dev-analytic-ops",
+    "digital-strategy"
+  ]
 }

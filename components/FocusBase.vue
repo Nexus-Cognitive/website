@@ -39,7 +39,7 @@ export default Vue.extend({
             ? this.opacityGet(40)
             : '0'
         }`,
-        `top-${this.topGet(3)}`,
+        `top-${this.topGet(5)}`,
         `sm:top-${this.topGet(8)}`,
         `2xl:top-${this.topGet(10)}`,
         this.activeIndex ? ' underline' : ''

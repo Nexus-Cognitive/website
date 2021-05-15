@@ -1,4 +1,7 @@
 {
   "title": "Analytics Operations",
-  "description": ""
+  "description": " AnalyticOps is a framework that oversees development of automation and consumption of analytics across the enterprise. ",
+  "services": [
+    "dev-analytic-ops"
+  ]
 }

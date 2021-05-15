@@ -3,7 +3,7 @@ title: AI and Data Integration
 description: eAutomate data integration with machine learning.
 authors:
   - anu-jain
-publish: 2021-04-28T12:00:00Z
+publish: 2021-08-28T12:00:00Z
 categories:
   - big-data
   - analytic-ops
@@ -56,11 +56,11 @@ Using that information, ML algorithms learn about data structures,
 flows, and needs and can use that information to automate data
 integration tasks such as:
 
--   Deducing appropriate data schemas and structures
--   Cataloging data used across applications — both repetitive and
+- Deducing appropriate data schemas and structures
+- Cataloging data used across applications — both repetitive and
     unique elements
--   Recommending transformation tasks
--   Mapping metadata elements between applications
+- Recommending transformation tasks
+- Mapping metadata elements between applications
 
 Think about the impact of that automation on your business. By enabling
 you to better understand your data and — more importantly — which of

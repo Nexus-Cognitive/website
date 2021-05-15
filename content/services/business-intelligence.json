@@ -1,0 +1,11 @@
+{
+  "title": "Business Intelligence",
+  "description": "More than dashboards and reports. Actionable real time insights and playbooks for products and workflows",
+  "body": "Business intelligence (BI) is a technology-driven process for analyzing data and delivering actionable information that helps executives, managers and workers make informed business decisions.",
+  "image": "services-businessintelligence",
+  "services": [
+    "business-intelligence",
+    "digital-strategy",
+    "dev-analytic-ops"
+  ]
+}

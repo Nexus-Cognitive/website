@@ -1,4 +1,7 @@
 {
   "title": "Cloud",
-  "description": ""
+  "description": "Cloud computing is the delivery of on-demand computing services, including applications, processing power and storage, typically over the internet on a pay-only-what-you-use format. They can also be setup on premises or in hybrid configurations.",
+  "services": [
+    "cloud-computing"
+  ]
 }

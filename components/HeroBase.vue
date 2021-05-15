@@ -1,9 +1,9 @@
 <template>
   <header
-    class="flex lg:h-screen justify-center overflow-hidden relative text-center"
+    class="flex justify-center overflow-hidden relative text-center"
     :class="headerClassList"
   >
-    <SectionVideo v-if="videoShow" v-bind="video" class="hero-video" />
+    <VideoBase v-if="videoShow" v-bind="video" class="hero-video" />
 
     <ImageBase v-if="imageShow" v-bind="image" class="hero-image" />
 
@@ -28,9 +28,11 @@ export default Vue.extend({
       validator: (v) => ['black', 'blue-dark', 'purple'].includes(v)
     },
 
-    image: {
-      default: (): ImageContentT => ImageContentM,
-      type: Object as PropType<ImageContentT>
+    headerHeight: {
+      default: 'full',
+      type: String,
+      validator: (v): boolean =>
+        ['full', 'half', 'three-quarter'].includes(v.toLowerCase())
     },
 
     heroVideo: {
@@ -41,6 +43,11 @@ export default Vue.extend({
     heroSection: {
       default: true,
       type: Boolean
+    },
+
+    image: {
+      default: (): ImageContentT => ImageContentM,
+      type: Object as PropType<ImageContentT>
     },
 
     sectionClassList: {
@@ -55,8 +62,13 @@ export default Vue.extend({
   },
 
   computed: {
-    headerClassList(): string {
-      return `bg-${this.backgroundColor}`
+    headerClassList(): string[] {
+      return [
+        `bg-${this.backgroundColor}`,
+        this.headerHeight === 'full' ? 'lg:h-screen' : '',
+        this.headerHeight === 'half' ? 'lg:h-screen-half' : '',
+        this.headerHeight === 'three-quarter' ? 'lg:h-screen-three-quarter' : ''
+      ]
     },
 
     imageShow(): boolean {

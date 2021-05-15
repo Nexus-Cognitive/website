@@ -1,7 +1,7 @@
 import type { ArticlePageI, SolutionBaseI } from '@/interfaces'
 
 export interface SolutionPageI extends ArticlePageI, SolutionBaseI {
-  amount: string
+  outcomes: string
   client: string
   problem: string
   project: string

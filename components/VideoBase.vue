@@ -6,9 +6,11 @@
     muted
     playsinline
     :poster="poster.src"
-    :src="src"
     :width="width"
-  ></video>
+  >
+    <source :src="srcWebM" type="video/webm" />
+    <source :src="srcMP4" type="video/mp4" />
+  </video>
 </template>
 
 <script lang="ts">
@@ -35,6 +37,16 @@ export default Vue.extend({
     width: {
       required: true,
       type: Number
+    }
+  },
+
+  computed: {
+    srcWebM() {
+      return `${this.src}.webm`
+    },
+
+    srcMP4() {
+      return `${this.src}.mp4`
     }
   }
 })
