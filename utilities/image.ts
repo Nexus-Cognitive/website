@@ -5,7 +5,7 @@ import { contentFind } from '@/utilities'
 export function imageFind(
   images: ImageContentsT,
   relation: ImageRelationT,
-  key: string = 'slug'
+  key: keyof ImageContentT = 'slug'
 ): ImageContentT | undefined {
   return contentFind<ImageBaseI, ImageRelationT>(images, relation, key)
 }

@@ -5,7 +5,7 @@ import { contentFind } from '@/utilities'
 export function colorFind(
   colors: ColorContentsT,
   relation: ColorRelationT,
-  key: string = 'slug'
+  key: keyof ColorContentT = 'slug'
 ): ColorContentT | undefined {
   return contentFind<ColorBaseI, ColorRelationT>(colors, relation, key)
 }
