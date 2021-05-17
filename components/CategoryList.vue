@@ -6,7 +6,10 @@
       class="inline"
     >
       <span v-if="startShow(index)">//</span>
-      {{ category.title }}<span v-if="delimiterShow(index)">,</span>
+      <NuxtLink :to="categoryToGet(category.slug)">{{
+        category.title
+      }}</NuxtLink
+      ><span v-if="delimiterShow(index)">,</span>
     </li>
   </ul>
 </template>
@@ -30,6 +33,10 @@ export default Vue.extend({
   },
 
   methods: {
+    categoryToGet(slug: string): string {
+      return `/insights/categories/${slug}`
+    },
+
     delimiterShow(index: number): boolean {
       return index !== this.last
     },
