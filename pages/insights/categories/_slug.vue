@@ -18,7 +18,7 @@
     </HeroBase>
 
     <!-- description and body -->
-    <section class="px-2 md:px-4 py-3 md:py-6">
+    <section v-if="category.description" class="px-2 md:px-4 py-3 md:py-6">
       <!-- grid -->
       <Grid class="container" cols-md="2">
         <!-- default -->
@@ -36,7 +36,6 @@
       v-if="insightsShow"
       class="bg-blue-dark px-2 md:px-4 pt-1 pb-3 md:pt-3 md:pb-6"
     >
-      <!-- <section v-if="insightsShow" class="bg-blue-dark px-2 md:px-4 py-3 md:py-6"> -->
       <!-- container -->
       <div class="container">
         <!-- insights list -->
