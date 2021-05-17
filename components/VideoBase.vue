@@ -1,6 +1,7 @@
 <template>
   <video
     autoplay
+    class="w-full"
     :height="height"
     loop
     muted
