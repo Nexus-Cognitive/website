@@ -4,7 +4,7 @@ description: Why Azure Synapse Analytics should be on your short-list of
   analytics solutions.
 cover: azure-synapse-analytics
 publish: 2020-11-09T12:00:00.000Z
-feature: false
+feature: true
 authors:
   - andy-nardo
 categories:
