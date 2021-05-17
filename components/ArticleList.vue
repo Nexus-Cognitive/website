@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import type { ArticleContentsT } from '@/types'
+import type { InsightBaseI, SolutionBaseI } from '@/interfaces'
 import Vue, { PropType } from 'vue'
 
 export default Vue.extend({
@@ -21,7 +22,7 @@ export default Vue.extend({
 
     articles: {
       required: true,
-      type: Array as PropType<ArticleContentsT>
+      type: Array as PropType<ArticleContentsT<InsightBaseI | SolutionBaseI>>
     },
 
     // component

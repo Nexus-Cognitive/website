@@ -1,13 +1,15 @@
 ---
 title: Deep Learning, Seismic Reflection Data for the DoI
-description: Delivering state-of-the-art solutions to investigate the mineral potential of Alaska's Offshore Continental Shelf (OCS).
+description: Delivering state-of-the-art solutions to investigate the mineral
+  potential of Alaska's Offshore Continental Shelf (OCS).
+cover: offshore-oil-rig
+publish: 2020-09-28T12:00:00.000Z
+feature: false
 authors:
   - scott-marvel
-publish: 2020-09-28T12:00:00Z
 categories:
   - press-release
-cover: offshore-oil-rig
-feature: false
+section: technology
 ---
 
 Nexus Cognitive Government Solutions (Nexus Cognitive) announced that it was awarded a 5-year Indefinite Delivery, Indefinite Quantity (IDIQ) contract to evaluate 2-D seismic reflection field data for The Department of the Interior (DOI), Bureau of Safety and Environmental Enforcement (BSEE), on behalf of the Bureau of Ocean Energy Management (BOEM).

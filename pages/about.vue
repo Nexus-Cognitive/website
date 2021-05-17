@@ -1,6 +1,6 @@
 <template>
   <article>
-    <HeroBase :video="heroVideo">
+    <HeroBase v-if="heroVideo" :video="heroVideo">
       <template #default>
         <h1 class="sr-only">About</h1>
 
@@ -11,7 +11,7 @@
       </template>
     </HeroBase>
 
-    <SlideBase v-bind="weAreSlide" class="h-screen-half" />
+    <SlideBase v-if="weAreSlide" v-bind="weAreSlide" class="h-screen-half" />
 
     <section class="px-3 sm:px-6 py-6 sm:py-9 text-black z-10 bg-white">
       <div class="flex items-center">
@@ -26,6 +26,7 @@
     </section>
 
     <SectionBase
+      v-if="authors"
       class="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 bg-white"
     >
       <template #default>
@@ -43,13 +44,12 @@
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  AuthorContentsT,
-  ImageContentT,
-  SlideContentT,
-  ImageContentsT,
-  ColorContentsT,
+  AuthorResultT,
+  ImageResultT,
+  ColorResultT,
   VideoContentT,
-  VideoContentsT
+  VideoResultT,
+  SlideResultT
 } from '@/types'
 import type {
   AuthorBaseI,
@@ -59,58 +59,44 @@ import type {
   VideoBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { authorMap, imageFind, slideMap } from '@/utilities'
+import { authorResultMap, imageFind, slideResultMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
     try {
-      const colors: ColorContentsT = (await $content(
-        'colors'
-      ).fetch<ColorBaseI>()) as ColorContentsT
+      const colors: ColorResultT = await $content('colors').fetch<ColorBaseI>()
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      const videos: VideoContentsT = (await $content(
-        'videos'
-      ).fetch<VideoBaseI>()) as VideoContentsT
+      const videos: VideoResultT = await $content('videos').fetch<VideoBaseI>()
 
-      const aboutHero: ImageContentT = imageFind(
-        images,
-        'about-hero'
-      ) as ImageContentT
-
-      const aboutImageOne: ImageContentT = imageFind(
-        images,
-        'the-future-isnt-static'
-      ) as ImageContentT
-
-      let weAreSlide: SlideContentT = (await $content(
-        'slides',
-        'we-are'
-      ).fetch<SlideBaseI>()) as SlideContentT
-
-      weAreSlide = slideMap(weAreSlide, colors, images, videos)
-
-      let authors: AuthorContentsT = (await $content('authors')
+      let authors: AuthorResultT = await $content('authors')
         .where({ partner: true })
         .sortBy('order')
-        .fetch<AuthorBaseI>()) as AuthorContentsT
+        .fetch<AuthorBaseI>()
 
-      authors = authors.map((author) => authorMap(author, images))
+      authors = authorResultMap(authors, images)
 
-      const heroVideo: VideoContentT | undefined = videos.find(
-        ({ slug }: VideoContentT): boolean => slug === 'about-hero'
-      )
+      let weAreSlide: SlideResultT = await $content(
+        'slides',
+        'we-are'
+      ).fetch<SlideBaseI>()
 
-      if (heroVideo?.poster) {
-        heroVideo.poster = imageFind(images, heroVideo.poster)
+      weAreSlide = slideResultMap(weAreSlide, colors, images, videos)
+
+      let heroVideo: VideoContentT | undefined
+
+      if (Array.isArray(images)) {
+        heroVideo = videos.find(
+          ({ slug }: VideoContentT): boolean => slug === 'about-hero'
+        )
+
+        if (heroVideo?.poster) {
+          heroVideo.poster = imageFind(images, heroVideo.poster)
+        }
       }
 
       return {
-        aboutHero,
-        aboutImageOne,
         authors,
         heroVideo,
         weAreSlide

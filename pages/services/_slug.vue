@@ -28,7 +28,9 @@
           </h3>
 
           <!-- body -->
-          <p class="font-sans text-gray-dark text-xs md:row-start-2 md:col-start-2">
+          <p
+            class="font-sans text-gray-dark text-xs md:row-start-2 md:col-start-2"
+          >
             {{ service.body }}
           </p>
         </template>
@@ -62,7 +64,10 @@
     </section>
 
     <!-- related services -->
-    <section v-if="servicesShow" class="px-2 md:px-4 py-3 md:py-6 border-t border-solid border-gray-light">
+    <section
+      v-if="servicesShow"
+      class="px-2 md:px-4 py-3 md:py-6 border-t border-solid border-gray-light"
+    >
       <!-- container -->
       <div class="container">
         <!-- heading and arrow -->
@@ -86,7 +91,7 @@
               :key="serviceRelation.slug"
             >
               <!-- title -->
-              <h4 class="font-sans text-sm text-purple  md:text-md">
+              <h4 class="font-sans text-sm text-purple md:text-md">
                 <NuxtLink :to="serviceToGet(serviceRelation)">
                   {{ serviceRelation.title }}
                 </NuxtLink>
@@ -105,14 +110,14 @@
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  ArticleContentT,
-  AuthorContentsT,
-  CategoryContentsT,
+  AuthorResultT,
   CategoryContentT,
-  ImageContentsT,
-  InsightContentsT,
-  ServiceContentsT,
-  ServiceContentT
+  CategoryResultT,
+  ImageResultT,
+  InsightContentT,
+  InsightResultT,
+  ServiceContentT,
+  ServiceResultT
 } from '@/types'
 import {
   ServiceBaseI,
@@ -122,7 +127,11 @@ import {
   CategoryBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightsMap, serviceFind, serviceMap } from '~/utilities'
+import {
+  insightResultFilterPublishMap,
+  serviceFind,
+  serviceMap
+} from '@/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -131,51 +140,57 @@ export default Vue.extend({
     params
   }: Context): Promise<object | undefined> {
     try {
-      const authors: AuthorContentsT = (await $content(
+      const authors: AuthorResultT = await $content(
         'authors'
-      ).fetch<AuthorBaseI>()) as AuthorContentsT
+      ).fetch<AuthorBaseI>()
 
-      const categories: CategoryContentsT = (await $content(
+      const categories: CategoryResultT = await $content(
         'categories'
-      ).fetch<CategoryBaseI>()) as CategoryContentsT
+      ).fetch<CategoryBaseI>()
 
       const categoriesFiltered: string[] = categories
-        .filter(
-          ({ services }: CategoryContentT): boolean =>
-            !!services?.includes(params.slug)
-        )
+        .filter(({ services }: CategoryContentT): boolean => {
+          if (Array.isArray(services)) {
+            return (services as string[]).includes(params.slug)
+          } else {
+            return false
+          }
+        })
         ?.map(({ slug }: CategoryContentT): string => slug)
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      let insights: InsightContentsT = (await $content('insights')
+      let insights: InsightResultT = await $content('insights')
         .where({ categories: { $containsAny: categoriesFiltered } })
         .sortBy('publish', 'desc')
         .limit(2)
-        .fetch<InsightBaseI>()) as InsightContentsT
+        .fetch<InsightBaseI>()
 
-      if (insights?.length) {
-        insights = insightsMap(insights, authors, categories, images).map(
-          (insight: ArticleContentT): ArticleContentT => {
-            insight.feature = false
-            return insight
-          }
-        ) as InsightContentsT
-      }
+      insights = insightResultFilterPublishMap(
+        insights,
+        authors,
+        categories,
+        images
+      )?.map(
+        (insight: InsightContentT): InsightContentT => {
+          insight.feature = false
 
-      const services: ServiceContentsT = (await $content(
-        'services'
-      ).fetch<ServiceBaseI>()) as ServiceContentsT
-
-      let service: ServiceContentT | undefined = serviceFind(
-        services,
-        params.slug
+          return insight
+        }
       )
 
-      if (service) {
-        service = serviceMap(service, services, images)
+      const services: ServiceResultT = await $content(
+        'services'
+      ).fetch<ServiceBaseI>()
+
+      let service: ServiceContentT | undefined
+
+      if (Array.isArray(services)) {
+        service = serviceFind(services, params.slug)
+
+        if (service && Array.isArray(images)) {
+          service = serviceMap(service, services, images)
+        }
       }
 
       return {
