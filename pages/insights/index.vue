@@ -1,6 +1,7 @@
 <template>
   <article>
     <HeroBase
+      v-if="insightFeature"
       background-color="blue-dark"
       :hero-section="false"
       :image="insightFeature.cover"
@@ -15,20 +16,15 @@
       </template>
     </HeroBase>
 
-    <Grid v-if="sectionsShow" class="container mt-6" cols-md="2">
-      <template #default>
-        <ul class="flex items-baseline justify-between">
-          <li v-for="section in sections" :key="sectionKeyGet(section)">
-            <NuxtLink
-              class="text-sm md:text-md underline hover:no-underline"
-              :to="sectionToGet(section)"
-            >
-              {{ section | capitalize }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </template>
-    </Grid>
+    <SectionNavigation v-if="sectionsShow" :sections="sections" />
+
+    <SectionInsights
+      v-if="insightsRecentShow"
+      cols-md="1"
+      :insights="insightsRecent"
+      title="Recent"
+      :title-block="false"
+    />
 
     <SectionInsights
       v-if="insightsBusinessShow"
@@ -71,7 +67,10 @@ import type {
   SectionBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightResultFilterPublishMap } from '@/utilities'
+import {
+  insightsFilterSection,
+  insightResultFilterPublishMap
+} from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
@@ -113,58 +112,59 @@ export default Vue.extend({
         sections
       )
 
-      const insightFeature: InsightContentT | undefined = insights?.find(
-        (insight: InsightContentT): boolean => insight.feature
-      )
+      let insightsBusiness: InsightResultT
 
-      insights = insights
-        ?.filter(
-          ({ slug }: InsightContentT): boolean => slug !== insightFeature?.slug
-        )
-        ?.map(
-          (insight: InsightContentT): InsightContentT => {
-            insight.feature = false
+      let insightsDesign: InsightResultT
 
-            return insight
-          }
-        )
+      let insightFeature: InsightContentT | undefined
+
+      let insightsRecent: InsightResultT
+
+      let insightsTechnology: InsightResultT
 
       const insightLimit: number = 3
 
-      const insightsBusiness: InsightResultT = insights
-        ?.filter(({ section }: InsightContentT): boolean => {
-          if (typeof section !== 'string' && !!section?.slug) {
-            return section.slug === 'business'
-          } else {
-            return false
-          }
-        })
-        ?.slice(0, insightLimit)
+      if (Array.isArray(insights)) {
+        insightFeature = insights.find(
+          (insight: InsightContentT): boolean => insight.feature
+        )
 
-      const insightsDesign: InsightResultT = insights
-        ?.filter(({ section }: InsightContentT): boolean => {
-          if (typeof section !== 'string' && !!section?.slug) {
-            return section.slug === 'design'
-          } else {
-            return false
-          }
-        })
-        ?.slice(0, insightLimit)
+        insights = insights
+          .filter(
+            ({ slug }: InsightContentT): boolean =>
+              slug !== insightFeature?.slug
+          )
+          .map(
+            (insight: InsightContentT): InsightContentT => {
+              insight.feature = false
 
-      const insightsTechnology: InsightResultT = insights
-        ?.filter(({ section }: InsightContentT): boolean => {
-          if (typeof section !== 'string' && !!section?.slug) {
-            return section.slug === 'technology'
-          } else {
-            return false
-          }
-        })
-        ?.slice(0, insightLimit)
+              return insight
+            }
+          )
+
+        insightsRecent = insights.splice(0, 2)
+
+        insightsBusiness = insightsFilterSection(insights, 'business')?.slice(
+          0,
+          insightLimit
+        )
+
+        insightsDesign = insightsFilterSection(insights, 'design')?.slice(
+          0,
+          insightLimit
+        )
+
+        insightsTechnology = insightsFilterSection(
+          insights,
+          'technology'
+        )?.slice(0, insightLimit)
+      }
 
       return {
         insightFeature,
         insightsBusiness,
         insightsDesign,
+        insightsRecent,
         insightsTechnology
       }
     } catch (e: any) {
@@ -175,11 +175,13 @@ export default Vue.extend({
   data(): any {
     const insightsBusiness: InsightResultT = []
     const insightsDesign: InsightResultT = []
+    const insightsRecent: InsightResultT = []
     const insightsTechnology: InsightResultT = []
 
     return {
       insightsBusiness,
       insightsDesign,
+      insightsRecent,
       insightsTechnology
     }
   },
@@ -191,6 +193,10 @@ export default Vue.extend({
 
     insightsDesignShow(): boolean {
       return this.insightsDesign?.length > 0
+    },
+
+    insightsRecentShow(): boolean {
+      return this.insightsRecent?.length > 0
     },
 
     insightsTechnologyShow(): boolean {
