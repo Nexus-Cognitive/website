@@ -2,6 +2,7 @@
   <article>
     <!-- hero -->
     <HeroBase
+      v-if="category"
       header-height="three-quarter"
       :image="category.image"
       section-class-list="pb-9 sm:pb-24"
@@ -31,7 +32,10 @@
     </section>
 
     <!-- insights -->
-    <section class="bg-blue-dark px-2 md:px-4 pt-1 pb-3 md:pt-3 md:pb-6">
+    <section
+      v-if="insightsShow"
+      class="bg-blue-dark px-2 md:px-4 pt-1 pb-3 md:pt-3 md:pb-6"
+    >
       <!-- <section v-if="insightsShow" class="bg-blue-dark px-2 md:px-4 py-3 md:py-6"> -->
       <!-- container -->
       <div class="container">
@@ -49,13 +53,12 @@
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  ArticleContentT,
-  AuthorContentsT,
+  AuthorResultT,
   CategoryContentT,
-  CategoryContentsT,
-  ImageContentsT,
+  CategoryResultT,
   InsightContentT,
-  InsightContentsT
+  InsightResultT,
+  ImageResultT
 } from '@/types'
 import {
   ImageBaseI,
@@ -64,7 +67,7 @@ import {
   CategoryBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightsMap } from '~/utilities'
+import { insightResultFilterPublishMap } from '~/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -73,42 +76,38 @@ export default Vue.extend({
     params
   }: Context): Promise<object | undefined> {
     try {
-      const authors: AuthorContentsT = (await $content(
+      const authors: AuthorResultT = await $content(
         'authors'
-      ).fetch<AuthorBaseI>()) as AuthorContentsT
+      ).fetch<AuthorBaseI>()
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      const categories: CategoryContentsT = (await $content(
+      const categories: CategoryResultT = await $content(
         'categories'
-      ).fetch<CategoryBaseI>()) as CategoryContentsT
+      ).fetch<CategoryBaseI>()
 
-      const category: CategoryContentT | undefined = categories.find(
-        ({ slug }) => slug === params.slug
+      const category: CategoryContentT | undefined = categories?.find(
+        ({ slug }: CategoryContentT): boolean => slug === params.slug
       )
 
-      let insights: InsightContentsT = []
+      let insights: InsightResultT = []
 
       if (category) {
-        insights = (await $content('insights')
+        insights = await $content('insights')
           .where({ categories: { $contains: category.slug } })
           .sortBy('publish', 'desc')
-          .fetch<InsightBaseI>()) as InsightContentsT
+          .fetch<InsightBaseI>()
 
-        if (insights?.length) {
-          insights = insightsMap(insights, authors, categories, images).map(
-            (insight: ArticleContentT): ArticleContentT => {
-              insight.feature = false
-              return insight
-            }
-          ) as InsightContentsT
-        }
-
-        insights = insights.filter(
-          ({ feature, publish }: InsightContentT): boolean =>
-            !feature && publish <= new Date().toISOString()
+        insights = insightResultFilterPublishMap(
+          insights,
+          authors,
+          categories,
+          images
+        )?.map(
+          (insight: InsightContentT): InsightContentT => {
+            insight.feature = false
+            return insight
+          }
         )
       }
 
