@@ -1,21 +1,26 @@
 import type {
+  ArticleContentT,
   AuthorContentsT,
+  AuthorResultT,
   CategoryContentsT,
+  CategoryResultT,
   ImageContentsT,
+  ImageResultT,
   InsightContentT,
   InsightContentsT,
   InsightRelationT,
-  SectionContentsT,
-  ArticleContentT,
   InsightResultT,
-  AuthorResultT,
-  CategoryResultT,
-  ImageResultT,
+  SectionContentsT,
+  SectionRelationT,
   SectionResultT
 } from '@/types'
 import type { InsightBaseI } from '@/interfaces'
-import { articleMap, contentFind, sectionFind } from '@/utilities'
-import { articlesFilter } from './article'
+import {
+  articleMap,
+  articlesFilter,
+  contentFind,
+  sectionFind
+} from '@/utilities'
 
 export function insightFind(
   insights: InsightContentsT,
@@ -121,10 +126,29 @@ export function insightsFilterPublish(
 
   date = date.toISOString()
 
-  return articlesFilter<InsightBaseI>(
+  return insightsFilter(
     insights,
     'publish',
     (value: string): boolean => value <= date
+  )
+}
+
+export function insightsFilterSection(
+  insights: InsightContentsT,
+  section: string
+): InsightContentsT | undefined {
+  return insightsFilter(
+    insights,
+    'section',
+    (value: SectionRelationT): boolean => {
+      if (typeof value === 'string') {
+        return value === section
+      } else if (value?.slug) {
+        return value.slug === section
+      } else {
+        return false
+      }
+    }
   )
 }
 
