@@ -1,5 +1,6 @@
 <template>
   <video
+    class="w-full"
     autoplay
     :height="height"
     loop
