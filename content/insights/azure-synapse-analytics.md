@@ -1,13 +1,15 @@
 ---
 title: Azure Synapse Analytics
-description: Why Azure Synapse Analytics should be on your short-list of analytics solutions.
+description: Why Azure Synapse Analytics should be on your short-list of
+  analytics solutions.
+cover: azure-synapse-analytics
+publish: 2020-11-09T12:00:00.000Z
+feature: false
 authors:
   - andy-nardo
-publish: 2020-11-09T12:00:00Z
 categories:
   - data-analytics
-cover: azure-synapse-analytics
-feature: false
+section: technology
 ---
 
 The last 4 years saw a massive migration to the cloud with enterprises signed up by the thousands for flexible, large–scale computing and data storage. This new environment led to a broad ecosystem of vendor platforms and custom solutions to collect, retrieve, and analyze huge amounts of data. Firms realized ROI, however, in most cases these systems are siloed driving up cost, duplication, and complexity — without providing broad insight across the enterprise.
