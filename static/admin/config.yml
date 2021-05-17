@@ -194,9 +194,8 @@ collections:
         search_fields:
           - title
         multiple: true
-      - name: sections
-        label: Sections
-        label_singular: Section
+      - name: section
+        label: Section
         widget: relation
         collection: sections
         display_fields:
