@@ -1,16 +1,18 @@
----  
+---
 title: AI and Data Integration
 description: eAutomate data integration with machine learning.
+cover: ai-and-data-integration
+publish: 2021-08-28T12:00:00.000Z
+feature: false
 authors:
   - anu-jain
-publish: 2021-08-28T12:00:00Z
 categories:
   - big-data
   - analytic-ops
   - business-strategy
-cover: ai-and-data-integration
-feature: false
---- 
+section: business
+---
+ 
 
 ## Cut Costs and Improve Agility: eAutomate Data Integration with Machine Learning
 

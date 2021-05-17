@@ -1,6 +1,6 @@
 <template>
   <article>
-    <HeroBase section-class-list="md:h-screen" :video="video">
+    <HeroBase v-if="video" section-class-list="md:h-screen" :video="video">
       <template #default>
         <h1 class="sr-only">Government</h1>
 
@@ -63,6 +63,7 @@
       </section>
 
       <div
+        v-if="strategies"
         class="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 md:mt-10 px-3 md:px-0 max-w-12xl"
       >
         <StrategyBase
@@ -74,7 +75,7 @@
       </div>
     </SectionBase>
 
-    <section class="bg-blue-dark px-4 py-6">
+    <section v-if="solutions" class="bg-blue-dark px-4 py-6">
       <div class="container">
         <div class="flex items-baseline">
           <ArrowBase class="mr-1 text-blue" />
@@ -147,7 +148,7 @@
     <SectionBase
       class="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 px-4 bg-purple flex items-between"
     >
-      <div class="sm:pl-8">
+      <div v-if="authorPoC" class="sm:pl-8">
         <h2
           class="font-bold font-mono text-sm text-uppercase tracking-wider uppercase"
         >
@@ -193,15 +194,15 @@
 import type { Context } from '@nuxt/types'
 import type {
   AuthorContentT,
-  AuthorContentsT,
-  CategoryContentsT,
-  ColorContentsT,
-  ImageContentsT,
-  ServiceContentsT,
-  SolutionContentsT,
-  StrategyContentsT,
+  AuthorResultT,
+  CategoryResultT,
+  ColorResultT,
+  ImageResultT,
+  ServiceResultT,
+  SolutionResultT,
   StrategyContentT,
-  VideoContentT
+  StrategyResultT,
+  VideoResultT
 } from '@/types'
 import {
   AuthorBaseI,
@@ -216,98 +217,97 @@ import {
 import Vue from 'vue'
 import {
   authorFind,
-  authorsMap,
+  authorResultMap,
   colorFind,
   imageFind,
   servicesFilter,
-  solutionsMap
+  solutionResultMap
 } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
     try {
-      const categories: CategoryContentsT = (await $content(
+      const categories: CategoryResultT = await $content(
         'categories'
-      ).fetch<CategoryBaseI>()) as CategoryContentsT
+      ).fetch<CategoryBaseI>()
 
-      const colors: ColorContentsT = (await $content(
-        'colors'
-      ).fetch<ColorBaseI>()) as ColorContentsT
+      const colors: ColorResultT = await $content('colors').fetch<ColorBaseI>()
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      const services: ServiceContentsT = (await $content('services')
+      const services: ServiceResultT = await $content('services')
         .sortBy('title')
-        .fetch<ServiceBaseI>()) as ServiceContentsT
+        .fetch<ServiceBaseI>()
 
-      let authors: AuthorContentsT = (await $content(
+      let authors: AuthorResultT = await $content(
         'authors'
-      ).fetch<AuthorBaseI>()) as AuthorContentsT
+      ).fetch<AuthorBaseI>()
 
-      authors = authorsMap(authors, images)
+      authors = authorResultMap(authors, images)
 
-      const authorPoC: AuthorContentT = authorFind(
-        authors,
-        'steve-roberts'
-      ) as AuthorContentT
+      let authorPoC: AuthorContentT | undefined
 
-      let solutions: SolutionContentsT = (await $content('solutions')
+      if (Array.isArray(authors)) {
+        authorPoC = authorFind(authors, 'steve-roberts')
+      }
+
+      let solutions: SolutionResultT = await $content('solutions')
         .sortBy('publish', 'desc')
-        .fetch<SolutionBaseI>()) as SolutionContentsT
+        .fetch<SolutionBaseI>()
 
-      solutions = solutionsMap(solutions, authors, categories, images)
+      solutions = solutionResultMap(solutions, authors, categories, images)
 
-      let strategies: StrategyContentsT = (await $content('strategies')
+      let strategies: StrategyResultT = await $content('strategies')
         .sortBy('order')
-        .fetch<StrategyBaseI>()) as StrategyContentsT
+        .fetch<StrategyBaseI>()
 
       strategies = strategies.map(
         (strategy: StrategyContentT): StrategyContentT => {
-          if (strategy.backgroundColor) {
-            strategy.backgroundColor = colorFind(
-              colors,
-              strategy.backgroundColor
-            )
+          if (Array.isArray(colors)) {
+            if (strategy.backgroundColor) {
+              strategy.backgroundColor = colorFind(
+                colors,
+                strategy.backgroundColor
+              )
+            }
+
+            if (strategy.bodyColor) {
+              strategy.bodyColor = colorFind(colors, strategy.bodyColor)
+            }
+
+            switch (strategy.slug) {
+              case 'amplify':
+                strategy.titleColor = colorFind(colors, 'green')
+                break
+              case 'empower':
+                strategy.titleColor = colorFind(colors, 'red')
+                break
+              case 'illuminate':
+                strategy.titleColor = colorFind(colors, 'blue')
+                break
+              default:
+                strategy.titleColor = colorFind(colors, 'purple')
+            }
           }
 
-          if (strategy.bodyColor) {
-            strategy.bodyColor = colorFind(colors, strategy.bodyColor)
-          }
-
-          if (strategy.image) {
+          if (strategy.image && Array.isArray(images)) {
             strategy.image = imageFind(images, strategy.image)
           }
 
-          if (strategy.services?.length) {
+          if (Array.isArray(strategy.services) && Array.isArray(services)) {
             strategy.services = servicesFilter(services, strategy.services)
-          }
-
-          switch (strategy.slug) {
-            case 'amplify':
-              strategy.titleColor = colorFind(colors, 'green')
-              break
-            case 'empower':
-              strategy.titleColor = colorFind(colors, 'red')
-              break
-            case 'illuminate':
-              strategy.titleColor = colorFind(colors, 'blue')
-              break
-            default:
-              strategy.titleColor = colorFind(colors, 'purple')
           }
 
           return strategy
         }
       )
 
-      const video: VideoContentT = (await $content(
+      const video: VideoResultT = await $content(
         'videos',
         'government-hero'
-      ).fetch<VideoBaseI>()) as VideoContentT
+      ).fetch<VideoBaseI>()
 
-      if (video.poster) {
+      if (!Array.isArray(video) && video.poster && Array.isArray(images)) {
         video.poster = imageFind(images, video.poster)
       }
 
