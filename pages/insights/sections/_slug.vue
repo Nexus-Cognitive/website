@@ -16,27 +16,11 @@
       </template>
     </HeroBase>
 
-    <Grid v-if="sectionsShow" class="container mt-6" cols-md="2">
-      <template #default>
-        <ul class="flex items-baseline justify-between">
-          <li v-for="s in sections" :key="sectionKeyGet(s)">
-            <NuxtLink
-              v-if="sectionLinkableGet(s)"
-              class="text-sm md:text-md underline hover:no-underline"
-              :to="sectionToGet(s)"
-            >
-              {{ s | capitalize }}
-            </NuxtLink>
-
-            <template v-else>
-              <p class="font-bold text-sm md:text-md">
-                {{ s | capitalize }}
-              </p>
-            </template>
-          </li>
-        </ul>
-      </template>
-    </Grid>
+    <SectionNavigation
+      v-if="sectionsShow"
+      :section-current="sectionCurrent"
+      :sections="sections"
+    />
 
     <SectionInsights
       v-if="insightsBusinessShow"
@@ -83,7 +67,10 @@ import type {
   SectionBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightResultFilterPublishMap } from '@/utilities'
+import {
+  insightsFilterSection,
+  insightResultFilterPublishMap
+} from '@/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -133,79 +120,46 @@ export default Vue.extend({
         sections
       )
 
+      let insightsBusiness: InsightResultT
+
+      let insightsDesign: InsightResultT
+
       let insightFeature: InsightContentT | undefined
 
-      if (!!insights && !!sectionCurrent) {
-        insightFeature = insights.find((insight: InsightContentT): boolean => {
-          return insight.feature && typeof insight.section === 'object'
-            ? insight.section.slug === sectionCurrent.slug
-            : typeof insight.section === 'string'
-            ? insight.section === sectionCurrent.clug
-            : false
-        })
+      let insightsTechnology: InsightResultT
 
-        insights = insights.filter(
-          ({ slug }: InsightContentT): boolean => slug !== insightFeature?.slug
-        )
-      }
-
-      insights = insights?.map(
-        (insight: InsightContentT): InsightContentT => {
-          insight.feature = false
-
-          return insight
+      if (Array.isArray(insights)) {
+        if (sectionCurrent) {
+          insightFeature = insights.find(
+            (insight: InsightContentT): boolean => {
+              return insight.feature && typeof insight.section === 'object'
+                ? insight.section.slug === sectionCurrent.slug
+                : typeof insight.section === 'string'
+                ? insight.section === sectionCurrent.clug
+                : false
+            }
+          )
         }
-      )
 
-      const insightsBusiness: InsightResultT = insights
-        ?.filter(({ section, slug }: InsightContentT): boolean => {
-          if (typeof section !== 'string' && !!section?.slug) {
-            return section.slug === 'business' && slug !== insightFeature?.slug
-          } else {
-            return false
-          }
-        })
-        .map(
-          (insight: InsightContentT): InsightContentT => {
-            insight.feature = false
+        insights = insights
+          .filter(
+            ({ slug }: InsightContentT): boolean =>
+              slug !== insightFeature?.slug
+          )
+          .map(
+            (insight: InsightContentT): InsightContentT => {
+              insight.feature = false
 
-            return insight
-          }
-        )
+              return insight
+            }
+          )
 
-      const insightsDesign: InsightResultT = insights
-        ?.filter(({ section, slug }: InsightContentT): boolean => {
-          if (typeof section !== 'string' && !!section?.slug) {
-            return section.slug === 'design' && slug !== insightFeature?.slug
-          } else {
-            return false
-          }
-        })
-        .map(
-          (insight: InsightContentT): InsightContentT => {
-            insight.feature = false
+        insightsBusiness = insightsFilterSection(insights, 'business')
 
-            return insight
-          }
-        )
+        insightsDesign = insightsFilterSection(insights, 'design')
 
-      const insightsTechnology: InsightResultT = insights
-        ?.filter(({ section, slug }: InsightContentT): boolean => {
-          if (typeof section !== 'string' && !!section?.slug) {
-            return (
-              section.slug === 'technology' && slug !== insightFeature?.slug
-            )
-          } else {
-            return false
-          }
-        })
-        .map(
-          (insight: InsightContentT): InsightContentT => {
-            insight.feature = false
-
-            return insight
-          }
-        )
+        insightsTechnology = insightsFilterSection(insights, 'technology')
+      }
 
       return {
         insightFeature,
