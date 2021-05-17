@@ -7,6 +7,7 @@
     playsinline
     :poster="poster.src"
     :width="width"
+    class="h-full"
   >
     <source :src="srcWebM" type="video/webm" />
     <source :src="srcMP4" type="video/mp4" />
