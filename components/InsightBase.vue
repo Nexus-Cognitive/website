@@ -70,6 +70,11 @@ export default Vue.extend({
       type: Boolean
     },
 
+    shadow: {
+      default: true,
+      type: Boolean
+    },
+
     slug: {
       required: true,
       type: String
@@ -89,7 +94,9 @@ export default Vue.extend({
   computed: {
     classList(): object {
       return {
-        feature: this.feature
+        feature: this.feature,
+        shadow: this.shadow,
+        'shadow-lg': this.feature && this.shadow
       }
     },
 
@@ -102,10 +109,10 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .base {
-  @apply bg-white gap-3 md:gap-4 grid grid-cols-1 xl:grid-cols-2 overflow-hidden rounded-lg shadow text-black;
+  @apply bg-white gap-3 md:gap-4 grid grid-cols-1 xl:grid-cols-2 overflow-hidden rounded-lg text-black;
 
   &.feature {
-    @apply bg-purple md:grid-cols-2 shadow-lg text-white;
+    @apply bg-purple md:grid-cols-2 text-white;
 
     .content {
       &-container {

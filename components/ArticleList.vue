@@ -1,5 +1,5 @@
 <template>
-  <Grid cols-md="2">
+  <Grid :cols-md="colsMd">
     <template #default>
       <component
         v-bind="article"
@@ -30,6 +30,15 @@ export default Vue.extend({
     component: {
       required: true,
       type: String
+    },
+
+    // columns
+
+    colsMd: {
+      default: 2,
+      type: [Number, String],
+      validator: (v: any): boolean =>
+        typeof v === 'number' || !isNaN(parseInt(v))
     }
   }
 })

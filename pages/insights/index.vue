@@ -20,9 +20,10 @@
 
     <SectionInsights
       v-if="insightsRecentShow"
-      background-color="blue-dark"
+      cols-md="1"
       :insights="insightsRecent"
       title="Recent"
+      :title-block="false"
     />
 
     <SectionInsights
