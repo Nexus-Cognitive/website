@@ -1,36 +1,40 @@
 <template>
   <article>
-    <HeroBase section-class-list="pb-9 sm:pb-24" :video="video">
+    <HeroBase v-if="video" section-class-list="pb-9 sm:pb-24" :video="video">
       <template #default>
         <h1 class="sr-only">Services</h1>
 
         <p
           class="font-light font-mono text-md sm:text-lg 2xl:text-xl text-left left-2 md:left-6 bottom-2/4 md:bottom-1/3 absolute"
         >
-          We’re building<br class="hidden xs:inline" />digitally mature<br class="md:hidden"/>
+          We’re building<br class="hidden xs:inline" />digitally mature<br
+            class="md:hidden"
+          />
           <FocusList :focuses="focuses" />
         </p>
       </template>
     </HeroBase>
 
-    <StrategyBase
-      v-for="(strategy, index) in strategies"
-      v-bind="strategy"
-      :key="strategy.slug"
-      :image-right="strategyImageRightGet(index)"
-    />
+    <template v-if="strategies">
+      <StrategyBase
+        v-for="(strategy, index) in strategies"
+        v-bind="strategy"
+        :key="strategy.slug"
+        :image-right="strategyImageRightGet(index)"
+      />
+    </template>
   </article>
 </template>
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  ColorContentsT,
-  FocusContentsT,
-  ImageContentsT,
-  ServiceContentsT,
-  StrategyContentsT,
-  VideoContentT
+  ColorResultT,
+  FocusResultT,
+  ImageResultT,
+  ServiceResultT,
+  StrategyResultT,
+  VideoResultT
 } from '@/types'
 import type {
   ColorBaseI,
@@ -41,41 +45,35 @@ import type {
   VideoBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { imageFind, strategiesMap } from '@/utilities'
+import { strategyResultMap, videoResultMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
     try {
-      const focuses: FocusContentsT = (await $content('focuses')
+      const focuses: FocusResultT = await $content('focuses')
         .sortBy('createdAt')
-        .fetch<FocusBaseI>()) as FocusContentsT
+        .fetch<FocusBaseI>()
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      const video: VideoContentT = (await $content(
+      let video: VideoResultT = await $content(
         'videos',
         'services-hero'
-      ).fetch<VideoBaseI>()) as VideoContentT
+      ).fetch<VideoBaseI>()
 
-      if (video.poster) {
-        video.poster = imageFind(images, video.poster)
-      }
+      video = videoResultMap(video, images)
 
-      const services: ServiceContentsT = (await $content('services')
+      const services: ServiceResultT = await $content('services')
         .sortBy('title')
-        .fetch<ServiceBaseI>()) as ServiceContentsT
+        .fetch<ServiceBaseI>()
 
-      const colors: ColorContentsT = (await $content(
-        'colors'
-      ).fetch<ColorBaseI>()) as ColorContentsT
+      const colors: ColorResultT = await $content('colors').fetch<ColorBaseI>()
 
-      let strategies: StrategyContentsT = (await $content('strategies')
+      let strategies: StrategyResultT = await $content('strategies')
         .sortBy('order')
-        .fetch<StrategyBaseI>()) as StrategyContentsT
+        .fetch<StrategyBaseI>()
 
-      strategies = strategiesMap(strategies, colors, images, services)
+      strategies = strategyResultMap(strategies, colors, images, services)
 
       return {
         focuses,

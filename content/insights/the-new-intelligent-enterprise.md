@@ -1,14 +1,16 @@
 ---
 title: The New Intelligent Enterprise
-description: Smart companies will leverage new technologies to become exponentially more intelligent.
+description: Smart companies will leverage new technologies to become
+  exponentially more intelligent.
+cover: the-new-intelligent-enterprise
+publish: 2021-01-12T12:00:00.000Z
+feature: false
 authors:
   - anu-jain
-publish: 2021-01-12T12:00:00Z
-categories: 
+categories:
   - business-intelligence
   - data-analytics
-cover: the-new-intelligent-enterprise
-feature: false
+section: business
 ---
 
 In my previous Insight, I outlined what I thought future companies would look like vis-à-vis their information technology and decision-making capabilities. I believe they’ll be intelligent, connected, and agile. Over the next several weeks, I’m going to dive deeper into how I think companies will realize their futures. And, as I’ve said, that future is not truly five years from now. It is now.

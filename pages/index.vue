@@ -23,7 +23,7 @@
         class="flex flex-col items-start text-white z-10 xs: pt-2 sm:pt-3 px-3 md:px-0 max-w-12xl"
       >
         <div class="flex items-center">
-          <ArrowBase class="mr-1" />
+          <ArrowBase class="mr-1 text-blue" />
           <h2
             class="font-bold font-mono font-title text-sm tracking-widest uppercase"
           >
@@ -51,7 +51,7 @@
       >
         <section class="illuminate-text">
           <div class="flex items-center">
-            <ArrowBase class="mr-1" />
+            <ArrowBase class="mr-1 text-blue" />
             <h2
               class="font-bold font-mono font-title text-sm tracking-widest uppercase"
             >
@@ -79,11 +79,9 @@
 
     <SectionVideo v-bind="futureStaticVideo" class="relative">
       <section
-        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
-      >
+        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute h-auto mt-3">
         <div class="flex items-center">
-      
-          <h2 class="font-bold uppercase font-title text-md xl:text-lg">
+           <h2 class="font-bold text-center uppercase font-title text-center text-md xl:text-lg">
             The Future isn’t Static
           </h2>
         </div>
@@ -102,14 +100,10 @@
         <div class="flex items-baseline">
           <ArrowBase class="mr-1 text-blue" />
 
-          <h2
-            class="font-bold font-title text-sm text-white tracking-wider uppercase"
-          >
-            Latest Insights
-          </h2>
+          <h2 class="cross text-white title">Latest Insights</h2>
         </div>
 
-    
+        <InsightBase v-bind="insightFeature" class="mt-4" />
 
         <ArticleList
           :articles="insights"
@@ -124,15 +118,15 @@
 <script lang="ts">
 import type { Context } from '@nuxt/types'
 import type {
-  AuthorContentsT,
-  ColorContentsT,
-  ImageContentsT,
-  InsightContentsT,
-  SlideContentsT,
+  AuthorResultT,
+  CategoryResultT,
+  ColorResultT,
+  ImageResultT,
+  InsightContentT,
+  InsightResultT,
+  SlideResultT,
   VideoContentT,
-  CategoryContentsT,
-  VideoContentsT,
-  InsightContentT
+  VideoResultT
 } from '@/types'
 import type {
   AuthorBaseI,
@@ -144,32 +138,31 @@ import type {
   VideoBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { imageFind, insightsMap, slidesMap, videoFind } from '@/utilities'
+import {
+  imageFind,
+  insightResultFilterPublishMap,
+  slideResultMap,
+  videoFind
+} from '@/utilities'
 
 export default Vue.extend({
   async asyncData({ $content, error }: Context): Promise<object | undefined> {
     try {
-      const authors: AuthorContentsT = (await $content(
+      const authors: AuthorResultT = await $content(
         'authors'
-      ).fetch<AuthorBaseI>()) as AuthorContentsT
+      ).fetch<AuthorBaseI>()
 
-      const categories: CategoryContentsT = (await $content(
+      const categories: CategoryResultT = await $content(
         'categories'
-      ).fetch<CategoryBaseI>()) as CategoryContentsT
+      ).fetch<CategoryBaseI>()
 
-      const colors: ColorContentsT = (await $content(
-        'colors'
-      ).fetch<ColorBaseI>()) as ColorContentsT
+      const colors: ColorResultT = await $content('colors').fetch<ColorBaseI>()
 
-      const images: ImageContentsT = (await $content(
-        'images'
-      ).fetch<ImageBaseI>()) as ImageContentsT
+      const images: ImageResultT = await $content('images').fetch<ImageBaseI>()
 
-      const videos: VideoContentsT = (await $content(
-        'videos'
-      ).fetch<VideoBaseI>()) as VideoContentsT
+      const videos: VideoResultT = await $content('videos').fetch<VideoBaseI>()
 
-      let insights: InsightContentsT = (await $content('insights')
+      let insights: InsightResultT = await $content('insights')
         .only([
           'authors',
           'categories',
@@ -181,49 +174,50 @@ export default Vue.extend({
           'title'
         ])
         .sortBy('publish', 'desc')
-        .fetch<InsightBaseI>()) as InsightContentsT
+        .fetch<InsightBaseI>()
 
-      insights = insightsMap(
+      insights = insightResultFilterPublishMap(
         insights,
         authors,
         categories,
-        images
-      ) as InsightContentsT
-
-      const insight: InsightContentT = insights.find(
-        ({ feature }: InsightContentT): boolean => feature
-      ) as InsightContentT
-
-      insights = insights
-        .filter(
-          ({ feature, publish }: InsightContentT): boolean =>
-            !feature && publish <= new Date().toISOString()
-        )
-        ?.slice(0, 2)
-
-      let slides: SlideContentsT = (await $content('slides')
-        .sortBy('order')
-        .fetch<SlideBaseI>()) as SlideContentsT
-
-      slides = slidesMap(slides, colors, images, videos)
-
-      const video: VideoContentT | undefined = videoFind(videos, 'index-hero')
-
-      const futureStaticVideo: VideoContentT | undefined = videoFind(
-        videos,
-        'the-future-isnt-static'
+        images,
+        undefined
       )
 
-      if (video) {
-        video.poster = imageFind(images, video.poster)
+      const insightFeature: InsightContentT = insights?.find(
+        ({ feature }: InsightContentT): boolean => feature
+      )
+
+      insights = insights?.slice(0, 2)
+
+      let slides: SlideResultT = await $content('slides')
+        .sortBy('order')
+        .fetch<SlideBaseI>()
+
+      slides = slideResultMap(slides, colors, images, videos)
+
+      let video: VideoContentT | undefined
+
+      let futureStaticVideo: VideoContentT | undefined
+
+      if (Array.isArray(videos)) {
+        video = videoFind(videos, 'index-hero')
+
+        futureStaticVideo = videoFind(videos, 'the-future-isnt-static')
       }
 
-      if (futureStaticVideo) {
-        futureStaticVideo.poster = imageFind(images, futureStaticVideo.poster)
+      if (Array.isArray(images)) {
+        if (video) {
+          video.poster = imageFind(images, video.poster)
+        }
+
+        if (futureStaticVideo) {
+          futureStaticVideo.poster = imageFind(images, futureStaticVideo.poster)
+        }
       }
 
       return {
-        insight,
+        insightFeature,
         insights,
         slides,
         video,

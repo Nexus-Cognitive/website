@@ -144,7 +144,6 @@ export default Vue.extend({
       ]
 
       if (index > 0) {
-       
         if (this.gov) {
           classList.push(this.titleColor_)
         } else {

@@ -1,14 +1,15 @@
 ---
 title: Analytics Maturity and Getting There
 description: Right-size your analytics capabilites.
+cover: analytics-maturity-and-getting-there
+publish: 2021-03-23T12:00:00.000Z
+feature: false
 authors:
   - anu-jain
-publish: 2021-03-23T12:00:00Z
 categories:
   - analytics-operations
   - business-strategy
-cover: analytics-maturity-and-getting-there
-feature: false
+section: business
 ---
 
 If your company is like most mid-to-large size companies today, your

@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-white;
+}
+
 .hero-image,
 .hero-video,
 .slide-image,
@@ -55,7 +59,7 @@ address {
 }
 
 .hero-video {
-  @apply z-0;
+  @apply z-0 h-screen;
 }
 
 .illuminate-wrapper {
@@ -107,4 +111,29 @@ address {
 
 .section-video-wrapper {
   @apply h-full max-h-screen overflow-hidden pointer-events-none top-0 left-0 w-full z-0;
+}
+
+.title {
+  @apply font-bold font-title;
+}
+
+.title.page,
+.title.cross {
+  @apply tracking-widest uppercase;
+}
+
+.title.page {
+  @apply text-sm md:text-md lg:text-lg xl:text-xl;
+}
+
+.title.section {
+  @apply md:text-sm lg:text-md xl:text-lg;
+}
+
+.title.cross {
+  @apply lg:text-sm xl:text-md;
+}
+
+.title.runner {
+  @apply xl:text-sm;
 }

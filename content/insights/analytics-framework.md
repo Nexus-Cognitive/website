@@ -1,14 +1,15 @@
 ---
 title: Analytics Framework
 description: Components of an analytics framework.
+cover: analytics-framework
+publish: 2021-02-23T12:00:00.000Z
+feature: false
 authors:
   - anu-jain
-publish: 2021-02-23T12:00:00Z
 categories:
   - analytics-operations
   - business-strategy
-cover: analytics-framework
-feature: false
+section: business
 ---
 
 Last week I talked about the characteristics and advantages of a
