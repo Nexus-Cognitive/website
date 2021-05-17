@@ -1,6 +1,6 @@
 {
   "title": "Analytics Operations",
-  "description": " AnalyticOps is a framework that oversees development of automation and consumption of analytics across the enterprise. ",
+  "description": "AnalyticOps is a framework that oversees development of automation and consumption of analytics across the enterprise.",
   "services": [
     "dev-analytic-ops"
   ]
