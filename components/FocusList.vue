@@ -1,6 +1,6 @@
 <template>
   <span
-    class="align-top md:align-text-top lg:align-text-baseline 2xl:align-top inline-block relative transition-all"
+    class="align-top h-auto md:align-text-top lg:align-text-baseline 2xl:align-top inline-block relative transition-all"
     :class="classList"
   >
     <FocusBase

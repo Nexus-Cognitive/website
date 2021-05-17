@@ -59,7 +59,7 @@ address {
 }
 
 .hero-video {
-  @apply z-0;
+  @apply z-0 h-screen;
 }
 
 .illuminate-wrapper {
