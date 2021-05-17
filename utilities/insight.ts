@@ -32,13 +32,18 @@ export function insightMap(
   images: ImageContentsT,
   sections: SectionContentsT | undefined = undefined
 ): InsightContentT {
-  const article = articleMap<InsightBaseI>(insight, authors, categories, images)
+  const insightMapped = articleMap<InsightBaseI>(
+    insight,
+    authors,
+    categories,
+    images
+  )
 
   if (sections) {
-    article.section = sectionFind(sections, article.section)
+    insightMapped.section = sectionFind(sections, insightMapped.section)
   }
 
-  return article
+  return insightMapped
 }
 
 export function insightResultMap(
