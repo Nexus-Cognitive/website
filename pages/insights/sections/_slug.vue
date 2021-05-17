@@ -22,7 +22,7 @@
           <li v-for="s in sections" :key="sectionKeyGet(s)">
             <NuxtLink
               v-if="sectionLinkableGet(s)"
-              class="font-mono text-sm md:text-md underline hover:no-underline"
+              class="text-sm md:text-md underline hover:no-underline"
               :to="sectionToGet(s)"
             >
               {{ s | capitalize }}
@@ -143,7 +143,19 @@ export default Vue.extend({
             ? insight.section === sectionCurrent.clug
             : false
         })
+
+        insights = insights.filter(
+          ({ slug }: InsightContentT): boolean => slug !== insightFeature?.slug
+        )
       }
+
+      insights = insights?.map(
+        (insight: InsightContentT): InsightContentT => {
+          insight.feature = false
+
+          return insight
+        }
+      )
 
       const insightsBusiness: InsightResultT = insights
         ?.filter(({ section, slug }: InsightContentT): boolean => {

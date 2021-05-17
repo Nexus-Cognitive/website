@@ -24,11 +24,12 @@
         class="mx-auto prose prose-blue prose-lg"
         :document="insight"
       />
-      <div class="flex flex-col mx-auto w-1/2 justify-center content-center">
+      <div class="max-w-prose mx-auto">
         <CategoryList
           :categories="insight.categories"
           class="mt-3 text-gray-dark"
         />
+
         <p class="font-mono mt-3 text-gray-dark">
           {{ insight.publish | dateFormat }}
         </p>
@@ -52,7 +53,7 @@ import {
   InsightBaseI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightResultFilterPublishMap } from '@/utilities'
+import { insightResultMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -76,12 +77,7 @@ export default Vue.extend({
         params.slug
       ).fetch<InsightBaseI>()
 
-      insight = insightResultFilterPublishMap(
-        insight,
-        authors,
-        categories,
-        images
-      )
+      insight = insightResultMap(insight, authors, categories, images)
 
       return {
         insight

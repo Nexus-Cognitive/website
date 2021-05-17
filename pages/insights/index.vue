@@ -20,7 +20,7 @@
         <ul class="flex items-baseline justify-between">
           <li v-for="section in sections" :key="sectionKeyGet(section)">
             <NuxtLink
-              class="font-mono text-sm md:text-md underline hover:no-underline"
+              class="text-sm md:text-md underline hover:no-underline"
               :to="sectionToGet(section)"
             >
               {{ section | capitalize }}
@@ -116,6 +116,18 @@ export default Vue.extend({
       const insightFeature: InsightContentT | undefined = insights?.find(
         (insight: InsightContentT): boolean => insight.feature
       )
+
+      insights = insights
+        ?.filter(
+          ({ slug }: InsightContentT): boolean => slug !== insightFeature?.slug
+        )
+        ?.map(
+          (insight: InsightContentT): InsightContentT => {
+            insight.feature = false
+
+            return insight
+          }
+        )
 
       const insightLimit: number = 3
 
