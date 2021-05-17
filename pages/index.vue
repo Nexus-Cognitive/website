@@ -79,9 +79,12 @@
 
     <SectionVideo v-bind="futureStaticVideo" class="relative">
       <section
-        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute h-auto mt-3">
+        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute h-auto mt-3"
+      >
         <div class="flex items-center">
-           <h2 class="font-bold text-center uppercase font-title text-center text-md xl:text-lg">
+          <h2
+            class="font-bold text-center uppercase font-title text-center text-md xl:text-lg"
+          >
             The Future isn’t Static
           </h2>
         </div>
@@ -141,6 +144,7 @@ import Vue from 'vue'
 import {
   imageFind,
   insightResultFilterPublishMap,
+  insightsFilter,
   slideResultMap,
   videoFind
 } from '@/utilities'
@@ -188,7 +192,15 @@ export default Vue.extend({
         ({ feature }: InsightContentT): boolean => feature
       )
 
-      insights = insights?.slice(0, 2)
+      if (Array.isArray(insights)) {
+        insights = insightsFilter(
+          insights,
+          'slug',
+          (slug: string): boolean => slug !== insightFeature?.slug
+        )
+
+        insights = insights?.slice(0, 2)
+      }
 
       let slides: SlideResultT = await $content('slides')
         .sortBy('order')

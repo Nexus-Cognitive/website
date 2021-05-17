@@ -22,7 +22,7 @@
       v-if="insightsRecentShow"
       cols-md="1"
       :insights="insightsRecent"
-      title="Recent"
+      title="Latest Insights"
       :title-block="false"
     />
 

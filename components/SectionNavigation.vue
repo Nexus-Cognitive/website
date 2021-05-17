@@ -1,11 +1,11 @@
 <template>
   <Grid class="container mt-6 px-4 my-6" cols-md="2">
     <template #default>
-      <ul class="flex items-baseline justify-between">
-        <li v-for="section in sections" :key="sectionKeyGet(section)">
+      <ul :class="listClassList">
+        <li v-for="(section, index) in sections" :key="sectionKeyGet(section)">
           <NuxtLink
             v-if="sectionLinkableGet(section)"
-            class="text-sm md:text-md underline hover:no-underline"
+            :class="itemClassListGet(index)"
             :to="sectionToGet(section)"
           >
             {{ section | capitalize }}
@@ -39,7 +39,31 @@ export default Vue.extend({
     }
   },
 
+  computed: {
+    listClassList(): object {
+      return {
+        'flex items-baseline': true,
+        'justify-between': this.sectionsFull
+      }
+    },
+
+    sectionsFull(): boolean {
+      return this.sections.length > 2
+    },
+
+    sectionsLast() {
+      return this.sections.length - 1
+    }
+  },
+
   methods: {
+    itemClassListGet(index: number): object {
+      return {
+        'text-sm md:text-md underline hover:no-underline': true,
+        'mr-4': !this.sectionsFull && index < this.sectionsLast
+      }
+    },
+
     sectionKeyGet(section: string): string {
       return `section-${section}`
     },
