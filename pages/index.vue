@@ -79,11 +79,11 @@
 
     <SectionVideo v-bind="futureStaticVideo" class="relative">
       <section
-        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute"
+        class="px-3 sm:px-6 py-6 sm:py-9 text-white z-10 hero-section absolute h-auto mt-3"
       >
         <div class="flex items-center">
       
-          <h2 class="font-bold uppercase font-title text-md xl:text-lg">
+          <h2 class="font-bold text-center uppercase font-title text-center text-md xl:text-lg">
             The Future isn’t Static
           </h2>
         </div>
