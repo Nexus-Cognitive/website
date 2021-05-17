@@ -9,7 +9,7 @@ categories:
 cover: office-building-2
 client: Big 4 Professional Services Firm
 project: DevOps Framework Design and Deployment
-amount: $18M (over 3 years)
+outcomes: $18M (over 3 years)
 problem: 6 Billion Dollar business unit at a Big 4 firm had several internal teams across the US and several vendors delivering custom applications and platforms using a range of “agile” methodologies and the firm was seeing considerable duplication in effort across development workstreams.
 ---
 

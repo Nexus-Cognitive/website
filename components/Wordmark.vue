@@ -3,7 +3,7 @@
     <Logo class="mr-2" />
 
     <h1
-      class="md:font-bold inline-block text-xs md:text-sm text-white tracking-wide md:tracking-widest uppercase"
+      class="font-bold font-title inline-block text-xs md:text-sm text-white tracking-wide md:tracking-widest uppercase"
     >
       <NuxtLink :is-exact-active="false" to="/">Nexus Cognitive</NuxtLink>
     </h1>

@@ -9,7 +9,7 @@ categories:
 cover: offshore-oil-rig
 client: Major Oilfield Services Company
 project: Custom Asset Workflow Software Solution
-amount: $15M (over 2 years)
+outcomes: $15M (over 2 years)
 problem: A major oilfield services firm needed help integrating and correlating mountains of data related to thousands of wells in varying stages of production and perforation. The workflows and processes they used to make operational decisions were manual and laborious.
 ---
 

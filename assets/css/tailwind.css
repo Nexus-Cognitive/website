@@ -14,7 +14,7 @@
 .hero-image,
 .slide-image,
 .slide-video {
-  filter: grayscale(100%) opacity(20%);
+  filter:opacity(40%);
 }
 
 .hero-video,
@@ -59,7 +59,7 @@ address {
 }
 
 .illuminate-wrapper {
-  @apply h-auto overflow-hidden relative flex items-center justify-center bg-black;
+  @apply h-screen overflow-hidden relative flex items-center justify-center bg-black;
 }
 
 .illuminate-bg-image {

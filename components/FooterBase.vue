@@ -1,5 +1,5 @@
 <template>
-  <SectionBase class="bg-black block md:flex justify-between" tag="footer">
+  <SectionBase class="bg-black-dark block md:flex justify-between" tag="footer">
     <div>
       <Wordmark />
 

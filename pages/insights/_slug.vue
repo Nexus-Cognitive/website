@@ -1,32 +1,32 @@
 <template>
   <article>
-    <HeroBase background-color="blue-dark" :image="insight.cover">
+    <HeroBase    header-height="three-quarter" background-color="blue-dark" :image="insight.cover">
       <template #default>
         <div class="text-left">
-          <p class="font-mono">
-            {{ insight.publish | dateFormat }}
-          </p>
-
-          <CategoryList :categories="insight.categories" class="mt-1" />
-
-          <AuthorList :authors="insight.authors" class="mt-3" />
-
-          <h1 class="font-light font-mono mt-2 text-sm sm:text-lg 2xl:text-xl">
+          <h1 class="font-bold font-title mt-2 text-sm sm:text-lg 2xl:text-xl">
             {{ insight.title }}
           </h1>
 
           <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
             {{ insight.description }}
           </p>
+            <AuthorList :authors="insight.authors" class="mt-3" />
+    
+       
         </div>
       </template>
     </HeroBase>
 
     <div class="container py-6">
-      <NuxtContent
+        <NuxtContent
         class="mx-auto prose prose-blue prose-lg"
         :document="insight"
       />
+        <div class="flex flex-col mx-auto w-1/2 justify-center content-center">
+          <CategoryList :categories="insight.categories" class="mt-3 text-gray-dark " />
+                 <p class="font-mono mt-3 text-gray-dark ">
+            {{ insight.publish | dateFormat }}
+          </p></div>
     </div>
   </article>
 </template>

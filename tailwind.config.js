@@ -6,7 +6,8 @@ borderRadiuses.forEach((b, i) => (borderRadius[b] = `${i * unit}px`))
 
 const colors = {
   black: {
-    DEFAULT: '#22202E'
+    DEFAULT: '#22202E',
+    dark: '#070514'
   },
   blue: {
     dark: '#0C163B',
@@ -32,6 +33,7 @@ const colors = {
 
 const colorClasses = [
   'black',
+  'black-dark',
   'blue',
   'blue-dark',
   'gray-dark',
