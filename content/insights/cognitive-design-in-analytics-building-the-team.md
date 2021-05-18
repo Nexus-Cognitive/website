@@ -1,7 +1,7 @@
 ---
-title: Cognitive Design in Analytics---Building the Team
-description: Software---powerful as it may be---won't help you very much without
-  using your most valuable asset---your people---to make sense of it. Without
+title: Cognitive Design in Analytics—Building the Team
+description: Software—powerful as it may be—won't help you very much without
+  using your most valuable asset---your people—to make sense of it. Without
   people to interpret the results, that software is just 1's and 0's.
 cover: cognitive-design
 publish: 2021-05-17T13:15:03-05:00
