@@ -1,6 +1,6 @@
 <template>
   <span
-    class="absolute block whitespace-nowrap transition-all"
+    class="md:absolute block whitespace-nowrap transition-all"
     :class="classList"
     >{{ title }}<span v-show="activeIndex">.</span></span
   >
