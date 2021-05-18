@@ -16,11 +16,13 @@
       </template>
     </HeroBase>
 
-    <SectionNavigation
-      v-if="sectionsShow"
-      :section-current="sectionCurrent"
-      :sections="sections"
-    />
+    <div class="px-4">
+      <SectionNavigation
+        v-if="sectionsShow"
+        :section-current="sectionCurrent"
+        :sections="sections"
+      />
+    </div>
 
     <SectionInsights
       v-if="insightsBusinessShow"

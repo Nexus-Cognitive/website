@@ -1,5 +1,5 @@
 <template>
-  <Grid class="container mt-6 px-4 my-6" cols-md="2">
+  <Grid class="container mt-6" cols-md="2">
     <template #default>
       <ul :class="listClassList">
         <li v-for="(section, index) in sections" :key="sectionKeyGet(section)">

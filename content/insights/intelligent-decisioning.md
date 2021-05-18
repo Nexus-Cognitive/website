@@ -12,6 +12,7 @@ categories:
   - data-analytics
 section: design
 ---
+
 ## Going beyond Analytics to Intelligent Decisioning
 
 Years ago, in the dark ages of IT, the gold standard of decision-making was to rely on hard lessons learned and good, old-fashioned gut instinct, honed by those lessons. However, over the past decade or so, big data has changed that standard. What's more, big data is only getting bigger and more complex.

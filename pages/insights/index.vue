@@ -16,7 +16,9 @@
       </template>
     </HeroBase>
 
-    <SectionNavigation v-if="sectionsShow" :sections="sections" />
+    <div class="px-4">
+      <SectionNavigation v-if="sectionsShow" :sections="sections" />
+    </div>
 
     <SectionInsights
       v-if="insightsRecentShow"
