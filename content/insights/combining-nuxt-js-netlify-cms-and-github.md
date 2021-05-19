@@ -1,5 +1,5 @@
 ---
-title: Combining Nuxt.js, Netlify CMS, and GitHub
+title: Empower Your Team with Nuxt.js, Netlify CMS, and GitHub
 description: Unlock the power of the Jamstack with modern tools and automated workflows.
 cover: leaf-macro
 publish: 2021-05-21T12:00:00.000Z
