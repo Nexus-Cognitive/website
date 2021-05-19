@@ -1,9 +1,10 @@
 <template>
   <article v-if="insight">
     <HeroBase
-      header-height="three-quarter"
+     
       background-color="blue-dark"
       :image="insight.cover"
+      section-class-list="xs:h-screen-three-quarter"
     >
       <template #default>
         <div class="text-left">

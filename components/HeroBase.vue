@@ -5,7 +5,7 @@
   >
     <VideoBase v-if="videoShow" v-bind="video" class="hero-video" />
 
-    <ImageBase v-if="imageShow" v-bind="image" class="hero-image" />
+    <ImageBase v-if="imageShow" v-bind="image" class="hero-image port:max-h-full" />
 
     <SectionBase :class="sectionClassList_" tag="div">
       <template #default>

@@ -83,7 +83,7 @@
       >
         <div class="flex items-center">
           <h2
-            class="font-bold text-center uppercase font-title text-center text-md xl:text-lg"
+            class="font-bold text-center uppercase font-title text-center text-sm xl:text-lg"
           >
             The Future isn’t Static
           </h2>
