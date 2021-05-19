@@ -2,7 +2,7 @@
 title: Combining Nuxt.js, Netlify CMS, and GitHub
 description: Unlock the power of the Jamstack with modern tools and automated workflows.
 cover: leaf-macro
-publish: 2021-05-21T12:00:00Z
+publish: 2021-05-21T12:00:00.000Z
 feature: true
 authors:
   - adam-womble
@@ -50,6 +50,8 @@ Ultimately, because Nuxt Content and Netlify <abbr title="Content Management Sys
 Managing application code in Git makes developer collaboration a breeze. Writing content in Netlify <abbr title="Content Management System">CMS</abbr> makes author collaboration seamless. What about linting, testing, building, and deploying updates to web applications?
 
 Thankfully, when teams share remote repositories on GitHub, GitHub Actions make it possible to automate all those software workflows. With [webhooks](https://docs.microsoft.com/en-us/aspnet/webhooks/), GitHub Actions trigger <abbr title="Continuous Integration">CI</abbr> / <abbr title="Continuous Delivery">CD</abbr> processes on Git actions: when developers create Pull Requests, immediately lint and test their updates; when developers merge branches, build and deploy those updates.
+
+![Screenshot of a GitHub Action successful completion for Azure Static Web Apps CI/CD](/images/github-actions-ci-cd.png)
 
 These automated processes are critical to Git-based content authoring: with them, non-developers don’t need to know anything about software lifecycles. When authors publish their works through Netlify <abbr title="Content Management System">CMS</abbr>, their updates undergo the same automated processes as any others. And, with automated <abbr title="Continuous Integration">CI</abbr> / <abbr title="Continuous Delivery">CD</abbr> processes, Jamstack application teams develop new features instead of managing build processes.
 
