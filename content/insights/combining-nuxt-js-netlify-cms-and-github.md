@@ -10,7 +10,6 @@ categories:
   - developer-operations
 section: technology
 ---
-
 Although “[Jamstack](https://jamstack.org)” might sound like it belongs on a breakfast menu, it is a powerful paradigm for simplifying web development, content authoring, and application deployment. Jamstack architecture combines JavaScript, Application Programming Interfaces (APIs), and pre-rendered Markup — the “Jam” in our stack; when paired with modern development tools, teams can rapidly build for the web of tomorrow and the browsers of today.
 
 The bad news? Though its promised productivity is alluring, pulling together technologies for the Jamstack has left many with [“JavaScript Fatigue.”](https://css-tricks.com/javascript-fatigue/) The good news? [Nuxt.js](https://nuxtjs.org), [Netlify <abbr title="Content Management System">CMS</abbr>](https://www.netlifycms.org), and [GitHub](https://github.com) offer exceptional developer and author experiences that make leveraging the Jamstack for content publishing feel like magic.
