@@ -5,7 +5,7 @@
   >
     <VideoBase v-if="videoShow" v-bind="video" class="hero-video" />
 
-    <ImageBase v-if="imageShow" v-bind="image" class="hero-image port:max-h-full" />
+    <ImageBase v-if="imageShow" v-bind="image" class="hero-image xs:max-h-full" />
 
     <SectionBase :class="sectionClassList_" tag="div">
       <template #default>
@@ -29,7 +29,7 @@ export default Vue.extend({
     },
 
     headerHeight: {
-      default: 'full',
+      default: null,
       type: String,
       validator: (v): boolean =>
         ['full', 'half', 'three-quarter'].includes(v.toLowerCase())
