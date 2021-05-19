@@ -2,5 +2,9 @@
   "title": "Data Architecture",
   "description": "We enable enterprises to redesign, reimagine and reinvent.",
   "body": "Big data is a big deal, and the race to harness the promise of data for more profit is on in almost every industry. Many business leaders wonder how to dive into the big data pool without drowning. To fully leverage big data, it’s helpful to take a step back and understand the key features of modern data architecture and how that architecture can turn raw data into reliable, actionable insights. It’s also good to know what a data architect is and what they do to make data useful.",
-  "images": "about-poster"
+  "images": "about-poster",
+  "image": "services-dataarchitecture",
+  "services": [
+    "data-architecture"
+  ]
 }
