@@ -7,7 +7,7 @@
     >
       <template #default>
         <div class="text-left">
-          <h1 class="font-bold font-title mt-2 text-sm sm:text-lg 2xl:text-xl">
+          <h1 class="font-bold font-title mt-2 text-sm sm:text-md 2xl:text-lg">
             {{ insight.title }}
           </h1>
 
