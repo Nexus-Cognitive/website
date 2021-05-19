@@ -2,5 +2,8 @@
   "title": "Cloud Computing",
   "description": "Low risk cloud migration for maximum integration",
   "body": "Cloud computing is the delivery of on-demand computing services, including applications, processing power and storage, typically over the internet on a pay-only-what-you-use format. They can also be setup on premises or in hybrid configurations.",
-  "image": "about-poster"
+  "image": "services-cloud-computing",
+  "services": [
+    "cloud-computing"
+  ]
 }
