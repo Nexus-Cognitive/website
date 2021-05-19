@@ -12,13 +12,13 @@ body {
 .hero-video,
 .slide-image,
 .slide-video {
-  @apply absolute left-0 max-w-none xl:max-w-full object-cover land:w-full;
+  @apply absolute left-0 max-w-none xl:max-w-full object-cover land:w-full port:max-h-full;
 }
 
 .hero-image,
 .slide-image,
 .slide-video {
-  filter:opacity(10%);
+  filter:opacity(40%);
 }
 
 .hero-video,

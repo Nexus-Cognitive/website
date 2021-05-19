@@ -2,9 +2,9 @@
   <article>
     <!-- hero -->
     <HeroBase
-      header-height="three-quarter"
+
       :image="service.image"
-      section-class-list="pb-9 sm:pb-24"
+      section-class-list="pb-9 sm:pb-24 xs:h-screen-half"
     >
       <template #default>
         <!-- heading -->
