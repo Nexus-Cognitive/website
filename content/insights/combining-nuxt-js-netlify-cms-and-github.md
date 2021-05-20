@@ -1,6 +1,7 @@
 ---
-title: Unlock the Power of the Jamstack with Modern Tools and Automated Workflows
-description: Empower Your Team with Nuxt.js, Netlify CMS, and GitHub.
+title: How to Unlock Power of the Jamstack
+description: Empower your team with modern tools and automated workflows through
+  Nuxt.js, Netlify CMS, and GitHub.
 cover: leaf-macro
 publish: 2021-05-20T12:00:00+00:00
 feature: false
