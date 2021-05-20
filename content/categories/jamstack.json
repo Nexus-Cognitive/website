@@ -1,0 +1,8 @@
+{
+  "title": "Jamstack",
+  "description": "Jamstack architecture prioritizes modern JavaScript, encapsulated Application Programming Interfaces (APIs), and pre-rendered Markup. Through its simplification of web development and automation of application deployment, it liberates teams from tedium and ignites business possibilities.",
+  "services": [
+    "automation",
+    "app-development"
+  ]
+}
