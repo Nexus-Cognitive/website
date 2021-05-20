@@ -1,5 +1,5 @@
 ---
-title: How to Unlock Power of the Jamstack
+title: How to Unlock the Power of the Jamstack
 description: Empower your team with modern tools and automated workflows through
   Nuxt.js, Netlify CMS, and GitHub.
 cover: leaf-macro
