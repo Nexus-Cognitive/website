@@ -2,5 +2,9 @@
   "title": "Digital Strategy",
   "description": "Winning with Digital, Technology, and Data",
   "body": "The future is bionic, and it’s already here. It’s a new paradigm, powered by technology and harnessed by people. To thrive, you must focus on outcomes that will make a difference. Through the lens of our industry expertise, we identify and deliver programs with the greatest promise for success.",
-  "image": "about-poster"
+  "image": "services-digitalstrategy",
+  "services": [
+    "business-intelligence",
+    "digital-strategy"
+  ]
 }
