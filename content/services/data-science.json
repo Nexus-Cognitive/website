@@ -2,5 +2,8 @@
   "title": "Data Science",
   "description": "Instill data-driven intelligence across the organization to accelerate performance.",
   "body": "We combine quantitative and qualitative analytics to leverage behavioral insights, enabling organizations to customize their experience to customer needs.",
-  "image": "about-poster"
+  "image": "services-datascience",
+  "services": [
+    "data-science"
+  ]
 }
