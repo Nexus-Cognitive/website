@@ -2,7 +2,6 @@
   <article>
     <!-- hero -->
     <HeroBase
-
       :image="service.image"
       section-class-list="pb-9 sm:pb-24 xs:h-screen-half lg:h-screen-half"
     >
