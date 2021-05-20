@@ -2,12 +2,14 @@
 title: Unlock the Power of the Jamstack with Modern Tools and Automated Workflows
 description: Empower Your Team with Nuxt.js, Netlify CMS, and GitHub.
 cover: leaf-macro
-publish: 2021-05-21T12:00:00.000Z
-feature: true
+publish: 2021-05-20T12:00:00+00:00
+feature: false
 authors:
   - adam-womble
 categories:
-  - developer-operations
+  - application-development
+  - front-end-development
+  - jamstack
 section: technology
 ---
 Although “[Jamstack](https://jamstack.org)” might sound like it belongs on a breakfast menu, it is a powerful paradigm for simplifying web development, content authoring, and application deployment. Jamstack architecture combines JavaScript, Application Programming Interfaces (APIs), and pre-rendered Markup — the “Jam” in our stack; when paired with modern development tools, teams can rapidly build for the web of tomorrow and the browsers of today.
