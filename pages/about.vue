@@ -34,7 +34,7 @@
           v-for="author in authors"
           :key="author.slug"
           v-bind="author"
-          class="mx-auto"
+          class="md:mx-auto"
         />
       </template>
     </SectionBase>

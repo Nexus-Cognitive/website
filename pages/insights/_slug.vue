@@ -1,7 +1,6 @@
 <template>
   <article v-if="insight">
     <HeroBase
-     
       background-color="blue-dark"
       :image="insight.cover"
       section-class-list="xs:h-screen-three-quarter"
