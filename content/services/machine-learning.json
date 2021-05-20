@@ -2,5 +2,10 @@
   "title": "Machine Learning",
   "description": "Amplify your workflows and insights through hyper-curated deep learning algorithms",
   "body": "Machine Learning refers to the study of algorithms and models for computers to perform tasks without explicit instructions. It is a discipline of Artificial Intelligence (AI) that predicts the system output through its experience of processing the data",
-  "image": "about-poster"
+  "image": "services-machinelearning",
+  "services": [
+    "machine-learning",
+    "automation",
+    "artificial-intelligence"
+  ]
 }
