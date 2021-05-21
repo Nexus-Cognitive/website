@@ -8,7 +8,7 @@
       <template #default>
         <!-- heading -->
         <h2
-          class="font-title font-bold text-sm md:text-xl left-2 md:left-4 bottom-3 md:bottom-6 absolute"
+          class="font-title font-bold text-sm sm:px-2 md:text-xl left-2 md:left-4 bottom-3 md:bottom-6 absolute"
         >
           {{ service.title }}
         </h2>
@@ -18,7 +18,7 @@
     <!-- description and body -->
     <section class="px-2 md:px-4 py-3 md:py-6">
       <!-- grid -->
-      <Grid class="container" cols-md="2">
+      <Grid class="container md:py-10" cols-md="2">
         <!-- default -->
         <template #default>
           <!-- description -->
@@ -28,7 +28,7 @@
 
           <!-- body -->
           <p
-            class="font-sans text-gray-dark text-xs md:row-start-2 md:col-start-2"
+            class="font-sans text-gray-dark text-xs md:row-start-1 md:col-start-2"
           >
             {{ service.body }}
           </p>

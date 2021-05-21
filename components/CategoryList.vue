@@ -5,11 +5,11 @@
       :key="category.slug"
       class="inline"
     >
-      <span v-if="startShow(index)">//</span>
+     
       <NuxtLink :to="categoryToGet(category.slug)">{{
         category.title
       }}</NuxtLink
-      ><span v-if="delimiterShow(index)">,</span>
+      ><span v-if="delimiterShow(index)">&nbsp;|&nbsp;</span>
     </li>
   </ul>
 </template>

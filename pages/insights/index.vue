@@ -21,14 +21,6 @@
     </div>
 
     <SectionInsights
-      v-if="insightsRecentShow"
-      cols-md="1"
-      :insights="insightsRecent"
-      title="Latest Insights"
-      :title-block="false"
-    />
-
-    <SectionInsights
       v-if="insightsBusinessShow"
       background-color="green"
       :insights="insightsBusiness"
