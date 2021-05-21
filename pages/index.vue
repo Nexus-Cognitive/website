@@ -106,7 +106,7 @@
           <h2 class="cross text-white title">Latest Insights</h2>
         </div>
 
-        <InsightBase v-bind="insightFeature" class="mt-4" />
+       
 
         <ArticleList
           :articles="insights"
