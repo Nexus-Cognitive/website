@@ -1,6 +1,6 @@
 <template>
   <section class="px-4 my-6">
-    <Grid v-if="titleShow" class="container" :cols-sm="colssm">
+    <Grid v-if="titleShow" class="container" :cols-md="colsMd">
       <div :class="titleClassList">
         <ArrowBase :class="arrowClassList" />
         <h2 class="cross title">{{ title }}</h2>
@@ -11,7 +11,7 @@
       :articles="insights"
       class="container mt-4"
       component="InsightBase"
-      :cols-md="colsSm"
+      :cols-md="colsMd"
     />
   </section>
 </template>

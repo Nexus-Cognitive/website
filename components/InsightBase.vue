@@ -8,10 +8,8 @@
     <!-- content container -->
     <div class="content-container">
       <header>
-     
-     
-                <!-- categories -->
-        <CategoryList :categories="categories" class="text-gray-light " />
+        <!-- categories -->
+        <CategoryList :categories="categories" class="text-gray-light" />
         <!-- heading -->
         <h2 class="title">
           <!-- link -->
@@ -20,7 +18,6 @@
             {{ title }}
           </NuxtLink>
         </h2>
-       
       </header>
       <!-- description -->
       <p class="description">
@@ -28,13 +25,12 @@
       </p>
       <!-- footer -->
       <footer class="footer">
-            <!-- authors -->
-        <AuthorList :authors="authors" class="mt-4 authors" />  
- <!-- publish -->
+        <!-- authors -->
+        <AuthorList :authors="authors" class="mt-4 authors" />
+        <!-- publish -->
         <p class="px-6 font-mono text-gray-light">
           {{ publish | dateFormat }}
         </p>
-
       </footer>
     </div>
   </article>
@@ -112,7 +108,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .base {
-  @apply bg-white gap-3 md:gap-4 grid grid-cols-1 xl:grid-cols-2 overflow-hidden   text-black;
+  @apply bg-white gap-3 md:gap-4 grid grid-cols-1 xl:grid-cols-2 overflow-hidden text-black;
 
   &.feature {
     @apply bg-purple md:grid-cols-2 text-white;
