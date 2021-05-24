@@ -107,7 +107,7 @@ export default Vue.extend({
   head(): MetaInfo {
     return {
       title: this.title,
-      titleTemplate: '%s | Solutions | Government Services | Nexus Cognitive',
+      titleTemplate: '%s | Solutions | Government | Nexus Cognitive',
       meta: [
         {
           content: this.description,
