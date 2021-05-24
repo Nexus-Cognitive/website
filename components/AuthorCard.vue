@@ -3,8 +3,9 @@
     <figure>
       <ImageBase class="h-14 w-14" v-bind="image" />
       <figcaption class="mt-2">
-        <span class="font-bold tracking-wider uppercase">{{ title }}</span
-        ><br /><span class="font-mono" v-html="position"></span>
+        <span class="font-bold tracking-wider uppercase">{{ title }}</span>
+        <br />
+        <span class="font-sans" v-html="position"></span>
       </figcaption>
     </figure>
     <div class="flex items-center mt-1">

@@ -43,6 +43,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   ImageResultT,
@@ -103,6 +104,20 @@ export default Vue.extend({
       }
     } catch (e: any) {
       error({ message: e.toString() })
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      title: 'About | Nexus Cognitive',
+      meta: [
+        {
+          content:
+            'An agency rethinking how we work, play, and experience the future economy.',
+          hid: 'description',
+          name: 'description'
+        }
+      ]
     }
   }
 })

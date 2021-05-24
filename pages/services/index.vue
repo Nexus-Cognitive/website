@@ -28,6 +28,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   ColorResultT,
   FocusResultT,
@@ -83,6 +84,20 @@ export default Vue.extend({
       }
     } catch (e: any) {
       error({ message: e.toString() })
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      title: 'Services | Nexus Cognitive',
+      meta: [
+        {
+          content:
+            'Our framework of services empower your teams, illuminate your solutions, and amplify your successes.',
+          hid: 'description',
+          name: 'description'
+        }
+      ]
     }
   },
 

@@ -45,6 +45,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryResultT,
@@ -173,16 +174,18 @@ export default Vue.extend({
     }
   },
 
-  head: {
-    title: 'Insights | Nexus Cognitive',
-    meta: [
-      {
-        content:
-          'Articles to deepen your understanding of business, technology, and design written by our team of experts.',
-        hid: 'description',
-        name: 'description'
-      }
-    ]
+  head(): MetaInfo {
+    return {
+      title: 'Insights | Nexus Cognitive',
+      meta: [
+        {
+          content:
+            'Articles to deepen your understanding of business, technology, and design written by our team of experts.',
+          hid: 'description',
+          name: 'description'
+        }
+      ]
+    }
   },
 
   computed: {

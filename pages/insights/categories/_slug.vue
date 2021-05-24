@@ -51,6 +51,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryContentT,
@@ -60,10 +61,10 @@ import type {
   ImageResultT
 } from '@/types'
 import {
-  ImageBaseI,
-  InsightBaseI,
   AuthorBaseI,
-  CategoryBaseI
+  CategoryBaseI,
+  ImageBaseI,
+  InsightBaseI
 } from '@/interfaces'
 import Vue from 'vue'
 import { insightResultFilterPublishMap } from '~/utilities'
@@ -89,6 +90,18 @@ export default Vue.extend({
         ({ slug }: CategoryContentT): boolean => slug === params.slug
       )
 
+      let description: string = 'Insights focused on'
+
+      let title: string = 'Category'
+
+      if (category) {
+        title = category.title
+
+        description = category.description
+          ? category.description
+          : `${description} ${title}`
+      }
+
       let insights: InsightResultT = []
 
       if (category) {
@@ -112,8 +125,10 @@ export default Vue.extend({
 
       return {
         authors,
+        category,
+        description,
         insights,
-        category
+        title
       }
     } catch (e: any) {
       error({ message: e.toString() })
@@ -121,7 +136,27 @@ export default Vue.extend({
   },
 
   data(): any {
-    return {}
+    const description: string = ''
+    const title: string = ''
+
+    return {
+      description,
+      title
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      title: this.title,
+      titleTemplate: '%s | Categories | Insights | Nexus Cognitive',
+      meta: [
+        {
+          content: this.description,
+          hid: 'description',
+          name: 'description'
+        }
+      ]
+    }
   },
 
   computed: {
