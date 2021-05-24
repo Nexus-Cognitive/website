@@ -106,8 +106,6 @@
           <h2 class="cross text-white title">Latest Insights</h2>
         </div>
 
-       
-
         <ArticleList
           :articles="insights"
           class="mt-4"

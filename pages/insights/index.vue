@@ -45,6 +45,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryResultT,
@@ -112,8 +113,6 @@ export default Vue.extend({
 
       let insightFeature: InsightContentT | undefined
 
-      let insightsRecent: InsightResultT
-
       let insightsTechnology: InsightResultT
 
       const insightLimit: number = 3
@@ -136,8 +135,6 @@ export default Vue.extend({
             }
           )
 
-        insightsRecent = insights.splice(0, 2)
-
         insightsBusiness = insightsFilterSection(insights, 'business')?.slice(
           0,
           insightLimit
@@ -158,7 +155,6 @@ export default Vue.extend({
         insightFeature,
         insightsBusiness,
         insightsDesign,
-        insightsRecent,
         insightsTechnology
       }
     } catch (e: any) {
@@ -169,14 +165,26 @@ export default Vue.extend({
   data(): any {
     const insightsBusiness: InsightResultT = []
     const insightsDesign: InsightResultT = []
-    const insightsRecent: InsightResultT = []
     const insightsTechnology: InsightResultT = []
 
     return {
       insightsBusiness,
       insightsDesign,
-      insightsRecent,
       insightsTechnology
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      title: 'Insights | Nexus Cognitive',
+      meta: [
+        {
+          content:
+            'Articles to deepen your understanding of business, technology, and design written by our team of experts.',
+          hid: 'description',
+          name: 'description'
+        }
+      ]
     }
   },
 
@@ -187,10 +195,6 @@ export default Vue.extend({
 
     insightsDesignShow(): boolean {
       return this.insightsDesign?.length > 0
-    },
-
-    insightsRecentShow(): boolean {
-      return this.insightsRecent?.length > 0
     },
 
     insightsTechnologyShow(): boolean {

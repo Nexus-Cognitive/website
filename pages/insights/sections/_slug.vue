@@ -52,6 +52,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryResultT,
@@ -98,6 +99,18 @@ export default Vue.extend({
       const sectionCurrent: SectionContentT | undefined = sections?.find(
         ({ slug }: SectionContentT): boolean => slug === params.slug
       )
+
+      let description: string = 'How our team serves your'
+
+      let title: string = 'Section'
+
+      if (sectionCurrent) {
+        title = sectionCurrent.title
+
+        description = sectionCurrent.description
+          ? sectionCurrent.description
+          : `${description} ${title} needs.`
+      }
 
       let insights: InsightResultT = await $content('insights')
         .only([
@@ -164,11 +177,13 @@ export default Vue.extend({
       }
 
       return {
+        description,
         insightFeature,
         insightsBusiness,
         insightsDesign,
         insightsTechnology,
-        sectionCurrent
+        sectionCurrent,
+        title
       }
     } catch (e: any) {
       error({ message: e.toString() })
@@ -176,16 +191,34 @@ export default Vue.extend({
   },
 
   data(): any {
+    const description: string = ''
     const insightsBusiness: InsightResultT = []
     const insightsDesign: InsightResultT = []
     const insightsTechnology: InsightResultT = []
     let sectionCurrent: SectionContentT | undefined
+    const title: string = ''
 
     return {
+      description,
       insightsBusiness,
       insightsDesign,
       insightsTechnology,
-      sectionCurrent
+      sectionCurrent,
+      title
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      titleTemplate: '%s | Sections | Insights | Nexus Cognitive',
+      title: this.title,
+      meta: [
+        {
+          content: this.description,
+          hid: 'description',
+          name: 'description'
+        }
+      ]
     }
   },
 

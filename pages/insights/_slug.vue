@@ -40,6 +40,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryResultT,
@@ -50,10 +51,12 @@ import {
   AuthorBaseI,
   CategoryBaseI,
   ImageBaseI,
-  InsightBaseI
+  InsightBaseI,
+  MetaBaseI,
+  MetaPageI
 } from '@/interfaces'
 import Vue from 'vue'
-import { insightResultMap } from '@/utilities'
+import { authorRelationsMetaMap, insightResultMap } from '@/utilities'
 
 export default Vue.extend({
   async asyncData({
@@ -79,11 +82,51 @@ export default Vue.extend({
 
       insight = insightResultMap(insight, authors, categories, images)
 
+      let authorMetas: MetaBaseI[] = []
+      let description: string = 'Inform your intuition with our expertise.'
+      let title: string = 'Insight'
+
+      if (!!insight && !Array.isArray(insight)) {
+        authorMetas = authorRelationsMetaMap(insight.authors)
+        description = insight.description
+        title = insight.title
+      }
+
       return {
+        authors: authorMetas,
+        description,
+        title,
         insight
       }
     } catch (e: any) {
       error({ message: e.toString() })
+    }
+  },
+
+  data(): MetaPageI {
+    const authorMetas: MetaBaseI[] = []
+    const description: string = 'Inform your intuition with our expertise.'
+    const title: string = 'Insight'
+
+    return {
+      authors: authorMetas,
+      description,
+      title
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      title: this.title,
+      titleTemplate: '%s | Insights | Nexus Cognitive',
+      meta: [
+        ...(this.authors ?? []),
+        {
+          content: this.description,
+          hid: 'description',
+          name: 'description'
+        }
+      ]
     }
   }
 })

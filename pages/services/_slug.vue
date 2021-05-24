@@ -108,6 +108,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryContentT,
@@ -119,11 +120,11 @@ import type {
   ServiceResultT
 } from '@/types'
 import {
-  ServiceBaseI,
+  AuthorBaseI,
+  CategoryBaseI,
   ImageBaseI,
   InsightBaseI,
-  AuthorBaseI,
-  CategoryBaseI
+  ServiceBaseI
 } from '@/interfaces'
 import Vue from 'vue'
 import {
@@ -182,6 +183,10 @@ export default Vue.extend({
         'services'
       ).fetch<ServiceBaseI>()
 
+      let description: string = 'Our service for your needs'
+
+      let title: string = 'Service'
+
       let service: ServiceContentT | undefined
 
       if (Array.isArray(services)) {
@@ -190,11 +195,19 @@ export default Vue.extend({
         if (service && Array.isArray(images)) {
           service = serviceMap(service, services, images)
         }
+
+        if (service) {
+          description = service.description
+
+          title = service.title
+        }
       }
 
       return {
+        description,
         insights,
-        service
+        service,
+        title
       }
     } catch (e: any) {
       error({ message: e.toString() })
@@ -202,7 +215,27 @@ export default Vue.extend({
   },
 
   data(): any {
-    return {}
+    const description: string = ''
+    const title: string = ''
+
+    return {
+      description,
+      title
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      title: this.title,
+      titleTemplate: '%s | Services | Nexus Cognitive',
+      meta: [
+        {
+          content: this.description,
+          hid: 'description',
+          name: 'description'
+        }
+      ]
+    }
   },
 
   computed: {

@@ -3,10 +3,9 @@
     <ImageBase avatar class="h-4 mr-2 w-4" v-bind="image" />
 
     <figcaption class="xl:flex xl:items-center">
-      <span class="font-bold tracking-wider uppercase">{{ title }}</span
-      ><br class="xl:hidden" />
-      <span class="mx-1 hidden xl:inline-block">|</span>
-      <span v-html="position"></span>
+      <span class="font-bold tracking-wider uppercase">{{ title }}</span>
+      <br />
+      <span class="font-sans" v-html="position" />
     </figcaption>
   </figure>
 </template>
