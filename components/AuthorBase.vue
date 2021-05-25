@@ -1,6 +1,6 @@
 <template>
   <figure class="flex items-center">
-    <ImageBase avatar class="h-4 mr-2 w-4" v-bind="image" />
+    <ImageBase avatar class="h-5 mr-2 w-5" v-bind="image" />
 
     <figcaption>
       <span class="font-bold tracking-wider uppercase">{{ title }}</span>
