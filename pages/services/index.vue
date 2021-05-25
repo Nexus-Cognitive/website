@@ -7,9 +7,8 @@
         <p
           class="font-light font-mono text-md sm:text-lg 2xl:text-xl text-left left-2 md:left-6 bottom-1/4 md:bottom-1/3 absolute"
         >
-          We’re building<br class="hidden xs:inline" />digitally mature<br
-            class="md:hidden"
-          />
+          We’re building<br class="hidden xs:inline" />
+          digitally mature<br class="md:hidden" />
           <FocusList :focuses="focuses" />
         </p>
       </template>
