@@ -1,19 +1,22 @@
 <template>
-  <nav>
-    <div class="flex flex-wrap items-center">
+  <nav class="md:flex items-center">
+    <div class="flex flex-wrap items-center md:mr-auto">
       <Wordmark class="mr-auto" />
 
-      <button @click="hiddenToggle">
+      <button class="md:hidden" @click="hiddenToggle">
         <IconMenu />
       </button>
     </div>
 
-    <ol class="float-right w-full mt-2 text-right" :class="listClassList">
+    <ol
+      class="float-right md:flex md:items-center w-full md:w-auto mt-2 md:mt-0 text-right"
+      :class="listClassList"
+    >
       <li
-        v-for="route in routes"
+        v-for="(route, index) in routes"
         :key="route.name"
-        class="block mt-1 sm:text-sm font-title"
-        :class="routeClassListGet(route.name)"
+        class="block mt-1 md:mt-0 sm:text-sm font-title"
+        :class="routeClassListGet(route.name, index)"
       >
         <nuxt-link :to="{ name: route.name }">
           {{ route.name | capitalize }}
@@ -72,8 +75,9 @@ export default Vue.extend({
       this.hidden = !this.hidden
     },
 
-    routeClassListGet(name: string): object {
+    routeClassListGet(name: string, index: number): object {
       return {
+        'md:mr-4': index !== this.routeLast,
         underline: name === this.$route.name
       }
     }
