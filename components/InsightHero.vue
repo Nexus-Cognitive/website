@@ -136,7 +136,7 @@ export default Vue.extend({
 }
 
 .insight-hero {
-  @apply bg-blue-dark flex items-center min-h-screen-three-quarter pb-4 md:pb-6 pt-12 md:pt-24 px-4 md:px-6 relative text-white;
+  @apply bg-blue-dark flex items-center min-h-screen-three-quarter pb-4 md:pb-6 pt-16 md:pt-24 px-4 md:px-6 relative text-white;
 }
 
 .publish {
