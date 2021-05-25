@@ -1,20 +1,6 @@
 <template>
   <article>
-    <HeroBase
-      v-if="insightFeature"
-      background-color="blue-dark"
-      :hero-section="false"
-      :image="insightFeature.cover"
-    >
-      <template #default>
-        <h1 class="sr-only">Insights</h1>
-
-        <InsightBase
-          class="col-span-1 md:col-span-2 mt-12 text-left"
-          v-bind="insightFeature"
-        />
-      </template>
-    </HeroBase>
+    <InsightHero heading="Insights" v-bind="insightFeature" />
 
     <div class="px-4">
       <SectionNavigation v-if="sectionsShow" :sections="sections" />
@@ -22,24 +8,54 @@
 
     <SectionInsights
       v-if="insightsBusinessShow"
-      background-color="green"
       :insights="insightsBusiness"
+      text-color="green"
       title="Business"
     />
 
+    <div class="px-4 mt-4">
+      <div class="container">
+        <NuxtLink
+          class="hover:no-underline underline"
+          :to="sectionToGet('business')"
+          >View all Business Insights</NuxtLink
+        >
+      </div>
+    </div>
+
     <SectionInsights
       v-if="insightsTechnologyShow"
-      background-color="red"
       :insights="insightsTechnology"
+      text-color="blue"
       title="Technology"
     />
 
+    <div class="px-4 mt-4">
+      <div class="container">
+        <NuxtLink
+          class="hover:no-underline underline"
+          :to="sectionToGet('technology')"
+          >View all Technology Insights</NuxtLink
+        >
+      </div>
+    </div>
+
     <SectionInsights
       v-if="insightsDesignShow"
-      background-color="purple"
       :insights="insightsDesign"
+      text-color="red"
       title="Design"
     />
+
+    <div class="px-4 mt-4">
+      <div class="container">
+        <NuxtLink
+          class="hover:no-underline underline"
+          :to="sectionToGet('design')"
+          >View all Design Insights</NuxtLink
+        >
+      </div>
+    </div>
   </article>
 </template>
 
