@@ -59,7 +59,7 @@ export default Vue.extend({
   methods: {
     itemClassListGet(index: number): object {
       return {
-        'text-sm xl:text-md underline hover:no-underline': true,
+        'text-sm xl:text-md hover:no-underline underline underline-red': true,
         'mr-4': !this.sectionsFull && index < this.sectionsLast
       }
     },

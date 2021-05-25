@@ -24,7 +24,7 @@
     />
 
     <div v-if="linkShow" class="container mt-4">
-      <NuxtLink class="hover:no-underline underline" :to="to"
+      <NuxtLink class="hover:no-underline underline underline-red" :to="to"
         >View all {{ title }} Insights</NuxtLink
       >
     </div>
@@ -38,7 +38,7 @@ import { InsightContentsT } from '@/types'
 export default Vue.extend({
   props: {
     colsMd: {
-      default: 1,
+      default: 2,
       type: [Number, String],
       validator: (v: number | string): boolean =>
         typeof v === 'number' || !isNaN(parseInt(v))

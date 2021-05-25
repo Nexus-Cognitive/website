@@ -21,7 +21,11 @@
               :key="service.slug"
               :class="serviceClassListGet(index)"
             >
-              <NuxtLink :to="serviceToGet(service)">
+              <NuxtLink
+                class="hover:no-underline underline"
+                :class="linkClassList"
+                :to="serviceToGet(service)"
+              >
                 {{ service.title }}
               </NuxtLink>
             </li>
@@ -114,6 +118,10 @@ export default Vue.extend({
 
     imageShow(): boolean {
       return !!this.image.src
+    },
+
+    linkClassList(): string {
+      return `underline-${this.bodyColor}`
     },
 
     servicesClassList(): string {
