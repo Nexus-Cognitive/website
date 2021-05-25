@@ -5,11 +5,13 @@
       <!-- image -->
       <ImageBase v-bind="cover" class="cover-image" />
     </div>
+
     <!-- content container -->
     <div class="content-container">
       <header>
         <!-- categories -->
         <CategoryList :categories="categories" class="text-gray-light" />
+
         <!-- heading -->
         <h2 class="title">
           <!-- link -->
@@ -19,16 +21,19 @@
           </NuxtLink>
         </h2>
       </header>
+
       <!-- description -->
       <p class="description">
         {{ description }}
       </p>
+
       <!-- footer -->
       <footer class="footer">
         <!-- authors -->
         <AuthorList :authors="authors" class="mt-4 authors" />
+
         <!-- publish -->
-        <p class="px-6 font-mono text-gray-light">
+        <p class="px-7 font-mono text-gray-light">
           {{ publish | dateFormat }}
         </p>
       </footer>
@@ -115,7 +120,7 @@ export default Vue.extend({
 
     .content {
       &-container {
-        @apply md:justify-center md:pt-3 md:pl-0;
+        @apply md:pt-3 md:pl-0;
       }
     }
 
@@ -155,7 +160,7 @@ export default Vue.extend({
 
 .content {
   &-container {
-    @apply flex flex-col pb-3 px-3 xl:pl-0 xl:pr-4;
+    @apply flex flex-col justify-center pb-3 px-3 xl:pl-0 xl:pr-4;
   }
 }
 
@@ -172,10 +177,6 @@ export default Vue.extend({
 
 .description {
   @apply mt-1;
-}
-
-.footer {
-  @apply mt-auto;
 }
 
 .title {
