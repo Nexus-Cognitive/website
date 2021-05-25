@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 mt-6">
+  <section class="px-4 mb-7 mt-6">
     <Grid v-if="titleShow" class="container" :cols-md="colsMd">
       <div class="flex items-center" :class="textColor_">
         <ArrowBase class="mr-1" />
@@ -16,6 +16,12 @@
       component="InsightBase"
       :cols-md="colsMd"
     />
+
+    <div v-if="linkShow" class="container mt-4">
+      <NuxtLink class="hover:no-underline underline" :to="to"
+        >View all {{ title }} Insights</NuxtLink
+      >
+    </div>
   </section>
 </template>
 
@@ -35,6 +41,11 @@ export default Vue.extend({
     insights: {
       required: true,
       type: Array as PropType<InsightContentsT>
+    },
+
+    linkShow: {
+      default: true,
+      type: Boolean
     },
 
     textColor: {
@@ -58,6 +69,10 @@ export default Vue.extend({
   computed: {
     textColor_(): string {
       return `text-${this.textColor}`
+    },
+
+    to(): string {
+      return `/insights/sections/${this.title.toLowerCase()}`
     }
   }
 })
