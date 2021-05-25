@@ -100,7 +100,30 @@ address {
 
 .underline {
   text-decoration: underline;
+}
+
+.underline-blue {
+  text-decoration-color: #444AE2;
+}
+
+.underline-gray {
+  text-decoration-color: #4B4B5E;
+}
+
+.underline-green {
+  text-decoration-color: #2A4D4B;
+}
+
+.underline-red {
   text-decoration-color: #e24944;
+}
+
+.underline-purple {
+  text-decoration-color: #2E2A4D;
+}
+
+.underline-white {
+  text-decoration-color: #F7F7F7;
 }
 
 .section-video-iframe {
