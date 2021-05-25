@@ -42,8 +42,8 @@ export default Vue.extend({
   computed: {
     listClassList(): object {
       return {
-        'flex items-baseline': true,
-        'justify-between': this.sectionsFull
+        'sm:flex sm:items-baseline': true,
+        'sm:justify-between': this.sectionsFull
       }
     },
 
@@ -59,7 +59,7 @@ export default Vue.extend({
   methods: {
     itemClassListGet(index: number): object {
       return {
-        'text-sm md:text-md underline hover:no-underline': true,
+        'text-sm xl:text-md underline hover:no-underline': true,
         'mr-4': !this.sectionsFull && index < this.sectionsLast
       }
     },
