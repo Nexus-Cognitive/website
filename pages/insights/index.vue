@@ -13,16 +13,6 @@
       title="Business"
     />
 
-    <div class="px-4 mt-4">
-      <div class="container">
-        <NuxtLink
-          class="hover:no-underline underline"
-          :to="sectionToGet('business')"
-          >View all Business Insights</NuxtLink
-        >
-      </div>
-    </div>
-
     <SectionInsights
       v-if="insightsTechnologyShow"
       :insights="insightsTechnology"
@@ -30,32 +20,12 @@
       title="Technology"
     />
 
-    <div class="px-4 mt-4">
-      <div class="container">
-        <NuxtLink
-          class="hover:no-underline underline"
-          :to="sectionToGet('technology')"
-          >View all Technology Insights</NuxtLink
-        >
-      </div>
-    </div>
-
     <SectionInsights
       v-if="insightsDesignShow"
       :insights="insightsDesign"
       text-color="red"
       title="Design"
     />
-
-    <div class="px-4 mt-4">
-      <div class="container">
-        <NuxtLink
-          class="hover:no-underline underline"
-          :to="sectionToGet('design')"
-          >View all Design Insights</NuxtLink
-        >
-      </div>
-    </div>
   </article>
 </template>
 
