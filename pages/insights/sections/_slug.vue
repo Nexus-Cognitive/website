@@ -26,24 +26,24 @@
 
     <SectionInsights
       v-if="insightsBusinessShow"
-      background-color="green"
       :insights="insightsBusiness"
+      text-color="green"
       title="Business"
       :title-show="false"
     />
 
     <SectionInsights
       v-if="insightsTechnologyShow"
-      background-color="red"
       :insights="insightsTechnology"
+      text-color="blue"
       title="Technology"
       :title-show="false"
     />
 
     <SectionInsights
       v-if="insightsDesignShow"
-      background-color="purple"
       :insights="insightsDesign"
+      text-color="red"
       title="Design"
       :title-show="false"
     />
