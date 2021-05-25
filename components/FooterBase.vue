@@ -1,6 +1,6 @@
 <template>
   <SectionBase
-    class="bg-black-dark block md:flex md:justify-between mt-4 md:mt-6"
+    class="bg-black-dark block md:flex md:justify-between"
     tag="footer"
   >
     <div>
