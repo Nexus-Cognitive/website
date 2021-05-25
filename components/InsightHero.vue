@@ -7,7 +7,7 @@
     <!-- container -->
     <div class="container">
       <!-- arrow + page heading -->
-      <div class="arrow-heading">
+      <div v-if="heading" class="arrow-heading">
         <!-- arrow -->
         <ArrowBase class="arrow" />
 
@@ -16,13 +16,18 @@
       </div>
 
       <!-- title + link -->
-      <h2 class="title">
+      <component :is="titleIs" class="title">
         <!-- link -->
-        <NuxtLink :to="to">
+        <NuxtLink v-if="linkShow" :to="to">
           <!-- title -->
           {{ title }}
         </NuxtLink>
-      </h2>
+
+        <!-- title -->
+        <template v-else>
+          {{ title }}
+        </template>
+      </component>
 
       <!-- description -->
       <p class="description">{{ description }}</p>
@@ -71,8 +76,13 @@ export default Vue.extend({
     },
 
     heading: {
-      required: true,
+      default: '',
       type: String
+    },
+
+    linkShow: {
+      default: true,
+      type: Boolean
     },
 
     publish: {
@@ -94,6 +104,10 @@ export default Vue.extend({
   },
 
   computed: {
+    titleIs(): string {
+      return `h${this.heading ? '2' : '1'}`
+    },
+
     to(): string {
       return `/insights/${this.slug}`
     }
