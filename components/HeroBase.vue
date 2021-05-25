@@ -3,7 +3,11 @@
     class="flex justify-center overflow-hidden relative text-center"
     :class="headerClassList"
   >
-    <VideoBase v-if="videoShow" v-bind="video" class="hero-video min-w-full" />
+    <SectionVideo
+      v-if="videoShow"
+      v-bind="video"
+      class="hero-video min-w-full"
+    />
 
     <ImageBase
       v-if="imageShow"
