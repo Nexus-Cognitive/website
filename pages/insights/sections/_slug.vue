@@ -1,20 +1,6 @@
 <template>
   <article v-if="sectionCurrent">
-    <HeroBase
-      v-if="insightFeature"
-      background-color="blue-dark"
-      :hero-section="false"
-      :image="insightFeature.cover"
-    >
-      <template #default>
-        <h1 class="sr-only">Insights</h1>
-
-        <InsightBase
-          class="col-span-1 md:col-span-2 mt-12 text-left"
-          v-bind="insightFeature"
-        />
-      </template>
-    </HeroBase>
+    <InsightHero :heading="heading" v-bind="insightFeature" />
 
     <div class="px-4">
       <SectionNavigation
@@ -27,6 +13,7 @@
     <SectionInsights
       v-if="insightsBusinessShow"
       :insights="insightsBusiness"
+      :link-show="false"
       text-color="green"
       title="Business"
       :title-show="false"
@@ -35,6 +22,7 @@
     <SectionInsights
       v-if="insightsTechnologyShow"
       :insights="insightsTechnology"
+      :link-show="false"
       text-color="blue"
       title="Technology"
       :title-show="false"
@@ -43,6 +31,7 @@
     <SectionInsights
       v-if="insightsDesignShow"
       :insights="insightsDesign"
+      :link-show="false"
       text-color="red"
       title="Design"
       :title-show="false"
@@ -223,6 +212,10 @@ export default Vue.extend({
   },
 
   computed: {
+    heading(): string {
+      return `${this.sectionCurrent.title} Insights`
+    },
+
     insightsBusinessLength(): number {
       return this.insightsBusiness?.length
     },
