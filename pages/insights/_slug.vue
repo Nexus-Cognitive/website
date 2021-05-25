@@ -19,7 +19,7 @@
       </template>
     </HeroBase>
 
-    <div class="container py-6">
+    <div class="container px-3 md:px-0 py-6">
       <NuxtContent
         class="mx-auto prose prose-blue prose-lg"
         :document="insight"
