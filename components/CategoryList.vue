@@ -5,7 +5,6 @@
       :key="category.slug"
       class="inline"
     >
-     
       <NuxtLink :to="categoryToGet(category.slug)">{{
         category.title
       }}</NuxtLink

@@ -16,7 +16,7 @@
         v-for="(route, index) in routes"
         :key="route.name"
         class="block mt-1 md:mt-0 sm:text-sm font-title"
-        :class="routeClassListGet(index, route.name)"
+        :class="routeClassListGet(route.name, index)"
       >
         <nuxt-link :to="{ name: route.name }">
           {{ route.name | capitalize }}
@@ -62,12 +62,20 @@ export default Vue.extend({
     }
   },
 
+  watch: {
+    $route() {
+      if (!this.hidden) {
+        this.hiddenToggle()
+      }
+    }
+  },
+
   methods: {
     hiddenToggle(): void {
       this.hidden = !this.hidden
     },
 
-    routeClassListGet(index: number, name: string): object {
+    routeClassListGet(name: string, index: number): object {
       return {
         'md:mr-4': index !== this.routeLast,
         underline: name === this.$route.name

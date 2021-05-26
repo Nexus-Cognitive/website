@@ -192,6 +192,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorContentT,
   AuthorResultT,
@@ -322,6 +323,21 @@ export default Vue.extend({
       error({ message: e.toString() })
     }
   },
+
+  head(): MetaInfo {
+    return {
+      title: 'Government | Nexus Cognitive',
+      meta: [
+        {
+          content:
+            'Digitally maturing government organizations and workflows for the future economy.',
+          hid: 'description',
+          name: 'description'
+        }
+      ]
+    }
+  },
+
   methods: {
     strategyImageRightGet(index: number): boolean {
       return !(index % 2 === 0)

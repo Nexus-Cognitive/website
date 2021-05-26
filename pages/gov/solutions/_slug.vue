@@ -34,6 +34,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryResultT,
@@ -73,11 +74,47 @@ export default Vue.extend({
 
       solution = solutionResultMap(solution, authors, categories, images)
 
+      let description: string = 'How our team empowered a government agency.'
+
+      let title: string = 'Solution'
+
+      if (solution && !Array.isArray(solution)) {
+        description = solution.description
+
+        title = solution.client
+      }
+
       return {
-        solution
+        description,
+        solution,
+        title
       }
     } catch (e: any) {
       error({ message: e.toString() })
+    }
+  },
+
+  data(): any {
+    const description: string = ''
+    const title: string = ''
+
+    return {
+      description,
+      title
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      title: this.title,
+      titleTemplate: '%s | Solutions | Government | Nexus Cognitive',
+      meta: [
+        {
+          content: this.description,
+          hid: 'description',
+          name: 'description'
+        }
+      ]
     }
   }
 })

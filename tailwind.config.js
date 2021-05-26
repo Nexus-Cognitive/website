@@ -6,8 +6,8 @@ borderRadiuses.forEach((b, i) => (borderRadius[b] = `${i * unit}px`))
 
 const colors = {
   black: {
-    DEFAULT: '#22202E',
-    dark: '#070514'
+    dark: '#070514',
+    DEFAULT: '#22202E'
   },
   blue: {
     dark: '#0C163B',
@@ -57,8 +57,8 @@ const fontSize = {
   xs: ['16px', '24px'],
   sm: ['24px', '32px'],
   md: ['32px', '40px'],
-  lg: ['48px', '56px'],
-  xl: ['64px', '72px']
+  lg: ['40px', '48px'],
+  xl: ['48px', '56px']
 }
 
 const opacities = [0, 20, 60].map((o) => `opacity-${o}`)
@@ -206,6 +206,14 @@ module.exports = {
     fontFamily,
     fontSize,
     height: {
+      ...height,
+      auto: 'auto',
+      full: '100%',
+      screen: '100vh',
+      'screen-half': '50vh',
+      'screen-three-quarter': '75vh'
+    },
+    minHeight: {
       ...height,
       auto: 'auto',
       full: '100%',

@@ -1,6 +1,6 @@
 {
-  "name": "nexus-cognitive-front-end",
-  "version": "1.0.0",
+  "name": "nexus-cognitive",
+  "version": "8.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",

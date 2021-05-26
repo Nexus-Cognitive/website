@@ -3,12 +3,17 @@ import type {
   AuthorContentsT,
   AuthorRelationT,
   AuthorRelationsT,
-  ImageContentsT,
   AuthorResultT,
+  ImageContentsT,
   ImageResultT
 } from '@/types'
-import type { AuthorBaseI } from '@/interfaces'
-import { contentFind, contentsFilter, imageFind } from '@/utilities'
+import type { AuthorBaseI, MetaBaseI } from '@/interfaces'
+import {
+  contentFind,
+  contentsFilter,
+  imageFind,
+  relationMetaMap
+} from '@/utilities'
 
 export function authorFind(
   authors: AuthorContentsT,
@@ -27,6 +32,21 @@ export function authorMap(
   }
 
   return author
+}
+
+export function authorRelationMetaMap(relation: AuthorRelationT): MetaBaseI {
+  return relationMetaMap<AuthorBaseI>(relation, 'author')
+}
+
+export function authorRelationsMetaMap(
+  relations: AuthorRelationsT
+): MetaBaseI[] {
+  return Array.isArray(relations)
+    ? relations.map(
+        (relation: AuthorRelationT): MetaBaseI =>
+          authorRelationMetaMap(relation)
+      )
+    : []
 }
 
 export function authorResultMap(

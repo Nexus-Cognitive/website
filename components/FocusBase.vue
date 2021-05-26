@@ -42,7 +42,7 @@ export default Vue.extend({
         `top-${this.topGet(5)}`,
         `sm:top-${this.topGet(8)}`,
         `2xl:top-${this.topGet(10)}`,
-        this.activeIndex ? ' underline' : ''
+        this.activeIndex ? ' underline underline-red' : ''
       ]
     },
 

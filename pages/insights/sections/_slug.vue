@@ -1,20 +1,6 @@
 <template>
   <article v-if="sectionCurrent">
-    <HeroBase
-      v-if="insightFeature"
-      background-color="blue-dark"
-      :hero-section="false"
-      :image="insightFeature.cover"
-    >
-      <template #default>
-        <h1 class="sr-only">Insights</h1>
-
-        <InsightBase
-          class="col-span-1 md:col-span-2 mt-12 text-left"
-          v-bind="insightFeature"
-        />
-      </template>
-    </HeroBase>
+    <InsightHero :heading="heading" v-bind="insightFeature" />
 
     <div class="px-4">
       <SectionNavigation
@@ -26,24 +12,27 @@
 
     <SectionInsights
       v-if="insightsBusinessShow"
-      background-color="green"
       :insights="insightsBusiness"
+      :link-show="false"
+      text-color="green"
       title="Business"
       :title-show="false"
     />
 
     <SectionInsights
       v-if="insightsTechnologyShow"
-      background-color="red"
       :insights="insightsTechnology"
+      :link-show="false"
+      text-color="blue"
       title="Technology"
       :title-show="false"
     />
 
     <SectionInsights
       v-if="insightsDesignShow"
-      background-color="purple"
       :insights="insightsDesign"
+      :link-show="false"
+      text-color="red"
       title="Design"
       :title-show="false"
     />
@@ -52,6 +41,7 @@
 
 <script lang="ts">
 import type { Context } from '@nuxt/types'
+import type { MetaInfo } from 'vue-meta'
 import type {
   AuthorResultT,
   CategoryResultT,
@@ -98,6 +88,18 @@ export default Vue.extend({
       const sectionCurrent: SectionContentT | undefined = sections?.find(
         ({ slug }: SectionContentT): boolean => slug === params.slug
       )
+
+      let description: string = 'How our team serves your'
+
+      let title: string = 'Section'
+
+      if (sectionCurrent) {
+        title = sectionCurrent.title
+
+        description = sectionCurrent.description
+          ? sectionCurrent.description
+          : `${description} ${title} needs.`
+      }
 
       let insights: InsightResultT = await $content('insights')
         .only([
@@ -164,11 +166,13 @@ export default Vue.extend({
       }
 
       return {
+        description,
         insightFeature,
         insightsBusiness,
         insightsDesign,
         insightsTechnology,
-        sectionCurrent
+        sectionCurrent,
+        title
       }
     } catch (e: any) {
       error({ message: e.toString() })
@@ -176,20 +180,42 @@ export default Vue.extend({
   },
 
   data(): any {
+    const description: string = ''
     const insightsBusiness: InsightResultT = []
     const insightsDesign: InsightResultT = []
     const insightsTechnology: InsightResultT = []
     let sectionCurrent: SectionContentT | undefined
+    const title: string = ''
 
     return {
+      description,
       insightsBusiness,
       insightsDesign,
       insightsTechnology,
-      sectionCurrent
+      sectionCurrent,
+      title
+    }
+  },
+
+  head(): MetaInfo {
+    return {
+      titleTemplate: '%s | Sections | Insights | Nexus Cognitive',
+      title: this.title,
+      meta: [
+        {
+          content: this.description,
+          hid: 'description',
+          name: 'description'
+        }
+      ]
     }
   },
 
   computed: {
+    heading(): string {
+      return `${this.sectionCurrent.title} Insights`
+    },
+
     insightsBusinessLength(): number {
       return this.insightsBusiness?.length
     },

@@ -1,17 +1,16 @@
 <template>
   <div class="section-video-wrapper flex justify-center items-center">
-    <video
-      autoplay
+    <iframe
+      allowfullscreen
+      class="section-video-iframe"
+      frameborder="0"
       :height="height"
-      loop
-      muted
-      playsinline
+      mozallowfullscreen
       :poster="poster.src"
+      :src="src"
+      webkitallowfullscreen
       :width="width"
-    >
-      <source :src="srcWebM" type="video/webm" />
-      <source :src="srcMP4" type="video/mp4" />
-    </video>
+    />
     <slot></slot>
   </div>
 </template>
@@ -40,16 +39,6 @@ export default Vue.extend({
     width: {
       required: true,
       type: Number
-    }
-  },
-
-  computed: {
-    srcWebM() {
-      return `${this.src}.webm`
-    },
-
-    srcMP4() {
-      return `${this.src}.mp4`
     }
   }
 })

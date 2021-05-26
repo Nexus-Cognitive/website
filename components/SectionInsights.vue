@@ -1,18 +1,33 @@
 <template>
-  <section class="px-4 my-6">
-    <Grid v-if="titleShow" class="container" :cols-sm="colssm">
-      <div :class="titleClassList">
-        <ArrowBase :class="arrowClassList" />
-        <h2 class="cross title">{{ title }}</h2>
+  <section class="px-4 mb-7 mt-6">
+    <Grid
+      v-if="titleShow"
+      class="container"
+      :cols-md="colsMd"
+      :cols2xl="cols2xl"
+    >
+      <div class="flex items-center" :class="textColor_">
+        <ArrowBase class="mr-1" />
+
+        <h2 class="cross title">
+          {{ title }}
+        </h2>
       </div>
     </Grid>
 
     <ArticleList
       :articles="insights"
-      class="container mt-4"
+      class="container mt-5"
       component="InsightBase"
-      :cols-md="colsSm"
+      :cols-md="colsMd"
+      :cols2xl="cols2xl"
     />
+
+    <div v-if="linkShow" class="container mt-4">
+      <NuxtLink class="hover:no-underline underline underline-red" :to="to"
+        >View all {{ title }} Insights</NuxtLink
+      >
+    </div>
   </section>
 </template>
 
@@ -22,19 +37,17 @@ import { InsightContentsT } from '@/types'
 
 export default Vue.extend({
   props: {
-    backgroundColor: {
-      default: 'blue',
-      type: String,
-      validator: (v: string): boolean =>
-        ['blue', 'blue-dark', 'green', 'purple', 'red'].includes(
-          v.toLowerCase()
-        )
+    colsMd: {
+      default: 2,
+      type: [Number, String],
+      validator: (v: number | string): boolean =>
+        typeof v === 'number' || !isNaN(parseInt(v))
     },
 
-    colsMd: {
-      default: 1,
+    cols2xl: {
+      default: 2,
       type: [Number, String],
-      validator: (v: any): boolean =>
+      validator: (v: number | string): boolean =>
         typeof v === 'number' || !isNaN(parseInt(v))
     },
 
@@ -43,14 +56,21 @@ export default Vue.extend({
       type: Array as PropType<InsightContentsT>
     },
 
+    linkShow: {
+      default: true,
+      type: Boolean
+    },
+
+    textColor: {
+      required: true,
+      type: String,
+      validator: (v: string): boolean =>
+        ['blue', 'blue-dark', 'green', 'purple', 'red'].includes(v)
+    },
+
     title: {
       required: true,
       type: String
-    },
-
-    titleBlock: {
-      default: true,
-      type: Boolean
     },
 
     titleShow: {
@@ -60,18 +80,12 @@ export default Vue.extend({
   },
 
   computed: {
-    arrowClassList(): object {
-      return {
-        'mr-1': true,
-        'text-blue': !this.titleBlock
-      }
+    textColor_(): string {
+      return `text-${this.textColor}`
     },
 
-    titleClassList(): string[] {
-      return [
-        'flex items-center',
-        this.titleBlock ? `bg-${this.backgroundColor} px-2 py-1 text-white` : ''
-      ]
+    to(): string {
+      return `/insights/sections/${this.title.toLowerCase()}`
     }
   }
 })

@@ -1,7 +1,7 @@
 ---
 title: Cognitive Design in Analytics—Building the Team
 description: Software—powerful as it may be—won't help you very much without
-  using your most valuable asset---your people—to make sense of it. Without
+  using your most valuable asset—your people—to make sense of it. Without
   people to interpret the results, that software is just 1's and 0's.
 cover: cognitive-design
 publish: 2021-05-17T13:15:03-05:00
@@ -87,5 +87,4 @@ upcoming blogs, I'll discuss to how the team can use their skills to
 draw out the knowledge resident in the organization and build truly
 innovative solutions.
 
-[^1]: Definition from Dictionary.com.
-    <http://www.dictionary.com/browse/cognitive>. Retrieved 9/17/17.
+[^1]: [Definition from Dictionary.com](http://www.dictionary.com/browse/cognitive). Retrieved 9/17/17.
