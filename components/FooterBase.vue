@@ -1,5 +1,6 @@
 <template>
   <SectionBase
+    id="footer"
     class="bg-black-dark block md:flex md:justify-between"
     tag="footer"
   >
