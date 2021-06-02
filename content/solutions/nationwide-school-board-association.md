@@ -3,7 +3,8 @@ title: "Nationwide School Board Association "
 description: Applying the Nexus Cloud Accelerator framework for rapid e-Commerce deployment
 client: "Nationwide School Board Association "
 project: Azure Migration and App Development for national e-commerce platform
-amount: "-"
+outcomes: Rapid 0-1 eCommerce deployment for empowered revenue streams. (40%
+  volume increase)
 problem: The largest non-profit Public School Board Association (PSBA) operate a
   purchasing cooperative serving over 8,000 public schools districts and
   government agencies.  This association and cooperative provide critical
@@ -17,6 +18,7 @@ cover: gov-public-school-board
 publish: 2021-05-11T09:52:29-05:00
 authors:
   - andy-nardo
+amount: "-"
 categories:
   - application-development
   - cloud
