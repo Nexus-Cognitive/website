@@ -3,7 +3,7 @@ title: Department of Interior
 description: Robust Cloud Analytic Solution
 client: Department of Interior
 project: Cloud Analytics
-amount: "-"
+outcomes: Rapid production rollout for maximum ROI
 problem: The Department of the Interior (DOI), Bureau of Safety and
   Environmental Enforcement (BSEE), on behalf of the Bureau of Ocean Energy
   Management (BOEM) needed assistance to value mineral potential in Alaska’s
@@ -12,6 +12,7 @@ cover: doi
 publish: 2021-05-11T09:30:13-05:00
 authors:
   - steve-roberts
+amount: "-"
 categories:
   - data-analytics
   - analytics-operations
