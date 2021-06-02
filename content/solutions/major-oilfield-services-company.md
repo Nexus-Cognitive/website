@@ -1,16 +1,19 @@
 ---
 title: Major Oilfield Services Company
 description: Asset Workflow Software Solution for Major Oilfield Services Company
-authors:
-  - steve-roberts
-publish: 2021-01-05T12:00:00Z
-categories:
-  - data-analytics
-cover: offshore-oil-rig
 client: Major Oilfield Services Company
 project: Custom Asset Workflow Software Solution
-outcomes: $15M (over 2 years)
-problem: A major oilfield services firm needed help integrating and correlating mountains of data related to thousands of wells in varying stages of production and perforation. The workflows and processes they used to make operational decisions were manual and laborious.
+outcomes: Unlocked valuable data, illuminating new paths of productivity and revenue.
+problem: A major oilfield services firm needed help integrating and correlating
+  mountains of data related to thousands of wells in varying stages of
+  production and perforation. The workflows and processes they used to make
+  operational decisions were manual and laborious.
+cover: offshore-oil-rig
+publish: 2021-01-05T12:00:00.000Z
+authors:
+  - steve-roberts
+categories:
+  - data-analytics
 ---
 
 ## Solution
