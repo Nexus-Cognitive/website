@@ -1,16 +1,19 @@
 ---
 title: Big 4 Professional Services Firm 2
 description: DevOps Framework Design and Deployment for Big 4 Professional Services Firm
-authors:
-  - steve-roberts
-publish: 2021-01-02T12:00:00Z
-categories:
-  - developer-operations
-cover: office-building-2
 client: Big 4 Professional Services Firm
 project: DevOps Framework Design and Deployment
-outcomes: $18M (over 3 years)
-problem: 6 Billion Dollar business unit at a Big 4 firm had several internal teams across the US and several vendors delivering custom applications and platforms using a range of “agile” methodologies and the firm was seeing considerable duplication in effort across development workstreams.
+outcomes: Major efficiency boosts resulting in $50M savings annually by year 2
+problem: 6 Billion Dollar business unit at a Big 4 firm had several internal
+  teams across the US and several vendors delivering custom applications and
+  platforms using a range of “agile” methodologies and the firm was seeing
+  considerable duplication in effort across development workstreams.
+cover: office-building-2
+publish: 2021-01-02T12:00:00.000Z
+authors:
+  - steve-roberts
+categories:
+  - developer-operations
 ---
 
 ## Solution
