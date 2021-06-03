@@ -9,9 +9,6 @@
     <!-- content container -->
     <div class="content-container">
       <header>
-        <!-- categories -->
-        <CategoryList :categories="categories" class="text-gray-light" />
-
         <!-- heading -->
         <h2 class="title">
           <!-- link -->
@@ -42,7 +39,7 @@
 </template>
 
 <script lang="ts">
-import type { AuthorContentsT, CategoryContentsT, ImageContentT } from '@/types'
+import type { AuthorContentsT, ImageContentT } from '@/types'
 import Vue, { PropType } from 'vue'
 
 export default Vue.extend({
@@ -52,11 +49,6 @@ export default Vue.extend({
     authors: {
       required: true,
       type: Array as PropType<AuthorContentsT>
-    },
-
-    categories: {
-      required: true,
-      type: Array as PropType<CategoryContentsT>
     },
 
     cover: {
