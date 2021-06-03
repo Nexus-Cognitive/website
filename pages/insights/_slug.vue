@@ -9,11 +9,6 @@
           :document="insight"
         />
         <div class="max-w-prose mx-auto">
-          <CategoryList
-            :categories="insight.categories"
-            class="mt-3 text-gray-dark"
-          />
-
           <p class="font-mono mt-3 text-gray-dark">
             {{ insight.publish | dateFormat }}
           </p>
