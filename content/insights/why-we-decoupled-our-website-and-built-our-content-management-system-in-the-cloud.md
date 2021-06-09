@@ -6,7 +6,7 @@ cover: content-anywhere-building-a-robust-cloud-cms
 publish: 2021-06-09T16:40:18-05:00
 feature: false
 authors:
-  - anu-jain
+  - jonathan-looney
 categories:
   - jamstack
   - business-strategy
