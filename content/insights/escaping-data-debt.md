@@ -1,7 +1,8 @@
 ---
 title: Escaping Data Debt
-description: Are you getting the answers you need from all your analytics initiatives? If you aren’t, you’re in data debt.
-cover: analytics-framework
+description: Are you getting the answers you need from all your analytics
+  initiatives? If you aren’t, you’re in data debt.
+cover: escapingdatadebt
 publish: 2021-02-23T12:00:00.000Z
 feature: false
 authors:

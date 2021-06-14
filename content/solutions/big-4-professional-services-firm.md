@@ -1,16 +1,18 @@
 ---
 title: Big 4 Professional Services Firm
-description: Technology Platform Design and Implementation for Big 4 Professional Services Firm
-authors:
-  - steve-roberts
-publish: 2021-01-01T12:00:00Z
-categories:
-  - cloud
-cover: office-building
+description: Technology Platform Design and Implementation for Big 4
+  Professional Services Firm
 client: Big 4 Professional Services Firm
 project: IT Process Optimization
-outcomes: $32M (over 4 years)
-problem: Large, global professional services organization lacked consistency and alignment in technology sourcing and platforms across multiple countries.
+outcomes: Immediate savings of 15M+ with expected ROI of $100M
+problem: Large, global professional services organization lacked consistency and
+  alignment in technology sourcing and platforms across multiple countries.
+cover: office-building
+publish: 2021-01-01T12:00:00.000Z
+authors:
+  - steve-roberts
+categories:
+  - cloud
 ---
 
 ## Solution
