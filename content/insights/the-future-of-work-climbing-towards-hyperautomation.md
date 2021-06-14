@@ -89,7 +89,7 @@ See how we helped a large Tax Firm streamline their invoice accounting process u
 
 
 
-### ![.](/images/frame-20.png "sentiment") Use Case: Real-time Customer Sentiment
+### Use Case: Real-time Customer Sentiment
 
 
 
