@@ -33,14 +33,18 @@ RPA is compatible with any application that presents an interface for user inter
 
 #### **Examples include:** 
 
-* ![](/images/frame.png) Windows applications
-* ![](/images/group-288.png)
+* ![.](/images/frame.png "windows")
+
+  Windows applications
+* ![.](/images/group-288.png "websites")
 
   Web pages,
-* ![](/images/group-1.png)
+* ![.](/images/group-1.png "databnase")
 
   Legacy mainframe applications, 
-* Java apps, 
+* ![.](/images/group-303.png "jaba")
+
+  Java apps, 
 * ERP platforms,
 * and thousands more. 
 
