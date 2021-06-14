@@ -30,8 +30,11 @@ RPA uses robots or bots that are software agents that interact with an applicati
  Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
 
 ### Where is RPA Used?
+
 RPA is compatible with any application that presents an interface for user interaction. 
-***
+
+- - -
+
 #### **This includes:** 
 
 * **Windows applications**
@@ -39,9 +42,11 @@ RPA is compatible with any application that presents an interface for user inter
 * **Legacy mainframe applications**
 * **Java apps**
 * **ERP platforms**
-***
 
-#### ***There are two main types of RPA – assisted and unassisted:***  
+- - -
+
+#### ***There are two main types of RPA – assisted and unassisted:***
+
 ##### ***Assisted:*** 
 
 Bots deploy to an individual desktop. In Assisted RPA, a human worker carries out some tasks while relying on the bot to tackle the process's repetitive or technically complex parts. Assisted RPA is also known as attended execution.
@@ -68,6 +73,7 @@ These technologies integrate AI, machine learning, natural language processing, 
 
 ### Use Case: Invoice Processing
 
+<div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 Anyone with experience processing invoices will explain that nearly every company has unique formats for sending invoices to their customers. These non-standardized invoices come in different file formats. In addition, they have a dynamic data structure that requires staff to individually review each invoice before inputting it into their accounting and ERP systems.
 
 Depending on invoice volume, this activity may require dedicated resources and distract staff from higher-value activities. 
@@ -76,9 +82,9 @@ Implementing Intelligent Automation will significantly reduce staff time while c
 
 See how we helped a large Tax Firm streamline their invoice accounting process using our Intelligent Automation tools. 
 
-<div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
 ### Use Case: Real-time Customer Sentiment
+
+![.](/images/ornament-2x.png "sentiment")
 
 Invoice processing only scratches the surface of what is possible with intelligent automation. Let's look at an example of real-time natural language processing (NLP) and sentiment analysis of customers.
 
