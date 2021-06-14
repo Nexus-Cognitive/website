@@ -45,7 +45,9 @@ RPA is compatible with any application that presents an interface for user inter
 * ![.](/images/group-303.png "jaba")
 
   Java apps, 
-* ERP platforms,
+* ![.](/images/group-302.png "erp")
+
+  ERP platforms,
 * and thousands more. 
 
 #### ***There are two main types of RPA – assisted and unassisted:***
