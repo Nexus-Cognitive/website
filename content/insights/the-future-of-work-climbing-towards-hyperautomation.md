@@ -51,6 +51,7 @@ RPA is compatible with any application that presents an interface for user inter
 
 #### ***There are two main types of RPA – assisted and unassisted:***
 
+
 **Assisted:** 
 
 * Bots deploy to an individual desktop. In Assisted RPA, a human worker carries out some tasks while relying on the bot to tackle the process's repetitive or technically complex parts. Assisted RPA is also known as attended execution.
@@ -73,9 +74,11 @@ While RPA tends to focus on automating repetitive and, many times, rules-based p
 
 > Gartner predicts that, by 2022, 80 percent of RPA-centric automation implementations will derive their value from complementary technologies
 
-### Use Case: Invoice Processing
 
+
+### Use Case: Invoice Processing
 <div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
 Anyone with experience processing invoices will explain that nearly every company has unique formats for sending invoices to their customers. These non-standardized invoices come in different file formats. In addition, they have a dynamic data structure that requires staff to individually review each invoice before inputting it into their accounting and ERP systems.
 
 Depending on invoice volume, this activity may require dedicated resources and distract staff from higher-value activities. 
@@ -84,9 +87,11 @@ Implementing Intelligent Automation will significantly reduce staff time while c
 
 See how we helped a large Tax Firm streamline their invoice accounting process using our Intelligent Automation tools. 
 
-### Use Case: Real-time Customer Sentiment
 
-![.](/images/frame-20.png "sentiment")
+
+### ![.](/images/frame-20.png "sentiment") Use Case: Real-time Customer Sentiment
+
+
 
 Invoice processing only scratches the surface of what is possible with intelligent automation. Let's look at an example of real-time natural language processing (NLP) and sentiment analysis of customers.
 
