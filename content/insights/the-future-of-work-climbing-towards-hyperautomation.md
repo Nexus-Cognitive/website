@@ -66,7 +66,7 @@ RPA provides a low-code / no-code mechanism to apply rules, extract data, and ex
 
 These concepts require an RPA platform to permit interaction with the applications without programming the interactions. Without RPA, automating existing applications and corporate systems would require multiple point-to-point connections to be developed and integrated into artificial intelligence (AI) solution.
 
-\[The Capgemini Research Institute estimates that large organizations will achieve cost savings of around USD 500 billion through IPA in 2022. – fun fact – please include in image blurb somehow]
+> The Capgemini Research Institute estimates that large organizations will achieve cost savings of around USD 500 billion through IPA in 2022.
 
 ## **The Next Step: Intelligent Automation (IA)**
 
