@@ -69,9 +69,7 @@ These concepts require an RPA platform to permit interaction with the applicatio
 
 Intelligent automation (also referred to as Cognitive Automation) links Artificial Intelligence (AI) with the interactive capabilities of Robotic Process Automation (RPA). 
 
-While RPA focuses on automating repetitive and, often, rules-based processes, intelligent automation incorporates artificial intelligence to take automation to the next level. 
-
-These technologies integrate AI, machine learning, natural language processing, structured data interaction, and intelligent document processing. Intelligent Automation simulates the analysis, reasoning, and decision-making that human workers use for daily tasks.
+While RPA tends to focus on automating repetitive and, many times, rules-based processes, intelligent automation incorporates (AI) technologies like machine learning, natural language processing, and intelligent document processing.  Because AI simulates types of human intelligence, IA can process higher-function tasks that require some level of reasoning, judgment, decision, and analysis.
 
 > Gartner predicts that, by 2022, 80 percent of RPA-centric automation implementations will derive their value from complementary technologies
 
