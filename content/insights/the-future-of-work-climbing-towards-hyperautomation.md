@@ -86,7 +86,7 @@ See how we helped a large Tax Firm streamline their invoice accounting process u
 
 ### Use Case: Real-time Customer Sentiment
 
-![.](/images/ornament.png "sentiment")
+![.](/images/frame-20.png "sentiment")
 
 Invoice processing only scratches the surface of what is possible with intelligent automation. Let's look at an example of real-time natural language processing (NLP) and sentiment analysis of customers.
 
