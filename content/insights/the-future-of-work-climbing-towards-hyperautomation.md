@@ -49,13 +49,12 @@ RPA is compatible with any application that presents an interface for user inter
 
 - - -
 
-#### ***There are two main types of RPA – assisted and unassisted:***
-
-##### ***Assisted:*** 
+#### ***There are two main types of RPA – assisted and unassisted:***  
+**Assisted:** 
 
 Bots deploy to an individual desktop. In Assisted RPA, a human worker carries out some tasks while relying on the bot to tackle the process's repetitive or technically complex parts. Assisted RPA is also known as attended execution.
 
-##### ***Unassisted:*** 
+**Unassisted:** 
 
 Bots are deployed on a centralized server, allowing unattended execution. This type of RPA solution can automate end-to-end tasks and workflow scheduling from a central point of control. 
 
