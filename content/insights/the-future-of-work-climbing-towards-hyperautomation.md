@@ -23,11 +23,15 @@ The ultimate goal of automation is to unlock efficiencies and enable employees t
 
 ## A Strong Foundation: Robotic Process Automation (RPA)
 
-RPA uses robots or bots that are software agents that interact with an application similar to a human user. 
+RPA uses robots or bots which are software agents that interact with an application similar to a human user. 
 
 > *RPA is a noninvasive integration technology used to automate routine, repetitive, and predictable tasks through orchestrated UI interactions that emulate human actions.*
 
- Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
+Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
+
+### Use Case: Automating Accounts Receivable 
+
+The tasks encountered in an Accounts Receivable department is a great example of the possibilities of RPA. If an office has invoice that is 30 days outstanding, a reminder email can be automatically drafted and sent.  If the invoice is 45 days outstanding, a warning email could be drafted and sent.  If the invoice is 60 days outstanding, the customer’s account could be marked past due in the system with follow up ticket generated for the account team to take action.
 
 ### Where is RPA Used?
 
