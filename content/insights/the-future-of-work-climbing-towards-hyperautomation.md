@@ -33,24 +33,24 @@ RPA uses robots or bots that are software agents that interact with an applicati
 
 RPA is compatible with any application that presents an interface for user interaction. 
 
-#### **Examples include:** 
+#### **Some Examples include:** 
 
-* ![.](/images/frame.png "windows")
+* ![.](/images/frame.png "windows")   **Windows applications**
 
-  Windows applications
-* ![.](/images/group-288.png "websites")
 
-  Web pages,
-* ![.](/images/group-1.png "databnase")
+* ![.](/images/group-288.png "websites")  **Web pages**
 
-  Legacy mainframe applications, 
-* ![.](/images/group-303.png "jaba")
 
-  Java apps, 
-* ![.](/images/group-302.png "erp")
+* ![.](/images/group-1.png "databnase")  **Legacy mainframe applications**
 
-  ERP platforms,
-* and thousands more. 
+
+* ![.](/images/group-303.png "jaba")  **Java apps**
+
+
+* ![.](/images/group-302.png "erp")  **ERP platforms**
+
+
+
 
 #### ***There are two main types of RPA – assisted and unassisted:***
 
