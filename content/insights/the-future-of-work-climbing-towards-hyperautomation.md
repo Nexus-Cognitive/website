@@ -76,7 +76,7 @@ While RPA focuses on automating repetitive and, often, rules-based processes, in
 
 These technologies integrate AI, machine learning, natural language processing, structured data interaction, and intelligent document processing. This framework of tools simulates the analysis, reasoning, and decision-making that human workers use for daily tasks.
 
-\[Gartner predicts that, by 2022, 80 percent of RPA-centric automation implementations will derive their value from complementary technologies]
+> Gartner predicts that, by 2022, 80 percent of RPA-centric automation implementations will derive their value from complementary technologies
 
 ### Use Case: Invoice Processing
 
@@ -88,7 +88,7 @@ Implementing Intelligent Automation will significantly reduce staff time while c
 
 See how we helped a large Tax Firm streamline their invoice accounting process using our Intelligent Automation tools. 
 
-\[Jonathan – add a plug here with graphic and link to our video]
+<div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 ### Use Case: Real-time Customer Sentiment
 
