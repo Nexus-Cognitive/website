@@ -140,4 +140,6 @@ Nearly every business has numerous use cases for RPA or IA to drive meaningful n
 
 Even if you aren't ready to invest in full-blown hyper-automation, your organization's RPA and IA efforts must build on a solid foundation for the future of HyperAutomation. To wait and develop for hyper-automation from scratch is to lose competitive advantage. It's critical to begin growing your hyper-automation moat now, reshaping culture, and reskilling employees to adopt an automation-first mindset.
 
-![.](/images/frame-19.png "HyperAutomation Path")
+
+
+![.](/images/hyperautomation.png "Hyperautomation")
