@@ -116,15 +116,15 @@ For example, a DTO might capture pricing and sales data to model the impact of m
 
 ### Use Cases:
 
-Logistics
+* Logistics
 
-warehousing costs
+* Warehousing costs
 
-personnel costs in the shipping departments
+* Personnel costs in the shipping departments
 
-supply-chain change requirements
+* Supply-chain change requirements
 
-overall profitability
+* Overall profitability
 
 These changes could then be analyzed in real-time across the entire company, even with limited or selective market pricing changes.
 
@@ -132,13 +132,13 @@ The automated feedback from the systems could then make the adjustments necessar
 
 ### Creating Continuous Competitive Advantage
 
-·   **A higher scope of automation:** The range of process automation will grow and shift from simple tasks to deeper knowledge and decision work.
+*  **A higher scope of automation:** The range of process automation will grow and shift from simple tasks to deeper knowledge and decision work.
 
-·   **An Automation Technology Stack:** RPA alone is not enough. It requires a specific stack of technologies focused on and supporting machine learning. The art will lie in selecting, orchestrating, and controlling the "right" technologies.
+* **An Automation Technology Stack:** RPA alone is not enough. It requires a specific stack of technologies focused on and supporting machine learning. The art will lie in selecting, orchestrating, and controlling the "right" technologies.
 
-·   **High agility and agile process management:** Organizations must be able to reconfigure and optimize processes quickly. 
+* **High agility and agile process management:** Organizations must be able to reconfigure and optimize processes quickly. 
 
-·   **Employee commitment.** Employees must question, optimize, and reinvent their work processes. To do so, they must understand and actively use automation in an organization-wide mindset. 
+*  **Employee commitment.** Employees must question, optimize, and reinvent their work processes. To do so, they must understand and actively use automation in an organization-wide mindset. 
 
 ## The future of work
 
