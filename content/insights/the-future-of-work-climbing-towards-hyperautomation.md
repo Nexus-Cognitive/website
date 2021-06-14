@@ -142,4 +142,4 @@ Even if you aren't ready to invest in full-blown hyper-automation, your organiza
 
 
 
-![](/images/frame-19.png)
+![.](/images/frame-19.png "HyperAutomation Path")
