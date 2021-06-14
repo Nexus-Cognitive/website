@@ -25,7 +25,7 @@ The ultimate goal of automation is to unlock efficiencies and enable employees t
 
 RPA uses robots or bots that are software agents that interact with an application similar to a human user. 
 
-> *"RPA is a noninvasive integration technology used to automate routine, repetitive, and predictable tasks through orchestrated UI interactions that emulate human actions."*
+> *RPA is a noninvasive integration technology used to automate routine, repetitive, and predictable tasks through orchestrated UI interactions that emulate human actions.*
 
  Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
 
