@@ -33,19 +33,16 @@ RPA is compatible with any application that presents an interface for user inter
 
 #### **Examples include:** 
 
-![](/images/frame.png) Windows applications
+* ![](/images/frame.png) Windows applications
+* ![](/images/group-288.png)
 
-![]()
+  Web pages,
+* ![](/images/group-1.png)
 
-web pages,
-
-legacy mainframe applications, 
-
-Java apps, 
-
-ERP platforms,
-
-and thousands more. 
+  Legacy mainframe applications, 
+* Java apps, 
+* ERP platforms,
+* and thousands more. 
 
 #### ***There are two main types of RPA – assisted and unassisted:***
 
