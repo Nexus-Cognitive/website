@@ -29,31 +29,23 @@ RPA uses robots or bots that are software agents that interact with an applicati
 
  Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
 
+***
+
 ### Where is RPA Used?
 
 RPA is compatible with any application that presents an interface for user interaction. 
 
-#### **Examples include:** 
+#### **Some Examples include:** 
 
-* ![.](/images/frame.png "windows")
+* #### ![.](/images/frame.png "windows")   **Windows applications**
+* #### ![.](/images/group-288.png "websites")  **Web pages**
+* #### ![.](/images/group-1.png "databnase")  **Legacy mainframe applications**
+* #### ![.](/images/group-303.png "jaba")  **Java apps**
+* #### ![.](/images/group-302.png "erp")  **ERP platforms**
 
-  Windows applications
-* ![.](/images/group-288.png "websites")
+***
 
-  Web pages,
-* ![.](/images/group-1.png "databnase")
-
-  Legacy mainframe applications, 
-* ![.](/images/group-303.png "jaba")
-
-  Java apps, 
-* ![.](/images/group-302.png "erp")
-
-  ERP platforms,
-* and thousands more. 
-
-#### ***There are two main types of RPA – assisted and unassisted:***
-
+#### ***There are two main types of RPA – assisted and unassisted:***  
 ##### ***Assisted:*** 
 
 Bots deploy to an individual desktop. In Assisted RPA, a human worker carries out some tasks while relying on the bot to tackle the process's repetitive or technically complex parts. Assisted RPA is also known as attended execution.
@@ -66,7 +58,7 @@ RPA provides a low-code / no-code mechanism to apply rules, extract data, and ex
 
 These concepts require an RPA platform to permit interaction with the applications without programming the interactions. Without RPA, automating existing applications and corporate systems would require multiple point-to-point connections to be developed and integrated into artificial intelligence (AI) solution.
 
-\[The Capgemini Research Institute estimates that large organizations will achieve cost savings of around USD 500 billion through IPA in 2022. – fun fact – please include in image blurb somehow]
+> The Capgemini Research Institute estimates that large organizations will achieve cost savings of around USD 500 billion through IPA in 2022.
 
 ## **The Next Step: Intelligent Automation (IA)**
 
@@ -130,10 +122,10 @@ The automated feedback from the systems could then make the adjustments necessar
 
 ### Creating Continuous Competitive Advantage
 
-*  **A higher scope of automation:** The range of process automation will grow and shift from simple tasks to deeper knowledge and decision work.
+* **A higher scope of automation:** The range of process automation will grow and shift from simple tasks to deeper knowledge and decision work.
 * **An Automation Technology Stack:** RPA alone is not enough. It requires a specific stack of technologies focused on and supporting machine learning. The art will lie in selecting, orchestrating, and controlling the "right" technologies.
 * **High agility and agile process management:** Organizations must be able to reconfigure and optimize processes quickly. 
-*  **Employee commitment.** Employees must question, optimize, and reinvent their work processes. To do so, they must understand and actively use automation in an organization-wide mindset. 
+* **Employee commitment.** Employees must question, optimize, and reinvent their work processes. To do so, they must understand and actively use automation in an organization-wide mindset. 
 
 ## The future of work
 
