@@ -15,6 +15,8 @@ section: business
 ---
 Let's look towards the future of business automation and how building a strong foundation of technologies can allow businesses to climb from traditional RPA to Intelligent Automation and ultimately HyperAutomation. 
 
+![.](/images/frame-17.png "maturity")
+
 To better understand this evolution, It's best to think of automation in terms of a maturity continuum progressing from "doing" to "thinking" and from process-driven to data-driven. 
 
 The ultimate goal of automation is to unlock efficiencies and enable employees to move beyond the mundane and focus on more profound business outcomes.
@@ -117,13 +119,9 @@ For example, a DTO might capture pricing and sales data to model the impact of m
 ### Use Cases:
 
 * Logistics
-
 * Warehousing costs
-
 * Personnel costs in the shipping departments
-
 * Supply-chain change requirements
-
 * Overall profitability
 
 These changes could then be analyzed in real-time across the entire company, even with limited or selective market pricing changes.
@@ -133,11 +131,8 @@ The automated feedback from the systems could then make the adjustments necessar
 ### Creating Continuous Competitive Advantage
 
 *  **A higher scope of automation:** The range of process automation will grow and shift from simple tasks to deeper knowledge and decision work.
-
 * **An Automation Technology Stack:** RPA alone is not enough. It requires a specific stack of technologies focused on and supporting machine learning. The art will lie in selecting, orchestrating, and controlling the "right" technologies.
-
 * **High agility and agile process management:** Organizations must be able to reconfigure and optimize processes quickly. 
-
 *  **Employee commitment.** Employees must question, optimize, and reinvent their work processes. To do so, they must understand and actively use automation in an organization-wide mindset. 
 
 ## The future of work
