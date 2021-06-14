@@ -31,7 +31,7 @@ Without writing code or modifying existing applications in any way, a process an
 
 ### Use Case: Automating Accounts Receivable
 
-Automating the past due communication for an accounts receivable department represents a great use case of RPA. These automation steps would include evaluating specific fields in the application and then following those rules such as checking the days an invoice is outstanding. For instance, if an office has an invoice that is 30 days outstanding, a reminder email can be automatically drafted and sent.  If the invoice is 45 days outstanding, a warning email could be drafted and sent.  If the invoice is 60 days outstanding, the customer’s account could be marked past due in the system with follow up ticket generated for the account team to take action.
+Automating past due communication for an accounts receivable department represents a great use case of RPA. These automation steps would include evaluating specific fields in the application and then following those rules such as checking the days an invoice is outstanding. For instance, if an office has an invoice that is 30 days outstanding, a reminder email can be automatically drafted and sent.  If the invoice is 45 days outstanding, a warning email could be drafted and sent.  If the invoice is 60 days outstanding, the customer’s account could be marked past due in the system with follow up ticket generated for the account team to take action.
 
 ### Where is RPA Used?
 
@@ -86,7 +86,7 @@ See how we helped a large Tax Firm streamline their invoice accounting process u
 
 ### Use Case: Real-time Customer Sentiment
 
-![.](/images/ornament.png "sentiment")
+![.](/images/frame-20.png "sentiment")
 
 Invoice processing only scratches the surface of what is possible with intelligent automation. Let's look at an example of real-time natural language processing (NLP) and sentiment analysis of customers.
 
