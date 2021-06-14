@@ -29,7 +29,7 @@ RPA uses robots or bots which are software agents that interact with an applicat
 
 Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
 
-### Use Case: Automating Accounts Receivable 
+### Use Case: Automating Accounts Receivable
 
 Automating the past due communication for an accounts receivable department represents a great use case of RPA. These automation steps would include evaluating specific fields in the application and then following those rules such as checking the days an invoice is outstanding. For instance, if an office has an invoice that is 30 days outstanding, a reminder email can be automatically drafted and sent.  If the invoice is 45 days outstanding, a warning email could be drafted and sent.  If the invoice is 60 days outstanding, the customer’s account could be marked past due in the system with follow up ticket generated for the account team to take action.
 
@@ -49,12 +49,13 @@ RPA is compatible with any application that presents an interface for user inter
 
 - - -
 
-#### ***There are two main types of RPA – assisted and unassisted:***  
-**Assisted:** 
+#### ***There are two main types of RPA – assisted and unassisted:***
+
+**\- Assisted:** 
 
 Bots deploy to an individual desktop. In Assisted RPA, a human worker carries out some tasks while relying on the bot to tackle the process's repetitive or technically complex parts. Assisted RPA is also known as attended execution.
 
-**Unassisted:** 
+**\- Unassisted:** 
 
 Bots are deployed on a centralized server, allowing unattended execution. This type of RPA solution can automate end-to-end tasks and workflow scheduling from a central point of control. 
 
