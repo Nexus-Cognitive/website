@@ -15,6 +15,8 @@ section: business
 ---
 Let's look towards the future of business automation and how building a strong foundation of technologies can allow businesses to climb from traditional RPA to Intelligent Automation and ultimately HyperAutomation. 
 
+![.](/images/frame-17.png "maturity")
+
 To better understand this evolution, It's best to think of automation in terms of a maturity continuum progressing from "doing" to "thinking" and from process-driven to data-driven. 
 
 The ultimate goal of automation is to unlock efficiencies and enable employees to move beyond the mundane and focus on more profound business outcomes.
@@ -74,7 +76,7 @@ While RPA focuses on automating repetitive and, often, rules-based processes, in
 
 These technologies integrate AI, machine learning, natural language processing, structured data interaction, and intelligent document processing. This framework of tools simulates the analysis, reasoning, and decision-making that human workers use for daily tasks.
 
-\[Gartner predicts that, by 2022, 80 percent of RPA-centric automation implementations will derive their value from complementary technologies]
+> Gartner predicts that, by 2022, 80 percent of RPA-centric automation implementations will derive their value from complementary technologies
 
 ### Use Case: Invoice Processing
 
@@ -86,7 +88,7 @@ Implementing Intelligent Automation will significantly reduce staff time while c
 
 See how we helped a large Tax Firm streamline their invoice accounting process using our Intelligent Automation tools. 
 
-\[Jonathan – add a plug here with graphic and link to our video]
+<div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 ### Use Case: Real-time Customer Sentiment
 
@@ -117,13 +119,9 @@ For example, a DTO might capture pricing and sales data to model the impact of m
 ### Use Cases:
 
 * Logistics
-
 * Warehousing costs
-
 * Personnel costs in the shipping departments
-
 * Supply-chain change requirements
-
 * Overall profitability
 
 These changes could then be analyzed in real-time across the entire company, even with limited or selective market pricing changes.
@@ -133,11 +131,8 @@ The automated feedback from the systems could then make the adjustments necessar
 ### Creating Continuous Competitive Advantage
 
 *  **A higher scope of automation:** The range of process automation will grow and shift from simple tasks to deeper knowledge and decision work.
-
 * **An Automation Technology Stack:** RPA alone is not enough. It requires a specific stack of technologies focused on and supporting machine learning. The art will lie in selecting, orchestrating, and controlling the "right" technologies.
-
 * **High agility and agile process management:** Organizations must be able to reconfigure and optimize processes quickly. 
-
 *  **Employee commitment.** Employees must question, optimize, and reinvent their work processes. To do so, they must understand and actively use automation in an organization-wide mindset. 
 
 ## The future of work
