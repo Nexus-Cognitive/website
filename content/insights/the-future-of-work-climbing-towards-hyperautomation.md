@@ -132,14 +132,8 @@ The automated feedback from the systems could then make the adjustments necessar
 
 ## The future of work
 
-Automation continues to evolve with each technological advance and integrate into the workplace, unlocking more impactful capabilities.   
-
-Because these capabilities are cumulative, implementing RPA and IA without patterns that establish a foundation for Hyperautomation creates the risk of unnecessary rework and additional implementation costs down the line.
-
-Nearly every business has numerous use cases for RPA or IA to drive meaningful near-term business outcomes. 
+The path to Hyper-automation isn’t either-or, but the cumulative adoption of RPA and Intelligent Automation.
 
 Even if you aren't ready to invest in full-blown hyper-automation, your organization's RPA and IA efforts must build on a solid foundation for the future of HyperAutomation. To wait and develop for hyper-automation from scratch is to lose competitive advantage. It's critical to begin growing your hyper-automation moat now, reshaping culture, and reskilling employees to adopt an automation-first mindset.
 
-
-
-![.](/images/hyperautomation.png "Hyperautomation")
+![.](/images/frame-22.png "Hyperautomation")
