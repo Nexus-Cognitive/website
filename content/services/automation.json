@@ -1,6 +1,11 @@
 {
   "title": "Automation",
-  "description": "",
-  "body": "",
-  "image": "about-poster"
+  "description": "Building an automated world that let's humans be humans.",
+  "body": "Technology-enabled automation unlocks new efficiencies for complex business processes. It can streamline a business for simplicity, enable digital mature workflows, increase service quality, improve service delivery and contain operating costs.",
+  "image": "services-automation",
+  "services": [
+    "automation",
+    "artificial-intelligence",
+    "digital-strategy"
+  ]
 }

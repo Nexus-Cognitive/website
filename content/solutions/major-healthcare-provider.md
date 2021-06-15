@@ -1,17 +1,23 @@
 ---
 title: Major Healthcare Provider
-description: EMR System Selection, Implementation and Support for Major Healthcare Services Company
+description: EMR System Selection, Implementation and Support for Major
+  Healthcare Services Company
+client: Major Healthcare Provider
+project: EMR System Selection, Implementation and Support
+outcomes: Integrated custom healthcare solution allowing for long term
+  competitive advantage
+problem: The company needed an Electronic Medical Records system for all of its
+  on-site clinics, including electronic file transmission capabilities with
+  pharmacies as well as reporting requirements within the clinics and back to
+  corporate. The legacy system was ineffective functionally, highly manual, and
+  did not scale as required by the growth of the business.
+cover: healthcare-worker
+publish: 2021-01-03T12:00:00.000Z
 authors:
   - steve-roberts
-publish: 2021-01-03T12:00:00Z
 categories:
   - application-development
   - healthcare
-cover: healthcare-worker
-client: Major Healthcare Provider
-project: EMR System Selection, Implementation and Support
-outcomes: $7M
-problem: The company needed an Electronic Medical Records system for all of its on-site clinics, including electronic file transmission capabilities with pharmacies as well as reporting requirements within the clinics and back to corporate. The legacy system was ineffective functionally, highly manual, and did not scale as required by the growth of the business.
 ---
 
 ## Solution
