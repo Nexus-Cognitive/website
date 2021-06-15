@@ -107,41 +107,9 @@ export default Vue.extend({
 .base {
   @apply bg-white gap-3 md:gap-4 grid grid-cols-1 xl:grid-cols-2 overflow-hidden text-black;
 
-  &.feature {
-    @apply bg-purple md:grid-cols-2 text-white;
-
-    .content {
-      &-container {
-        @apply md:pt-3 md:pl-0;
-      }
-    }
-
-    .cover {
-      &-container,
-      &-image {
-        @apply md:h-full;
-      }
-    }
-
-    .description {
-      @apply xl:text-sm;
-    }
-
-    .footer {
-      @apply xl:mt-0;
-    }
-
-    .title {
-      @apply text-md lg:text-lg;
-    }
-  }
-
-  &,
-  &.feature {
-    .content {
-      &-container {
-        @apply xl:py-4;
-      }
+  .content {
+    &-container {
+      @apply xl:py-4;
     }
   }
 }
