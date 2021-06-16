@@ -10,7 +10,7 @@
   ],
   "order": 3,
   "backgroundColor": "red",
-  "bodyColor": "black",
+  "bodyColor": "black-dark",
   "titleColor": "white",
   "image": "amplify"
 }

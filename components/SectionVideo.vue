@@ -8,6 +8,7 @@
       mozallowfullscreen
       :poster="poster.src"
       :src="src"
+      :title="title"
       webkitallowfullscreen
       :width="width"
     />
@@ -32,6 +33,11 @@ export default Vue.extend({
     },
 
     src: {
+      required: true,
+      type: String
+    },
+
+    title: {
       required: true,
       type: String
     },

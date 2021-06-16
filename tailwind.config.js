@@ -15,7 +15,7 @@ const colors = {
   },
   gray: {
     dark: '#4B4B5E',
-    light: '#B6B5BF'
+    light: '#727172'
   },
   green: {
     DEFAULT: '#2A4D4B'

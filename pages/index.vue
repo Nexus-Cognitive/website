@@ -95,6 +95,7 @@
       <img
         class="absolute -bottom-10 w-full"
         src="/images/the-future-isnt-static-cover.svg"
+        alt="Nexus Cognitive service focuses stacked and flowing off the page."
       />
     </SectionVideo>
 
