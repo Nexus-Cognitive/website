@@ -3,7 +3,7 @@ title: Intelligent Decisioning
 description: Without the ability to properly interpret data, its true value is locked away.
 cover: intelligent-decisioning
 publish: 2021-01-26T01:01:25+00:00
-feature: true
+feature: false
 authors:
   - anu-jain
 categories:
