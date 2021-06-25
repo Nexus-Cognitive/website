@@ -1,9 +1,7 @@
 ---
-title: Competitive Advantage through Content Platforms
-description: "Content is still king for companies looking to scale growth and
-  product adoption. From marketing materials to product details and customer
-  support, every aspect of your business requires constant messaging and
-  communications with your customers. "
+title: Competitive Advantage through Cloud Content Platforms
+description: Content is still king for companies looking to scale growth and
+  product adoption.
 cover: content-anywhere-building-a-robust-cloud-cms
 publish: 2021-06-25T16:06:16-05:00
 feature: false
@@ -13,11 +11,9 @@ categories:
   - cloud
 section: technology
 ---
-
+From marketing materials to product details and customer support, every aspect of your business requires constant messaging and communications with your customers. Sadly, very few of these touchpoints are in sync, creating a nest of infrastructure and impersonal, fragmented experiences.
 
 ![](/images/silos.png)
-
-Sadly, few of these touchpoints are in sync, creating a nest of infrastructure and impersonal, fragmented experiences.
 
 ## Unlocking Growth
 
@@ -59,8 +55,6 @@ Masterclass embraced an omnichannel content strategy that distributes newly publ
 
 - - -
 
-![](/images/cloud-platform.png)
-
 ## Use Cases
 
 **Websites**
@@ -81,7 +75,10 @@ With a robust backend UI editor, any department can produce content that can be 
 **E-commerce sites**
 Vendors and product teams can provide rich inventory details and images that can be integrated into inventory management systems like Shopify or SAP Hybris.
 
-Industry Winning Content Platforms :
-[https://prismic.io/
-](https://prismic.io/)[https://www.contentful.com/
-](https://www.contentful.com/)<https://xperience.io/>
+![](/images/frame-9.png)
+
+## Industry Winning Content Platforms :
+
+[Prismic](https://www.contentful.com/)
+[Contentful](https://www.contentful.com/)
+[Xperience](https://xperience.io/)
