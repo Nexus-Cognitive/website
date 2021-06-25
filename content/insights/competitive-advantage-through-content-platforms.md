@@ -13,6 +13,8 @@ categories:
   - cloud
 section: technology
 ---
+
+
 ![](/images/silos.png)
 
 Sadly, few of these touchpoints are in sync, creating a nest of infrastructure and impersonal, fragmented experiences.
@@ -69,6 +71,7 @@ Content Platform empowered websites allow for statically generated files to be u
 Dive deeper into [the technical stack of the Nexus Cognitive website](https://www.nexuscognitive.com/insights/how-to-unlock-the-power-of-the-jamstack) by reading about our content-first approach.
 
 - - -
+
 **Marketing and CX Automation**
 Teams like Customer Support can update and maintain in-depth FAQs or issue tracking notices from a single source of truth. This allows your marketing department to set up trigger-based automation and dynamically import this content to customers across all channels.
 
@@ -77,8 +80,6 @@ With a robust backend UI editor, any department can produce content that can be 
 
 **E-commerce sites**
 Vendors and product teams can provide rich inventory details and images that can be integrated into inventory management systems like Shopify or SAP Hybris.
-
-
 
 Industry Winning Content Platforms :
 [https://prismic.io/
