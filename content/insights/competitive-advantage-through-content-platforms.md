@@ -69,6 +69,6 @@ Masterclass embraced an omnichannel content strategy that distributes newly publ
 
 ## Industry Winning Content Platforms :
 
-[Prismic](https://www.contentful.com/)
-[Contentful](https://www.contentful.com/)
-[Xperience](https://xperience.io/)
+* [Prismic](https://www.contentful.com/)
+* [Contentful](https://www.contentful.com/)
+* [Xperience](https://xperience.io/)
