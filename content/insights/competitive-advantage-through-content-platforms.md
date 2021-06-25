@@ -1,9 +1,7 @@
 ---
-title: Competitive Advantage through Content Platforms
-description: "Content is still king for companies looking to scale growth and
-  product adoption. From marketing materials to product details and customer
-  support, every aspect of your business requires constant messaging and
-  communications with your customers. "
+title: Competitive Advantage through Cloud Content Platforms
+description: Content is still king for companies looking to scale growth and
+  product adoption.
 cover: content-anywhere-building-a-robust-cloud-cms
 publish: 2021-06-25T16:06:16-05:00
 feature: false
@@ -13,11 +11,11 @@ categories:
   - cloud
 section: technology
 ---
-
+From marketing materials to product details and customer support, every aspect of your business requires constant messaging and communications with your customers. Sadly, very few of these touchpoints are in sync, creating a nest of infrastructure and impersonal, fragmented experiences.
 
 ![](/images/silos.png)
 
-Sadly, few of these touchpoints are in sync, creating a nest of infrastructure and impersonal, fragmented experiences.
+
 
 ## Unlocking Growth
 
@@ -58,8 +56,6 @@ Masterclass embraced an omnichannel content strategy that distributes newly publ
 [Read the case study at FoundationInc.](https://foundationinc.co/lab/masterclass-empire/)
 
 - - -
-
-![](/images/cloud-platform.png)
 
 ## Use Cases
 
