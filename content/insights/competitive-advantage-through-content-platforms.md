@@ -21,17 +21,14 @@ The key to future innovation and growth is implementing a flexible content platf
 
 ### **Components to a Modern Content Platform**
 
-**Security**
-Content is driven through an Application Programming Interface (APIs), allowing for less exposure to the core database. This reduces possible access for hackers to steal sensitive data through malicious requests. 
-
-**Scalability**
-API-driven content allows for flexible development using any configuration of frameworks or hosting.
-
-**Composability**
-A single content piece can be reused and combined with various content throughout a customer's journey.
-
-**Efficiency**
-Automate continuous deployment across your omnichannel stack after new content has been pushed to a repository.
+* **Security**
+  Content is driven through an Application Programming Interface (APIs), allowing for less exposure to the core database. This reduces possible access for hackers to steal sensitive data through malicious requests. 
+* **Scalability**
+  API-driven content allows for flexible development using any configuration of frameworks or hosting.
+* **Composability**
+  A single content piece can be reused and combined with various content throughout a customer's journey.
+* **Efficiency**
+  Automate continuous deployment across your omnichannel stack after new content has been pushed to a repository.
 
 - - -
 
@@ -57,23 +54,16 @@ Masterclass embraced an omnichannel content strategy that distributes newly publ
 
 ## Use Cases
 
-**Websites**
-Content Platform empowered websites allow for statically generated files to be used, leading to a boost in SEO and site performance, update efficiencies and increased security.
+* **Websites**
+    Content Platform empowered websites allow for statically generated files to be used, leading to a boost in SEO and site performance, update efficiencies and increased security.
 
-- - -
-
-Dive deeper into [the technical stack of the Nexus Cognitive website](https://www.nexuscognitive.com/insights/how-to-unlock-the-power-of-the-jamstack) by reading about our content-first approach.
-
-- - -
-
-**Marketing and CX Automation**
-Teams like Customer Support can update and maintain in-depth FAQs or issue tracking notices from a single source of truth. This allows your marketing department to set up trigger-based automation and dynamically import this content to customers across all channels.
-
-**Products & Services**
-With a robust backend UI editor, any department can produce content that can be used by any service, voice assistant, digital kiosks, app, or even print materials.
-
-**E-commerce sites**
-Vendors and product teams can provide rich inventory details and images that can be integrated into inventory management systems like Shopify or SAP Hybris.
+  > Dive deeper into [the technical stack of the Nexus Cognitive website](https://www.nexuscognitive.com/insights/how-to-unlock-the-power-of-the-jamstack) by reading about our content-first approach.
+* **Marketing and CX Automation**
+  Teams like Customer Support can update and maintain in-depth FAQs or issue tracking notices from a single source of truth. This allows your marketing department to set up trigger-based automation and dynamically import this content to customers across all channels.
+* **Products & Services**
+  With a robust backend UI editor, any department can produce content that can be used by any service, voice assistant, digital kiosks, app, or even print materials.
+* **E-commerce sites**
+  Vendors and product teams can provide rich inventory details and images that can be integrated into inventory management systems like Shopify or SAP Hybris.
 
 ![](/images/frame-9.png)
 
