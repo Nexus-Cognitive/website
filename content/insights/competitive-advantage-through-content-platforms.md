@@ -15,8 +15,6 @@ From marketing materials to product details and customer support, every aspect o
 
 ![](/images/silos.png)
 
-
-
 ## Unlocking Growth
 
 The key to future innovation and growth is implementing a flexible content platform allowing for rapidly deployed content at scale across channels and technical stacks
@@ -77,7 +75,10 @@ With a robust backend UI editor, any department can produce content that can be 
 **E-commerce sites**
 Vendors and product teams can provide rich inventory details and images that can be integrated into inventory management systems like Shopify or SAP Hybris.
 
-Industry Winning Content Platforms :
-[https://prismic.io/
-](https://prismic.io/)[https://www.contentful.com/
-](https://www.contentful.com/)<https://xperience.io/>
+![](/images/frame-9.png)
+
+## Industry Winning Content Platforms :
+
+[Prismic](https://www.contentful.com/)
+[Contentful](https://www.contentful.com/)
+[Xperience](https://xperience.io/)
