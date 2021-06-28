@@ -3,7 +3,7 @@ title: Competitive Advantage through Cloud Content Platforms
 description: Content is still king for companies looking to scale growth and
   product adoption.
 cover: content-anywhere-building-a-robust-cloud-cms
-publish: 2021-06-25T16:06:16-05:00
+publish: 2021-06-28T13:06:58-05:00
 feature: false
 authors:
   - jonathan-looney
