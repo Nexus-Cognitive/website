@@ -137,7 +137,7 @@ export default Vue.extend({
 }
 
 .cover {
-  @apply absolute left-0 max-w-none xl:max-w-full object-cover land:w-full xs:max-h-full top-0 z-0;
+  @apply absolute left-0 max-w-none xl:max-w-full object-cover land:w-full xs:max-h-full xs:min-h-full xs:max-w-full top-0 z-0;
   filter: opacity(20%);
 }
 

@@ -23,15 +23,22 @@ The ultimate goal of automation is to unlock efficiencies and enable employees t
 
 ## A Strong Foundation: Robotic Process Automation (RPA)
 
-RPA uses robots or bots that are software agents that interact with an application similar to a human user. 
+RPA uses robots or bots that interact with an application similar to a human user. 
 
-> *"RPA is a noninvasive integration technology used to automate routine, repetitive, and predictable tasks through orchestrated UI interactions that emulate human actions."*
+> *RPA is a noninvasive integration technology used to automate routine, repetitive, and predictable tasks through orchestrated UI interactions that emulate human actions.*
 
- Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
+Without writing code or modifying existing applications in any way, a process analyst can identify elements of an application that can become automated. Using these elements, they can apply data-driven rules using an easy-to-use low-code interface to train the robot. 
+
+### Use Case: Automating Accounts Receivable
+
+Automating past due communication for an accounts receivable department represents a great use case of RPA. These automation steps would include evaluating specific fields in the application and then following those rules such as checking the days an invoice is outstanding. For instance, if an office has an invoice that is 30 days outstanding, a reminder email can be automatically drafted and sent.  If the invoice is 45 days outstanding, a warning email could be drafted and sent.  If the invoice is 60 days outstanding, the customer’s account could be marked past due in the system with follow-up ticket generated for the account team to take action.
 
 ### Where is RPA Used?
+
 RPA is compatible with any application that presents an interface for user interaction. 
-***
+
+- - -
+
 #### **This includes:** 
 
 * **Windows applications**
@@ -39,16 +46,18 @@ RPA is compatible with any application that presents an interface for user inter
 * **Legacy mainframe applications**
 * **Java apps**
 * **ERP platforms**
-***
 
-#### ***There are two main types of RPA – assisted and unassisted:***  
-##### ***Assisted:*** 
+- - -
 
-Bots deploy to an individual desktop. In Assisted RPA, a human worker carries out some tasks while relying on the bot to tackle the process's repetitive or technically complex parts. Assisted RPA is also known as attended execution.
+#### ***There are two main types of RPA – assisted and unassisted:***
 
-##### ***Unassisted:*** 
+**Assisted:** 
 
-Bots are deployed on a centralized server, allowing unattended execution. This type of RPA solution can automate end-to-end tasks and workflow scheduling from a central point of control. 
+* Bots deploy to an individual desktop. In Assisted RPA, a human worker carries out some tasks while relying on the bot to tackle the process's repetitive or technically complex parts. Assisted RPA is also known as attended execution.
+
+**Unassisted:** 
+
+* Bots are deployed on a centralized server, allowing unattended execution. This type of RPA solution can automate end-to-end tasks and workflow scheduling from a central point of control. 
 
 RPA provides a low-code / no-code mechanism to apply rules, extract data, and execute actions across many existing applications and corporate systems. These capabilities provide the foundational layer for Intelligent Automation and Hyperautomation. 
 
@@ -60,13 +69,13 @@ These concepts require an RPA platform to permit interaction with the applicatio
 
 Intelligent automation (also referred to as Cognitive Automation) links Artificial Intelligence (AI) with the interactive capabilities of Robotic Process Automation (RPA). 
 
-While RPA focuses on automating repetitive and, often, rules-based processes, intelligent automation incorporates technology's latest advancements to take automation to the next level. 
-
-These technologies integrate AI, machine learning, natural language processing, structured data interaction, and intelligent document processing. This framework of tools simulates the analysis, reasoning, and decision-making that human workers use for daily tasks.
+While RPA focuses on automating repetitive and, often, rules-based processes, intelligent automation incorporates (AI) technologies like machine learning, natural language processing, and intelligent document processing.  Because AI simulates types of human intelligence, IA can process higher-function tasks that require some level of reasoning, judgment, decision, and analysis.
 
 > Gartner predicts that, by 2022, 80 percent of RPA-centric automation implementations will derive their value from complementary technologies
 
 ### Use Case: Invoice Processing
+
+<div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 Anyone with experience processing invoices will explain that nearly every company has unique formats for sending invoices to their customers. These non-standardized invoices come in different file formats. In addition, they have a dynamic data structure that requires staff to individually review each invoice before inputting it into their accounting and ERP systems.
 
@@ -75,8 +84,6 @@ Depending on invoice volume, this activity may require dedicated resources and d
 Implementing Intelligent Automation will significantly reduce staff time while concurrently improving data quality and reducing latency. 
 
 See how we helped a large Tax Firm streamline their invoice accounting process using our Intelligent Automation tools. 
-
-<div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 ### Use Case: Real-time Customer Sentiment
 
@@ -125,10 +132,8 @@ The automated feedback from the systems could then make the adjustments necessar
 
 ## The future of work
 
-Automation continues to evolve with each technological advance and integrate into the workplace, unlocking more impactful capabilities.   
-
-Because these capabilities are cumulative, implementing RPA and IA without patterns that establish a foundation for Hyperautomation creates the risk of unnecessary rework and additional implementation costs down the line.
-
-Nearly every business has numerous use cases for RPA or IA to drive meaningful near-term business outcomes. 
+The path to Hyper-automation isn’t either-or, but the cumulative adoption of RPA and Intelligent Automation.
 
 Even if you aren't ready to invest in full-blown hyper-automation, your organization's RPA and IA efforts must build on a solid foundation for the future of HyperAutomation. To wait and develop for hyper-automation from scratch is to lose competitive advantage. It's critical to begin growing your hyper-automation moat now, reshaping culture, and reskilling employees to adopt an automation-first mindset.
+
+![.](/images/frame-22.png "Hyperautomation")
