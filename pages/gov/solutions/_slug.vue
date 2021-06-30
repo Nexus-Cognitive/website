@@ -3,7 +3,7 @@
     <HeroBase background-color="blue-dark" :image="solution.cover">
       <template #default>
         <div class="text-left">
-          <CategoryList :categories="solution.categories" class="mt-1" />
+         
 
           <AuthorList :authors="solution.authors" class="mt-3" />
 
@@ -13,18 +13,14 @@
           <h2 class="font-light font-mono mt-2 text-xs sm:text-sm 2xl:text-md">
             <strong>Project:</strong> {{ solution.description }}
           </h2>
-          <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
-            <strong> Outcomes:</strong> {{ solution.outcomes }}
-          </p>
-        </div>
+           <CategoryList :categories="solution.categories" class="mt-1" />
+          </div>
       </template>
     </HeroBase>
 
     <div class="container py-6">
       <div class="mx-auto prose prose-blue prose-lg">
-        <h2>Problem</h2>
-
-        <p>{{ solution.problem }}</p>
+     
 
         <NuxtContent :document="solution" />
       </div>

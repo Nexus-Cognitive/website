@@ -15,10 +15,13 @@ body {
   @apply absolute left-0 max-w-none xl:max-w-full object-cover land:w-full xs:max-h-full;
 }
 
-.hero-image,
+
 .slide-image,
 .slide-video {
   filter:opacity(40%);
+}
+.hero-image{
+filter:opacity(20%);
 }
 
 .hero-video,
