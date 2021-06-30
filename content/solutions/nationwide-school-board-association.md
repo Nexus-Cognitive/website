@@ -44,12 +44,10 @@ After a two-month rapid analysis and design phase we determined the existing pla
 
 Applying our Cloud Acceleration Framework allowed Nexus to complete cloud modernization and migrate to a production environment in under 4.5 months. This efficient migration allowed the client to take advantage of the back-to-school season, a key business driver.
 
-
-
 ### **Outcomes**
 
 * #### Rapid (4.5 months) delivery of online marketplace running on 100% Azure PaaS supporting over $1.5 Billion in transaction volume and 400k purchase orders.
-* #### Punchout integration to support real-time purchase order and requisition transmission from customer ERP. 
-* #### New digital Marketplace unlocking new monthly volume highs (+40%)
+* #### Punchout integration to support real-time purchase order and requisition transmission from customer ERP.
+* #### New digital Marketplace user experience driving new monthly volume highs (+40%)
 
 - - -
