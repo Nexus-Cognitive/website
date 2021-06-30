@@ -25,6 +25,16 @@ categories:
   - cloud
   - developer-operations
 ---
+### **Outcomes**
+
+* #### Rapid (4.5 months) delivery of online marketplace running on 100% Azure PaaS supporting over $1.5 Billion in transaction volume and 400k purchase orders.
+* #### Punchout Integration for ERP and Vendor shopping
+* #### New digital Marketplace unlocking new monthly volume highs (+40%)
+
+**Problem**
+
+The largest non-profit Public School Board Association (PSBA) operates a purchasing cooperative serving over 8,000 public school districts and government agencies. The cooperative was facing an increasingly competitive environment from commercial operators offering a more sophisticated online marketplace experience.   The existing web application was developed internally on the Microsoft Platform over ten years prior, with platform performance beginning to degrade as demand increases.
+
 **Solution**
 
 After a two-month rapid analysis and design phase we determined the existing platform required building a reimagined cloud-based eCommerce platform. Due to the unique combination of regulatory compliance requirements and diversity of service offerings across over 4,000 vendors a custom marketplace solution was required.
@@ -38,11 +48,3 @@ After a two-month rapid analysis and design phase we determined the existing pla
 * Azure Dev Ops
 
 Applying our Cloud Acceleration Framework allowed Nexus to complete cloud modernization and migrate to a production environment in under 4.5 months. This efficient migration allowed the client to take advantage of the back-to-school season, a key business driver.
-
-**Outcomes**
-
-#### Rapid (4.5 months) delivery of online marketplace running on 100% Azure PaaS supporting over $1.5 Billion in transaction volume and 400k purchase orders.
-
-#### Punchout Integration for ERP and Vendor shopping
-
-#### New digital Marketplace unlocking new monthly volume highs (+40%)
