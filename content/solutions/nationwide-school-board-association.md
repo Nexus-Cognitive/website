@@ -1,6 +1,7 @@
 ---
 title: "Nationwide School Board Association "
-description: Applying the Nexus Cloud Accelerator framework for rapid e-Commerce deployment
+description: Create an e-Commerce marketplace enabling school district and
+  government agency access to over 2,000 approved vendors
 client: "Nationwide School Board Association "
 project: Apply Nexus Cloud Accelerator framework to create an e-Commerce
   marketplace enabling school district and government agency access to over
