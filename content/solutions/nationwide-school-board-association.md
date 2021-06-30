@@ -32,7 +32,7 @@ The largest non-profit Public School Board Association (PSBA) operates a purchas
 
 **Solution**
 
-After a two-month rapid analysis and design phase we determined the existing platform required building a reimagined cloud-based eCommerce platform. Due to the unique combination of regulatory compliance requirements and diversity of service offerings across over 4,000 vendors a custom marketplace solution was required.
+After a two-month rapid analysis and design phase we determined the existing platform required building a reimagined cloud-based eCommerce platform. Due to the unique combination of regulatory compliance requirements and diversity of service offerings across over 2,000 vendors a custom marketplace solution was required.
 
  A Nexus team of experienced Azure architects, analysts, engineers, and designers analyzed existing capabilities while determining optimal platform architecture and technologies. 
 
