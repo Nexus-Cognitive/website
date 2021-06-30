@@ -17,7 +17,8 @@ categories:
 ---
 > #### Maximized well productivity for our global client base thus, driving revenue and profitability - Oilfield COO
 
-## Problem
+## \
+Problem
 
 A major oilfield services firm needed help integrating and correlating mountains of data related to thousands of wells in varying stages of production and perforation. The workflows and processes they used to make operational decisions were manual and laborious.
 
