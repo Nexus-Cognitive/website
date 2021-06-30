@@ -5,9 +5,7 @@ client: "Nationwide School Board Association "
 project: Apply Nexus Cloud Accelerator framework to create an e-Commerce
   marketplace enabling school district and government agency access to over
   2,000 approved vendors.
-outcomes: Rapid (4.5 months) delivery of online marketplace running on 100%
-  Azure PaaS supporting over $1.5 Billion in transaction volume and 400k
-  purchase orders.
+outcomes: "-"
 problem: The largest non-profit Public School Board Association (PSBA) operates
   a purchasing cooperative serving over 8,000 public school districts and
   government agencies. The cooperative was facing an increasingly competitive
