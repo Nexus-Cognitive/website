@@ -24,7 +24,7 @@ categories:
   - cloud
   - developer-operations
 ---
-> **Rapidly delivering a $1.5 Bn annual transaction marketplace in 4.5 months.**
+> Rapidly delivering a $1.5 Bn annual transaction marketplace in 4.5 months.
 
 **Problem**
 
