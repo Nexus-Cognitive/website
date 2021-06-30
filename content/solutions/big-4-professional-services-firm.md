@@ -13,14 +13,7 @@ authors:
 categories:
   - cloud
 ---
-### Outcomes
-* #### Immediate savings of 15M+ with expected ROI of $100M
-* #### Development plan ratified by board.
-* #### Led to global implementation of Salesforce and Workday across all major network firm countries.
-* #### Selected Microsoft and Amazon as cloud providers at strong discounts.
-* #### Gained approval to apply development framework from above example across all network firms.
-
-- - - 
+> Creating savings of 15M+ with expected ROI of $100M
 
 ## Problem
 
@@ -34,3 +27,13 @@ Conduct an assessment based on people, process, and technology to identify oppor
 * Conducted analysis using provided IT assessment methodology.
 * Heavy focus on technology infrastructure alignment.
 * Heavy focus on consolidation from data centers and shift to cloud.
+
+### Outcomes
+
+* #### Immediate savings of 15M+ with expected ROI of $100M
+* #### Development plan ratified by board.
+* #### Led to global implementation of Salesforce and Workday across all major network firm countries.
+* #### Selected Microsoft and Amazon as cloud providers at strong discounts.
+* #### Gained approval to apply development framework from above example across all network firms.
+
+- - -
