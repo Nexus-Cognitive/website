@@ -19,11 +19,11 @@ categories:
   - application-development
   - healthcare
 ---
+> Integrated custom healthcare solution allowing for long term competitive advantage
+
 ## Problem
 
 The company needed an Electronic Medical Records system for all of its on-site clinics, including electronic file transmission capabilities with pharmacies as well as reporting requirements within the clinics and back to corporate. The legacy system was ineffective functionally, highly manual, and did not scale as required by the growth of the business.
-
-
 
 ## Solution
 
