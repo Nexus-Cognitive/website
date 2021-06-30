@@ -1,21 +1,15 @@
 <template>
   <article v-if="solution">
-    <HeroBase background-color="blue-dark" :image="solution.cover">
+      <HeroBase
+      background-color="blue-dark"
+      :image="solution.cover">
       <template #default>
         <div class="text-left">
-          <CategoryList :categories="solution.categories" class="mt-1" />
-
           <AuthorList :authors="solution.authors" class="mt-3" />
-
           <h1 class="font-bold font-title mt-2 text-sm sm:text-lg 2xl:text-xl">
             {{ solution.client }}
           </h1>
-          <h2 class="font-light font-mono mt-2 text-xs sm:text-sm 2xl:text-md">
-            <strong>Project:</strong> {{ solution.description }}
-          </h2>
-          <p class="font-light font-mono mt-1 text-xs sm:text-sm 2xl:text-md">
-            <strong> Outcomes:</strong> {{ solution.outcomes }}
-          </p>
+          <CategoryList :categories="solution.categories" class="mt-1" />
         </div>
       </template>
     </HeroBase>
