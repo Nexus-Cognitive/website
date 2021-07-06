@@ -15,7 +15,8 @@ export default {
         hid: 'description',
         name: 'description',
         content: 'Developing strong foundations for the future economy.'
-      }
+      },
+      { name:'ahrefs-site-verification', content:'aca7e1b605fa3d73df812863a622599d599a68d729ffd107e60405195b3361fc'}
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },

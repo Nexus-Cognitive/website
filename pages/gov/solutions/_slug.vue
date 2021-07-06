@@ -6,15 +6,16 @@
       section-class-list="hero-section-solution h-screen-three-quarter"
     >
       <template #default>
-        <div class="text-left pt-10">
+        <div class="text-left pt-10">         
+
           <h1 class="font-bold font-title mt-2 text-sm sm:text-lg 2xl:text-xl">
             {{ solution.client }}
           </h1>
           <h2 class="font-light font-mono mt-2 text-xs sm:text-sm 2xl:text-md">
             <strong>Project:</strong> {{ solution.description }}
           </h2>
-          <CategoryList :categories="solution.categories" class="mt-1" />
-          <AuthorList :authors="solution.authors" class="mt-3" />
+           <CategoryList :categories="solution.categories" class="mt-1" />
+           <AuthorList :authors="solution.authors" class="mt-3" />
         </div>
       </template>
     </HeroBase>
