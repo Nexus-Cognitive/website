@@ -1,9 +1,9 @@
 ---
-title: Embedding Analytics in your Operations - Pt 1
+title: Embedding Analytics in your Operations
 description: Gartner reported that only 15% of analytics projects ever make it
   out of the pilot state to enterprise deployment. That's a lot of wasted time,
   effort, and money.
-cover: analytics-strategy
+cover: services-analyticops
 publish: 2021-05-07T16:00:50+00:00
 feature: true
 authors:
@@ -12,7 +12,7 @@ categories:
   - analytics-operations
 section: business
 ---
-**Embedding Analytics in your Operations---Part One**
+
 
 Gartner reported that only 15% of analytics projects ever make
 it out of the pilot state to enterprise deployment. That's a lot of
@@ -82,11 +82,3 @@ opinion. They're on the frontlines, and they know what they need to do
 their jobs. They'll play a large part in determining the success or
 failure of your project.
 
-I've only scratched the surface here. Over the coming weeks, I'll be
-discussing specific tools and methods you can use to ensure that
-analytics is embedded within your enterprise---both technically and
-culturally. We'll discuss what it means to marry analytics tools with
-back-end IT and business processes, accelerators you can use to both
-speed up deployment and ensure success, and a framework you can employ
-to integrate analytics into your corporate DNA. Stay tuned!
-{"mode":"full","isActive":false}
