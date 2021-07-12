@@ -28,7 +28,8 @@ export default {
   plugins: [
     '~/plugins/capitalizeFilter.ts',
     '~/plugins/commaDelimitFilter.ts',
-    '~/plugins/dateFormatFilter.ts'
+    '~/plugins/dateFormatFilter.ts',
+    { src: '~/plugins/googleTagManager.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

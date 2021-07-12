@@ -57,8 +57,17 @@ address {
 }
 
 .hero-section {
-  @apply flex flex-col h-screen items-center justify-center pb-9 sm:pb-24 z-10;
+  @apply h-screen;
+}
+
+.hero-section,
+.hero-section-solution {
+  @apply flex flex-col items-center justify-center z-10;
   max-width: 88ch;
+}
+
+.hero-section-solution {
+  @apply h-screen-three-quarter;
 }
 
 .hero-video {

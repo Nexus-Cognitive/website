@@ -3,7 +3,11 @@
     <div class="flex flex-wrap items-center md:mr-auto">
       <Wordmark class="mr-auto" />
 
-      <button class="md:hidden" @click="hiddenToggle">
+      <button
+        class="md:hidden"
+        aria-label="Open navigation menu"
+        @click="hiddenToggle"
+      >
         <IconMenu />
       </button>
     </div>

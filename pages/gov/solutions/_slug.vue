@@ -1,11 +1,12 @@
 <template>
   <article v-if="solution">
-    <HeroBase background-color="blue-dark" :image="solution.cover">
+    <HeroBase
+      background-color="blue-dark"
+      :image="solution.cover"
+      section-class-list="hero-section-solution h-screen-three-quarter"
+    >
       <template #default>
-        <div class="text-left">
-         
-
-          <AuthorList :authors="solution.authors" class="mt-3" />
+        <div class="text-left pt-10">         
 
           <h1 class="font-bold font-title mt-2 text-sm sm:text-lg 2xl:text-xl">
             {{ solution.client }}
@@ -14,14 +15,13 @@
             <strong>Project:</strong> {{ solution.description }}
           </h2>
            <CategoryList :categories="solution.categories" class="mt-1" />
-          </div>
+           <AuthorList :authors="solution.authors" class="mt-3" />
+        </div>
       </template>
     </HeroBase>
 
     <div class="container py-6">
       <div class="mx-auto prose prose-blue prose-lg">
-     
-
         <NuxtContent :document="solution" />
       </div>
     </div>

@@ -9,7 +9,9 @@
       </figcaption>
     </figure>
     <div class="flex items-center mt-1">
-      <a :href="href" class="mr-2"><IconEmail /></a>
+      <a :href="href" class="mr-2" :aria-label="`Email ${title}`"
+        ><IconEmail
+      /></a>
       <a :href="linkedIn"
         ><ImageBase
           alt="LinkedIn Logo"
