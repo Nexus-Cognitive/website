@@ -75,7 +75,7 @@ While RPA focuses on automating repetitive and, often, rules-based processes, in
 
 ### Use Case: Invoice Processing
 
-<div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="padding:66.67% 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561355679?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="height:100%;left:0;position:absolute;top:0;width:100%;" title="IntelligentAutomation.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 Anyone with experience processing invoices will explain that nearly every company has unique formats for sending invoices to their customers. These non-standardized invoices come in different file formats. In addition, they have a dynamic data structure that requires staff to individually review each invoice before inputting it into their accounting and ERP systems.
 

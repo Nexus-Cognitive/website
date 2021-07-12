@@ -4,7 +4,7 @@ description: Technological change is happening at a rapid pace, no more so than
   in Information Technology (IT).
 cover: the-future-is-now
 publish: 2021-01-08T12:00:00.000Z
-feature: true
+feature: false
 authors:
   - anu-jain
 categories:

@@ -5,7 +5,7 @@ description: Software—powerful as it may be—won't help you very much without
   to interpret the results, that software is just 1's and 0's.
 cover: cognitive-design
 publish: 2021-05-17T13:15:03-05:00
-feature: false
+feature: true
 authors:
   - anu-jain
 categories:
