@@ -12,8 +12,6 @@ section: business
 ---
  
 
-## Cut Costs and Improve Agility: eAutomate Data Integration with Machine Learning
-
 Source Capital, through Source Capital Credit Opportunities IV, LP (“SCCO IV”), is pleased to announce its investment in Nexus Cognitive Solutions, an AI, data analytics, and software-development services firm focused on digital-maturity. SCCO IV supported Nexus’ acquisition of a cloud solutions and software development services provider, by providing debt financing.
 
 Headquartered in Addison, TX, Nexus is a service-disabled veteran-owned small business (SDVOSB) that helps companies leverage their data and processes to drive greater efficiency, insights, and scalability through highly-tailored software solutions. The Company has significant cloud, robotics process automation, analytics, blockchain and software development expertise. The acquisition brings further depth in many of Nexus’ core competencies and also offers significant experience in systems integration & architecture.
