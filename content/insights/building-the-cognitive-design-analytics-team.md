@@ -1,7 +1,7 @@
 ---
 title: Building the Cognitive Design Analytics Team
 description: Ensuring your teams's success in analytics.
-cover: building-the-cognitive-design-analytics-team
+cover: analytics-framework
 publish: 2021-09-09T12:00:00.000Z
 feature: false
 authors:
