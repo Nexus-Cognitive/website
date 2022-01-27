@@ -1,7 +1,7 @@
 ---
 title: Source Capital Invests In Nexus Cognitive Solutions
 description: Strategic partnership to drive further growth
-cover: ai-and-data-integration
+cover: amplify
 publish: 2022-01-26T12:00:00.000Z
 feature: false
 authors:
