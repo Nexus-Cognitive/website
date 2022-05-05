@@ -3,7 +3,7 @@ title: Nexus Cognitive is Pleased to Announce the Acquisition of Salos Services
 description: Headquartered out of Golden, Colorado, Salos Services helps
   companies leverage their data and processes for greater efficiency through
   managed Business Intelligence (BI) services.
-cover: cloud-considerations
+cover: salos
 publish: 2022-05-05T17:48:01-05:00
 feature: true
 authors:
